@@ -30,18 +30,6 @@
     {%- endif -%}
   </div>
 
-  <nav class="tavia-hero__nav" aria-label="Primary">
-    <a class="tavia-hero__menu" href="{{ section.settings.menu_link | default: routes.all_products_collection_url }}">
-      <span class="tavia-hero__menu-label">{{ section.settings.menu_label | escape }}</span>
-      <span class="tavia-hero__menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-    </a>
-    <a class="tavia-hero__wordmark" href="{{ routes.root_url }}">{{ section.settings.wordmark | escape }}</a>
-    <div class="tavia-hero__utilities">
-      <a class="tavia-hero__utility tavia-hero__utility--account" href="{{ routes.account_url }}">{{ section.settings.account_label | escape }}</a>
-      <a class="tavia-hero__utility" href="{{ routes.cart_url }}">{{ section.settings.cart_label | escape }} ({{ cart.item_count }})</a>
-    </div>
-  </nav>
-
   <div class="tavia-hero__content">
     {%- if section.settings.eyebrow != blank -%}<p class="tavia-kicker tavia-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
     <h1 class="tavia-hero__heading" id="TaviaHeroHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
@@ -77,11 +65,6 @@
   "max_blocks": 8,
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hero image" },
-    { "type": "text", "id": "wordmark", "label": "Wordmark", "default": "TAVIA" },
-    { "type": "text", "id": "menu_label", "label": "Menu label", "default": "Menu" },
-    { "type": "url", "id": "menu_link", "label": "Menu link" },
-    { "type": "text", "id": "account_label", "label": "Account label", "default": "Account" },
-    { "type": "text", "id": "cart_label", "label": "Cart label", "default": "Bag" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Video / City shift / Product in motion" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "BUILT FOR LONG DAYS." },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "A one-piece shoe designed for people who stay in motion." },

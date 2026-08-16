@@ -11,10 +11,6 @@
   font-family: Lato, "Helvetica Neue", Arial, sans-serif;
 }
 
-.template-index .section-header {
-  display: none;
-}
-
 .template-index #MainContent {
   overflow: clip;
 }
@@ -94,57 +90,6 @@
   width: 100%;
 }
 
-.tavia-hero__nav {
-  align-items: center;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  left: 0;
-  padding: 2.4rem var(--tavia-gutter);
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 2;
-}
-
-.tavia-hero__menu,
-.tavia-hero__utilities {
-  align-items: center;
-  display: flex;
-  font-size: 0.9rem;
-  font-weight: 700;
-  gap: 1.5rem;
-  letter-spacing: 0.12em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.tavia-hero__menu-icon {
-  display: grid;
-  gap: 0.35rem;
-  width: 2rem;
-}
-
-.tavia-hero__menu-icon span {
-  border-top: 0.1rem solid currentColor;
-  display: block;
-}
-
-.tavia-hero__wordmark {
-  font-size: clamp(2.4rem, 2.5vw, 3.6rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  text-decoration: none;
-}
-
-.tavia-hero__utilities {
-  justify-content: flex-end;
-}
-
-.tavia-hero__utility {
-  text-decoration: none;
-}
-
 .tavia-hero__content {
   align-items: center;
   display: flex;
@@ -160,7 +105,7 @@
 .tavia-hero__eyebrow {
   left: var(--tavia-gutter);
   position: absolute;
-  top: 11rem;
+  top: 15rem;
 }
 
 .tavia-hero__heading {
@@ -522,15 +467,6 @@
     object-position: var(--tavia-hero-mobile-position, 50% 50%);
   }
 
-  .tavia-hero__nav {
-    padding-top: 1.8rem;
-  }
-
-  .tavia-hero__menu-label,
-  .tavia-hero__utility--account {
-    display: none;
-  }
-
   .tavia-hero__heading {
     font-size: clamp(4rem, 13vw, 6.4rem);
   }
@@ -541,7 +477,7 @@
   }
 
   .tavia-hero__eyebrow {
-    top: 8.5rem;
+    top: 10rem;
   }
 
   .tavia-hero__bottom {

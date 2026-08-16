@@ -11,10 +11,6 @@
       },
       "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5"],
       "settings": {
-        "wordmark": "TAVIA",
-        "menu_label": "Menu",
-        "account_label": "Account",
-        "cart_label": "Bag",
         "eyebrow": "Product / City shift / In motion",
         "heading": "BUILT FOR LONG DAYS.",
         "copy": "A one-piece shoe designed for people who stay in motion.",

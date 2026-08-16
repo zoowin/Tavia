@@ -1,0 +1,107 @@
+:root {
+  --tavia-ink: #111111;
+  --tavia-gray-100: #f4f4f1;
+  --tavia-gray-300: #d9d9d5;
+  --tavia-gray-600: #6b6b67;
+}
+
+.header-wrapper,
+.mega-menu__content,
+.menu-drawer,
+.cart-drawer,
+.footer {
+  font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+}
+
+.header-wrapper {
+  transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.header__menu-item,
+.mega-menu__link {
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mega-menu__content {
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.12);
+  box-shadow: none;
+}
+
+.template-index .section-header {
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.template-index .section-header:not(.shopify-section-header-sticky) .header-wrapper {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+.template-index .section-header:not(.shopify-section-header-sticky) .header__heading-link .h2,
+.template-index .section-header:not(.shopify-section-header-sticky) .header__menu-item,
+.template-index .section-header:not(.shopify-section-header-sticky) .header__icon {
+  color: #ffffff;
+}
+
+.template-index .section-header:not(.shopify-section-header-sticky) .header__heading-logo {
+  filter: brightness(0) invert(1);
+}
+
+.template-index .section-header.shopify-section-header-sticky {
+  position: fixed;
+}
+
+.template-index .section-header.shopify-section-header-sticky .header-wrapper {
+  background: #ffffff;
+  box-shadow: 0 0.1rem 0 rgba(17, 17, 17, 0.12);
+}
+
+.footer {
+  border-top: 0.1rem solid var(--tavia-gray-300);
+}
+
+.footer__content-top .grid {
+  align-items: start;
+}
+
+.footer-block__heading {
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer-block__details-content,
+.footer-block__details-content .list-menu__item--link {
+  color: rgba(var(--color-foreground), 0.68);
+  font-size: 1.3rem;
+}
+
+.footer-block__newsletter .field::after,
+.footer-block__newsletter .field::before,
+.footer-block__newsletter .field__input {
+  border-radius: 0;
+}
+
+.footer__content-bottom {
+  border-top-color: var(--tavia-gray-300);
+}
+
+.footer__copyright,
+.policies {
+  color: rgba(var(--color-foreground), 0.6);
+}
+
+@media screen and (max-width: 989px) {
+  .template-index .section-header .header {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
