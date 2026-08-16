@@ -427,14 +427,22 @@
 }
 
 .tavia-story__media {
-  min-height: 64rem;
+  height: var(--tavia-story-image-height, 64rem);
+  min-height: 0;
   overflow: hidden;
   position: relative;
+}
+
+.tavia-story__picture {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .tavia-story__image {
   height: 100% !important;
   object-fit: cover;
+  object-position: var(--tavia-story-image-position, 50% 50%);
   width: 100%;
 }
 
@@ -613,7 +621,7 @@
   .tavia-story__grid {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
   }
 
   .tavia-story--reverse .tavia-story__media,
@@ -622,7 +630,12 @@
   }
 
   .tavia-story__media {
-    min-height: 52rem;
+    height: var(--tavia-story-mobile-image-height, 46rem);
+    min-height: 0;
+  }
+
+  .tavia-story__image {
+    object-position: var(--tavia-story-mobile-image-position, 50% 50%);
   }
 
   .tavia-story__heading {

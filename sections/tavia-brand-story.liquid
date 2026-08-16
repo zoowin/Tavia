@@ -4,23 +4,47 @@
   #shopify-section-{{ section.id }} .tavia-story {
     --tavia-story-background: {{ section.settings.background }};
     --tavia-story-color: {{ section.settings.text_color }};
+    --tavia-story-image-height: {{ section.settings.desktop_image_height }}px;
+    --tavia-story-image-position: {{ section.settings.desktop_image_position }};
+    --tavia-story-mobile-image-height: {{ section.settings.mobile_image_height }}px;
+    --tavia-story-mobile-image-position: {{ section.settings.mobile_image_position }};
   }
 {%- endstyle -%}
 
 <section class="tavia-home-section tavia-story tavia-story--{{ section.settings.theme }}{% if section.settings.image_position == 'right' %} tavia-story--reverse{% endif %}" aria-labelledby="TaviaStoryHeading-{{ section.id }}">
   <div class="tavia-story__grid">
     <div class="tavia-story__media">
-      {%- if section.settings.image != blank -%}
-        {{
-          section.settings.image
-          | image_url: width: 2200
-          | image_tag:
-            class: 'tavia-story__image',
-            widths: '600, 900, 1200, 1600, 2200',
-            sizes: '(min-width: 750px) 55vw, 100vw',
-            loading: 'lazy',
-            alt: section.settings.image.alt
-        }}
+      {%- liquid
+        assign desktop_image = section.settings.image
+        assign mobile_image = section.settings.mobile_image
+        assign fallback_image = desktop_image | default: mobile_image
+        assign image_alt = desktop_image.alt | default: mobile_image.alt
+      -%}
+      {%- if fallback_image != blank -%}
+        <picture class="tavia-story__picture">
+          {%- if mobile_image != blank -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="
+                {{ mobile_image | image_url: width: 375 }} 375w,
+                {{ mobile_image | image_url: width: 550 }} 550w,
+                {{ mobile_image | image_url: width: 750 }} 750w,
+                {{ mobile_image | image_url: width: 1000 }} 1000w
+              "
+              sizes="100vw"
+            >
+          {%- endif -%}
+          {{
+            fallback_image
+            | image_url: width: 2200
+            | image_tag:
+              class: 'tavia-story__image',
+              widths: '600, 900, 1200, 1600, 2200',
+              sizes: '(min-width: 750px) 55vw, 100vw',
+              loading: 'lazy',
+              alt: image_alt
+          }}
+        </picture>
       {%- else -%}
         {{ 'lifestyle-2' | placeholder_svg_tag: 'tavia-story__image placeholder-svg' }}
       {%- endif -%}
@@ -67,7 +91,13 @@
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }
     ] },
-    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "header", "content": "Images" },
+    { "type": "image_picker", "id": "image", "label": "Desktop image" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Mobile image", "info": "Falls back to the desktop image when empty." },
+    { "type": "range", "id": "desktop_image_height", "label": "Desktop image height", "min": 400, "max": 900, "step": 20, "unit": "px", "default": 640 },
+    { "type": "text", "id": "desktop_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
+    { "type": "range", "id": "mobile_image_height", "label": "Mobile image height", "min": 280, "max": 760, "step": 20, "unit": "px", "default": 460 },
+    { "type": "text", "id": "mobile_image_position", "label": "Mobile image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 35%." },
     { "type": "text", "id": "image_caption", "label": "Image caption", "default": "Lifestyle film / Full shift / City" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "MADE TO STAY\nIN MOTION." },
