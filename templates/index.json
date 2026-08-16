@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "tavia-hero": {
+      "type": "tavia-hero",
+      "blocks": {
+        "benefit-1": { "type": "benefit", "settings": { "text": "One-piece construction" } },
+        "benefit-2": { "type": "benefit", "settings": { "text": "No traditional assembly" } },
+        "benefit-3": { "type": "benefit", "settings": { "text": "Open lattice airflow" } },
+        "benefit-4": { "type": "benefit", "settings": { "text": "Designed for long days" } },
+        "benefit-5": { "type": "benefit", "settings": { "text": "Built for daily motion" } }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5"],
+      "settings": {
+        "wordmark": "TAVIA",
+        "menu_label": "Menu",
+        "account_label": "Account",
+        "cart_label": "Bag",
+        "eyebrow": "Product / City shift / In motion",
+        "heading": "BUILT FOR LONG DAYS.",
+        "copy": "A one-piece shoe designed for people who stay in motion.",
+        "button_label": "Discover the 01",
+        "bottom_left": "Drop 01 / First production",
+        "bottom_right": "Designed for daily motion",
+        "text_color": "#ffffff",
+        "overlay_opacity": 20,
+        "desktop_height": 900,
+        "mobile_height": 720,
+        "desktop_position": "50% 54%",
+        "mobile_position": "50% 50%"
+      }
+    },
+    "object-statement": {
+      "type": "tavia-statement",
+      "settings": {
+        "eyebrow": "01 / The object",
+        "heading": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t.",
+        "copy": "Digitally designed and printed as one, so support, flex and airflow work together.",
+        "link_label": "Read the product note"
+      }
+    },
+    "current-forms": {
+      "type": "tavia-product-gallery",
+      "blocks": {
+        "form-1": { "type": "product_card", "settings": { "title": "The 01 / Earth", "description": "One-piece everyday shoe", "price": "$—", "fallback_tone": "natural", "background": "#eeeeec", "swatch_one": "#8b624c", "swatch_two": "#171717" } },
+        "form-2": { "type": "product_card", "settings": { "title": "The 01 / Mono", "description": "One-piece everyday shoe", "price": "$—", "fallback_tone": "mono", "background": "#d8d8d5", "swatch_one": "#171717", "swatch_two": "#f2f1ec" } },
+        "form-3": { "type": "product_card", "settings": { "title": "The 01 / Sand", "description": "Open form for home and away", "price": "$—", "fallback_tone": "sand", "background": "#e8e5df", "swatch_one": "#b89b7e", "swatch_two": "#171717" } }
+      },
+      "block_order": ["form-1", "form-2", "form-3"],
+      "settings": { "heading": "Current forms", "link_label": "View all" }
+    },
+    "motion-story": {
+      "type": "tavia-brand-story",
+      "blocks": {
+        "motion-1": { "type": "feature", "settings": { "title": "Light on foot", "text": "Less visual and physical weight" } },
+        "motion-2": { "type": "feature", "settings": { "title": "Open structure", "text": "Air can move through the form" } },
+        "motion-3": { "type": "feature", "settings": { "title": "Simple care", "text": "Rinse, air dry, repeat" } }
+      },
+      "block_order": ["motion-1", "motion-2", "motion-3"],
+      "settings": { "theme": "light", "background": "#ffffff", "text_color": "#111111", "image_position": "left", "image_caption": "Lifestyle study / Full shift / City", "heading": "MADE TO STAY\nIN MOTION.", "copy": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you.", "link_label": "See how it feels" }
+    },
+    "technology-story": {
+      "type": "tavia-brand-story",
+      "blocks": {
+        "technology-1": { "type": "feature", "settings": { "title": "01", "text": "Open lattice airflow" } },
+        "technology-2": { "type": "feature", "settings": { "title": "02", "text": "Responsive geometry" } },
+        "technology-3": { "type": "feature", "settings": { "title": "03", "text": "Single-piece construction" } }
+      },
+      "block_order": ["technology-1", "technology-2", "technology-3"],
+      "settings": { "theme": "dark", "background": "#111111", "text_color": "#ffffff", "image_position": "right", "image_caption": "Lattice response / Product study", "eyebrow": "02 / How it is made", "heading": "PRINTED,\nNOT ASSEMBLED.", "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.", "link_label": "Explore the technology" }
+    }
+  },
+  "order": ["tavia-hero", "object-statement", "current-forms", "motion-story", "technology-story"]
+}

@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="8320" viewBox="0 0 1440 8320">
+  <title>Tavia desktop homepage — States Gallery x Shop G0 direction</title>
+  <desc>White editorial commerce UI with three large-type brand moments, product carousel, collections, technology, manufacturing, community and footer.</desc>
+  <defs>
+    <style>
+      .mega{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:700;letter-spacing:-4px}
+      .display{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:700;letter-spacing:-1.3px}
+      .body{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:400}
+      .medium{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:600}
+      .label{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:500;letter-spacing:1.1px}
+      .micro{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:400;letter-spacing:.8px}
+      .marquee{font-family:Lato,"Helvetica Neue",Arial,sans-serif;font-weight:300}
+    </style>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#777874"/><stop offset=".5" stop-color="#B0AFAA"/><stop offset="1" stop-color="#52534F"/></linearGradient>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E2E0DB"/><stop offset="1" stop-color="#ABA8A0"/></linearGradient>
+    <linearGradient id="cool" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D2D2CF"/><stop offset="1" stop-color="#8D8E89"/></linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#292929"/><stop offset="1" stop-color="#090909"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="18"/></filter>
+    <g id="shoe">
+      <ellipse cx="250" cy="320" rx="190" ry="20" fill="#777771" opacity=".13" filter="url(#blur)"/>
+      <path d="M48 245C118 205 185 126 270 91C319 71 365 84 399 124C433 164 448 206 487 229C514 245 519 268 497 282C471 299 423 304 354 307L135 322C74 326 35 306 32 281C30 264 35 253 48 245Z" fill="#F8F8F5" stroke="#B2B2AD" stroke-width="1.8"/>
+      <g fill="none" stroke="#C5C5C0" stroke-width="1.4"><path d="M149 184L237 305M184 144L273 307M223 112L312 308M263 91L351 308"/><path d="M109 211L357 138M73 239L409 178M42 262L463 223"/></g>
+      <path d="M35 284C124 309 238 282 332 285C398 287 450 282 502 265" fill="none" stroke="#83837D" stroke-width="5"/>
+    </g>
+    <g id="slide">
+      <ellipse cx="250" cy="320" rx="170" ry="19" fill="#777771" opacity=".13" filter="url(#blur)"/>
+      <path d="M58 240C113 208 172 159 243 134C285 119 325 127 358 158C390 188 413 226 457 242C495 256 511 280 498 300C485 322 439 331 360 332L141 341C78 344 41 327 33 302C26 280 33 254 58 240Z" fill="#C3A88B" stroke="#A88D70" stroke-width="1.8"/>
+      <g fill="none" stroke="#AC9074" stroke-width="1.4"><path d="M155 195L230 324M198 163L270 326M242 139L314 327M286 128L357 328"/></g>
+      <path d="M35 300C127 322 228 302 316 302C404 302 455 309 503 289" fill="none" stroke="#8E745C" stroke-width="5"/>
+    </g>
+  </defs>
+
+  <rect width="1440" height="8320" fill="#FFFFFF"/>
+
+  <!-- 01 / VIDEO HERO + HIDDEN HEADER -->
+  <g id="hero-section">
+    <rect width="1440" height="900" fill="url(#hero)"/>
+    <text x="24" y="126" class="micro" font-size="8" fill="#F1F1EE">VIDEO / CITY SHIFT / PRODUCT IN MOTION</text>
+    <g fill="#FFFFFF">
+      <text x="26" y="50" class="label" font-size="9">MENU</text><path d="M80 39H100M80 45H100M80 51H100" stroke="#FFFFFF" stroke-width="1.2"/>
+      <g transform="translate(649 25) scale(.175)"><path d="M0 0H170L153 23H104V204H61V23H16Z"/><path fill-rule="evenodd" d="M174 204L235 0H296L358 204H312L300 159H232L219 204ZM242 125H290L267 47Z"/><path d="M359 0H405L452 158L500 0H546L477 204H428Z"/><path d="M564 0H609V204H564ZM564 0H609L596 13H551ZM564 204H609L596 191H551Z"/><path fill-rule="evenodd" d="M625 204L686 0H747L809 204H763L751 159H683L670 204ZM693 125H741L718 47Z"/></g>
+      <circle cx="1334" cy="43" r="9" fill="none" stroke="#FFFFFF"/><path d="M1322 62C1327 52 1342 52 1347 62" fill="none" stroke="#FFFFFF"/>
+      <path d="M1375 37H1394L1391 57H1379Z" fill="none" stroke="#FFFFFF"/><path d="M1380 37C1380 29 1389 29 1389 37" fill="none" stroke="#FFFFFF"/><text x="1414" y="48" text-anchor="end" class="micro" font-size="8">(0)</text>
+    </g>
+    <g transform="translate(370 280) scale(1.38)"><use href="#shoe"/></g>
+    <g text-anchor="middle" fill="#FFFFFF">
+      <text x="720" y="510" class="mega" font-size="72">BUILT FOR LONG DAYS.</text>
+      <text x="720" y="553" class="body" font-size="15">A one-piece shoe designed for people who stay in motion.</text>
+      <rect x="640" y="600" width="160" height="48" rx="24" fill="#FFFFFF"/><text x="720" y="630" class="label" font-size="8" fill="#111111">DISCOVER THE 01</text>
+    </g>
+    <text x="26" y="860" class="label" font-size="8" fill="#FFFFFF">DROP 01 / FIRST PRODUCTION</text>
+    <text x="1414" y="860" text-anchor="end" class="label" font-size="8" fill="#FFFFFF">DESIGNED FOR DAILY MOTION</text>
+  </g>
+
+  <!-- 02 / MARQUEE -->
+  <g id="marquee">
+    <rect y="900" width="1440" height="78" fill="#FFFFFF"/><line x1="0" y1="977.5" x2="1440" y2="977.5" stroke="#D9D9D5"/>
+    <text x="-50" y="947" class="marquee" font-size="12">One-piece construction</text><circle cx="155" cy="944" r="2"/>
+    <text x="214" y="947" class="marquee" font-size="12">No traditional assembly</text><circle cx="424" cy="944" r="2"/>
+    <text x="483" y="947" class="marquee" font-size="12">Open lattice airflow</text><circle cx="681" cy="944" r="2"/>
+    <text x="740" y="947" class="marquee" font-size="12">Free U.S. shipping</text><circle cx="928" cy="944" r="2"/>
+    <text x="987" y="947" class="marquee" font-size="12">30-day returns</text><circle cx="1138" cy="944" r="2"/>
+    <text x="1197" y="947" class="marquee" font-size="12">Designed for long days</text>
+  </g>
+
+  <!-- 03 / EDITORIAL OBJECT STATEMENT -->
+  <g id="object-statement">
+    <rect y="978" width="1440" height="630" fill="#FFFFFF"/>
+    <text x="28" y="1040" class="label" font-size="8" fill="#757570">01 / THE OBJECT</text>
+    <text x="28" y="1240" class="display" font-size="48" fill="#111111"><tspan x="28">One object. One continuous structure.</tspan><tspan x="28" dy="61">Everything it needs, nothing it doesn’t.</tspan></text>
+    <text x="1000" y="1407" class="body" font-size="14" fill="#50504B"><tspan x="1000">Digitally designed and printed as one,</tspan><tspan x="1000" dy="22">so support, flex and airflow work together.</tspan></text>
+    <text x="1000" y="1496" class="label" font-size="8" text-decoration="underline">READ THE PRODUCT NOTE ↗</text>
+  </g>
+
+  <!-- 04 / CURRENT FORMS CAROUSEL -->
+  <g id="current-forms">
+    <rect y="1608" width="1440" height="1030" fill="#FFFFFF"/><line x1="28" y1="1608.5" x2="1412" y2="1608.5" stroke="#D9D9D5"/>
+    <text x="28" y="1670" class="display" font-size="31">Current forms</text><text x="1412" y="1667" text-anchor="end" class="label" font-size="8" text-decoration="underline">VIEW ALL ↗</text>
+    <circle cx="1320" cy="1720" r="19" fill="none" stroke="#C8C8C4"/><path d="M1325 1720H1315M1315 1720L1319 1716M1315 1720L1319 1724" fill="none" stroke="#111111"/>
+    <circle cx="1370" cy="1720" r="19" fill="none" stroke="#111111"/><path d="M1365 1720H1375M1375 1720L1371 1716M1375 1720L1371 1724" fill="none" stroke="#111111"/>
+    <g transform="translate(28 1760)"><rect width="440" height="650" fill="#EEEEEC"/><g transform="translate(-30 145) scale(.98)"><use href="#shoe"/></g><text x="0" y="690" class="medium" font-size="15">The 01 / Chalk</text><text x="440" y="690" text-anchor="end" class="body" font-size="13">$—</text><text x="0" y="716" class="body" font-size="12" fill="#74746F">One-piece everyday shoe</text><circle cx="4" cy="750" r="6" fill="#F2F1EC" stroke="#111111"/><circle cx="27" cy="750" r="6" fill="#171717"/></g>
+    <g transform="translate(500 1760)"><rect width="440" height="650" fill="#D8D8D5"/><g transform="translate(-30 145) scale(.98)"><use href="#shoe"/><path d="M48 245C118 205 185 126 270 91C319 71 365 84 399 124C433 164 448 206 487 229C514 245 519 268 497 282C471 299 423 304 354 307L135 322C74 326 35 306 32 281C30 264 35 253 48 245Z" fill="#171717" opacity=".94"/></g><text x="0" y="690" class="medium" font-size="15">The 01 / Mono</text><text x="440" y="690" text-anchor="end" class="body" font-size="13">$—</text><text x="0" y="716" class="body" font-size="12" fill="#74746F">One-piece everyday shoe</text><circle cx="4" cy="750" r="6" fill="#171717"/><circle cx="27" cy="750" r="6" fill="#F2F1EC" stroke="#AAA"/></g>
+    <g transform="translate(972 1760)"><rect width="440" height="650" fill="#E8E5DF"/><g transform="translate(-30 145) scale(.98)"><use href="#slide"/></g><text x="0" y="690" class="medium" font-size="15">The Slide 01 / Sand</text><text x="440" y="690" text-anchor="end" class="body" font-size="13">$—</text><text x="0" y="716" class="body" font-size="12" fill="#74746F">Open form for home and away</text><circle cx="4" cy="750" r="6" fill="#B89B7E"/><circle cx="27" cy="750" r="6" fill="#171717"/></g>
+    <line x1="28" y1="2580" x2="1412" y2="2580" stroke="#D9D9D5"/><line x1="28" y1="2580" x2="470" y2="2580" stroke="#111111" stroke-width="2"/>
+  </g>
+
+  <!-- 05 / LARGE-TYPE USE CASE -->
+  <g id="long-days">
+    <rect y="2638" width="1440" height="930" fill="#FFFFFF"/>
+    <rect x="28" y="2700" width="680" height="760" fill="url(#cool)"/><text x="50" y="2730" class="micro" font-size="7" fill="#FFFFFF">LIFESTYLE FILM / FULL SHIFT / CITY</text>
+    <path d="M208 2785C311 2928 325 3119 296 3355H520L568 2967C578 2875 554 2795 518 2700H291Z" fill="#858681" opacity=".68"/><path d="M191 3268C282 3252 377 3298 479 3371C535 3411 602 3429 687 3434V3460H259C196 3460 164 3420 170 3370Z" fill="#EEEDE8"/>
+    <g transform="translate(790 2805)"><text x="0" y="0" class="mega" font-size="76">MADE TO STAY</text><text x="0" y="82" class="mega" font-size="76">IN MOTION.</text><text x="0" y="172" class="body" font-size="15" fill="#4F4F4A"><tspan x="0">For commutes, studio floors, long shifts and the hours</tspan><tspan x="0" dy="23">in between. The structure is designed to move with you.</tspan></text>
+      <line x1="0" y1="260" x2="622" y2="260" stroke="#D6D6D2"/><text x="0" y="304" class="label" font-size="8" fill="#73736E">LIGHT ON FOOT</text><text x="622" y="304" text-anchor="end" class="body" font-size="12">Less visual and physical weight</text>
+      <line x1="0" y1="338" x2="622" y2="338" stroke="#D6D6D2"/><text x="0" y="382" class="label" font-size="8" fill="#73736E">OPEN STRUCTURE</text><text x="622" y="382" text-anchor="end" class="body" font-size="12">Air can move through the form</text>
+      <line x1="0" y1="416" x2="622" y2="416" stroke="#D6D6D2"/><text x="0" y="460" class="label" font-size="8" fill="#73736E">SIMPLE CARE</text><text x="622" y="460" text-anchor="end" class="body" font-size="12">Rinse, air dry, repeat</text>
+      <line x1="0" y1="494" x2="622" y2="494" stroke="#D6D6D2"/><text x="0" y="580" class="label" font-size="8" text-decoration="underline">SEE HOW IT FEELS ↗</text>
+    </g>
+  </g>
+
+  <!-- 06 / COLLECTIONS -->
+  <g id="collections">
+    <rect y="3568" width="1440" height="1310" fill="#FFFFFF"/><line x1="28" y1="3568.5" x2="1412" y2="3568.5" stroke="#D9D9D5"/>
+    <text x="28" y="3630" class="display" font-size="31">Shop by use</text><text x="1412" y="3627" text-anchor="end" class="body" font-size="13" fill="#555550">Selected by fit, function and preference—not gender.</text>
+    <g transform="translate(28 3685)"><rect width="676" height="480" fill="url(#warm)"/><path d="M77 353C155 307 255 222 353 183C428 154 496 178 546 235C590 285 617 334 676 368V480H60C49 428 53 384 77 353Z" fill="#DAD8D2" opacity=".8"/><text x="0" y="520" class="medium" font-size="17">Everyday</text><text x="0" y="546" class="body" font-size="12" fill="#666661">All-gender forms for daily movement.</text><text x="0" y="590" class="label" font-size="8" text-decoration="underline">EXPLORE EVERYDAY ↗</text></g>
+    <g transform="translate(736 3685)"><rect width="676" height="480" fill="url(#cool)"/><ellipse cx="340" cy="185" rx="105" ry="126" fill="#AAA9A4"/><path d="M150 303C230 258 345 269 443 326C531 377 598 421 676 445V480H105V393C110 352 124 318 150 303Z" fill="#8C8D88" opacity=".75"/><text x="0" y="520" class="medium" font-size="17">All shoes</text><text x="0" y="546" class="body" font-size="12" fill="#666661">One form language, multiple ways to wear.</text><text x="0" y="590" class="label" font-size="8" text-decoration="underline">SHOP ALL SHOES ↗</text></g>
+    <g transform="translate(28 4310)"><rect width="676" height="350" fill="#D5D4D0"/><g transform="translate(75 10) scale(.72)"><use href="#slide"/></g><text x="0" y="390" class="medium" font-size="17">Slides</text><text x="0" y="416" class="body" font-size="12" fill="#666661">Open, washable forms for home and away.</text><text x="0" y="460" class="label" font-size="8" text-decoration="underline">SHOP SLIDES ↗</text></g>
+    <g transform="translate(736 4310)"><rect width="676" height="350" fill="#E4E3DF"/><circle cx="270" cy="174" r="95" fill="#F7F6F2" stroke="#B9B7B1"/><rect x="380" y="73" width="170" height="205" rx="85" fill="#181818"/><path d="M206 112L334 238M206 238L334 112" stroke="#C5C2BB"/><text x="0" y="390" class="medium" font-size="17">Objects</text><text x="0" y="416" class="body" font-size="12" fill="#666661">Small printed forms for daily carry.</text><text x="0" y="460" class="label" font-size="8" text-decoration="underline">VIEW OBJECTS ↗</text></g>
+  </g>
+
+  <!-- 07 / LARGE TECH STATEMENT -->
+  <g id="technology">
+    <rect y="4878" width="1440" height="1060" fill="#111111"/>
+    <text x="28" y="4940" class="label" font-size="8" fill="#888883">02 / HOW IT IS MADE</text>
+    <text x="28" y="5100" class="mega" font-size="96" fill="#FFFFFF">PRINTED,</text><text x="28" y="5202" class="mega" font-size="96" fill="#FFFFFF">NOT ASSEMBLED.</text>
+    <rect x="28" y="5300" width="850" height="500" fill="url(#dark)" stroke="#292929"/><text x="50" y="5330" class="micro" font-size="7" fill="#858580">LATTICE RESPONSE / MACRO VIDEO</text>
+    <g fill="none" stroke="#70706B"><path d="M112 5705C250 5406 421 5297 594 5388C731 5460 789 5680 845 5724" stroke-width="25" opacity=".25"/><path d="M96 5636C260 5383 438 5340 597 5445C719 5526 770 5676 850 5693" stroke-width="3"/><path d="M158 5765C300 5558 449 5500 588 5569C693 5621 755 5735 817 5755" stroke-width="2"/></g>
+    <g transform="translate(950 5320)"><text x="0" y="0" class="display" font-size="37" fill="#FFFFFF">Structure is the cushioning.</text><text x="0" y="77" class="body" font-size="14" fill="#B2B2AD"><tspan x="0">Thousands of connected cells flex and recover</tspan><tspan x="0" dy="22">as the foot moves. No foam stack is required.</tspan></text>
+      <line x1="0" y1="165" x2="462" y2="165" stroke="#393937"/><text x="0" y="207" class="label" font-size="8" fill="#888883">01</text><text x="58" y="207" class="body" font-size="12" fill="#FFFFFF">Open lattice airflow</text>
+      <line x1="0" y1="240" x2="462" y2="240" stroke="#393937"/><text x="0" y="282" class="label" font-size="8" fill="#888883">02</text><text x="58" y="282" class="body" font-size="12" fill="#FFFFFF">Responsive geometry</text>
+      <line x1="0" y1="315" x2="462" y2="315" stroke="#393937"/><text x="0" y="357" class="label" font-size="8" fill="#888883">03</text><text x="58" y="357" class="body" font-size="12" fill="#FFFFFF">Single-piece construction</text>
+      <line x1="0" y1="390" x2="462" y2="390" stroke="#393937"/><text x="0" y="468" class="label" font-size="8" text-decoration="underline" fill="#FFFFFF">EXPLORE THE TECHNOLOGY ↗</text></g>
+  </g>
+
+  <!-- 08 / MATERIAL STRUCTURE ORIGIN -->
+  <g id="origin">
+    <rect y="5938" width="1440" height="900" fill="#FFFFFF"/>
+    <text x="28" y="6000" class="label" font-size="8" fill="#757570">03 / MATERIAL, STRUCTURE, ORIGIN</text>
+    <text x="28" y="6140" class="display" font-size="44">Developed directly from model to object.</text>
+    <rect x="28" y="6220" width="850" height="470" fill="#D4D3CF"/><text x="50" y="6250" class="micro" font-size="7" fill="#555550">MANUFACTURING FILM / PRINT + FINISH</text><rect x="225" y="6290" width="460" height="325" fill="#B6B5B0"/><rect x="270" y="6330" width="370" height="210" fill="#252525"/><g fill="none" stroke="#74746E"><path d="M309 6492C366 6372 445 6333 520 6383C580 6423 608 6501 627 6518" stroke-width="14" opacity=".4"/><path d="M300 6456C368 6355 445 6351 516 6403C571 6444 600 6500 628 6508" stroke-width="2"/></g><circle cx="824" cy="6643" r="21" fill="#FFFFFF"/><path d="M819 6635L833 6643L819 6651Z"/>
+    <g transform="translate(948 6230)"><text x="0" y="0" class="label" font-size="8" fill="#757570">MATERIAL</text><text x="0" y="40" class="body" font-size="13">Flexible elastomer selected for daily wear.</text><line x1="0" y1="76" x2="464" y2="76" stroke="#D6D6D2"/><text x="0" y="130" class="label" font-size="8" fill="#757570">STRUCTURE</text><text x="0" y="170" class="body" font-size="13">Digital geometry replaces layered assembly.</text><line x1="0" y1="206" x2="464" y2="206" stroke="#D6D6D2"/><text x="0" y="260" class="label" font-size="8" fill="#757570">ORIGIN</text><text x="0" y="300" class="body" font-size="13"><tspan x="0">Tavia works directly with specialist manufacturing</tspan><tspan x="0" dy="21">partners to develop, test and finish each form.</tspan></text><line x1="0" y1="360" x2="464" y2="360" stroke="#D6D6D2"/><text x="0" y="430" class="label" font-size="8" text-decoration="underline">HOW TAVIA IS MADE ↗</text></g>
+  </g>
+
+  <!-- 09 / EARLY FEEDBACK -->
+  <g id="feedback">
+    <rect y="6838" width="1440" height="600" fill="#F7F7F6"/>
+    <text x="28" y="6900" class="label" font-size="8" fill="#757570">EARLY WEAR NOTES</text>
+    <text x="720" y="7080" text-anchor="middle" class="display" font-size="40"><tspan x="720">“It feels less like a conventional shoe</tspan><tspan x="720" dy="52">and more like one object moving with you.”</tspan></text>
+    <text x="720" y="7230" text-anchor="middle" class="label" font-size="8" fill="#666661">JORDAN M. / EARLY WEAR TESTER</text>
+    <circle cx="689" cy="7320" r="3"/><circle cx="710" cy="7320" r="3" fill="#C1C1BD"/><circle cx="731" cy="7320" r="3" fill="#C1C1BD"/>
+  </g>
+
+  <!-- 10 / COMMUNITY + SOCIAL -->
+  <g id="community">
+    <rect y="7438" width="1440" height="600" fill="#FFFFFF"/>
+    <text x="28" y="7500" class="display" font-size="31">Tavia, in motion</text><text x="1412" y="7497" text-anchor="end" class="label" font-size="8" text-decoration="underline">FOLLOW @TAVIA ↗</text>
+    <g transform="translate(28 7550)"><rect width="322" height="380" fill="url(#warm)"/><circle cx="161" cy="176" r="91" fill="#EEEDE8" stroke="#B6B4AE"/><g stroke="#C2BFB8"><path d="M98 113L224 239M98 239L224 113M70 176H252M161 85V267"/></g><text x="0" y="416" class="body" font-size="11">Material study / 01</text></g>
+    <g transform="translate(382 7550)"><rect width="322" height="380" fill="url(#cool)"/><path d="M72 40C135 132 145 245 129 355H261V140C244 80 224 35 209 0H116Z" fill="#848580"/><path d="M57 304C108 296 166 323 225 365C255 386 284 391 310 394H92C57 393 44 361 48 333Z" fill="#EEEDE8"/><text x="0" y="416" class="body" font-size="11">On foot / city</text></g>
+    <g transform="translate(736 7550)"><rect width="322" height="380" fill="url(#dark)"/><g fill="none" stroke="#73736E"><path d="M35 322C86 112 158 49 237 113C284 151 301 273 310 332" stroke-width="14" opacity=".35"/><path d="M31 284C94 113 164 92 232 150C281 192 298 285 311 303" stroke-width="2"/></g><text x="0" y="416" class="body" font-size="11">Print process / 02</text></g>
+    <g transform="translate(1090 7550)"><rect width="322" height="380" fill="#CBC9C3"/><path d="M0 268L112 117L183 190L263 72L322 125V380H0Z" fill="#9D9A92" opacity=".72"/><text x="0" y="416" class="body" font-size="11">Field study / architecture</text></g>
+  </g>
+
+  <!-- 11 / FOOTER -->
+  <g id="footer">
+    <rect y="8038" width="1440" height="282" fill="#111111"/>
+    <text x="28" y="8094" class="label" font-size="8" fill="#898984">STAY CLOSE</text><text x="28" y="8152" class="display" font-size="29" fill="#FFFFFF">New forms, product notes and future drops.</text>
+    <line x1="870" y1="8144" x2="1412" y2="8144" stroke="#52524F"/><text x="870" y="8128" class="body" font-size="12" fill="#888883">Email address</text><text x="1412" y="8128" text-anchor="end" class="label" font-size="8" fill="#FFFFFF">JOIN →</text>
+    <line x1="28" y1="8194" x2="1412" y2="8194" stroke="#343432"/>
+    <g transform="translate(28 8230) scale(.105)" fill="#FFFFFF"><path d="M0 0H170L153 23H104V204H61V23H16Z"/><path fill-rule="evenodd" d="M174 204L235 0H296L358 204H312L300 159H232L219 204ZM242 125H290L267 47Z"/><path d="M359 0H405L452 158L500 0H546L477 204H428Z"/><path d="M564 0H609V204H564ZM564 0H609L596 13H551ZM564 204H609L596 191H551Z"/><path fill-rule="evenodd" d="M625 204L686 0H747L809 204H763L751 159H683L670 204ZM693 125H741L718 47Z"/></g>
+    <text x="550" y="8252" class="label" font-size="7" fill="#999994">SHOP</text><text x="640" y="8252" class="label" font-size="7" fill="#999994">ABOUT</text><text x="730" y="8252" class="label" font-size="7" fill="#999994">PROCESS</text><text x="835" y="8252" class="label" font-size="7" fill="#999994">SUPPORT</text><text x="1412" y="8252" text-anchor="end" class="label" font-size="7" fill="#999994">INSTAGRAM · TIKTOK · PINTEREST</text>
+    <text x="28" y="8295" class="micro" font-size="6" fill="#666661">© 2026 TAVIA</text><text x="1412" y="8295" text-anchor="end" class="micro" font-size="6" fill="#666661">PRIVACY · TERMS · SHIPPING &amp; RETURNS</text>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+{{ 'tavia-homepage.css' | asset_url | stylesheet_tag }}
+
+<section class="tavia-home-section tavia-statement" aria-labelledby="TaviaStatementHeading-{{ section.id }}">
+  <p class="tavia-kicker">{{ section.settings.eyebrow | escape }}</p>
+  <h2 class="tavia-statement__heading" id="TaviaStatementHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
+  <div class="tavia-statement__aside">
+    {%- if section.settings.copy != blank -%}<p class="tavia-statement__copy">{{ section.settings.copy | escape | newline_to_br }}</p>{%- endif -%}
+    {%- if section.settings.link_label != blank -%}
+      <a class="tavia-underlined-link" href="{{ section.settings.link | default: routes.all_products_collection_url }}">{{ section.settings.link_label | escape }} ↗</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tavia statement",
+  "tag": "section",
+  "class": "tavia-homepage-section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "01 / The object" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t." },
+    { "type": "textarea", "id": "copy", "label": "Copy", "default": "Digitally designed and printed as one, so support, flex and airflow work together." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Read the product note" },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "presets": [{ "name": "Tavia statement" }]
+}
+{% endschema %}
