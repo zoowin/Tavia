@@ -1,0 +1,66 @@
+{{ 'tavia-homepage.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .tavia-marquee {
+    --tavia-marquee-background: {{ section.settings.background }};
+    --tavia-marquee-color: {{ section.settings.text_color }};
+    --tavia-marquee-line: {{ section.settings.line_color }};
+    --tavia-marquee-duration: {{ section.settings.speed }}s;
+    --tavia-marquee-height: {{ section.settings.desktop_height }}px;
+    --tavia-marquee-mobile-height: {{ section.settings.mobile_height }}px;
+  }
+{%- endstyle -%}
+
+<section
+  class="tavia-home-section tavia-marquee{% if section.settings.pause_on_hover %} tavia-marquee--pause-on-hover{% endif %}"
+  aria-label="{{ section.settings.accessibility_label | escape }}"
+>
+  <div class="tavia-marquee__track">
+    {%- for iteration in (1..2) -%}
+      <div class="tavia-marquee__group"{% if iteration == 2 %} aria-hidden="true"{% endif %}>
+        {%- for block in section.blocks -%}
+          <span class="tavia-marquee__item" {% if iteration == 1 %}{{ block.shopify_attributes }}{% endif %}>{{ block.settings.text | escape }}</span>
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tavia marquee",
+  "tag": "section",
+  "class": "tavia-homepage-section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "accessibility_label", "label": "Accessibility label", "default": "Product benefits" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#111111" },
+    { "type": "color", "id": "line_color", "label": "Divider color", "default": "#d9d9d5" },
+    { "type": "range", "id": "speed", "min": 12, "max": 60, "step": 2, "unit": "s", "label": "Loop duration", "default": 32, "info": "Lower values move faster." },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": true },
+    { "type": "range", "id": "desktop_height", "min": 48, "max": 100, "step": 4, "unit": "px", "label": "Desktop height", "default": 80 },
+    { "type": "range", "id": "mobile_height", "min": 44, "max": 80, "step": 4, "unit": "px", "label": "Mobile height", "default": 60 }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Text item",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "One-piece construction" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tavia marquee",
+      "blocks": [
+        { "type": "item", "settings": { "text": "One-piece construction" } },
+        { "type": "item", "settings": { "text": "No traditional assembly" } },
+        { "type": "item", "settings": { "text": "Open lattice airflow" } },
+        { "type": "item", "settings": { "text": "Designed for long days" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

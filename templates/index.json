@@ -2,14 +2,6 @@
   "sections": {
     "tavia-hero": {
       "type": "tavia-hero",
-      "blocks": {
-        "benefit-1": { "type": "benefit", "settings": { "text": "One-piece construction" } },
-        "benefit-2": { "type": "benefit", "settings": { "text": "No traditional assembly" } },
-        "benefit-3": { "type": "benefit", "settings": { "text": "Open lattice airflow" } },
-        "benefit-4": { "type": "benefit", "settings": { "text": "Designed for long days" } },
-        "benefit-5": { "type": "benefit", "settings": { "text": "Built for daily motion" } }
-      },
-      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5"],
       "settings": {
         "eyebrow": "Product / City shift / In motion",
         "heading": "BUILT FOR LONG DAYS.",
@@ -23,6 +15,27 @@
         "mobile_height": 720,
         "desktop_position": "50% 54%",
         "mobile_position": "50% 50%"
+      }
+    },
+    "tavia-marquee": {
+      "type": "tavia-marquee",
+      "blocks": {
+        "benefit-1": { "type": "item", "settings": { "text": "One-piece construction" } },
+        "benefit-2": { "type": "item", "settings": { "text": "No traditional assembly" } },
+        "benefit-3": { "type": "item", "settings": { "text": "Open lattice airflow" } },
+        "benefit-4": { "type": "item", "settings": { "text": "Designed for long days" } },
+        "benefit-5": { "type": "item", "settings": { "text": "Built for daily motion" } }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5"],
+      "settings": {
+        "accessibility_label": "Product benefits",
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "line_color": "#d9d9d5",
+        "speed": 32,
+        "pause_on_hover": true,
+        "desktop_height": 80,
+        "mobile_height": 60
       }
     },
     "object-statement": {
@@ -65,5 +78,5 @@
       "settings": { "theme": "dark", "background": "#111111", "text_color": "#ffffff", "image_position": "right", "image_caption": "Lattice response / Product study", "eyebrow": "02 / How it is made", "heading": "PRINTED,\nNOT ASSEMBLED.", "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.", "link_label": "Explore the technology" }
     }
   },
-  "order": ["tavia-hero", "object-statement", "current-forms", "motion-story", "technology-story"]
+  "order": ["tavia-hero", "tavia-marquee", "object-statement", "current-forms", "motion-story", "technology-story"]
 }

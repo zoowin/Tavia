@@ -155,19 +155,31 @@
 }
 
 .tavia-marquee {
-  border-bottom: 0.1rem solid var(--tavia-line);
-  height: 7.8rem;
+  background: var(--tavia-marquee-background, #ffffff);
+  border-bottom: 0.1rem solid var(--tavia-marquee-line, var(--tavia-line));
+  color: var(--tavia-marquee-color, #111111);
+  height: var(--tavia-marquee-height, 7.8rem);
   overflow: hidden;
 }
 
 .tavia-marquee__track {
   align-items: center;
-  animation: tavia-marquee 32s linear infinite;
+  animation: tavia-marquee var(--tavia-marquee-duration, 32s) linear infinite;
   display: flex;
-  gap: 5rem;
   height: 100%;
   min-width: max-content;
-  padding-left: 2rem;
+  width: max-content;
+}
+
+.tavia-marquee--pause-on-hover:hover .tavia-marquee__track {
+  animation-play-state: paused;
+}
+
+.tavia-marquee__group {
+  align-items: center;
+  display: flex;
+  gap: 5rem;
+  padding-right: 5rem;
 }
 
 .tavia-marquee__item {
@@ -489,7 +501,7 @@
   }
 
   .tavia-marquee {
-    height: 6rem;
+    height: var(--tavia-marquee-mobile-height, 6rem);
   }
 
   .tavia-statement {

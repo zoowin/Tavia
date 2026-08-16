@@ -45,24 +45,11 @@
   </div>
 </section>
 
-{%- if section.blocks.size > 0 -%}
-  <div class="tavia-home-section tavia-marquee" aria-label="Product benefits">
-    <div class="tavia-marquee__track">
-      {%- for iteration in (1..2) -%}
-        {%- for block in section.blocks -%}
-          <span class="tavia-marquee__item" {% if iteration == 1 %}{{ block.shopify_attributes }}{% else %}aria-hidden="true"{% endif %}>{{ block.settings.text | escape }}</span>
-        {%- endfor -%}
-      {%- endfor -%}
-    </div>
-  </div>
-{%- endif -%}
-
 {% schema %}
 {
   "name": "Tavia hero",
   "tag": "section",
   "class": "tavia-homepage-section",
-  "max_blocks": 8,
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hero image" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Video / City shift / Product in motion" },
@@ -79,13 +66,6 @@
     { "type": "text", "id": "desktop_position", "label": "Desktop image position", "default": "50% 50%", "info": "Use CSS object-position, for example 50% 60%." },
     { "type": "text", "id": "mobile_position", "label": "Mobile image position", "default": "50% 50%" }
   ],
-  "blocks": [
-    {
-      "type": "benefit",
-      "name": "Benefit",
-      "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "One-piece construction" }]
-    }
-  ],
-  "presets": [{ "name": "Tavia hero", "blocks": [{ "type": "benefit" }, { "type": "benefit" }, { "type": "benefit" }] }]
+  "presets": [{ "name": "Tavia hero" }]
 }
 {% endschema %}
