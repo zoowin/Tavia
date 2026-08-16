@@ -133,7 +133,8 @@
 
 .tavia-hero__button {
   background: #ffffff;
-  border-radius: 99rem;
+  border: 0.1rem solid #ffffff;
+  border-radius: 0;
   color: #111111 !important;
   font-size: 1.05rem;
   font-weight: 600;
@@ -200,7 +201,7 @@
 
 .tavia-marquee__item::after {
   background: currentColor;
-  border-radius: 50%;
+  border-radius: 0;
   content: "";
   height: 0.35rem;
   width: 0.35rem;
@@ -271,15 +272,19 @@
 }
 
 .tavia-products__arrows {
-  display: flex;
+  display: none;
   gap: 1rem;
+}
+
+.tavia-products--scrollable .tavia-products__arrows {
+  display: flex;
 }
 
 .tavia-products__arrow {
   align-items: center;
   background: transparent;
   border: 0.1rem solid var(--tavia-line);
-  border-radius: 50%;
+  border-radius: 0;
   color: inherit;
   cursor: pointer;
   display: flex;
@@ -294,6 +299,11 @@
   border-color: currentColor;
 }
 
+.tavia-products__arrow:disabled {
+  cursor: default;
+  opacity: 0.28;
+}
+
 .tavia-products__rail {
   display: grid;
   gap: clamp(1.6rem, 2vw, 3rem);
@@ -301,11 +311,25 @@
   grid-auto-flow: column;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
-  padding-bottom: 4.8rem;
-  scrollbar-color: var(--tavia-black) var(--tavia-line);
+  padding-bottom: 3.2rem;
+  scrollbar-color: var(--tavia-black) transparent;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-snap-type: inline mandatory;
+}
+
+.tavia-products__rail::-webkit-scrollbar {
+  height: 0.2rem;
+}
+
+.tavia-products__rail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tavia-products__rail::-webkit-scrollbar-thumb {
+  background: var(--tavia-black);
+  border: 0;
+  border-radius: 0;
 }
 
 .tavia-product-card {
@@ -377,7 +401,7 @@
 .tavia-product-card__swatch {
   background: var(--swatch);
   border: 0.1rem solid rgba(17, 17, 17, 0.35);
-  border-radius: 50%;
+  border-radius: 0;
   height: 1.2rem;
   width: 1.2rem;
 }
@@ -482,6 +506,13 @@
   text-align: right;
 }
 
+@media screen and (min-width: 990px) {
+  .tavia-products__rail {
+    gap: 2rem;
+    grid-auto-columns: calc((100% - 6rem) / 4);
+  }
+}
+
 @media screen and (max-width: 749px) {
   .template-index {
     --tavia-gutter: 1.6rem;
@@ -558,6 +589,10 @@
     display: none;
   }
 
+  .tavia-products--scrollable .tavia-products__arrows {
+    display: none;
+  }
+
   .tavia-products__title {
     font-size: clamp(2.7rem, 8vw, 3.3rem);
     line-height: 1.15;
@@ -567,6 +602,7 @@
     gap: 1.2rem;
     grid-auto-columns: 84vw;
     margin-right: calc(var(--tavia-gutter) * -1);
+    padding-bottom: 2.4rem;
     padding-right: var(--tavia-gutter);
   }
 

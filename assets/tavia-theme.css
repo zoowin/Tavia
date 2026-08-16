@@ -7,6 +7,18 @@
   --tavia-tracking-display: -0.025em;
   --tavia-tracking-heading: -0.015em;
   --tavia-tracking-label: 0.11em;
+  --product-card-corner-radius: 0rem;
+  --collection-card-corner-radius: 0rem;
+  --blog-card-corner-radius: 0rem;
+  --badge-corner-radius: 0rem;
+  --popup-corner-radius: 0px;
+  --text-boxes-radius: 0px;
+  --buttons-radius: 0px;
+  --buttons-radius-outset: 0px;
+  --inputs-radius: 0px;
+  --inputs-radius-outset: 0px;
+  --variant-pills-radius: 0px;
+  --media-radius: 0px;
 }
 
 body {
@@ -15,6 +27,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+body .media--circle,
+body .cart-count-bubble,
+body .deferred-media__poster-button,
+body .modal-video__toggle,
+body .product__media-icon,
+body .thumbnail__badge,
+body .product-media-modal__toggle,
+body .product-popup-modal__toggle,
+body .quick-add-modal__toggle,
+body .slider-counter__link--dots .dot,
+body .shopify-model-viewer-ui .shopify-model-viewer-ui__button--poster,
+body .swatch,
+body .swatch-input__input + .swatch,
+body span.active-facets__button-inner {
+  border-radius: 0;
+}
+
+body cart-drawer-items::-webkit-scrollbar-thumb {
+  border-radius: 0;
 }
 
 body,
