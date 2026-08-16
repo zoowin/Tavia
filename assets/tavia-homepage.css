@@ -36,20 +36,20 @@
 }
 
 .tavia-kicker {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 500;
   letter-spacing: 0.14em;
-  line-height: 1.2;
+  line-height: 1.35;
   margin: 0;
   text-transform: uppercase;
 }
 
 .tavia-underlined-link {
   display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 500;
   letter-spacing: 0.09em;
-  line-height: 1.4;
+  line-height: 1.5;
   padding-bottom: 0.25rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -112,7 +112,7 @@
   color: inherit;
   font-family: inherit;
   font-size: clamp(4.2rem, 6vw, 8.8rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.055em;
   line-height: 0.94;
   margin: 0;
@@ -121,8 +121,8 @@
 }
 
 .tavia-hero__copy {
-  font-size: clamp(1.25rem, 1.2vw, 1.6rem);
-  line-height: 1.5;
+  font-size: clamp(1.5rem, 1.25vw, 1.8rem);
+  line-height: 1.6;
   margin: 2rem 0 0;
   max-width: 54rem;
 }
@@ -131,8 +131,8 @@
   background: #ffffff;
   border-radius: 99rem;
   color: #111111 !important;
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   margin-top: 3.6rem;
   padding: 1.7rem 2.8rem;
@@ -185,8 +185,10 @@
 .tavia-marquee__item {
   align-items: center;
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 400;
   gap: 5rem;
+  line-height: 1.5;
   white-space: nowrap;
 }
 
@@ -212,7 +214,7 @@
   color: inherit;
   font-family: inherit;
   font-size: clamp(3.6rem, 4.2vw, 6rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.06;
   margin: clamp(12rem, 14vw, 20rem) 0 0;
@@ -227,8 +229,8 @@
 
 .tavia-statement__copy {
   color: var(--tavia-muted);
-  font-size: 1.4rem;
-  line-height: 1.55;
+  font-size: 1.6rem;
+  line-height: 1.65;
   margin: 0 0 3.5rem;
 }
 
@@ -248,7 +250,7 @@
   color: inherit;
   font-family: inherit;
   font-size: clamp(2.6rem, 2.6vw, 3.8rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
   margin: 0;
@@ -340,9 +342,9 @@
 
 .tavia-product-card__title,
 .tavia-product-card__price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.3;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .tavia-product-card__price {
@@ -351,8 +353,8 @@
 
 .tavia-product-card__description {
   color: var(--tavia-muted);
-  font-size: 1.15rem;
-  line-height: 1.4;
+  font-size: 1.35rem;
+  line-height: 1.55;
 }
 
 .tavia-product-card__swatches {
@@ -422,7 +424,7 @@
   color: inherit;
   font-family: inherit;
   font-size: clamp(5rem, 6.2vw, 9.4rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.06em;
   line-height: 0.93;
   margin: 3rem 0 5rem;
@@ -431,8 +433,8 @@
 
 .tavia-story__copy {
   color: currentColor;
-  font-size: 1.45rem;
-  line-height: 1.55;
+  font-size: 1.6rem;
+  line-height: 1.65;
   margin: 0 0 4.5rem;
   max-width: 55rem;
   opacity: 0.72;
@@ -453,15 +455,16 @@
 }
 
 .tavia-story__feature-title {
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0.12em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
 .tavia-story__feature-text {
-  font-size: 1.2rem;
-  line-height: 1.45;
+  font-size: 1.4rem;
+  line-height: 1.55;
   text-align: right;
 }
 

@@ -19,8 +19,10 @@
 
 .header__menu-item,
 .mega-menu__link {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
@@ -72,16 +74,18 @@
 
 .footer-block__heading {
   font-family: inherit;
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
+  line-height: 1.4;
   text-transform: uppercase;
 }
 
 .footer-block__details-content,
 .footer-block__details-content .list-menu__item--link {
   color: rgba(var(--color-foreground), 0.68);
-  font-size: 1.3rem;
+  font-size: 1.45rem;
+  line-height: 1.6;
 }
 
 .footer-block__newsletter .field::after,
