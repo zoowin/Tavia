@@ -3,6 +3,71 @@
   --tavia-gray-100: #f4f4f1;
   --tavia-gray-300: #d9d9d5;
   --tavia-gray-600: #6b6b67;
+  --tavia-tracking-body: 0.01em;
+  --tavia-tracking-display: -0.025em;
+  --tavia-tracking-heading: -0.015em;
+  --tavia-tracking-label: 0.11em;
+}
+
+body {
+  font-kerning: normal;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+.text-body,
+.rte {
+  letter-spacing: var(--tavia-tracking-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+.h0,
+.h1,
+.h2,
+.h3,
+.h4 {
+  letter-spacing: var(--tavia-tracking-heading);
+  line-height: 1.12;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  word-break: normal;
+}
+
+.hxl,
+.hxxl {
+  letter-spacing: var(--tavia-tracking-display);
+  line-height: 1.02;
+}
+
+.caption,
+.caption-with-letter-spacing,
+.caption-with-letter-spacing--medium {
+  font-weight: 500;
+  letter-spacing: var(--tavia-tracking-label);
+  line-height: 1.5;
+}
+
+.button,
+.shopify-challenge__button,
+.customer button {
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+}
+
+.field__input,
+.select__select,
+.customer .field input,
+.customer select {
+  font-size: 1.6rem;
+  letter-spacing: var(--tavia-tracking-body);
+  line-height: 1.5;
 }
 
 .header-wrapper,
@@ -17,12 +82,27 @@
   transition: background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
 }
 
-.header__menu-item,
-.mega-menu__link {
+.header .header__menu-item {
   font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.4;
+  letter-spacing: 0.09em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.mega-menu .mega-menu__link {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: var(--tavia-tracking-body);
+  line-height: 1.55;
+  text-transform: none;
+}
+
+.mega-menu .mega-menu__link--level-2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: var(--tavia-tracking-label);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
@@ -72,20 +152,21 @@
   align-items: start;
 }
 
-.footer-block__heading {
+.footer .footer-block__heading {
   font-family: inherit;
   font-size: 1.15rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
+  letter-spacing: var(--tavia-tracking-label);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
-.footer-block__details-content,
-.footer-block__details-content .list-menu__item--link {
+.footer .footer-block__details-content,
+.footer .footer-block__details-content .list-menu__item--link {
   color: rgba(var(--color-foreground), 0.68);
   font-size: 1.45rem;
-  line-height: 1.6;
+  letter-spacing: var(--tavia-tracking-body);
+  line-height: 1.65;
 }
 
 .footer-block__newsletter .field::after,
@@ -101,11 +182,119 @@
 .footer__copyright,
 .policies {
   color: rgba(var(--color-foreground), 0.6);
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.drawer__heading {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: var(--tavia-tracking-heading);
+  line-height: 1.2;
+}
+
+.cart-drawer .cart-item__name {
+  font-family: var(--font-body-family);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.cart-drawer .product-option,
+.cart-drawer .price,
+.cart-drawer .totals__total-value {
+  font-size: 1.4rem;
+  letter-spacing: var(--tavia-tracking-body);
+  line-height: 1.55;
+}
+
+.cart-drawer .drawer__footer summary {
+  line-height: 1.5;
+}
+
+.card__heading {
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+}
+
+.card-information,
+.card-information .price {
+  letter-spacing: var(--tavia-tracking-body);
+  line-height: 1.55;
+}
+
+.product__title > * {
+  letter-spacing: var(--tavia-tracking-display);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.product__description.rte {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+.product-form__input .form__label {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 989px) {
   .template-index .section-header .header {
     padding-left: 1.6rem;
     padding-right: 1.6rem;
+  }
+
+  .menu-drawer .menu-drawer__menu-item {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 1.35;
+    padding-bottom: 1.35rem;
+    padding-top: 1.35rem;
+  }
+
+  .menu-drawer .menu-drawer__submenu .menu-drawer__menu-item,
+  .menu-drawer .menu-drawer__close-button,
+  .menu-drawer .menu-drawer__account {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: var(--tavia-tracking-body);
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  .h0,
+  .h1,
+  .h2,
+  .h3,
+  .h4 {
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  .footer .footer-block__heading {
+    margin-bottom: 1.4rem;
+  }
+
+  .footer .footer-block__details-content,
+  .footer .footer-block__details-content .list-menu__item--link {
+    font-size: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .drawer__heading {
+    font-size: 2.2rem;
   }
 }

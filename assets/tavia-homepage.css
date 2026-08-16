@@ -38,8 +38,8 @@
 .tavia-kicker {
   font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  line-height: 1.35;
+  letter-spacing: var(--tavia-tracking-label, 0.11em);
+  line-height: 1.5;
   margin: 0;
   text-transform: uppercase;
 }
@@ -48,10 +48,11 @@
   display: inline-block;
   font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   line-height: 1.5;
   padding-bottom: 0.25rem;
   text-decoration: none;
+  text-underline-offset: 0.4rem;
   text-transform: uppercase;
   border-bottom: 0.1rem solid currentColor;
 }
@@ -113,18 +114,21 @@
   font-family: inherit;
   font-size: clamp(4.2rem, 6vw, 8.8rem);
   font-weight: 700;
-  letter-spacing: -0.055em;
-  line-height: 0.94;
+  letter-spacing: var(--tavia-tracking-display, -0.025em);
+  line-height: 1;
   margin: 0;
   max-width: 118rem;
+  text-wrap: balance;
   text-transform: uppercase;
 }
 
 .tavia-hero__copy {
-  font-size: clamp(1.5rem, 1.25vw, 1.8rem);
-  line-height: 1.6;
-  margin: 2rem 0 0;
-  max-width: 54rem;
+  font-size: clamp(1.6rem, 1.25vw, 1.85rem);
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.65;
+  margin: 2.4rem 0 0;
+  max-width: 58rem;
+  text-wrap: pretty;
 }
 
 .tavia-hero__button {
@@ -133,7 +137,8 @@
   color: #111111 !important;
   font-size: 1.05rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
   margin-top: 3.6rem;
   padding: 1.7rem 2.8rem;
   text-decoration: none;
@@ -188,7 +193,8 @@
   font-size: 1.4rem;
   font-weight: 400;
   gap: 5rem;
-  line-height: 1.5;
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.6;
   white-space: nowrap;
 }
 
@@ -215,10 +221,11 @@
   font-family: inherit;
   font-size: clamp(3.6rem, 4.2vw, 6rem);
   font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1.06;
+  letter-spacing: var(--tavia-tracking-display, -0.025em);
+  line-height: 1.12;
   margin: clamp(12rem, 14vw, 20rem) 0 0;
   max-width: 104rem;
+  text-wrap: balance;
 }
 
 .tavia-statement__aside {
@@ -230,7 +237,8 @@
 .tavia-statement__copy {
   color: var(--tavia-muted);
   font-size: 1.6rem;
-  line-height: 1.65;
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.7;
   margin: 0 0 3.5rem;
 }
 
@@ -251,8 +259,8 @@
   font-family: inherit;
   font-size: clamp(2.6rem, 2.6vw, 3.8rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
-  line-height: 1;
+  letter-spacing: var(--tavia-tracking-heading, -0.015em);
+  line-height: 1.15;
   margin: 0;
 }
 
@@ -344,7 +352,8 @@
 .tavia-product-card__price {
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 1.45;
+  letter-spacing: 0;
+  line-height: 1.5;
 }
 
 .tavia-product-card__price {
@@ -354,7 +363,8 @@
 .tavia-product-card__description {
   color: var(--tavia-muted);
   font-size: 1.35rem;
-  line-height: 1.55;
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.6;
 }
 
 .tavia-product-card__swatches {
@@ -423,21 +433,24 @@
 .tavia-story__heading {
   color: inherit;
   font-family: inherit;
-  font-size: clamp(5rem, 6.2vw, 9.4rem);
+  font-size: clamp(4.8rem, 5.7vw, 8.4rem);
   font-weight: 700;
-  letter-spacing: -0.06em;
-  line-height: 0.93;
+  letter-spacing: -0.03em;
+  line-height: 1;
   margin: 3rem 0 5rem;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .tavia-story__copy {
   color: currentColor;
   font-size: 1.6rem;
-  line-height: 1.65;
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.7;
   margin: 0 0 4.5rem;
   max-width: 55rem;
   opacity: 0.72;
+  text-wrap: pretty;
 }
 
 .tavia-story__features {
@@ -457,14 +470,15 @@
 .tavia-story__feature-title {
   font-size: 1rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
+  letter-spacing: var(--tavia-tracking-label, 0.11em);
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .tavia-story__feature-text {
   font-size: 1.4rem;
-  line-height: 1.55;
+  letter-spacing: var(--tavia-tracking-body, 0.01em);
+  line-height: 1.6;
   text-align: right;
 }
 
@@ -483,7 +497,9 @@
   }
 
   .tavia-hero__heading {
-    font-size: clamp(4rem, 13vw, 6.4rem);
+    font-size: clamp(4rem, 12.5vw, 5.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1.02;
   }
 
   .tavia-hero__content {
@@ -503,6 +519,12 @@
     display: none;
   }
 
+  .tavia-hero__copy {
+    font-size: 1.55rem;
+    line-height: 1.7;
+    max-width: 34rem;
+  }
+
   .tavia-marquee {
     height: var(--tavia-marquee-mobile-height, 6rem);
   }
@@ -513,12 +535,19 @@
   }
 
   .tavia-statement__heading {
-    font-size: 3.7rem;
+    font-size: clamp(3.2rem, 9vw, 4rem);
+    letter-spacing: -0.015em;
+    line-height: 1.15;
     margin-top: 11rem;
   }
 
   .tavia-statement__aside {
     margin-left: 0;
+  }
+
+  .tavia-statement__copy {
+    font-size: 1.55rem;
+    line-height: 1.7;
   }
 
   .tavia-products__header {
@@ -527,6 +556,11 @@
 
   .tavia-products__actions .tavia-underlined-link {
     display: none;
+  }
+
+  .tavia-products__title {
+    font-size: clamp(2.7rem, 8vw, 3.3rem);
+    line-height: 1.15;
   }
 
   .tavia-products__rail {
@@ -556,8 +590,15 @@
   }
 
   .tavia-story__heading {
-    font-size: clamp(4.8rem, 15vw, 7rem);
+    font-size: clamp(4.2rem, 13vw, 5.8rem);
+    letter-spacing: -0.02em;
+    line-height: 1.02;
     margin-bottom: 3.5rem;
+  }
+
+  .tavia-story__copy {
+    font-size: 1.55rem;
+    line-height: 1.7;
   }
 
   .tavia-story__feature {
