@@ -212,13 +212,53 @@
 }
 
 .tavia-statement {
-  min-height: 63rem;
-  padding: 6rem var(--tavia-gutter) 8rem;
+  background: var(--tavia-statement-background, #ffffff);
+  min-height: var(--tavia-statement-height, 64rem);
+  overflow: hidden;
   position: relative;
 }
 
+.tavia-statement__media,
+.tavia-statement__media::after {
+  inset: 0;
+  position: absolute;
+}
+
+.tavia-statement__media {
+  z-index: 0;
+}
+
+.tavia-statement__media::after {
+  background: var(--tavia-statement-overlay-color, #000000);
+  content: "";
+  opacity: var(--tavia-statement-overlay-opacity, 0);
+}
+
+.tavia-statement__picture,
+.tavia-statement__image {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.tavia-statement__image {
+  object-fit: cover;
+  object-position: var(--tavia-statement-image-position, 50% 50%);
+}
+
+.tavia-statement__inner {
+  min-height: inherit;
+  padding: 6rem var(--tavia-gutter) 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tavia-statement__eyebrow {
+  color: var(--tavia-statement-label-color, #111111);
+}
+
 .tavia-statement__heading {
-  color: inherit;
+  color: var(--tavia-statement-heading-color, #111111);
   font-family: inherit;
   font-size: clamp(3.6rem, 4.2vw, 6rem);
   font-weight: 700;
@@ -236,11 +276,15 @@
 }
 
 .tavia-statement__copy {
-  color: var(--tavia-muted);
+  color: var(--tavia-statement-copy-color, var(--tavia-muted));
   font-size: 1.6rem;
   letter-spacing: var(--tavia-tracking-body, 0.01em);
   line-height: 1.7;
   margin: 0 0 3.5rem;
+}
+
+.tavia-statement .tavia-underlined-link {
+  color: var(--tavia-statement-link-color, #111111);
 }
 
 .tavia-products {
@@ -569,8 +613,16 @@
   }
 
   .tavia-statement {
-    min-height: 55rem;
-    padding-top: 4rem;
+    min-height: var(--tavia-statement-mobile-height, 56rem);
+  }
+
+  .tavia-statement__image {
+    object-position: var(--tavia-statement-mobile-image-position, 50% 50%);
+  }
+
+  .tavia-statement__inner {
+    min-height: inherit;
+    padding: 4rem var(--tavia-gutter) 6rem;
   }
 
   .tavia-statement__heading {
