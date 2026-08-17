@@ -13,10 +13,10 @@
       "type": "tavia-hero",
       "settings": {
         "image": "shopify://shop_images/ad5775d8be0e3a2eccd71d872c8c1cce.png",
-        "eyebrow": "Product / City shift / In motion",
+        "eyebrow": "",
         "heading": "BUILT FOR LONG DAYS.",
-        "heading_size_desktop": 88,
-        "heading_size_mobile": 58,
+        "heading_size_desktop": 50,
+        "heading_size_mobile": 40,
         "copy": "A one-piece shoe designed for people who stay in motion.",
         "button_label": "Discover the 01",
         "button_link": "",
@@ -24,8 +24,8 @@
         "bottom_right": "Designed for daily motion",
         "text_color": "#ffffff",
         "overlay_opacity": 35,
-        "desktop_height": 900,
-        "mobile_height": 720,
+        "desktop_height": 880,
+        "mobile_height": 600,
         "desktop_position": "50% 54%",
         "mobile_position": "50% 50%"
       }
@@ -85,11 +85,22 @@
     "object-statement": {
       "type": "tavia-statement",
       "settings": {
+        "background_color": "#ffffff",
+        "desktop_height": 640,
+        "mobile_height": 560,
+        "desktop_image_position": "50% 50%",
+        "mobile_image_position": "50% 50%",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
         "eyebrow": "01 / The object",
         "heading": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t.",
         "copy": "Digitally designed and printed as one, so support, flex and airflow work together.",
         "link_label": "Read the product note",
-        "link": ""
+        "link": "",
+        "label_color": "#111111",
+        "heading_color": "#111111",
+        "copy_color": "#6f6f69",
+        "link_color": "#111111"
       }
     },
     "current-forms": {
