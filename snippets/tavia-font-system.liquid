@@ -1,0 +1,32 @@
+{%- if settings.use_tavia_font_system -%}
+  @font-face {
+    font-family: 'Tavia Geist';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('{{ 'tavia-geist-sans-variable.woff2' | asset_url }}') format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Tavia Geist Mono';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('{{ 'tavia-geist-mono-variable.woff2' | asset_url }}') format('woff2');
+  }
+
+  :root {
+    --font-body-family: 'Tavia Geist', 'Helvetica Neue', Arial, sans-serif;
+    --font-body-style: normal;
+    --font-body-weight: 400;
+    --font-body-weight-bold: 650;
+    --font-heading-family: 'Tavia Geist', 'Helvetica Neue', Arial, sans-serif;
+    --font-heading-style: normal;
+    --font-heading-weight: 650;
+    --font-mono-family: 'Tavia Geist Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  }
+{%- else -%}
+  :root {
+    --font-mono-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  }
+{%- endif -%}

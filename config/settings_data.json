@@ -69,6 +69,7 @@
           }
         }
       },
+      "use_tavia_font_system": true,
       "type_header_font": "lato_n7",
       "heading_scale": 125,
       "type_body_font": "lato_n4",

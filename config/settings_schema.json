@@ -105,6 +105,13 @@
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "use_tavia_font_system",
+        "label": "Use Tavia Geist type system",
+        "info": "Uses the self-hosted Geist Sans and Geist Mono brand fonts. Turn off to use the Shopify font pickers below.",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "t:settings_schema.typography.settings.header__1.content"
       },

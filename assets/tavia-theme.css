@@ -6,7 +6,7 @@
   --tavia-tracking-body: 0.01em;
   --tavia-tracking-display: -0.025em;
   --tavia-tracking-heading: -0.015em;
-  --tavia-tracking-label: 0.11em;
+  --tavia-tracking-label: 0.08em;
   --product-card-corner-radius: 0rem;
   --collection-card-corner-radius: 0rem;
   --blog-card-corner-radius: 0rem;
@@ -22,6 +22,7 @@
 }
 
 body {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   font-kerning: normal;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
@@ -81,6 +82,7 @@ h4,
 .caption,
 .caption-with-letter-spacing,
 .caption-with-letter-spacing--medium {
+  font-family: var(--font-mono-family);
   font-weight: 500;
   letter-spacing: var(--tavia-tracking-label);
   line-height: 1.5;
@@ -90,7 +92,7 @@ h4,
 .shopify-challenge__button,
 .customer button {
   font-weight: 600;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.055em;
   line-height: 1.2;
 }
 
@@ -108,7 +110,7 @@ h4,
 .menu-drawer,
 .cart-drawer,
 .footer {
-  font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-body-family);
 }
 
 .header-wrapper {
@@ -118,7 +120,7 @@ h4,
 .header .header__menu-item {
   font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.07em;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -186,7 +188,7 @@ h4,
 }
 
 .footer .footer-block__heading {
-  font-family: inherit;
+  font-family: var(--font-mono-family);
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: var(--tavia-tracking-label);
@@ -238,6 +240,8 @@ h4,
 .cart-drawer .product-option,
 .cart-drawer .price,
 .cart-drawer .totals__total-value {
+  font-family: var(--font-mono-family);
+  font-variant-numeric: tabular-nums;
   font-size: 1.4rem;
   letter-spacing: var(--tavia-tracking-body);
   line-height: 1.55;
@@ -256,6 +260,11 @@ h4,
 .card-information .price {
   letter-spacing: var(--tavia-tracking-body);
   line-height: 1.55;
+}
+
+.price-item {
+  font-family: var(--font-mono-family);
+  font-variant-numeric: tabular-nums;
 }
 
 .product__title > * {
