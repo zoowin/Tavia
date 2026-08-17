@@ -15,6 +15,8 @@
         "image": "shopify://shop_images/ad5775d8be0e3a2eccd71d872c8c1cce.png",
         "eyebrow": "Product / City shift / In motion",
         "heading": "BUILT FOR LONG DAYS.",
+        "heading_size_desktop": 88,
+        "heading_size_mobile": 58,
         "copy": "A one-piece shoe designed for people who stay in motion.",
         "button_label": "Discover the 01",
         "button_link": "",
