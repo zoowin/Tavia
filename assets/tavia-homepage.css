@@ -114,7 +114,7 @@
 .tavia-hero__heading {
   color: inherit;
   font-family: inherit;
-  font-size: clamp(3.6rem, 6vw, var(--tavia-hero-heading-size, 8.8rem));
+  font-size: var(--tavia-hero-heading-size, 8.8rem);
   font-weight: 650;
   letter-spacing: var(--tavia-tracking-display, -0.025em);
   line-height: 1;
@@ -585,7 +585,7 @@
   }
 
   .tavia-hero__heading {
-    font-size: clamp(3.2rem, 12.5vw, var(--tavia-hero-heading-size-mobile, 5.8rem));
+    font-size: var(--tavia-hero-heading-size-mobile, 5.8rem);
     letter-spacing: -0.02em;
     line-height: 1.02;
   }
