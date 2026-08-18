@@ -1,5 +1,10 @@
 {{ 'tavia-homepage.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'tavia-homepage.js' | asset_url }}" defer="defer"></script>
+{%- if section.settings.enable_quick_add -%}
+  {{ 'quick-add.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 <section class="tavia-home-section tavia-products" data-tavia-slider aria-labelledby="TaviaProductsHeading-{{ section.id }}">
   <div class="tavia-products__header">
@@ -32,38 +37,118 @@
           endif
         endif
       -%}
-      <a
+      <article
         class="tavia-product-card tavia-product-card--{{ block.settings.fallback_tone }}"
-        href="{{ card_url | default: routes.all_products_collection_url }}"
         {{ block.shopify_attributes }}
         style="--tavia-card-background: {{ block.settings.background }};"
       >
-        <div class="tavia-product-card__media">
-          {%- if card_image != blank -%}
-            {{
-              card_image
-              | image_url: width: 1400
-              | image_tag:
-                class: 'tavia-product-card__image',
-                widths: '500, 750, 1000, 1400',
-                sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 84vw',
-                loading: 'lazy',
-                alt: card_image.alt
-            }}
-          {%- else -%}
-            {{ 'product-1' | placeholder_svg_tag: 'tavia-product-card__image placeholder-svg' }}
-          {%- endif -%}
-        </div>
-        <div class="tavia-product-card__meta">
-          <span class="tavia-product-card__title">{{ card_title | default: 'Tavia form' | escape }}</span>
-          <span class="tavia-product-card__price">{%- if card_product != blank -%}{{ card_product.price | money }}{%- else -%}{{ block.settings.price | escape }}{%- endif -%}</span>
-          <span class="tavia-product-card__description">{{ card_description | escape }}</span>
-          <span class="tavia-product-card__swatches" aria-label="Available colors">
-            <span class="tavia-product-card__swatch" style="--swatch: {{ block.settings.swatch_one }};"></span>
-            <span class="tavia-product-card__swatch" style="--swatch: {{ block.settings.swatch_two }};"></span>
-          </span>
-        </div>
-      </a>
+        <a class="tavia-product-card__link" href="{{ card_url | default: routes.all_products_collection_url }}">
+          <div class="tavia-product-card__media">
+            {%- if card_image != blank -%}
+              {{
+                card_image
+                | image_url: width: 1400
+                | image_tag:
+                  class: 'tavia-product-card__image',
+                  widths: '500, 750, 1000, 1400',
+                  sizes: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 84vw',
+                  loading: 'lazy',
+                  alt: card_image.alt
+              }}
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'tavia-product-card__image placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="tavia-product-card__meta">
+            <span class="tavia-product-card__title" id="TaviaProductTitle-{{ section.id }}-{{ block.id }}">{{ card_title | default: 'Tavia form' | escape }}</span>
+            <span class="tavia-product-card__price">{%- if card_product != blank -%}{{ card_product.price | money }}{%- else -%}{{ block.settings.price | escape }}{%- endif -%}</span>
+            <span class="tavia-product-card__description">{{ card_description | escape }}</span>
+            <span class="tavia-product-card__swatches" aria-label="Available colors">
+              <span class="tavia-product-card__swatch" style="--swatch: {{ block.settings.swatch_one }};"></span>
+              <span class="tavia-product-card__swatch" style="--swatch: {{ block.settings.swatch_two }};"></span>
+            </span>
+          </div>
+        </a>
+
+        {%- if section.settings.enable_quick_add and card_product != blank -%}
+          {%- assign product_form_id = 'TaviaQuickAddForm-' | append: section.id | append: '-' | append: block.id -%}
+          <div class="tavia-product-card__quick-add">
+            {%- if card_product.variants_count > 1 -%}
+              <modal-opener data-modal="#TaviaQuickAdd-{{ section.id }}-{{ block.id }}">
+                <button
+                  type="button"
+                  class="tavia-product-card__button button button--full-width"
+                  aria-haspopup="dialog"
+                  aria-describedby="TaviaProductTitle-{{ section.id }}-{{ block.id }}"
+                  data-product-url="{{ card_product.url }}"
+                  {% unless card_product.available %}disabled{% endunless %}
+                >
+                  <span>
+                    {%- if card_product.available -%}
+                      {{ section.settings.quick_add_label | escape }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  {%- render 'loading-spinner' -%}
+                </button>
+              </modal-opener>
+              <quick-add-modal id="TaviaQuickAdd-{{ section.id }}-{{ block.id }}" class="quick-add-modal">
+                <div
+                  role="dialog"
+                  aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}"
+                  aria-modal="true"
+                  class="quick-add-modal__content global-settings-popup"
+                  tabindex="-1"
+                >
+                  <button
+                    type="button"
+                    class="quick-add-modal__toggle"
+                    aria-label="{{ 'accessibility.close' | t }}"
+                  >
+                    {{- 'icon-close.svg' | inline_asset_content -}}
+                  </button>
+                  <div id="QuickAddInfo-{{ section.id }}-{{ block.id }}" class="quick-add-modal__content-info"></div>
+                </div>
+              </quick-add-modal>
+            {%- else -%}
+              <product-form data-section-id="{{ section.id }}">
+                {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  <input
+                    type="hidden"
+                    name="id"
+                    value="{{ card_product.selected_or_first_available_variant.id }}"
+                    class="product-variant-id"
+                    {% unless card_product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                  >
+                  <button
+                    type="submit"
+                    name="add"
+                    class="tavia-product-card__button button button--full-width"
+                    aria-describedby="TaviaProductTitle-{{ section.id }}-{{ block.id }}"
+                    aria-live="polite"
+                    data-sold-out-message="true"
+                    {% unless card_product.selected_or_first_available_variant.available %}disabled{% endunless %}
+                  >
+                    <span>
+                      {%- if card_product.selected_or_first_available_variant.available -%}
+                        {{ section.settings.quick_add_label | escape }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
+                    </span>
+                    <span class="sold-out-message hidden">{{ 'products.product.sold_out' | t }}</span>
+                    {%- render 'loading-spinner' -%}
+                  </button>
+                {%- endform -%}
+                <div class="product-form__error-message-wrapper" role="alert" hidden>
+                  <span class="product-form__error-message"></span>
+                </div>
+              </product-form>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </article>
     {%- endfor -%}
   </div>
 </section>
@@ -77,7 +162,9 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Current forms" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "View all" },
-    { "type": "url", "id": "link", "label": "Link" }
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "checkbox", "id": "enable_quick_add", "label": "Show quick add buttons", "default": true },
+    { "type": "text", "id": "quick_add_label", "label": "Quick add label", "default": "Add to cart" }
   ],
   "blocks": [
     {

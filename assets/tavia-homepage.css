@@ -380,8 +380,16 @@
 
 .tavia-product-card {
   color: inherit;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   scroll-snap-align: start;
+}
+
+.tavia-product-card__link {
+  color: inherit;
+  display: block;
+  flex: 1 1 auto;
   text-decoration: none;
 }
 
@@ -452,6 +460,57 @@
   border-radius: 0;
   height: 1.2rem;
   width: 1.2rem;
+}
+
+.tavia-product-card__quick-add {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.tavia-product-card__quick-add modal-opener,
+.tavia-product-card__quick-add product-form {
+  display: block;
+}
+
+.tavia-product-card__button {
+  background: var(--tavia-black);
+  border: 0.1rem solid var(--tavia-black);
+  border-radius: 0;
+  box-shadow: none;
+  color: #ffffff;
+  font-family: var(--font-mono-family);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: var(--tavia-tracking-label, 0.08em);
+  min-height: 4.8rem;
+  padding: 1.4rem 2rem;
+  text-transform: uppercase;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.tavia-product-card__button::before,
+.tavia-product-card__button::after {
+  display: none;
+}
+
+.tavia-product-card__button:not([disabled]):hover {
+  background: transparent;
+  color: var(--tavia-black);
+}
+
+.tavia-product-card__button[disabled] {
+  background: var(--tavia-line);
+  border-color: var(--tavia-line);
+  color: var(--tavia-muted);
+  cursor: not-allowed;
+}
+
+.tavia-product-card__button.loading {
+  color: transparent;
+}
+
+.tavia-product-card__button .loading__spinner .path {
+  stroke: currentColor;
 }
 
 .tavia-story {

@@ -188,7 +188,9 @@
       "settings": {
         "heading": "Current forms",
         "link_label": "View all",
-        "link": ""
+        "link": "",
+        "enable_quick_add": true,
+        "quick_add_label": "Add to cart"
       }
     },
     "motion-story": {
