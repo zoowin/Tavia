@@ -110,7 +110,7 @@
         "product_card_XR8NLK": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "asset-pack-69501812738-example-product-1",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -124,7 +124,7 @@
         "product_card_Jj8YCm": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "asset-pack-69501812738-example-product-3",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -138,7 +138,7 @@
         "form-1": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "asset-pack-69501812738-example-product-2",
             "title": "The 01 / Earth",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -152,7 +152,7 @@
         "form-2": {
           "type": "product_card",
           "settings": {
-            "product": "",
+            "product": "asset-pack-69501812738-example-product-1",
             "title": "The 01 / Mono",
             "description": "One-piece everyday shoe",
             "price": "$—",
