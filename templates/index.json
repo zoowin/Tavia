@@ -188,9 +188,7 @@
       "settings": {
         "heading": "Current forms",
         "link_label": "View all",
-        "link": "",
-        "enable_quick_add": true,
-        "quick_add_label": "Add to cart"
+        "link": ""
       }
     },
     "motion-story": {
@@ -229,7 +227,7 @@
         "text_color": "#111111",
         "image_position": "left",
         "image": "shopify://shop_images/6ef9aea53ee7cacd2965168371013bc0.png",
-        "desktop_image_height": 640,
+        "desktop_image_height": 680,
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
