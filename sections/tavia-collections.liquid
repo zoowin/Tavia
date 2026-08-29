@@ -1,0 +1,168 @@
+{{ 'tavia-homepage.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .tavia-directions {
+    --tavia-directions-background: {{ section.settings.background }};
+    --tavia-directions-text: {{ section.settings.text_color }};
+    --tavia-directions-line: {{ section.settings.line_color }};
+    --tavia-directions-gap: {{ section.settings.grid_gap }}px;
+    --tavia-directions-padding-top: {{ section.settings.padding_top }}px;
+    --tavia-directions-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section class="tavia-home-section tavia-directions" aria-labelledby="TaviaDirectionsHeading-{{ section.id }}">
+  <div class="tavia-directions__header">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tavia-kicker tavia-directions__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tavia-directions__heading" id="TaviaDirectionsHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.intro != blank -%}
+      <p class="tavia-directions__intro">{{ section.settings.intro | escape | newline_to_br }}</p>
+    {%- endif -%}
+  </div>
+
+  <div class="tavia-directions__grid">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign card_collection = block.settings.collection
+        assign desktop_image = block.settings.image | default: card_collection.featured_image
+        assign mobile_image = block.settings.mobile_image
+        assign card_title = block.settings.title | default: card_collection.title | default: 'Collection'
+        assign card_link = block.settings.link | default: card_collection.url | default: routes.collections_url
+        assign desktop_position = desktop_image.presentation.focal_point | default: 'center center'
+        assign mobile_position = mobile_image.presentation.focal_point | default: desktop_position
+        assign image_alt = desktop_image.alt | default: card_title
+        assign image_sizes = '(min-width: 750px) 50vw, 50vw'
+        if block.settings.wide_card
+          assign image_sizes = '100vw'
+        endif
+        assign placeholder_index = forloop.index0 | modulo: 4 | plus: 1
+        assign placeholder_name = 'collection-apparel-' | append: placeholder_index
+      -%}
+
+      <a
+        class="tavia-directions__card{% if block.settings.wide_card %} tavia-directions__card--wide{% endif %}"
+        href="{{ card_link }}"
+        aria-label="{{ card_title | escape }}"
+        style="
+          --tavia-direction-card-text: {{ block.settings.text_color }};
+          --tavia-direction-card-overlay: {{ block.settings.overlay_color }};
+          --tavia-direction-card-overlay-opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
+          --tavia-direction-desktop-position: {{ desktop_position }};
+          --tavia-direction-mobile-position: {{ mobile_position }};
+        "
+        {{ block.shopify_attributes }}
+      >
+        <div class="tavia-directions__media">
+          {%- if desktop_image != blank -%}
+            <picture class="tavia-directions__picture">
+              {%- if mobile_image != blank -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="
+                    {{ mobile_image | image_url: width: 375 }} 375w,
+                    {{ mobile_image | image_url: width: 550 }} 550w,
+                    {{ mobile_image | image_url: width: 750 }} 750w,
+                    {{ mobile_image | image_url: width: 900 }} 900w
+                  "
+                  sizes="{% if block.settings.wide_card %}100vw{% else %}50vw{% endif %}"
+                >
+              {%- endif -%}
+              {{
+                desktop_image
+                | image_url: width: 2000
+                | image_tag:
+                  class: 'tavia-directions__image',
+                  widths: '550, 750, 1100, 1400, 1700, 2000',
+                  sizes: image_sizes,
+                  loading: 'lazy',
+                  alt: image_alt
+              }}
+            </picture>
+          {%- else -%}
+            {{ placeholder_name | placeholder_svg_tag: 'tavia-directions__placeholder' }}
+          {%- endif -%}
+        </div>
+
+        <div class="tavia-directions__content">
+          <div class="tavia-directions__card-heading">
+            <span class="tavia-directions__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <div>
+              <h3 class="tavia-directions__title">{{ card_title | escape }}</h3>
+              {%- if block.settings.function_line != blank -%}
+                <p class="tavia-directions__function">{{ block.settings.function_line | escape }}</p>
+              {%- endif -%}
+            </div>
+          </div>
+
+          <div class="tavia-directions__card-footer">
+            {%- if block.settings.copy != blank -%}
+              <p class="tavia-directions__description">{{ block.settings.copy | escape | newline_to_br }}</p>
+            {%- endif -%}
+            <span class="tavia-directions__link">{{ block.settings.link_label | default: 'Explore collection' | escape }} ↗</span>
+          </div>
+        </div>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tavia collections",
+  "tag": "section",
+  "class": "tavia-homepage-section",
+  "max_blocks": 8,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Tavia collections" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Shop by direction." },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "Four approaches to movement, designed around different moments of the day." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Heading color", "default": "#111111" },
+    { "type": "color", "id": "line_color", "label": "Line color", "default": "#d9d9d5" },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "grid_gap", "label": "Grid gap", "min": 0, "max": 20, "step": 1, "unit": "px", "default": 4 },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 40, "max": 140, "step": 10, "unit": "px", "default": 90 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 40, "max": 140, "step": 10, "unit": "px", "default": 100 }
+  ],
+  "blocks": [
+    {
+      "type": "direction",
+      "name": "Collection",
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "image_picker", "id": "image", "label": "Desktop image", "info": "Recommended: 1600 × 1200 px for standard cards." },
+        { "type": "image_picker", "id": "mobile_image", "label": "Mobile image", "info": "Recommended: 900 × 1200 px for standard cards." },
+        { "type": "text", "id": "title", "label": "Custom title", "info": "Uses the collection title when empty." },
+        { "type": "text", "id": "function_line", "label": "Function line" },
+        { "type": "textarea", "id": "copy", "label": "Short description" },
+        { "type": "text", "id": "link_label", "label": "Link label", "default": "Explore collection" },
+        { "type": "url", "id": "link", "label": "Custom link", "info": "Uses the selected collection when empty." },
+        { "type": "checkbox", "id": "wide_card", "label": "Wide accessory card", "default": false },
+        { "type": "header", "content": "Card colors" },
+        { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+        { "type": "color", "id": "overlay_color", "label": "Overlay color", "default": "#000000" },
+        { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 70, "step": 5, "unit": "%", "default": 20 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tavia collections",
+      "blocks": [
+        { "type": "direction", "settings": { "title": "OASIS", "function_line": "COMFORT RESET", "copy": "Easy-on forms for downtime, travel and in-between moments." } },
+        { "type": "direction", "settings": { "title": "VECTOR", "function_line": "LIGHT MOTION", "copy": "Lightweight forms for everyday city movement." } },
+        { "type": "direction", "settings": { "title": "ATLAS", "function_line": "LONG DAYS", "copy": "Structured forms for extended time on foot." } },
+        { "type": "direction", "settings": { "title": "ORBIT", "function_line": "EVERYDAY RANGE", "copy": "Versatile forms for city, travel and weekends." } },
+        { "type": "direction", "settings": { "title": "MODULE", "function_line": "SYSTEM UTILITY", "copy": "Functional accessories designed around the Tavia system.", "wide_card": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -87,6 +87,94 @@
         "mobile_height": 44
       }
     },
+    "shop-by-direction": {
+      "type": "tavia-collections",
+      "blocks": {
+        "oasis": {
+          "type": "direction",
+          "settings": {
+            "title": "OASIS",
+            "function_line": "COMFORT RESET",
+            "copy": "Easy-on forms for downtime, travel and in-between moments.",
+            "link_label": "Explore collection",
+            "wide_card": false,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "vector": {
+          "type": "direction",
+          "settings": {
+            "title": "VECTOR",
+            "function_line": "LIGHT MOTION",
+            "copy": "Lightweight forms for everyday city movement.",
+            "link_label": "Explore collection",
+            "wide_card": false,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "atlas": {
+          "type": "direction",
+          "settings": {
+            "title": "ATLAS",
+            "function_line": "LONG DAYS",
+            "copy": "Structured forms for extended time on foot.",
+            "link_label": "Explore collection",
+            "wide_card": false,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "orbit": {
+          "type": "direction",
+          "settings": {
+            "title": "ORBIT",
+            "function_line": "EVERYDAY RANGE",
+            "copy": "Versatile forms for city, travel and weekends.",
+            "link_label": "Explore collection",
+            "wide_card": false,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        },
+        "module": {
+          "type": "direction",
+          "settings": {
+            "title": "MODULE",
+            "function_line": "SYSTEM UTILITY",
+            "copy": "Functional accessories designed around the Tavia system.",
+            "link_label": "Explore accessories",
+            "wide_card": true,
+            "text_color": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "oasis",
+        "vector",
+        "atlas",
+        "orbit",
+        "module"
+      ],
+      "settings": {
+        "eyebrow": "Tavia collections",
+        "heading": "SHOP BY DIRECTION.",
+        "intro": "Four approaches to movement, designed around different moments of the day.",
+        "background": "#ffffff",
+        "text_color": "#111111",
+        "line_color": "#d9d9d5",
+        "grid_gap": 4,
+        "padding_top": 90,
+        "padding_bottom": 100
+      }
+    },
     "current-forms": {
       "type": "tavia-product-gallery",
       "blocks": {
@@ -295,8 +383,9 @@
   "order": [
     "tavia-hero",
     "tavia-marquee",
-    "current-forms",
+    "shop-by-direction",
     "object-statement",
+    "current-forms",
     "motion-story",
     "technology-story"
   ]
