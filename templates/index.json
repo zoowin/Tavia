@@ -93,10 +93,12 @@
         "oasis": {
           "type": "direction",
           "settings": {
+            "collection": "oasis",
             "title": "OASIS",
             "function_line": "COMFORT RESET",
             "copy": "Easy-on forms for downtime, travel and in-between moments.",
             "link_label": "Explore collection",
+            "link": "",
             "wide_card": false,
             "text_color": "#ffffff",
             "overlay_color": "#000000",
@@ -106,10 +108,12 @@
         "vector": {
           "type": "direction",
           "settings": {
+            "collection": "vector",
             "title": "VECTOR",
             "function_line": "LIGHT MOTION",
             "copy": "Lightweight forms for everyday city movement.",
             "link_label": "Explore collection",
+            "link": "",
             "wide_card": false,
             "text_color": "#ffffff",
             "overlay_color": "#000000",
@@ -119,10 +123,12 @@
         "atlas": {
           "type": "direction",
           "settings": {
+            "collection": "atlas",
             "title": "ATLAS",
             "function_line": "LONG DAYS",
             "copy": "Structured forms for extended time on foot.",
             "link_label": "Explore collection",
+            "link": "",
             "wide_card": false,
             "text_color": "#ffffff",
             "overlay_color": "#000000",
@@ -132,10 +138,12 @@
         "orbit": {
           "type": "direction",
           "settings": {
+            "collection": "orbit",
             "title": "ORBIT",
             "function_line": "EVERYDAY RANGE",
             "copy": "Versatile forms for city, travel and weekends.",
             "link_label": "Explore collection",
+            "link": "",
             "wide_card": false,
             "text_color": "#ffffff",
             "overlay_color": "#000000",
@@ -145,10 +153,12 @@
         "module": {
           "type": "direction",
           "settings": {
+            "collection": "module",
             "title": "MODULE",
             "function_line": "SYSTEM UTILITY",
             "copy": "Functional accessories designed around the Tavia system.",
             "link_label": "Explore accessories",
+            "link": "",
             "wide_card": true,
             "text_color": "#ffffff",
             "overlay_color": "#000000",
@@ -164,15 +174,36 @@
         "module"
       ],
       "settings": {
-        "eyebrow": "Tavia collections",
+        "eyebrow": "",
         "heading": "SHOP BY DIRECTION.",
         "intro": "Four approaches to movement, designed around different moments of the day.",
         "background": "#ffffff",
         "text_color": "#111111",
         "line_color": "#d9d9d5",
         "grid_gap": 4,
-        "padding_top": 90,
-        "padding_bottom": 100
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "object-statement": {
+      "type": "tavia-statement",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
+        "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
+        "background_color": "#ffffff",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 40,
+        "eyebrow": "01 / The object",
+        "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
+        "heading_width_desktop": 720,
+        "heading_width_mobile": 300,
+        "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
+        "link_label": "Read the product note",
+        "link": "",
+        "label_color": "#111111",
+        "heading_color": "#111111",
+        "copy_color": "#343434",
+        "link_color": "#111111"
       }
     },
     "current-forms": {
@@ -262,25 +293,6 @@
         "link": "",
         "enable_quick_add": true,
         "quick_add_label": "Add to cart"
-      }
-    },
-    "object-statement": {
-      "type": "tavia-statement",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
-        "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
-        "background_color": "#ffffff",
-        "overlay_color": "#FFFFFF",
-        "overlay_opacity": 40,
-        "eyebrow": "01 / The object",
-        "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
-        "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
-        "link_label": "Read the product note",
-        "link": "",
-        "label_color": "#111111",
-        "heading_color": "#111111",
-        "copy_color": "#343434",
-        "link_color": "#111111"
       }
     },
     "motion-story": {
