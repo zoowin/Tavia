@@ -232,8 +232,8 @@
 }
 
 .tavia-statement {
+  aspect-ratio: var(--tavia-statement-desktop-ratio, 2.117647);
   background: var(--tavia-statement-background, #ffffff);
-  min-height: var(--tavia-statement-height, 64rem);
   overflow: hidden;
   position: relative;
 }
@@ -265,8 +265,7 @@
 .tavia-statement__image {
   height: 100% !important;
   max-width: none !important;
-  object-fit: cover;
-  object-position: var(--tavia-statement-image-position, 50% 50%);
+  object-fit: contain;
 }
 
 .tavia-statement__inner {
@@ -276,9 +275,11 @@
     "content"
     "cta";
   grid-template-rows: auto minmax(0, 1fr) auto;
-  min-height: inherit;
+  height: 100%;
+  inset: 0;
   padding: 4rem var(--tavia-gutter);
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 1;
 }
 
@@ -721,15 +722,10 @@
   }
 
   .tavia-statement {
-    min-height: var(--tavia-statement-mobile-height, 56rem);
-  }
-
-  .tavia-statement__image {
-    object-position: var(--tavia-statement-mobile-image-position, 50% 50%);
+    aspect-ratio: var(--tavia-statement-mobile-ratio, 0.646552);
   }
 
   .tavia-statement__inner {
-    min-height: inherit;
     padding: 3.2rem var(--tavia-gutter);
   }
 
