@@ -13,6 +13,8 @@
     --tavia-statement-mobile-height: {{ section.settings.mobile_height }}px;
     --tavia-statement-image-position: {{ section.settings.desktop_image_position }};
     --tavia-statement-mobile-image-position: {{ section.settings.mobile_image_position }};
+    --tavia-statement-heading-width: {{ section.settings.heading_width_desktop }}px;
+    --tavia-statement-mobile-heading-width: {{ section.settings.heading_width_mobile }}px;
   }
 {%- endstyle -%}
 
@@ -83,6 +85,8 @@
     { "type": "header", "content": "Content" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "01 / The object" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t." },
+    { "type": "range", "id": "heading_width_desktop", "label": "Desktop heading width", "min": 420, "max": 900, "step": 20, "unit": "px", "default": 720 },
+    { "type": "range", "id": "heading_width_mobile", "label": "Mobile heading width", "min": 220, "max": 360, "step": 10, "unit": "px", "default": 300 },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "Digitally designed and printed as one, so support, flex and airflow work together." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Read the product note" },
     { "type": "url", "id": "link", "label": "Link" },

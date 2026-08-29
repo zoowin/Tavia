@@ -101,6 +101,8 @@
         "overlay_opacity": 0,
         "eyebrow": "01 / The object",
         "heading": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t.",
+        "heading_width_desktop": 720,
+        "heading_width_mobile": 300,
         "copy": "Digitally designed and printed as one, so support, flex and airflow work together.",
         "link_label": "Read the product note",
         "link": "",

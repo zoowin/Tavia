@@ -245,6 +245,7 @@
 }
 
 .tavia-statement__media {
+  overflow: hidden;
   z-index: 0;
 }
 
@@ -262,6 +263,8 @@
 }
 
 .tavia-statement__image {
+  height: 100% !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: var(--tavia-statement-image-position, 50% 50%);
 }
@@ -280,19 +283,20 @@
 .tavia-statement__heading {
   color: var(--tavia-statement-heading-color, #111111);
   font-family: inherit;
-  font-size: clamp(3.6rem, 4.2vw, 6rem);
+  font-size: clamp(3.6rem, 3.6vw, 5.2rem);
   font-weight: 650;
   letter-spacing: var(--tavia-tracking-display, -0.025em);
   line-height: 1.12;
-  margin: clamp(12rem, 14vw, 20rem) 0 0;
-  max-width: 104rem;
+  margin: clamp(9rem, 9vw, 13rem) 0 0;
+  max-width: min(var(--tavia-statement-heading-width, 72rem), 58vw);
   text-wrap: balance;
 }
 
 .tavia-statement__aside {
-  margin-left: auto;
-  margin-top: 4rem;
-  max-width: 41rem;
+  margin-left: 0;
+  margin-top: 3rem;
+  max-width: 46rem;
+  text-align: left;
 }
 
 .tavia-statement__copy {
@@ -714,23 +718,28 @@
 
   .tavia-statement__inner {
     min-height: inherit;
-    padding: 4rem var(--tavia-gutter) 6rem;
+    padding: 3.2rem var(--tavia-gutter);
   }
 
   .tavia-statement__heading {
-    font-size: clamp(3.2rem, 9vw, 4rem);
-    letter-spacing: -0.015em;
-    line-height: 1.15;
-    margin-top: 11rem;
+    font-size: clamp(2.8rem, 8.5vw, 3.4rem);
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-top: 6rem;
+    max-width: min(var(--tavia-statement-mobile-heading-width, 30rem), 88vw);
   }
 
   .tavia-statement__aside {
     margin-left: 0;
+    margin-top: 2.8rem;
+    max-width: min(29rem, 82vw);
+    text-align: left;
   }
 
   .tavia-statement__copy {
-    font-size: 1.55rem;
-    line-height: 1.7;
+    font-size: 1.45rem;
+    line-height: 1.55;
+    margin-bottom: 2.5rem;
   }
 
   .tavia-products__header {
