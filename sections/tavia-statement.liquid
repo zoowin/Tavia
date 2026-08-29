@@ -13,8 +13,8 @@
     --tavia-statement-mobile-height: {{ section.settings.mobile_height }}px;
     --tavia-statement-image-position: {{ section.settings.desktop_image_position }};
     --tavia-statement-mobile-image-position: {{ section.settings.mobile_image_position }};
-    --tavia-statement-heading-width: {{ section.settings.heading_width_desktop }}px;
-    --tavia-statement-mobile-heading-width: {{ section.settings.heading_width_mobile }}px;
+    --tavia-statement-heading-width: {{ section.settings.heading_width_desktop | default: 720 }}px;
+    --tavia-statement-mobile-heading-width: {{ section.settings.heading_width_mobile | default: 300 }}px;
   }
 {%- endstyle -%}
 
@@ -56,13 +56,13 @@
 
   <div class="tavia-statement__inner">
     {%- if section.settings.eyebrow != blank -%}<p class="tavia-kicker tavia-statement__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-    <h2 class="tavia-statement__heading" id="TaviaStatementHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
-    <div class="tavia-statement__aside">
+    <div class="tavia-statement__content">
+      <h2 class="tavia-statement__heading" id="TaviaStatementHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
       {%- if section.settings.copy != blank -%}<p class="tavia-statement__copy">{{ section.settings.copy | escape | newline_to_br }}</p>{%- endif -%}
-      {%- if section.settings.link_label != blank -%}
-        <a class="tavia-underlined-link" href="{{ section.settings.link | default: routes.all_products_collection_url }}">{{ section.settings.link_label | escape }} ↗</a>
-      {%- endif -%}
     </div>
+    {%- if section.settings.link_label != blank -%}
+      <a class="tavia-underlined-link tavia-statement__cta" href="{{ section.settings.link | default: routes.all_products_collection_url }}">{{ section.settings.link_label | escape }} ↗</a>
+    {%- endif -%}
   </div>
 </section>
 

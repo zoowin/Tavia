@@ -270,14 +270,26 @@
 }
 
 .tavia-statement__inner {
+  display: grid;
+  grid-template-areas:
+    "eyebrow"
+    "content"
+    "cta";
+  grid-template-rows: auto minmax(0, 1fr) auto;
   min-height: inherit;
-  padding: 6rem var(--tavia-gutter) 8rem;
+  padding: 4rem var(--tavia-gutter);
   position: relative;
   z-index: 1;
 }
 
 .tavia-statement__eyebrow {
   color: var(--tavia-statement-label-color, #111111);
+  grid-area: eyebrow;
+}
+
+.tavia-statement__content {
+  align-self: center;
+  grid-area: content;
 }
 
 .tavia-statement__heading {
@@ -287,16 +299,9 @@
   font-weight: 650;
   letter-spacing: var(--tavia-tracking-display, -0.025em);
   line-height: 1.12;
-  margin: clamp(9rem, 9vw, 13rem) 0 0;
+  margin: 0;
   max-width: min(var(--tavia-statement-heading-width, 72rem), 58vw);
   text-wrap: balance;
-}
-
-.tavia-statement__aside {
-  margin-left: 0;
-  margin-top: 3rem;
-  max-width: 46rem;
-  text-align: left;
 }
 
 .tavia-statement__copy {
@@ -304,7 +309,14 @@
   font-size: 1.6rem;
   letter-spacing: var(--tavia-tracking-body, 0.01em);
   line-height: 1.7;
-  margin: 0 0 3.5rem;
+  margin: 3rem 0 0;
+  max-width: 46rem;
+  text-align: left;
+}
+
+.tavia-statement__cta {
+  grid-area: cta;
+  justify-self: start;
 }
 
 .tavia-statement .tavia-underlined-link {
@@ -725,21 +737,14 @@
     font-size: clamp(2.8rem, 8.5vw, 3.4rem);
     letter-spacing: -0.02em;
     line-height: 1.08;
-    margin-top: 6rem;
     max-width: min(var(--tavia-statement-mobile-heading-width, 30rem), 88vw);
-  }
-
-  .tavia-statement__aside {
-    margin-left: 0;
-    margin-top: 2.8rem;
-    max-width: min(29rem, 82vw);
-    text-align: left;
   }
 
   .tavia-statement__copy {
     font-size: 1.45rem;
     line-height: 1.55;
-    margin-bottom: 2.5rem;
+    margin-top: 2.8rem;
+    max-width: min(29rem, 82vw);
   }
 
   .tavia-products__header {
