@@ -91,7 +91,7 @@
         "mobile_height": 560,
         "desktop_image_position": "50% 50%",
         "mobile_image_position": "50% 50%",
-        "overlay_color": "#FFFFFF",
+        "overlay_color": "#ffffff",
         "overlay_opacity": 20,
         "eyebrow": "01 / The object",
         "heading": "One object. One continuous structure.\nEverything it needs, nothing it doesn’t.",
@@ -188,7 +188,9 @@
       "settings": {
         "heading": "Current forms",
         "link_label": "View all",
-        "link": ""
+        "link": "",
+        "enable_quick_add": true,
+        "quick_add_label": "Add to cart"
       }
     },
     "motion-story": {
