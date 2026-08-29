@@ -92,8 +92,8 @@
       "settings": {
         "desktop_image": "shopify://shop_images/131240d51a8276f848e966db5a566a38.png",
         "background_color": "#ffffff",
-        "desktop_height": 640,
-        "mobile_height": 560,
+        "desktop_height": 680,
+        "mobile_height": 580,
         "desktop_image_position": "50% 50%",
         "mobile_image_position": "50% 50%",
         "overlay_color": "#ffffff",
