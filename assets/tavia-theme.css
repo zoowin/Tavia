@@ -164,9 +164,11 @@ h4,
   position: fixed;
 }
 
-.template-index .section-header.shopify-section-header-sticky .header-wrapper {
-  background: rgb(var(--color-background));
-  box-shadow: 0 0.1rem 0 rgba(var(--color-foreground), 0.18);
+.section-header.shopify-section-header-sticky .header-wrapper {
+  -webkit-backdrop-filter: blur(1.2rem);
+  backdrop-filter: blur(1.2rem);
+  background: rgba(var(--color-background), var(--tavia-sticky-background-opacity, 0.75));
+  box-shadow: 0 0.1rem 0 rgba(var(--color-foreground), 0.14);
 }
 
 .footer {

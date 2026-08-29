@@ -44,6 +44,7 @@
         "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
+        "sticky_background_opacity": 75,
         "show_line_separator": true,
         "color_scheme": "scheme-4",
         "menu_color_scheme": "scheme-4",

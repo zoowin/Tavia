@@ -84,6 +84,7 @@
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+    --tavia-sticky-background-opacity: {{ section.settings.sticky_background_opacity | divided_by: 100.0 }};
   }
 
   @media screen and (min-width: 750px) {
@@ -562,6 +563,17 @@
       ],
       "default": "on-scroll-up",
       "label": "t:sections.header.settings.sticky_header_type.label"
+    },
+    {
+      "type": "range",
+      "id": "sticky_background_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Sticky background opacity",
+      "info": "Set to 0% for fully transparent. The normal header still uses the selected color scheme.",
+      "default": 75
     },
     {
       "type": "checkbox",
