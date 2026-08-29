@@ -8,6 +8,7 @@
     --tavia-hero-heading-size: {{ section.settings.heading_size_desktop }}px;
     --tavia-hero-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
     --tavia-hero-heading-width: {{ section.settings.heading_width_desktop }}px;
+    --tavia-hero-mobile-content-offset: {{ section.settings.mobile_content_offset }}px;
     --tavia-hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
     --tavia-hero-position: {{ section.settings.desktop_position }};
     --tavia-hero-mobile-position: {{ section.settings.mobile_position }};
@@ -93,6 +94,7 @@
     { "type": "range", "id": "heading_width_desktop", "min": 420, "max": 1000, "step": 20, "unit": "px", "label": "Heading width — left layout", "default": 760 },
     { "type": "range", "id": "heading_size_desktop", "min": 36, "max": 120, "step": 2, "unit": "px", "label": "Heading size — desktop", "default": 88 },
     { "type": "range", "id": "heading_size_mobile", "min": 32, "max": 72, "step": 2, "unit": "px", "label": "Heading size — mobile", "default": 58 },
+    { "type": "range", "id": "mobile_content_offset", "min": -160, "max": 160, "step": 10, "unit": "px", "label": "Mobile content vertical offset", "info": "Negative values move the title, copy and button upward.", "default": 0 },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "A one-piece shoe designed for people who stay in motion." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Discover the 01" },
     { "type": "url", "id": "button_link", "label": "Button link" },

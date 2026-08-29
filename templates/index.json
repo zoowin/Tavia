@@ -21,6 +21,7 @@
         "heading_width_desktop": 760,
         "heading_size_desktop": 50,
         "heading_size_mobile": 40,
+        "mobile_content_offset": -50,
         "copy": "A one-piece shoe designed for people who stay in motion.",
         "button_label": "Discover the 01",
         "button_link": "",

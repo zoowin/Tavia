@@ -670,6 +670,7 @@
   .tavia-hero__content {
     padding-left: 2rem;
     padding-right: 2rem;
+    transform: translateY(var(--tavia-hero-mobile-content-offset, 0));
   }
 
   .tavia-hero--mobile-left .tavia-hero__content {
