@@ -917,7 +917,7 @@
   }
 
   .tavia-directions__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .tavia-directions__card {
@@ -933,7 +933,7 @@
   }
 
   .tavia-directions__content {
-    padding: 1.4rem;
+    padding: 2rem;
   }
 
   .tavia-directions__card-heading {
@@ -947,7 +947,7 @@
   }
 
   .tavia-directions__title {
-    font-size: clamp(1.9rem, 6.5vw, 2.6rem);
+    font-size: clamp(2.8rem, 9vw, 3.8rem);
     line-height: 1;
   }
 
@@ -958,11 +958,17 @@
   }
 
   .tavia-directions__description {
+    display: block;
+    font-size: 1.35rem;
+    max-width: 27rem;
+  }
+
+  .tavia-directions__card--wide .tavia-directions__description {
     display: none;
   }
 
   .tavia-directions__link {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0.05em;
   }
 

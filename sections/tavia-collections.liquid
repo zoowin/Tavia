@@ -37,7 +37,7 @@
         assign desktop_position = desktop_image.presentation.focal_point | default: 'center center'
         assign mobile_position = mobile_image.presentation.focal_point | default: desktop_position
         assign image_alt = desktop_image.alt | default: card_title
-        assign image_sizes = '(min-width: 750px) 50vw, 50vw'
+        assign image_sizes = '(min-width: 750px) 50vw, 100vw'
         if block.settings.wide_card
           assign image_sizes = '100vw'
         endif
@@ -70,7 +70,7 @@
                     {{ mobile_image | image_url: width: 750 }} 750w,
                     {{ mobile_image | image_url: width: 900 }} 900w
                   "
-                  sizes="{% if block.settings.wide_card %}100vw{% else %}50vw{% endif %}"
+                  sizes="100vw"
                 >
               {%- endif -%}
               {{
