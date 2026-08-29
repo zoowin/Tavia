@@ -925,7 +925,7 @@
   }
 
   .tavia-directions__card--wide {
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 3 / 4;
   }
 
   .tavia-directions__image {
@@ -961,10 +961,6 @@
     display: block;
     font-size: 1.35rem;
     max-width: 27rem;
-  }
-
-  .tavia-directions__card--wide .tavia-directions__description {
-    display: none;
   }
 
   .tavia-directions__link {
