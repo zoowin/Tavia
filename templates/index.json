@@ -87,25 +87,6 @@
         "mobile_height": 44
       }
     },
-    "object-statement": {
-      "type": "tavia-statement",
-      "settings": {
-        "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
-        "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
-        "background_color": "#ffffff",
-        "overlay_color": "#FFFFFF",
-        "overlay_opacity": 40,
-        "eyebrow": "01 / The object",
-        "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
-        "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
-        "link_label": "Read the product note",
-        "link": "",
-        "label_color": "#111111",
-        "heading_color": "#111111",
-        "copy_color": "#343434",
-        "link_color": "#111111"
-      }
-    },
     "current-forms": {
       "type": "tavia-product-gallery",
       "blocks": {
@@ -193,6 +174,25 @@
         "link": "",
         "enable_quick_add": true,
         "quick_add_label": "Add to cart"
+      }
+    },
+    "object-statement": {
+      "type": "tavia-statement",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
+        "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
+        "background_color": "#ffffff",
+        "overlay_color": "#FFFFFF",
+        "overlay_opacity": 40,
+        "eyebrow": "01 / The object",
+        "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
+        "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
+        "link_label": "Read the product note",
+        "link": "",
+        "label_color": "#111111",
+        "heading_color": "#111111",
+        "copy_color": "#343434",
+        "link_color": "#111111"
       }
     },
     "motion-story": {
@@ -295,8 +295,8 @@
   "order": [
     "tavia-hero",
     "tavia-marquee",
-    "object-statement",
     "current-forms",
+    "object-statement",
     "motion-story",
     "technology-story"
   ]
