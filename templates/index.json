@@ -73,8 +73,8 @@
       ],
       "settings": {
         "accessibility_label": "Product benefits",
-        "background": "#ffffff",
-        "text_color": "#111111",
+        "background": "#000000",
+        "text_color": "#FFFFFF",
         "line_color": "#d9d9d5",
         "speed": 32,
         "pause_on_hover": true,
