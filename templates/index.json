@@ -13,6 +13,7 @@
       "type": "tavia-hero",
       "settings": {
         "image": "shopify://shop_images/hero-dp_LR.jpg",
+        "mobile_image": "shopify://shop_images/hero-mb_LR.jpg",
         "eyebrow": "",
         "heading": "BUILT FOR LONG DAYS.",
         "content_alignment_desktop": "left",
