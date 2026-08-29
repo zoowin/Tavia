@@ -7,13 +7,17 @@
     --tavia-hero-mobile-height: {{ section.settings.mobile_height }}px;
     --tavia-hero-heading-size: {{ section.settings.heading_size_desktop }}px;
     --tavia-hero-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
+    --tavia-hero-heading-width: {{ section.settings.heading_width_desktop }}px;
     --tavia-hero-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
     --tavia-hero-position: {{ section.settings.desktop_position }};
     --tavia-hero-mobile-position: {{ section.settings.mobile_position }};
   }
 {%- endstyle -%}
 
-<section class="tavia-home-section tavia-hero" aria-labelledby="TaviaHeroHeading-{{ section.id }}">
+<section
+  class="tavia-home-section tavia-hero tavia-hero--desktop-{{ section.settings.content_alignment_desktop }} tavia-hero--mobile-{{ section.settings.content_alignment_mobile }}"
+  aria-labelledby="TaviaHeroHeading-{{ section.id }}"
+>
   <div class="tavia-hero__media">
     {%- if section.settings.image != blank -%}
       {{
@@ -34,7 +38,7 @@
 
   <div class="tavia-hero__content">
     {%- if section.settings.eyebrow != blank -%}<p class="tavia-kicker tavia-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-    <h1 class="tavia-hero__heading" id="TaviaHeroHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+    <h1 class="tavia-hero__heading" id="TaviaHeroHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h1>
     {%- if section.settings.copy != blank -%}<p class="tavia-hero__copy">{{ section.settings.copy | escape }}</p>{%- endif -%}
     {%- if section.settings.button_label != blank -%}
       <a class="tavia-hero__button" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>
@@ -55,7 +59,16 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Hero image" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Video / City shift / Product in motion" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "BUILT FOR LONG DAYS." },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Add line breaks to control the title composition.", "default": "BUILT FOR LONG DAYS." },
+    { "type": "select", "id": "content_alignment_desktop", "label": "Content alignment — desktop", "default": "center", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Center" }
+    ] },
+    { "type": "select", "id": "content_alignment_mobile", "label": "Content alignment — mobile", "default": "center", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Center" }
+    ] },
+    { "type": "range", "id": "heading_width_desktop", "min": 420, "max": 1000, "step": 20, "unit": "px", "label": "Heading width — left layout", "default": 760 },
     { "type": "range", "id": "heading_size_desktop", "min": 36, "max": 120, "step": 2, "unit": "px", "label": "Heading size — desktop", "default": 88 },
     { "type": "range", "id": "heading_size_mobile", "min": 32, "max": 72, "step": 2, "unit": "px", "label": "Heading size — mobile", "default": 58 },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "A one-piece shoe designed for people who stay in motion." },

@@ -162,6 +162,18 @@
   z-index: 2;
 }
 
+@media screen and (min-width: 750px) {
+  .tavia-hero--desktop-left .tavia-hero__content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .tavia-hero--desktop-left .tavia-hero__heading {
+    max-width: min(var(--tavia-hero-heading-width, 76rem), 62vw);
+    text-wrap: pretty;
+  }
+}
+
 .tavia-marquee {
   background: var(--tavia-marquee-background, #ffffff);
   border-bottom: 0.1rem solid var(--tavia-marquee-line, var(--tavia-line));
@@ -652,6 +664,15 @@
   .tavia-hero__content {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .tavia-hero--mobile-left .tavia-hero__content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .tavia-hero--mobile-left .tavia-hero__heading {
+    text-wrap: pretty;
   }
 
   .tavia-hero__eyebrow {
