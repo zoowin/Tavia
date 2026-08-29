@@ -80,6 +80,12 @@
   overflow: hidden;
 }
 
+.tavia-hero__picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 .tavia-hero__media::after {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 35%, rgba(0, 0, 0, 0.18));
   content: "";

@@ -19,18 +19,39 @@
   aria-labelledby="TaviaHeroHeading-{{ section.id }}"
 >
   <div class="tavia-hero__media">
-    {%- if section.settings.image != blank -%}
-      {{
-        section.settings.image
-        | image_url: width: 3000
-        | image_tag:
-          class: 'tavia-hero__image',
-          widths: '750, 1100, 1500, 2000, 2500, 3000',
-          sizes: '100vw',
-          loading: 'eager',
-          fetchpriority: 'high',
-          alt: section.settings.image.alt
-      }}
+    {%- liquid
+      assign desktop_image = section.settings.image
+      assign mobile_image = section.settings.mobile_image
+      assign fallback_image = desktop_image | default: mobile_image
+      assign image_alt = desktop_image.alt | default: mobile_image.alt
+    -%}
+    {%- if fallback_image != blank -%}
+      <picture class="tavia-hero__picture">
+        {%- if mobile_image != blank -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="
+              {{ mobile_image | image_url: width: 375 }} 375w,
+              {{ mobile_image | image_url: width: 550 }} 550w,
+              {{ mobile_image | image_url: width: 750 }} 750w,
+              {{ mobile_image | image_url: width: 1000 }} 1000w,
+              {{ mobile_image | image_url: width: 1200 }} 1200w
+            "
+            sizes="100vw"
+          >
+        {%- endif -%}
+        {{
+          fallback_image
+          | image_url: width: 3000
+          | image_tag:
+            class: 'tavia-hero__image',
+            widths: '750, 1100, 1500, 2000, 2500, 3000',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            alt: image_alt
+        }}
+      </picture>
     {%- else -%}
       {{ 'lifestyle-1' | placeholder_svg_tag: 'tavia-hero__image placeholder-svg' }}
     {%- endif -%}
@@ -57,7 +78,8 @@
   "tag": "section",
   "class": "tavia-homepage-section",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "Hero image" },
+    { "type": "image_picker", "id": "image", "label": "Desktop image" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Mobile image", "info": "Falls back to the desktop image when empty." },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Video / City shift / Product in motion" },
     { "type": "textarea", "id": "heading", "label": "Heading", "info": "Add line breaks to control the title composition.", "default": "BUILT FOR LONG DAYS." },
     { "type": "select", "id": "content_alignment_desktop", "label": "Content alignment — desktop", "default": "center", "options": [
