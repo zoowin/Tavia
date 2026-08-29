@@ -12,9 +12,12 @@
     "tavia-hero": {
       "type": "tavia-hero",
       "settings": {
-        "image": "shopify://shop_images/ad5775d8be0e3a2eccd71d872c8c1cce.png",
+        "image": "shopify://shop_images/hero-dp_LR.jpg",
         "eyebrow": "",
         "heading": "BUILT FOR LONG DAYS.",
+        "content_alignment_desktop": "left",
+        "content_alignment_mobile": "left",
+        "heading_width_desktop": 760,
         "heading_size_desktop": 50,
         "heading_size_mobile": 40,
         "copy": "A one-piece shoe designed for people who stay in motion.",
