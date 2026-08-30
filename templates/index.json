@@ -94,6 +94,8 @@
           "type": "direction",
           "settings": {
             "collection": "oasis",
+            "image": "shopify://shop_images/oasis-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/oasis-mb-LR.jpg",
             "title": "OASIS",
             "function_line": "COMFORT RESET",
             "copy": "Easy-on forms for downtime, travel and in-between moments.",
