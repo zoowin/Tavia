@@ -2,16 +2,13 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} .tavia-directions {
-    --tavia-directions-background: {{ section.settings.background }};
-    --tavia-directions-text: {{ section.settings.text_color }};
-    --tavia-directions-line: {{ section.settings.line_color }};
     --tavia-directions-gap: {{ section.settings.grid_gap }}px;
     --tavia-directions-padding-top: {{ section.settings.padding_top }}px;
     --tavia-directions-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 {%- endstyle -%}
 
-<section class="tavia-home-section tavia-directions" aria-labelledby="TaviaDirectionsHeading-{{ section.id }}">
+<section class="tavia-home-section tavia-directions color-{{ section.settings.color_scheme }} gradient" aria-labelledby="TaviaDirectionsHeading-{{ section.id }}">
   <div class="tavia-directions__header">
     <div>
       {%- if section.settings.eyebrow != blank -%}
@@ -46,12 +43,10 @@
       -%}
 
       <a
-        class="tavia-directions__card{% if block.settings.wide_card %} tavia-directions__card--wide{% endif %}"
+        class="tavia-directions__card color-{{ block.settings.color_scheme }}{% if block.settings.wide_card %} tavia-directions__card--wide{% endif %}"
         href="{{ card_link }}"
         aria-label="{{ card_title | escape }}"
         style="
-          --tavia-direction-card-text: {{ block.settings.text_color }};
-          --tavia-direction-card-overlay: {{ block.settings.overlay_color }};
           --tavia-direction-card-overlay-opacity: {{ block.settings.overlay_opacity | divided_by: 100.0 }};
           --tavia-direction-desktop-position: {{ desktop_position }};
           --tavia-direction-mobile-position: {{ mobile_position }};
@@ -122,10 +117,7 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Tavia collections" },
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "Shop by direction." },
     { "type": "textarea", "id": "intro", "label": "Intro", "default": "Four approaches to movement, designed around different moments of the day." },
-    { "type": "header", "content": "Colors" },
-    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
-    { "type": "color", "id": "text_color", "label": "Heading color", "default": "#111111" },
-    { "type": "color", "id": "line_color", "label": "Line color", "default": "#d9d9d5" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "header", "content": "Layout" },
     { "type": "range", "id": "grid_gap", "label": "Grid gap", "min": 0, "max": 20, "step": 1, "unit": "px", "default": 4 },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 40, "max": 140, "step": 10, "unit": "px", "default": 90 },
@@ -145,9 +137,7 @@
         { "type": "text", "id": "link_label", "label": "Link label", "default": "Explore collection" },
         { "type": "url", "id": "link", "label": "Custom link", "info": "Uses the selected collection when empty." },
         { "type": "checkbox", "id": "wide_card", "label": "Wide accessory card", "default": false },
-        { "type": "header", "content": "Card colors" },
-        { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
-        { "type": "color", "id": "overlay_color", "label": "Overlay color", "default": "#000000" },
+        { "type": "color_scheme", "id": "color_scheme", "label": "Card color scheme", "default": "scheme-4" },
         { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 70, "step": 5, "unit": "%", "default": 20 }
       ]
     }

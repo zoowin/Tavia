@@ -102,8 +102,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
+            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -119,8 +118,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
+            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -136,8 +134,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
+            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -153,8 +150,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
+            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -168,8 +164,7 @@
             "link_label": "Explore accessories",
             "link": "",
             "wide_card": true,
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
+            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         }
@@ -185,9 +180,7 @@
         "eyebrow": "",
         "heading": "SHOP BY DIRECTION.",
         "intro": "Four approaches to movement, designed around different moments of the day.",
-        "background": "#ffffff",
-        "text_color": "#111111",
-        "line_color": "#d9d9d5",
+        "color_scheme": "scheme-1",
         "grid_gap": 4,
         "padding_top": 40,
         "padding_bottom": 40

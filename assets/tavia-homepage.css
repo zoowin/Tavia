@@ -232,14 +232,14 @@
 }
 
 .tavia-directions {
-  background: var(--tavia-directions-background, #ffffff);
-  color: var(--tavia-directions-text, #111111);
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
   padding: var(--tavia-directions-padding-top, 9rem) var(--tavia-gutter) var(--tavia-directions-padding-bottom, 10rem);
 }
 
 .tavia-directions__header {
   align-items: end;
-  border-top: 0.1rem solid var(--tavia-directions-line, var(--tavia-line));
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.18);
   display: grid;
   gap: 4rem;
   grid-template-columns: minmax(0, 1fr) minmax(28rem, 42rem);
@@ -277,8 +277,8 @@
 
 .tavia-directions__card {
   aspect-ratio: 4 / 3;
-  background: #e6e6e3;
-  color: var(--tavia-direction-card-text, #ffffff) !important;
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground)) !important;
   display: block;
   overflow: hidden;
   position: relative;
@@ -301,7 +301,7 @@
 }
 
 .tavia-directions__media::after {
-  background: var(--tavia-direction-card-overlay, #000000);
+  background: rgb(var(--color-background));
   content: "";
   opacity: var(--tavia-direction-card-overlay-opacity, 0.2);
   pointer-events: none;
@@ -318,8 +318,8 @@
 }
 
 .tavia-directions__placeholder {
-  background: #e6e6e3;
-  color: #bcbcb7;
+  background: rgb(var(--color-background));
+  color: rgba(var(--color-foreground), 0.35);
 }
 
 .tavia-directions__content {
