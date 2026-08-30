@@ -6,7 +6,7 @@
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<section class="tavia-home-section tavia-products" data-tavia-slider aria-labelledby="TaviaProductsHeading-{{ section.id }}">
+<section class="tavia-home-section tavia-products color-{{ section.settings.color_scheme }} gradient" data-tavia-slider aria-labelledby="TaviaProductsHeading-{{ section.id }}">
   <div class="tavia-products__header">
     <h2 class="tavia-products__title" id="TaviaProductsHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
     <div class="tavia-products__actions">
@@ -160,6 +160,7 @@
   "class": "tavia-homepage-section",
   "max_blocks": 8,
   "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Current forms" },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "View all" },
     { "type": "url", "id": "link", "label": "Link" },

@@ -2,8 +2,6 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} .tavia-story {
-    --tavia-story-background: {{ section.settings.background }};
-    --tavia-story-color: {{ section.settings.text_color }};
     --tavia-story-image-height: {{ section.settings.desktop_image_height }}px;
     --tavia-story-image-position: {{ section.settings.desktop_image_position }};
     --tavia-story-mobile-image-height: {{ section.settings.mobile_image_height }}px;
@@ -11,7 +9,7 @@
   }
 {%- endstyle -%}
 
-<section class="tavia-home-section tavia-story tavia-story--{{ section.settings.theme }}{% if section.settings.image_position == 'right' %} tavia-story--reverse{% endif %}" aria-labelledby="TaviaStoryHeading-{{ section.id }}">
+<section class="tavia-home-section tavia-story color-{{ section.settings.color_scheme }} gradient tavia-story--{{ section.settings.theme }}{% if section.settings.image_position == 'right' %} tavia-story--reverse{% endif %}" aria-labelledby="TaviaStoryHeading-{{ section.id }}">
   <div class="tavia-story__grid">
     <div class="tavia-story__media">
       {%- liquid
@@ -85,8 +83,7 @@
       { "value": "light", "label": "Light" },
       { "value": "dark", "label": "Dark image treatment" }
     ] },
-    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
-    { "type": "color", "id": "text_color", "label": "Text color", "default": "#111111" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "select", "id": "image_position", "label": "Image position", "default": "left", "options": [
       { "value": "left", "label": "Left" },
       { "value": "right", "label": "Right" }

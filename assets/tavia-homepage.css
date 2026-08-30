@@ -64,8 +64,8 @@
 }
 
 .tavia-hero {
-  background: #8b7c70;
-  color: var(--tavia-hero-color, #ffffff);
+  background: var(--gradient-background);
+  color: rgb(var(--color-foreground));
   min-height: var(--tavia-hero-height, 90rem);
   position: relative;
 }
@@ -87,7 +87,7 @@
 }
 
 .tavia-hero__media::after {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.18), transparent 35%, rgba(0, 0, 0, 0.18));
+  background: linear-gradient(180deg, rgba(var(--color-background), 0.7), transparent 35%, rgba(var(--color-background), 0.7));
   content: "";
   opacity: var(--tavia-hero-overlay, 0.12);
 }
@@ -145,10 +145,10 @@
 }
 
 .tavia-hero__button {
-  background: #ffffff;
-  border: 0.1rem solid #ffffff;
+  background: rgb(var(--color-button));
+  border: 0.1rem solid rgb(var(--color-button));
   border-radius: 0;
-  color: #111111 !important;
+  color: rgb(var(--color-button-text)) !important;
   font-size: 1.05rem;
   font-weight: 600;
   letter-spacing: 0.09em;
@@ -189,9 +189,9 @@
 }
 
 .tavia-marquee {
-  background: var(--tavia-marquee-background, #ffffff);
-  border-bottom: 0.1rem solid var(--tavia-marquee-line, var(--tavia-line));
-  color: var(--tavia-marquee-color, #111111);
+  background: var(--gradient-background);
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.18);
+  color: rgb(var(--color-foreground));
   height: var(--tavia-marquee-height, 7.8rem);
   overflow: hidden;
 }
@@ -240,7 +240,7 @@
 }
 
 .tavia-directions {
-  background: rgb(var(--color-background));
+  background: var(--gradient-background);
   color: rgb(var(--color-foreground));
   padding: var(--tavia-directions-padding-top, 9rem) 0 var(--tavia-directions-padding-bottom, 10rem);
 }
@@ -418,7 +418,8 @@
 
 .tavia-statement {
   aspect-ratio: var(--tavia-statement-desktop-ratio, 2.117647);
-  background: var(--tavia-statement-background, #ffffff);
+  background: var(--gradient-background);
+  color: rgb(var(--color-foreground));
   margin: 0 auto;
   max-width: var(--page-width);
   overflow: hidden;
@@ -437,7 +438,7 @@
 }
 
 .tavia-statement__media::after {
-  background: var(--tavia-statement-overlay-color, #000000);
+  background: rgb(var(--color-background));
   content: "";
   opacity: var(--tavia-statement-overlay-opacity, 0);
 }
@@ -475,7 +476,7 @@
 }
 
 .tavia-statement__eyebrow {
-  color: var(--tavia-statement-label-color, #111111);
+  color: inherit;
   grid-area: eyebrow;
 }
 
@@ -485,7 +486,7 @@
 }
 
 .tavia-statement__heading {
-  color: var(--tavia-statement-heading-color, #111111);
+  color: inherit;
   font-family: inherit;
   font-size: clamp(3.6rem, 3.6vw, 5.2rem);
   font-weight: 650;
@@ -497,12 +498,13 @@
 }
 
 .tavia-statement__copy {
-  color: var(--tavia-statement-copy-color, var(--tavia-muted));
+  color: inherit;
   font-size: 1.6rem;
   letter-spacing: var(--tavia-tracking-body, 0.01em);
   line-height: 1.7;
   margin: 3rem 0 0;
   max-width: 46rem;
+  opacity: 0.72;
   text-align: left;
 }
 
@@ -512,10 +514,12 @@
 }
 
 .tavia-statement .tavia-underlined-link {
-  color: var(--tavia-statement-link-color, #111111);
+  color: inherit;
 }
 
 .tavia-products {
+  background: var(--gradient-background);
+  color: rgb(var(--color-foreground));
   margin: 0 auto;
   max-width: var(--page-width);
   padding: 0 var(--tavia-gutter) var(--tavia-section-space);
@@ -523,7 +527,7 @@
 
 .tavia-products__header {
   align-items: flex-end;
-  border-top: 0.1rem solid var(--tavia-line);
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.18);
   display: flex;
   justify-content: space-between;
   padding: 3.5rem 0 4rem;
@@ -557,7 +561,7 @@
 .tavia-products__arrow {
   align-items: center;
   background: transparent;
-  border: 0.1rem solid var(--tavia-line);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.18);
   border-radius: 0;
   color: inherit;
   cursor: pointer;
@@ -586,7 +590,7 @@
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   padding-bottom: 3.2rem;
-  scrollbar-color: var(--tavia-black) transparent;
+  scrollbar-color: currentColor transparent;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-snap-type: inline mandatory;
@@ -601,7 +605,7 @@
 }
 
 .tavia-products__rail::-webkit-scrollbar-thumb {
-  background: var(--tavia-black);
+  background: currentColor;
   border: 0;
   border-radius: 0;
 }
@@ -669,10 +673,11 @@
 }
 
 .tavia-product-card__description {
-  color: var(--tavia-muted);
+  color: currentColor;
   font-size: 1.35rem;
   letter-spacing: var(--tavia-tracking-body, 0.01em);
   line-height: 1.6;
+  opacity: 0.68;
 }
 
 .tavia-product-card__swatches {
@@ -684,7 +689,7 @@
 
 .tavia-product-card__swatch {
   background: var(--swatch);
-  border: 0.1rem solid rgba(17, 17, 17, 0.35);
+  border: 0.1rem solid currentColor;
   border-radius: 0;
   height: 1.2rem;
   width: 1.2rem;
@@ -701,11 +706,11 @@
 }
 
 .tavia-product-card__button {
-  background: var(--tavia-black);
-  border: 0.1rem solid var(--tavia-black);
+  background: rgb(var(--color-button));
+  border: 0.1rem solid rgb(var(--color-button));
   border-radius: 0;
   box-shadow: none;
-  color: #ffffff;
+  color: rgb(var(--color-button-text));
   font-family: var(--font-mono-family);
   font-size: 1.05rem;
   font-weight: 500;
@@ -723,13 +728,13 @@
 
 .tavia-product-card__button:not([disabled]):hover {
   background: transparent;
-  color: var(--tavia-black);
+  color: rgb(var(--color-foreground));
 }
 
 .tavia-product-card__button[disabled] {
-  background: var(--tavia-line);
-  border-color: var(--tavia-line);
-  color: var(--tavia-muted);
+  background: rgba(var(--color-foreground), 0.16);
+  border-color: rgba(var(--color-foreground), 0.16);
+  color: rgba(var(--color-foreground), 0.55);
   cursor: not-allowed;
 }
 
@@ -742,8 +747,8 @@
 }
 
 .tavia-story {
-  background: var(--tavia-story-background, #ffffff);
-  color: var(--tavia-story-color, #111111);
+  background: var(--gradient-background);
+  color: rgb(var(--color-foreground));
   padding: var(--tavia-section-space) 0;
 }
 

@@ -15,12 +15,6 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} .tavia-statement {
-    --tavia-statement-background: {{ section.settings.background_color }};
-    --tavia-statement-label-color: {{ section.settings.label_color }};
-    --tavia-statement-heading-color: {{ section.settings.heading_color }};
-    --tavia-statement-copy-color: {{ section.settings.copy_color }};
-    --tavia-statement-link-color: {{ section.settings.link_color }};
-    --tavia-statement-overlay-color: {{ section.settings.overlay_color }};
     --tavia-statement-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
     --tavia-statement-desktop-ratio: {{ desktop_ratio }};
     --tavia-statement-mobile-ratio: {{ mobile_ratio }};
@@ -29,7 +23,7 @@
   }
 {%- endstyle -%}
 
-<section class="tavia-home-section tavia-statement" aria-labelledby="TaviaStatementHeading-{{ section.id }}">
+<section class="tavia-home-section tavia-statement color-{{ section.settings.color_scheme }} gradient" aria-labelledby="TaviaStatementHeading-{{ section.id }}">
   {%- if fallback_image != blank -%}
     <div class="tavia-statement__media" aria-hidden="true">
       <picture class="tavia-statement__picture">
@@ -80,8 +74,7 @@
     { "type": "header", "content": "Background" },
     { "type": "image_picker", "id": "desktop_image", "label": "Desktop background image", "info": "Recommended canvas: 1440 × 680 px." },
     { "type": "image_picker", "id": "mobile_image", "label": "Mobile background image", "info": "Recommended canvas: 375 × 580 px. Falls back to the desktop image when empty." },
-    { "type": "color", "id": "background_color", "label": "Background color", "default": "#ffffff" },
-    { "type": "color", "id": "overlay_color", "label": "Overlay color", "default": "#000000" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "range", "id": "overlay_opacity", "label": "Overlay opacity", "min": 0, "max": 80, "step": 5, "unit": "%", "default": 0 },
     { "type": "header", "content": "Content" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "01 / The object" },
@@ -90,12 +83,7 @@
     { "type": "range", "id": "heading_width_mobile", "label": "Mobile heading width", "min": 220, "max": 360, "step": 10, "unit": "px", "default": 300 },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "Digitally designed and printed as one, so support, flex and airflow work together." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "Read the product note" },
-    { "type": "url", "id": "link", "label": "Link" },
-    { "type": "header", "content": "Text colors" },
-    { "type": "color", "id": "label_color", "label": "Eyebrow color", "default": "#111111" },
-    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
-    { "type": "color", "id": "copy_color", "label": "Copy color", "default": "#6f6f69" },
-    { "type": "color", "id": "link_color", "label": "Link color", "default": "#111111" }
+    { "type": "url", "id": "link", "label": "Link" }
   ],
   "presets": [{ "name": "Tavia statement" }]
 }

@@ -2,9 +2,6 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} .tavia-marquee {
-    --tavia-marquee-background: {{ section.settings.background }};
-    --tavia-marquee-color: {{ section.settings.text_color }};
-    --tavia-marquee-line: {{ section.settings.line_color }};
     --tavia-marquee-duration: {{ section.settings.speed }}s;
     --tavia-marquee-height: {{ section.settings.desktop_height }}px;
     --tavia-marquee-mobile-height: {{ section.settings.mobile_height }}px;
@@ -12,7 +9,7 @@
 {%- endstyle -%}
 
 <section
-  class="tavia-home-section tavia-marquee{% if section.settings.pause_on_hover %} tavia-marquee--pause-on-hover{% endif %}"
+  class="tavia-home-section tavia-marquee color-{{ section.settings.color_scheme }} gradient{% if section.settings.pause_on_hover %} tavia-marquee--pause-on-hover{% endif %}"
   aria-label="{{ section.settings.accessibility_label | escape }}"
 >
   <div class="tavia-marquee__track">
@@ -34,9 +31,7 @@
   "max_blocks": 12,
   "settings": [
     { "type": "text", "id": "accessibility_label", "label": "Accessibility label", "default": "Product benefits" },
-    { "type": "color", "id": "background", "label": "Background", "default": "#ffffff" },
-    { "type": "color", "id": "text_color", "label": "Text color", "default": "#111111" },
-    { "type": "color", "id": "line_color", "label": "Divider color", "default": "#d9d9d5" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "range", "id": "speed", "min": 12, "max": 60, "step": 2, "unit": "s", "label": "Loop duration", "default": 32, "info": "Lower values move faster." },
     { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": true },
     { "type": "range", "id": "desktop_height", "min": 48, "max": 100, "step": 4, "unit": "px", "label": "Desktop height", "default": 80 },

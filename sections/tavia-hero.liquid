@@ -2,7 +2,6 @@
 
 {%- style -%}
   #shopify-section-{{ section.id }} .tavia-hero {
-    --tavia-hero-color: {{ section.settings.text_color }};
     --tavia-hero-height: {{ section.settings.desktop_height }}px;
     --tavia-hero-mobile-height: {{ section.settings.mobile_height }}px;
     --tavia-hero-heading-size: {{ section.settings.heading_size_desktop }}px;
@@ -16,7 +15,7 @@
 {%- endstyle -%}
 
 <section
-  class="tavia-home-section tavia-hero tavia-hero--desktop-{{ section.settings.content_alignment_desktop }} tavia-hero--mobile-{{ section.settings.content_alignment_mobile }}"
+  class="tavia-home-section tavia-hero color-{{ section.settings.color_scheme }} gradient tavia-hero--desktop-{{ section.settings.content_alignment_desktop }} tavia-hero--mobile-{{ section.settings.content_alignment_mobile }}"
   aria-labelledby="TaviaHeroHeading-{{ section.id }}"
 >
   <div class="tavia-hero__media">
@@ -100,7 +99,7 @@
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "text", "id": "bottom_left", "label": "Bottom left label", "default": "Drop 01 / First production" },
     { "type": "text", "id": "bottom_right", "label": "Bottom right label", "default": "Designed for daily motion" },
-    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-4" },
     { "type": "range", "id": "overlay_opacity", "min": 0, "max": 60, "step": 5, "unit": "%", "label": "Image overlay", "default": 15 },
     { "type": "range", "id": "desktop_height", "min": 600, "max": 1100, "step": 20, "unit": "px", "label": "Desktop height", "default": 900 },
     { "type": "range", "id": "mobile_height", "min": 520, "max": 900, "step": 20, "unit": "px", "label": "Mobile height", "default": 720 },

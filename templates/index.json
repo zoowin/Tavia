@@ -27,7 +27,7 @@
         "button_link": "",
         "bottom_left": "Drop 01 / First production",
         "bottom_right": "Designed for daily motion",
-        "text_color": "#ffffff",
+        "color_scheme": "scheme-4",
         "overlay_opacity": 35,
         "desktop_height": 680,
         "mobile_height": 600,
@@ -78,9 +78,7 @@
       ],
       "settings": {
         "accessibility_label": "Product benefits",
-        "background": "#000000",
-        "text_color": "#ffffff",
-        "line_color": "#d9d9d5",
+        "color_scheme": "scheme-4",
         "speed": 32,
         "pause_on_hover": true,
         "desktop_height": 60,
@@ -193,8 +191,7 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
         "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
-        "background_color": "#ffffff",
-        "overlay_color": "#ffffff",
+        "color_scheme": "scheme-1",
         "overlay_opacity": 40,
         "eyebrow": "01 / The object",
         "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
@@ -202,11 +199,7 @@
         "heading_width_mobile": 300,
         "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
         "link_label": "Read the product note",
-        "link": "",
-        "label_color": "#111111",
-        "heading_color": "#111111",
-        "copy_color": "#343434",
-        "link_color": "#111111"
+        "link": ""
       }
     },
     "current-forms": {
@@ -291,6 +284,7 @@
         "form-3"
       ],
       "settings": {
+        "color_scheme": "scheme-1",
         "heading": "Current forms",
         "link_label": "View all",
         "link": "",
@@ -330,8 +324,7 @@
       ],
       "settings": {
         "theme": "light",
-        "background": "#ffffff",
-        "text_color": "#111111",
+        "color_scheme": "scheme-1",
         "image_position": "left",
         "image": "shopify://shop_images/6ef9aea53ee7cacd2965168371013bc0.png",
         "desktop_image_height": 680,
@@ -378,8 +371,7 @@
       ],
       "settings": {
         "theme": "dark",
-        "background": "#111111",
-        "text_color": "#ffffff",
+        "color_scheme": "scheme-4",
         "image_position": "right",
         "image": "shopify://shop_images/b303ebd7cf6928aaf5f44f91e0226c5c.png",
         "desktop_image_height": 640,
