@@ -379,6 +379,8 @@
         "theme": "dark",
         "color_scheme": "scheme-4",
         "image_position": "right",
+        "image": "shopify://shop_images/Why_3d-dp-LR.jpg",
+        "mobile_image": "shopify://shop_images/Why_3d-mb-LR.jpg",
         "desktop_image_height": 640,
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
