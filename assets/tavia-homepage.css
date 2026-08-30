@@ -66,12 +66,11 @@
 .tavia-hero {
   background: var(--gradient-background);
   color: rgb(var(--color-foreground));
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  max-width: none;
+  margin: 0 auto;
+  max-width: var(--page-width);
   min-height: var(--tavia-hero-height, 90rem);
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 
 .tavia-hero__media,
