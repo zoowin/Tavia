@@ -302,7 +302,7 @@
           "type": "feature",
           "settings": {
             "title": "Long-day comfort",
-            "text": "Balanced ease for extended time on foot"
+            "text": "Balanced support without excess bulk"
           }
         },
         "motion-2": {
@@ -315,8 +315,8 @@
         "motion-3": {
           "type": "feature",
           "settings": {
-            "title": "Recovery moments",
-            "text": "Easy, open forms for rest and reset"
+            "title": "Clear purpose",
+            "text": "Every line has a function"
           }
         }
       },
@@ -335,14 +335,14 @@
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "Movement / Long days / Recovery",
+        "image_caption": "Tavia / Designed for daily motion",
         "eyebrow": "02 / Why Tavia",
-        "heading": "BUILT FOR MOTION.\nMADE FOR RECOVERY.",
-        "copy": "Tavia is designed around the full rhythm of the day—from long hours on your feet to the moments when you slow down and reset. Lightweight, adaptable forms bring ease to daily movement, extended wear and everyday recovery.",
+        "heading": "BUILT AROUND\nREAL MOVEMENT.",
+        "copy": "Tavia is designed for the hours between destinations—commutes, studio floors, long shifts and everything after. Lightweight, adaptable forms deliver lasting ease without unnecessary complexity.",
         "link_label": "Discover Tavia",
         "link": "",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 10,
+        "padding_bottom": 10
       }
     },
     "technology-story": {
@@ -389,8 +389,8 @@
         "copy": "3D printing lets us shape cushioning, flexibility and airflow directly into the geometry of the shoe. Thousands of connected cells become one continuous form—precisely tuned, without traditional layers or assembly.",
         "link_label": "Explore the process",
         "link": "",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 10,
+        "padding_bottom": 10
       }
     }
   },
