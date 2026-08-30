@@ -289,7 +289,9 @@
         "link_label": "View all",
         "link": "",
         "enable_quick_add": true,
-        "quick_add_label": "Add to cart"
+        "quick_add_label": "Add to cart",
+        "padding_top": 0,
+        "padding_bottom": 100
       }
     },
     "motion-story": {
@@ -336,7 +338,9 @@
         "heading": "MADE TO STAY\nIN MOTION.",
         "copy": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you.",
         "link_label": "See how it feels",
-        "link": ""
+        "link": "",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "technology-story": {
@@ -383,7 +387,9 @@
         "heading": "PRINTED,\nNOT ASSEMBLED.",
         "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.",
         "link_label": "Explore the technology",
-        "link": ""
+        "link": "",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },

@@ -6,6 +6,8 @@
     --tavia-story-image-position: {{ section.settings.desktop_image_position }};
     --tavia-story-mobile-image-height: {{ section.settings.mobile_image_height }}px;
     --tavia-story-mobile-image-position: {{ section.settings.mobile_image_position }};
+    --tavia-story-padding-top: {{ section.settings.padding_top }}px;
+    --tavia-story-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 {%- endstyle -%}
 
@@ -100,7 +102,10 @@
     { "type": "textarea", "id": "heading", "label": "Heading", "default": "MADE TO STAY\nIN MOTION." },
     { "type": "textarea", "id": "copy", "label": "Copy", "default": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you." },
     { "type": "text", "id": "link_label", "label": "Link label", "default": "See how it feels" },
-    { "type": "url", "id": "link", "label": "Link" }
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 160, "step": 10, "unit": "px", "default": 100 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 0, "max": 160, "step": 10, "unit": "px", "default": 100 }
   ],
   "blocks": [
     {

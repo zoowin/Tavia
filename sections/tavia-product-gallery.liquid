@@ -6,6 +6,13 @@
   <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{%- style -%}
+  #shopify-section-{{ section.id }} .tavia-products {
+    --tavia-products-padding-top: {{ section.settings.padding_top }}px;
+    --tavia-products-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
 <section class="tavia-home-section tavia-products color-{{ section.settings.color_scheme }} gradient" data-tavia-slider aria-labelledby="TaviaProductsHeading-{{ section.id }}">
   <div class="tavia-products__header">
     <h2 class="tavia-products__title" id="TaviaProductsHeading-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
@@ -165,7 +172,10 @@
     { "type": "text", "id": "link_label", "label": "Link label", "default": "View all" },
     { "type": "url", "id": "link", "label": "Link" },
     { "type": "checkbox", "id": "enable_quick_add", "label": "Show quick add buttons", "default": true },
-    { "type": "text", "id": "quick_add_label", "label": "Quick add label", "default": "Add to cart" }
+    { "type": "text", "id": "quick_add_label", "label": "Quick add label", "default": "Add to cart" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 0, "max": 160, "step": 10, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 0, "max": 160, "step": 10, "unit": "px", "default": 100 }
   ],
   "blocks": [
     {

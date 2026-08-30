@@ -66,8 +66,12 @@
 .tavia-hero {
   background: var(--gradient-background);
   color: rgb(var(--color-foreground));
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  max-width: none;
   min-height: var(--tavia-hero-height, 90rem);
   position: relative;
+  width: 100vw;
 }
 
 .tavia-hero__media,
@@ -522,7 +526,7 @@
   color: rgb(var(--color-foreground));
   margin: 0 auto;
   max-width: var(--page-width);
-  padding: 0 var(--tavia-gutter) var(--tavia-section-space);
+  padding: var(--tavia-products-padding-top, 0) var(--tavia-gutter) var(--tavia-products-padding-bottom, var(--tavia-section-space));
 }
 
 .tavia-products__header {
@@ -749,7 +753,7 @@
 .tavia-story {
   background: var(--gradient-background);
   color: rgb(var(--color-foreground));
-  padding: var(--tavia-section-space) 0;
+  padding: var(--tavia-story-padding-top, var(--tavia-section-space)) 0 var(--tavia-story-padding-bottom, var(--tavia-section-space));
 }
 
 .tavia-story__grid {
@@ -765,6 +769,20 @@
 @media screen and (min-width: 750px) {
   .template-index {
     --tavia-gutter: 3.2rem;
+  }
+
+  .tavia-story__grid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tavia-story__content {
+    padding-right: var(--tavia-gutter);
+  }
+
+  .tavia-story--reverse .tavia-story__content {
+    padding-left: var(--tavia-gutter);
+    padding-right: 0;
   }
 }
 
@@ -956,7 +974,7 @@
   }
 
   .tavia-directions {
-    padding: clamp(5.5rem, 16vw, 7rem) 0 clamp(6.5rem, 18vw, 8rem);
+    padding: var(--tavia-directions-padding-top, 9rem) 0 var(--tavia-directions-padding-bottom, 10rem);
   }
 
   .tavia-directions__header {
@@ -1087,6 +1105,8 @@
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .tavia-story--reverse .tavia-story__media,
@@ -1097,6 +1117,12 @@
   .tavia-story__media {
     height: var(--tavia-story-mobile-image-height, 46rem);
     min-height: 0;
+  }
+
+  .tavia-story__content,
+  .tavia-story--reverse .tavia-story__content {
+    padding-left: var(--tavia-gutter);
+    padding-right: var(--tavia-gutter);
   }
 
   .tavia-story__image {
