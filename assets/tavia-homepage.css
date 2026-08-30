@@ -419,8 +419,6 @@
 .tavia-statement {
   aspect-ratio: var(--tavia-statement-desktop-ratio, 2.117647);
   background: var(--tavia-statement-background, #ffffff);
-  margin: 0 auto;
-  max-width: var(--page-width);
   overflow: hidden;
   position: relative;
 }
