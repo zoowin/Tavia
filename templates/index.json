@@ -111,6 +111,8 @@
           "type": "direction",
           "settings": {
             "collection": "vector",
+            "image": "shopify://shop_images/vector-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/vector-mb-LR.jpg",
             "title": "VECTOR",
             "function_line": "LIGHT MOTION",
             "copy": "Lightweight forms for everyday city movement.",
@@ -126,6 +128,8 @@
           "type": "direction",
           "settings": {
             "collection": "atlas",
+            "image": "shopify://shop_images/atlas-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/atlas-mb-LR.jpg",
             "title": "ATLAS",
             "function_line": "LONG DAYS",
             "copy": "Structured forms for extended time on foot.",
@@ -141,6 +145,8 @@
           "type": "direction",
           "settings": {
             "collection": "orbit",
+            "image": "shopify://shop_images/orbit-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/orbit-mb-LR.jpg",
             "title": "ORBIT",
             "function_line": "EVERYDAY RANGE",
             "copy": "Versatile forms for city, travel and weekends.",
