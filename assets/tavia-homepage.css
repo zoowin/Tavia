@@ -63,6 +63,12 @@
   opacity: 0.62;
 }
 
+.tavia-hero-shell {
+  background: var(--gradient-background);
+  color: rgb(var(--color-foreground));
+  width: 100%;
+}
+
 .tavia-hero {
   background: var(--gradient-background);
   color: rgb(var(--color-foreground));

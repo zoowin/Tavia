@@ -28,6 +28,7 @@
         "bottom_left": "Drop 01 / First production",
         "bottom_right": "Designed for daily motion",
         "color_scheme": "scheme-4",
+        "outer_color_scheme": "scheme-4",
         "overlay_opacity": 35,
         "desktop_height": 680,
         "mobile_height": 600,
