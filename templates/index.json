@@ -342,7 +342,7 @@
         "link_label": "Discover Tavia",
         "link": "",
         "padding_top": 10,
-        "padding_bottom": 10
+        "padding_bottom": 20
       }
     },
     "technology-story": {
@@ -391,7 +391,7 @@
         "copy": "3D printing lets us shape cushioning, flexibility and airflow directly into the geometry of the shoe. Thousands of connected cells become one continuous form—precisely tuned, without traditional layers or assembly.",
         "link_label": "Explore the process",
         "link": "",
-        "padding_top": 10,
+        "padding_top": 20,
         "padding_bottom": 10
       }
     }
