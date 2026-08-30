@@ -27,6 +27,8 @@
         "button_link": "",
         "bottom_left": "Drop 01 / First production",
         "bottom_right": "Designed for daily motion",
+        "color_scheme": "",
+        "outer_color_scheme": "",
         "overlay_opacity": 35,
         "desktop_height": 680,
         "mobile_height": 600,
@@ -77,6 +79,7 @@
       ],
       "settings": {
         "accessibility_label": "Product benefits",
+        "color_scheme": "scheme-4",
         "speed": 32,
         "pause_on_hover": true,
         "desktop_height": 60,
@@ -96,6 +99,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
+            "color_scheme": "",
             "overlay_opacity": 20
           }
         },
@@ -109,6 +113,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
+            "color_scheme": "",
             "overlay_opacity": 20
           }
         },
@@ -122,6 +127,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
+            "color_scheme": "",
             "overlay_opacity": 20
           }
         },
@@ -135,6 +141,7 @@
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
+            "color_scheme": "",
             "overlay_opacity": 20
           }
         },
@@ -148,6 +155,7 @@
             "link_label": "Explore accessories",
             "link": "",
             "wide_card": true,
+            "color_scheme": "",
             "overlay_opacity": 20
           }
         }
@@ -163,6 +171,7 @@
         "eyebrow": "",
         "heading": "SHOP BY DIRECTION.",
         "intro": "Four approaches to movement, designed around different moments of the day.",
+        "color_scheme": "",
         "grid_gap": 4,
         "padding_top": 40,
         "padding_bottom": 40
@@ -173,6 +182,7 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
         "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
+        "color_scheme": "",
         "overlay_opacity": 40,
         "eyebrow": "01 / The object",
         "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
@@ -265,11 +275,14 @@
         "form-3"
       ],
       "settings": {
+        "color_scheme": "",
         "heading": "Current forms",
         "link_label": "View all",
         "link": "",
         "enable_quick_add": true,
-        "quick_add_label": "Add to cart"
+        "quick_add_label": "Add to cart",
+        "padding_top": 0,
+        "padding_bottom": 100
       }
     },
     "motion-story": {
@@ -304,6 +317,7 @@
       ],
       "settings": {
         "theme": "light",
+        "color_scheme": "",
         "image_position": "left",
         "image": "shopify://shop_images/6ef9aea53ee7cacd2965168371013bc0.png",
         "desktop_image_height": 680,
@@ -315,7 +329,9 @@
         "heading": "MADE TO STAY\nIN MOTION.",
         "copy": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you.",
         "link_label": "See how it feels",
-        "link": ""
+        "link": "",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     },
     "technology-story": {
@@ -349,7 +365,8 @@
         "technology-3"
       ],
       "settings": {
-        "theme": "dark",
+        "theme": "light",
+        "color_scheme": "scheme-4",
         "image_position": "right",
         "image": "shopify://shop_images/Why_3d-dp-LR.jpg",
         "desktop_image_height": 640,
@@ -361,7 +378,9 @@
         "heading": "PRINTED,\nNOT ASSEMBLED.",
         "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.",
         "link_label": "Explore the technology",
-        "link": ""
+        "link": "",
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
