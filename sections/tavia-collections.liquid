@@ -9,22 +9,23 @@
 {%- endstyle -%}
 
 <section class="tavia-home-section tavia-directions color-{{ section.settings.color_scheme }} gradient" aria-labelledby="TaviaDirectionsHeading-{{ section.id }}">
-  <div class="tavia-directions__header">
-    <div>
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="tavia-kicker tavia-directions__eyebrow">{{ section.settings.eyebrow | escape }}</p>
-      {%- endif -%}
-      {%- if section.settings.heading != blank -%}
-        <h2 class="tavia-directions__heading" id="TaviaDirectionsHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
+  <div class="tavia-directions__inner">
+    <div class="tavia-directions__header">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tavia-kicker tavia-directions__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tavia-directions__heading" id="TaviaDirectionsHeading-{{ section.id }}">{{ section.settings.heading | escape | newline_to_br }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.intro != blank -%}
+        <p class="tavia-directions__intro">{{ section.settings.intro | escape | newline_to_br }}</p>
       {%- endif -%}
     </div>
-    {%- if section.settings.intro != blank -%}
-      <p class="tavia-directions__intro">{{ section.settings.intro | escape | newline_to_br }}</p>
-    {%- endif -%}
-  </div>
 
-  <div class="tavia-directions__grid">
-    {%- for block in section.blocks -%}
+    <div class="tavia-directions__grid">
+      {%- for block in section.blocks -%}
       {%- liquid
         assign card_collection = block.settings.collection
         assign desktop_image = block.settings.image | default: card_collection.featured_image
@@ -102,8 +103,9 @@
             <span class="tavia-directions__link">{{ block.settings.link_label | default: 'Explore collection' | escape }} ↗</span>
           </div>
         </div>
-      </a>
-    {%- endfor -%}
+        </a>
+      {%- endfor -%}
+    </div>
   </div>
 </section>
 
