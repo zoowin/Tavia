@@ -210,6 +210,7 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-1",
+            "image": "shopify://shop_images/Frame_1-LR.jpg",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -224,6 +225,7 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-3",
+            "image": "shopify://shop_images/Frame_2-LR.jpg",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -238,6 +240,7 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-2",
+            "image": "shopify://shop_images/Frame_4-LR.jpg",
             "title": "The 01 / Earth",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -252,6 +255,7 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-1",
+            "image": "shopify://shop_images/Frame_3-LR.jpg",
             "title": "The 01 / Mono",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -266,6 +270,7 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-2",
+            "image": "shopify://shop_images/Frame_5-LR.jpg",
             "title": "The 01 / Sand",
             "description": "Open form for home and away",
             "price": "$—",
