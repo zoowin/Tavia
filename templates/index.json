@@ -27,8 +27,6 @@
         "button_link": "",
         "bottom_left": "Drop 01 / First production",
         "bottom_right": "Designed for daily motion",
-        "color_scheme": "scheme-4",
-        "outer_color_scheme": "",
         "overlay_opacity": 35,
         "desktop_height": 680,
         "mobile_height": 600,
@@ -79,7 +77,6 @@
       ],
       "settings": {
         "accessibility_label": "Product benefits",
-        "color_scheme": "scheme-4",
         "speed": 32,
         "pause_on_hover": true,
         "desktop_height": 60,
@@ -93,15 +90,12 @@
           "type": "direction",
           "settings": {
             "collection": "oasis",
-            "image": "shopify://shop_images/oasis-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/oasis-mb-LR.jpg",
             "title": "OASIS",
             "function_line": "COMFORT RESET",
             "copy": "Easy-on forms for downtime, travel and in-between moments.",
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -109,15 +103,12 @@
           "type": "direction",
           "settings": {
             "collection": "vector",
-            "image": "shopify://shop_images/vector-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/vector-mb-LR.jpg",
             "title": "VECTOR",
             "function_line": "LIGHT MOTION",
             "copy": "Lightweight forms for everyday city movement.",
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -125,15 +116,12 @@
           "type": "direction",
           "settings": {
             "collection": "atlas",
-            "image": "shopify://shop_images/atlas-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/atlas-mb-LR.jpg",
             "title": "ATLAS",
             "function_line": "LONG DAYS",
             "copy": "Structured forms for extended time on foot.",
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -141,15 +129,12 @@
           "type": "direction",
           "settings": {
             "collection": "orbit",
-            "image": "shopify://shop_images/orbit-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/orbit-mb-LR.jpg",
             "title": "ORBIT",
             "function_line": "EVERYDAY RANGE",
             "copy": "Versatile forms for city, travel and weekends.",
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
-            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         },
@@ -157,15 +142,12 @@
           "type": "direction",
           "settings": {
             "collection": "module",
-            "image": "shopify://shop_images/module-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/module-mb-LR.jpg",
             "title": "MODULE",
             "function_line": "SYSTEM UTILITY",
             "copy": "Functional accessories designed around the Tavia system.",
             "link_label": "Explore accessories",
             "link": "",
             "wide_card": true,
-            "color_scheme": "scheme-4",
             "overlay_opacity": 20
           }
         }
@@ -181,7 +163,6 @@
         "eyebrow": "",
         "heading": "SHOP BY DIRECTION.",
         "intro": "Four approaches to movement, designed around different moments of the day.",
-        "color_scheme": "scheme-1",
         "grid_gap": 4,
         "padding_top": 40,
         "padding_bottom": 40
@@ -192,7 +173,6 @@
       "settings": {
         "desktop_image": "shopify://shop_images/Tavia_statement-dp_LR.jpg",
         "mobile_image": "shopify://shop_images/Tavia_statement-mb_LR.jpg",
-        "color_scheme": "scheme-1",
         "overlay_opacity": 40,
         "eyebrow": "01 / The object",
         "heading": "A NEW ERA OF FOOTWEAR, BUILT FROM THE GROUND UP.",
@@ -285,14 +265,11 @@
         "form-3"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
         "heading": "Current forms",
         "link_label": "View all",
         "link": "",
         "enable_quick_add": true,
-        "quick_add_label": "Add to cart",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "quick_add_label": "Add to cart"
       }
     },
     "motion-story": {
@@ -301,22 +278,22 @@
         "motion-1": {
           "type": "feature",
           "settings": {
-            "title": "Long-day comfort",
-            "text": "Balanced support without excess bulk"
+            "title": "Light on foot",
+            "text": "Less visual and physical weight"
           }
         },
         "motion-2": {
           "type": "feature",
           "settings": {
-            "title": "Natural motion",
-            "text": "Geometry flexes as the foot moves"
+            "title": "Open structure",
+            "text": "Air can move through the form"
           }
         },
         "motion-3": {
           "type": "feature",
           "settings": {
-            "title": "Clear purpose",
-            "text": "Every line has a function"
+            "title": "Simple care",
+            "text": "Rinse, air dry, repeat"
           }
         }
       },
@@ -327,22 +304,18 @@
       ],
       "settings": {
         "theme": "light",
-        "color_scheme": "scheme-1",
         "image_position": "left",
-        "image": "shopify://shop_images/Why_tavia-dp-LR.jpg",
-        "mobile_image": "shopify://shop_images/Why_tavia-mb-LR.jpg",
+        "image": "shopify://shop_images/6ef9aea53ee7cacd2965168371013bc0.png",
         "desktop_image_height": 680,
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "Tavia / Designed for daily motion",
-        "eyebrow": "02 / Why Tavia",
-        "heading": "BUILT AROUND\nREAL MOVEMENT.",
-        "copy": "Tavia is designed for the hours between destinations—commutes, studio floors, long shifts and everything after. Lightweight, adaptable forms deliver lasting ease without unnecessary complexity.",
-        "link_label": "Discover Tavia",
-        "link": "",
-        "padding_top": 10,
-        "padding_bottom": 20
+        "image_caption": "Lifestyle study / Full shift / City",
+        "eyebrow": "",
+        "heading": "MADE TO STAY\nIN MOTION.",
+        "copy": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you.",
+        "link_label": "See how it feels",
+        "link": ""
       }
     },
     "technology-story": {
@@ -351,22 +324,22 @@
         "technology-1": {
           "type": "feature",
           "settings": {
-            "title": "Tuned response",
-            "text": "Different zones can flex and support differently"
+            "title": "01",
+            "text": "Open lattice airflow"
           }
         },
         "technology-2": {
           "type": "feature",
           "settings": {
-            "title": "One continuous form",
-            "text": "Structure replaces separate assembled layers"
+            "title": "02",
+            "text": "Responsive geometry"
           }
         },
         "technology-3": {
           "type": "feature",
           "settings": {
-            "title": "Open geometry",
-            "text": "Airflow is designed into the form"
+            "title": "03",
+            "text": "Single-piece construction"
           }
         }
       },
@@ -376,23 +349,19 @@
         "technology-3"
       ],
       "settings": {
-        "theme": "light",
-        "color_scheme": "scheme-4",
+        "theme": "dark",
         "image_position": "right",
         "image": "shopify://shop_images/Why_3d-dp-LR.jpg",
-        "mobile_image": "shopify://shop_images/Why_3d-mb-LR.jpg",
         "desktop_image_height": 640,
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "3D printed / One continuous structure",
-        "eyebrow": "03 / Why 3D printing",
-        "heading": "CONTROL AT THE\nLEVEL OF STRUCTURE.",
-        "copy": "3D printing lets us shape cushioning, flexibility and airflow directly into the geometry of the shoe. Thousands of connected cells become one continuous form—precisely tuned, without traditional layers or assembly.",
-        "link_label": "Explore the process",
-        "link": "",
-        "padding_top": 20,
-        "padding_bottom": 10
+        "image_caption": "Lattice response / Product study",
+        "eyebrow": "02 / How it is made",
+        "heading": "PRINTED,\nNOT ASSEMBLED.",
+        "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.",
+        "link_label": "Explore the technology",
+        "link": ""
       }
     }
   },
