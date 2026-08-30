@@ -302,7 +302,7 @@
           "type": "feature",
           "settings": {
             "title": "Long-day comfort",
-            "text": "Balanced support without excess bulk"
+            "text": "Balanced ease for extended time on foot"
           }
         },
         "motion-2": {
@@ -315,8 +315,8 @@
         "motion-3": {
           "type": "feature",
           "settings": {
-            "title": "Clear purpose",
-            "text": "Every line has a function"
+            "title": "Recovery moments",
+            "text": "Easy, open forms for rest and reset"
           }
         }
       },
@@ -335,10 +335,10 @@
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "Tavia / Designed for daily motion",
+        "image_caption": "Movement / Long days / Recovery",
         "eyebrow": "02 / Why Tavia",
-        "heading": "BUILT AROUND\nREAL MOVEMENT.",
-        "copy": "Tavia is designed for the hours between destinations—commutes, studio floors, long shifts and everything after. Lightweight, adaptable forms deliver lasting ease without unnecessary complexity.",
+        "heading": "BUILT FOR MOTION.\nMADE FOR RECOVERY.",
+        "copy": "Tavia is designed around the full rhythm of the day—from long hours on your feet to the moments when you slow down and reset. Lightweight, adaptable forms bring ease to daily movement, extended wear and everyday recovery.",
         "link_label": "Discover Tavia",
         "link": "",
         "padding_top": 100,
