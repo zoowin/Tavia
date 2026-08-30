@@ -767,6 +767,26 @@
   .template-index {
     --tavia-gutter: 5rem;
   }
+
+  .tavia-directions__inner {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tavia-directions__header {
+    margin-left: var(--tavia-gutter);
+    margin-right: var(--tavia-gutter);
+  }
+
+  .tavia-products {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tavia-products__header {
+    margin-left: var(--tavia-gutter);
+    margin-right: var(--tavia-gutter);
+  }
 }
 
 .tavia-story--reverse .tavia-story__media {
