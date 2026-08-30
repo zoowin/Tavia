@@ -158,6 +158,8 @@
           "type": "direction",
           "settings": {
             "collection": "module",
+            "image": "shopify://shop_images/module-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/module-mb-LR.jpg",
             "title": "MODULE",
             "function_line": "SYSTEM UTILITY",
             "copy": "Functional accessories designed around the Tavia system.",
