@@ -300,22 +300,22 @@
         "motion-1": {
           "type": "feature",
           "settings": {
-            "title": "Light on foot",
-            "text": "Less visual and physical weight"
+            "title": "Long-day comfort",
+            "text": "Balanced support without excess bulk"
           }
         },
         "motion-2": {
           "type": "feature",
           "settings": {
-            "title": "Open structure",
-            "text": "Air can move through the form"
+            "title": "Natural motion",
+            "text": "Geometry flexes as the foot moves"
           }
         },
         "motion-3": {
           "type": "feature",
           "settings": {
-            "title": "Simple care",
-            "text": "Rinse, air dry, repeat"
+            "title": "Clear purpose",
+            "text": "Every line has a function"
           }
         }
       },
@@ -332,11 +332,11 @@
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "Lifestyle study / Full shift / City",
-        "eyebrow": "",
-        "heading": "MADE TO STAY\nIN MOTION.",
-        "copy": "For commutes, studio floors, long shifts and the hours in between. The structure is designed to move with you.",
-        "link_label": "See how it feels",
+        "image_caption": "Tavia / Designed for daily motion",
+        "eyebrow": "02 / Why Tavia",
+        "heading": "BUILT AROUND\nREAL MOVEMENT.",
+        "copy": "Tavia is designed for the hours between destinations—commutes, studio floors, long shifts and everything after. Lightweight, adaptable forms deliver lasting ease without unnecessary complexity.",
+        "link_label": "Discover Tavia",
         "link": "",
         "padding_top": 100,
         "padding_bottom": 100
@@ -348,22 +348,22 @@
         "technology-1": {
           "type": "feature",
           "settings": {
-            "title": "01",
-            "text": "Open lattice airflow"
+            "title": "Tuned response",
+            "text": "Different zones can flex and support differently"
           }
         },
         "technology-2": {
           "type": "feature",
           "settings": {
-            "title": "02",
-            "text": "Responsive geometry"
+            "title": "One continuous form",
+            "text": "Structure replaces separate assembled layers"
           }
         },
         "technology-3": {
           "type": "feature",
           "settings": {
-            "title": "03",
-            "text": "Single-piece construction"
+            "title": "Open geometry",
+            "text": "Airflow is designed into the form"
           }
         }
       },
@@ -380,11 +380,11 @@
         "desktop_image_position": "50% 50%",
         "mobile_image_height": 460,
         "mobile_image_position": "50% 50%",
-        "image_caption": "Lattice response / Product study",
-        "eyebrow": "02 / How it is made",
-        "heading": "PRINTED,\nNOT ASSEMBLED.",
-        "copy": "Thousands of connected cells flex and recover as the foot moves. Structure replaces a traditional stack of separate parts.",
-        "link_label": "Explore the technology",
+        "image_caption": "3D printed / One continuous structure",
+        "eyebrow": "03 / Why 3D printing",
+        "heading": "CONTROL AT THE\nLEVEL OF STRUCTURE.",
+        "copy": "3D printing lets us shape cushioning, flexibility and airflow directly into the geometry of the shoe. Thousands of connected cells become one continuous form—precisely tuned, without traditional layers or assembly.",
+        "link_label": "Explore the process",
         "link": "",
         "padding_top": 100,
         "padding_bottom": 100
