@@ -14,6 +14,10 @@
       "blocks": {
         "title": {
           "type": "title",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
           "settings": {
             "show_preview_rating": true,
             "preview_rating": 4.8,
@@ -42,6 +46,7 @@
       },
       "block_order": [
         "title",
+        "rating",
         "price",
         "variant_picker",
         "quantity_selector_XWCHPk",

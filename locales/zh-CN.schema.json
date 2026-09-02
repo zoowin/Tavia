@@ -1835,19 +1835,7 @@
           "name": "弹出窗口"
         },
         "title": {
-          "name": "标题",
-          "settings": {
-            "show_preview_rating": {
-              "label": "显示预览评分",
-              "info": "商品没有真实评分时，仅在主题编辑器中显示。"
-            },
-            "preview_rating": {
-              "label": "预览星级"
-            },
-            "preview_rating_count": {
-              "label": "预览评论数"
-            }
-          }
+          "name": "标题"
         },
         "price": {
           "name": "价格"
@@ -1864,8 +1852,15 @@
         "rating": {
           "name": "产品评分",
           "settings": {
-            "paragraph": {
-              "content": "需要一个应用来进行产品评分。[详细了解](https://help.shopify.com/manual/online-store/themes/theme-structure/page-types/product-pages#product-rating-block)"
+            "show_preview_rating": {
+              "label": "显示模拟评分",
+              "info": "商品没有真实评分时，仅在主题编辑器中显示。"
+            },
+            "preview_rating": {
+              "label": "模拟星级"
+            },
+            "preview_rating_count": {
+              "label": "模拟评论数"
             }
           }
         },

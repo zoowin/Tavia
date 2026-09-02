@@ -1946,19 +1946,7 @@
           }
         },
         "title": {
-          "name": "Title",
-          "settings": {
-            "show_preview_rating": {
-              "label": "Show preview rating",
-              "info": "Shown only in the theme editor when the product has no real rating."
-            },
-            "preview_rating": {
-              "label": "Preview rating"
-            },
-            "preview_rating_count": {
-              "label": "Preview review count"
-            }
-          }
+          "name": "Title"
         },
         "price": {
           "name": "Price"
@@ -2226,8 +2214,15 @@
         "rating": {
           "name": "Product rating",
           "settings": {
-            "paragraph": {
-              "content": "An app is required for product ratings. [Learn more](https://help.shopify.com/manual/online-store/themes/theme-structure/page-types/product-pages#product-rating-block)"
+            "show_preview_rating": {
+              "label": "Show sample rating",
+              "info": "Shown only in the theme editor when the product has no real rating."
+            },
+            "preview_rating": {
+              "label": "Sample rating"
+            },
+            "preview_rating_count": {
+              "label": "Sample review count"
             }
           }
         },
