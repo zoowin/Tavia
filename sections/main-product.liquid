@@ -756,8 +756,8 @@
   .tavia-buybox {
     --tavia-buybox-line: rgba(var(--color-foreground), 0.16);
     --tavia-buybox-muted: rgba(var(--color-foreground), 0.62);
-    margin-left: auto;
-    max-width: 46rem;
+    margin-left: 0;
+    max-width: none;
     padding-bottom: 3rem;
   }
 
@@ -778,8 +778,9 @@
 
   .tavia-product-topline {
     display: block;
-    margin: 0 0 2.4rem auto;
-    max-width: 46rem;
+    margin: 0 0 2.4rem;
+    max-width: none;
+    text-align: left;
     width: 100%;
   }
 
@@ -805,7 +806,7 @@
     white-space: nowrap;
   }
 
-  .tavia-product-topline__rating .rating-star {
+  .tavia-product-layout .tavia-product-topline__rating .rating-star {
     --font-size: 1.25;
     --letter-spacing: 0.35;
   }
@@ -1020,7 +1021,7 @@
 
     .product--medium:not(.product--no-media) .product__info-wrapper {
       max-width: 40%;
-      padding-left: clamp(4rem, 5vw, 8rem);
+      padding-left: clamp(2rem, 2.5vw, 4rem);
       width: 40%;
     }
 
@@ -1038,7 +1039,10 @@
     }
 
     .tavia-product-topline .product__title h1 {
-      font-size: clamp(2.6rem, 8vw, 3.4rem);
+      font-size: clamp(2.4rem, 7vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      text-align: left;
     }
 
     .tavia-product-topline {
