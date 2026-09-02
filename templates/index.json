@@ -194,24 +194,24 @@
           "type": "comparison_row",
           "settings": {
             "criterion": "01 / AIRFLOW",
-            "left_text": "Open lattice geometry lets air move through the form.",
-            "right_text": "Closed layers can retain more heat around the foot."
+            "left_text": "Open structure lets air flow through,\nkeeping feet cooler and drier.",
+            "right_text": "Closed layers trap heat,\nleaving feet warmer and sweatier."
           }
         },
         "comparison_row_YPb6zG": {
           "type": "comparison_row",
           "settings": {
-            "criterion": "02 / ZONED RESPONSE",
-            "left_text": "Zoned geometry can tune softness and support by area.",
-            "right_text": "Uniform construction offers less zone-specific control."
+            "criterion": "02 / ZONED CUSHIONING",
+            "left_text": "Zoned structure softens landings\nand supports each step.",
+            "right_text": "One uniform layer compromises\ncushioning and support."
           }
         },
         "comparison_row_q9pxqf": {
           "type": "comparison_row",
           "settings": {
             "criterion": "03 / NATURAL FLEX",
-            "left_text": "Flexible cells can move with the foot.",
-            "right_text": "Fixed layered construction can feel more rigid."
+            "left_text": "Flexes with your foot, so every step\nfeels more natural.",
+            "right_text": "Fixed layers resist your movement,\nmaking each step feel stiffer."
           }
         }
       },
