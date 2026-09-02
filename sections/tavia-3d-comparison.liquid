@@ -93,19 +93,49 @@
       </div>
 
       {%- if section.blocks.size > 0 -%}
-        <div class="tavia-comparison__rows">
-          {%- for block in section.blocks -%}
-            <div class="tavia-comparison__row" {{ block.shopify_attributes }}>
-              <div class="tavia-comparison__cell color-{{ section.settings.left_color_scheme }} gradient">
-                <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-                <p>{{ block.settings.left_text | escape }}</p>
+        <div class="tavia-comparison__table" role="table" aria-label="{{ section.settings.comparison_label | escape }}">
+          <div class="tavia-comparison__table-header" role="row">
+            <span role="columnheader">{{ section.settings.item_column_label | escape }}</span>
+            <span class="color-{{ section.settings.left_color_scheme }} gradient" role="columnheader">
+              {{ section.settings.left_short_label | default: section.settings.left_title | escape }}
+            </span>
+            <span class="color-{{ section.settings.right_color_scheme }} gradient" role="columnheader">
+              {{ section.settings.right_short_label | default: section.settings.right_title | escape }}
+            </span>
+          </div>
+          <div class="tavia-comparison__rows" role="rowgroup">
+            {%- for block in section.blocks -%}
+              <div class="tavia-comparison__row" role="row" {{ block.shopify_attributes }}>
+                <div class="tavia-comparison__feature" role="rowheader">
+                  <span class="tavia-comparison__feature-icon" aria-hidden="true">
+                    {%- if block.settings.icon != blank -%}
+                      {{
+                        block.settings.icon
+                        | image_url: width: 96
+                        | image_tag:
+                          class: 'tavia-comparison__feature-image',
+                          widths: '32, 48, 64, 96',
+                          sizes: '40px',
+                          loading: 'lazy',
+                          alt: ''
+                      }}
+                    {%- else -%}
+                      <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                    {%- endif -%}
+                  </span>
+                  <span class="tavia-comparison__feature-name">
+                    {{ block.settings.criterion | default: section.settings.item_column_label | escape }}
+                  </span>
+                </div>
+                <div class="tavia-comparison__cell color-{{ section.settings.left_color_scheme }} gradient" role="cell">
+                  <p>{{ block.settings.left_text | escape }}</p>
+                </div>
+                <div class="tavia-comparison__cell color-{{ section.settings.right_color_scheme }} gradient" role="cell">
+                  <p>{{ block.settings.right_text | escape }}</p>
+                </div>
               </div>
-              <div class="tavia-comparison__cell color-{{ section.settings.right_color_scheme }} gradient">
-                <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-                <p>{{ block.settings.right_text | escape }}</p>
-              </div>
-            </div>
-          {%- endfor -%}
+            {%- endfor -%}
+          </div>
         </div>
       {%- endif -%}
     </div>
@@ -171,7 +201,33 @@
       {%- if section.blocks.size > 0 -%}
         <div class="tavia-comparison__mobile-rows">
           {%- for block in section.blocks -%}
-            <div class="tavia-comparison__mobile-row" {{ block.shopify_attributes }}>
+            <div
+              class="tavia-comparison__mobile-row"
+              role="group"
+              aria-label="{{ block.settings.criterion | default: section.settings.item_column_label | escape }}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="tavia-comparison__mobile-feature">
+                <span class="tavia-comparison__feature-icon" aria-hidden="true">
+                  {%- if block.settings.icon != blank -%}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 96
+                      | image_tag:
+                        class: 'tavia-comparison__feature-image',
+                        widths: '32, 48, 64, 96',
+                        sizes: '40px',
+                        loading: 'lazy',
+                        alt: ''
+                    }}
+                  {%- else -%}
+                    <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                  {%- endif -%}
+                </span>
+                <span class="tavia-comparison__feature-name">
+                  {{ block.settings.criterion | default: section.settings.item_column_label | escape }}
+                </span>
+              </div>
               <div class="tavia-comparison__mobile-cell color-{{ section.settings.left_color_scheme }} gradient">
                 <span>{{ section.settings.left_short_label | default: section.settings.left_title | escape }}</span>
                 <p>{{ block.settings.left_text | escape }}</p>
@@ -218,6 +274,8 @@
 
   .tavia-comparison__eyebrow,
   .tavia-comparison__index,
+  .tavia-comparison__table-header,
+  .tavia-comparison__feature-name,
   .tavia-comparison__mobile-cell > span {
     font-family: var(--font-mono-family);
     font-size: 10px;
@@ -345,25 +403,68 @@
     z-index: 2;
   }
 
+  .tavia-comparison__table {
+    border-top: 1px solid rgba(var(--color-foreground), 0.18);
+  }
+
+  .tavia-comparison__table-header,
   .tavia-comparison__row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(190px, 0.62fr) repeat(2, minmax(0, 1fr));
+  }
+
+  .tavia-comparison__table-header {
+    min-height: 54px;
+  }
+
+  .tavia-comparison__table-header > span {
+    align-items: center;
+    background: var(--gradient-background);
+    color: rgb(var(--color-foreground));
+    display: flex;
+    padding: 14px clamp(20px, 2.5vw, 40px);
+  }
+
+  .tavia-comparison__table-header > span + span {
+    border-left: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .tavia-comparison__row {
+    border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    min-height: 104px;
+  }
+
+  .tavia-comparison__feature {
+    align-items: center;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    padding: 20px clamp(20px, 2.5vw, 40px);
+  }
+
+  .tavia-comparison__feature-icon {
+    align-items: center;
+    border: 1px solid currentColor;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+
+  .tavia-comparison__feature-image {
+    display: block;
+    height: 28px !important;
+    object-fit: contain;
+    width: 28px;
   }
 
   .tavia-comparison__cell {
     align-items: center;
     background: var(--gradient-background);
-    border-top: 1px solid rgba(var(--color-foreground), 0.18);
-    color: rgb(var(--color-foreground));
-    display: grid;
-    gap: 24px;
-    grid-template-columns: 36px minmax(0, 1fr);
-    min-height: 88px;
-    padding: 20px clamp(28px, 4vw, 64px);
-  }
-
-  .tavia-comparison__cell + .tavia-comparison__cell {
     border-left: 1px solid rgba(var(--color-foreground), 0.2);
+    color: rgb(var(--color-foreground));
+    display: flex;
+    padding: 20px clamp(20px, 2.5vw, 40px);
   }
 
   .tavia-comparison__cell p {
@@ -375,11 +476,10 @@
 
   .tavia-comparison__index {
     align-items: center;
-    border: 1px solid currentColor;
     display: flex;
-    height: 32px;
+    height: 100%;
     justify-content: center;
-    width: 32px;
+    width: 100%;
   }
 
   .tavia-comparison__mobile {
@@ -545,6 +645,18 @@
       border-top: 1px solid rgba(var(--color-foreground), 0.18);
     }
 
+    .tavia-comparison__mobile-feature {
+      align-items: center;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 40px minmax(0, 1fr);
+      padding: 18px 16px;
+    }
+
+    .tavia-comparison__mobile-feature .tavia-comparison__feature-name {
+      font-size: 11px;
+    }
+
     .tavia-comparison__mobile-cell {
       background: var(--gradient-background);
       color: rgb(var(--color-foreground));
@@ -555,6 +667,10 @@
     }
 
     .tavia-comparison__mobile-cell + .tavia-comparison__mobile-cell {
+      border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    }
+
+    .tavia-comparison__mobile-feature + .tavia-comparison__mobile-cell {
       border-top: 1px solid rgba(var(--color-foreground), 0.18);
     }
 
@@ -607,10 +723,11 @@
     { "type": "text", "id": "comparison_label", "label": "Comparison accessibility label", "default": "3D-printed and traditional footwear comparison" },
     { "type": "text", "id": "vs_label", "label": "Center label", "default": "VS" },
     { "type": "range", "id": "comparison_title_size", "label": "Comparison title size", "min": 24, "max": 56, "step": 2, "unit": "px", "default": 40 },
+    { "type": "text", "id": "item_column_label", "label": "Comparison item column label", "default": "Feature" },
     { "type": "header", "content": "3D-printed side" },
     { "type": "color_scheme", "id": "left_color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "textarea", "id": "left_title", "label": "Title", "default": "3D-PRINTED\nFOOTWEAR" },
-    { "type": "text", "id": "left_short_label", "label": "Mobile label", "default": "3D printed" },
+    { "type": "text", "id": "left_short_label", "label": "Short column label", "default": "3D printed" },
     { "type": "image_picker", "id": "left_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
     { "type": "image_picker", "id": "left_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
     { "type": "text", "id": "left_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
@@ -618,7 +735,7 @@
     { "type": "header", "content": "Traditional side" },
     { "type": "color_scheme", "id": "right_color_scheme", "label": "Color scheme", "default": "scheme-3" },
     { "type": "textarea", "id": "right_title", "label": "Title", "default": "TRADITIONAL\nFOOTWEAR" },
-    { "type": "text", "id": "right_short_label", "label": "Mobile label", "default": "Traditional" },
+    { "type": "text", "id": "right_short_label", "label": "Short column label", "default": "Traditional" },
     { "type": "image_picker", "id": "right_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
     { "type": "image_picker", "id": "right_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
     { "type": "text", "id": "right_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
@@ -634,8 +751,10 @@
   "blocks": [
     {
       "type": "comparison_row",
-      "name": "Comparison row",
+      "name": "Comparison item",
       "settings": [
+        { "type": "image_picker", "id": "icon", "label": "Icon", "info": "Recommended: square PNG or SVG with a transparent background." },
+        { "type": "text", "id": "criterion", "label": "Comparison item", "default": "Airflow" },
         { "type": "textarea", "id": "left_text", "label": "3D-printed text", "default": "Open lattice geometry lets air move through the form." },
         { "type": "textarea", "id": "right_text", "label": "Traditional text", "default": "Closed layers can retain more heat around the foot." }
       ]
@@ -645,9 +764,9 @@
     {
       "name": "Tavia 3D comparison",
       "blocks": [
-        { "type": "comparison_row", "settings": { "left_text": "Open lattice geometry lets air move through the form.", "right_text": "Closed layers can retain more heat around the foot." } },
-        { "type": "comparison_row", "settings": { "left_text": "Zoned geometry can tune softness and support by area.", "right_text": "Uniform construction offers less zone-specific control." } },
-        { "type": "comparison_row", "settings": { "left_text": "Flexible cells can move with the foot.", "right_text": "Fixed layered construction can feel more rigid." } }
+        { "type": "comparison_row", "settings": { "criterion": "Airflow", "left_text": "Open lattice lets air move through the structure.", "right_text": "Closed material layers retain more heat." } },
+        { "type": "comparison_row", "settings": { "criterion": "Zoned response", "left_text": "Cell geometry can be tuned by zone.", "right_text": "Uniform construction offers less zone-specific control." } },
+        { "type": "comparison_row", "settings": { "criterion": "Natural flex", "left_text": "Connected cells flex with the foot.", "right_text": "Bonded layers can resist natural flex." } }
       ]
     }
   ]

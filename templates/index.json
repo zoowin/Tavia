@@ -193,22 +193,25 @@
         "comparison_row_HQ8ErK": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "Open lattice geometry lets air move through the form.",
-            "right_text": "Closed layers can retain more heat around the foot."
+            "criterion": "Airflow",
+            "left_text": "Open lattice lets air move through the structure.",
+            "right_text": "Closed material layers retain more heat."
           }
         },
         "comparison_row_YPb6zG": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "Zoned geometry can tune softness and support by area.",
+            "criterion": "Zoned response",
+            "left_text": "Cell geometry can be tuned by zone.",
             "right_text": "Uniform construction offers less zone-specific control."
           }
         },
         "comparison_row_q9pxqf": {
           "type": "comparison_row",
           "settings": {
-            "left_text": "Flexible cells can move with the foot.",
-            "right_text": "Fixed layered construction can feel more rigid."
+            "criterion": "Natural flex",
+            "left_text": "Connected cells flex with the foot.",
+            "right_text": "Bonded layers can resist natural flex."
           }
         }
       },
@@ -228,6 +231,7 @@
         "comparison_label": "3D-printed and traditional footwear comparison",
         "vs_label": "VS",
         "comparison_title_size": 40,
+        "item_column_label": "Feature",
         "left_color_scheme": "",
         "left_title": "3D-PRINTED\nFOOTWEAR",
         "left_short_label": "3D printed",
