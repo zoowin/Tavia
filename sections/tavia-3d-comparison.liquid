@@ -1,0 +1,652 @@
+{%- liquid
+  assign left_image = section.settings.left_image
+  assign right_image = section.settings.right_image
+  assign left_mobile_image = section.settings.left_mobile_image | default: left_image
+  assign right_mobile_image = section.settings.right_mobile_image | default: right_image
+  assign left_alt = left_image.alt | default: section.settings.left_title
+  assign right_alt = right_image.alt | default: section.settings.right_title
+  assign left_mobile_alt = left_mobile_image.alt | default: section.settings.left_title
+  assign right_mobile_alt = right_mobile_image.alt | default: section.settings.right_title
+-%}
+
+<section
+  class="tavia-comparison color-{{ section.settings.color_scheme }} gradient"
+  style="
+    --tavia-comparison-padding-top: {{ section.settings.padding_top }}px;
+    --tavia-comparison-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --tavia-comparison-desktop-height: {{ section.settings.desktop_image_height }}px;
+    --tavia-comparison-mobile-height: {{ section.settings.mobile_image_height }}px;
+    --tavia-comparison-left-position: {{ section.settings.left_image_position }};
+    --tavia-comparison-right-position: {{ section.settings.right_image_position }};
+    --tavia-comparison-left-mobile-position: {{ section.settings.left_mobile_image_position }};
+    --tavia-comparison-right-mobile-position: {{ section.settings.right_mobile_image_position }};
+  "
+>
+  <div class="tavia-comparison__inner">
+    <header class="tavia-comparison__header">
+      <div class="tavia-comparison__heading-group">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tavia-comparison__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tavia-comparison__heading">{{ section.settings.heading | escape | newline_to_br }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.intro != blank or section.settings.link_label != blank -%}
+        <div class="tavia-comparison__header-copy">
+          {%- if section.settings.intro != blank -%}
+            <p>{{ section.settings.intro | escape | newline_to_br }}</p>
+          {%- endif -%}
+          {%- if section.settings.link_label != blank -%}
+            <a href="{{ section.settings.link | default: routes.all_products_collection_url }}">
+              {{ section.settings.link_label | escape }} ↗
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </header>
+
+    <div class="tavia-comparison__desktop" role="group" aria-label="{{ section.settings.comparison_label | escape }}">
+      <div class="tavia-comparison__visuals">
+        <article class="tavia-comparison__visual color-{{ section.settings.left_color_scheme }} gradient">
+          <h3>{{ section.settings.left_title | escape | newline_to_br }}</h3>
+          <div class="tavia-comparison__media">
+            {%- if left_image != blank -%}
+              {{
+                left_image
+                | image_url: width: 2000
+                | image_tag:
+                  class: 'tavia-comparison__image tavia-comparison__image--left',
+                  widths: '600, 900, 1200, 1600, 2000',
+                  sizes: '(min-width: 990px) 50vw, 100vw',
+                  loading: 'lazy',
+                  alt: left_alt
+              }}
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'tavia-comparison__placeholder' }}
+            {%- endif -%}
+          </div>
+        </article>
+
+        <article class="tavia-comparison__visual color-{{ section.settings.right_color_scheme }} gradient">
+          <h3>{{ section.settings.right_title | escape | newline_to_br }}</h3>
+          <div class="tavia-comparison__media">
+            {%- if right_image != blank -%}
+              {{
+                right_image
+                | image_url: width: 2000
+                | image_tag:
+                  class: 'tavia-comparison__image tavia-comparison__image--right',
+                  widths: '600, 900, 1200, 1600, 2000',
+                  sizes: '(min-width: 990px) 50vw, 100vw',
+                  loading: 'lazy',
+                  alt: right_alt
+              }}
+            {%- else -%}
+              {{ 'product-2' | placeholder_svg_tag: 'tavia-comparison__placeholder' }}
+            {%- endif -%}
+          </div>
+        </article>
+
+        <span class="tavia-comparison__vs" aria-hidden="true">{{ section.settings.vs_label | escape }}</span>
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="tavia-comparison__rows">
+          {%- for block in section.blocks -%}
+            <div class="tavia-comparison__row" {{ block.shopify_attributes }}>
+              <div class="tavia-comparison__cell color-{{ section.settings.left_color_scheme }} gradient">
+                <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                <p>{{ block.settings.left_text | escape }}</p>
+              </div>
+              <div class="tavia-comparison__cell color-{{ section.settings.right_color_scheme }} gradient">
+                <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                <p>{{ block.settings.right_text | escape }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <tavia-comparison class="tavia-comparison__mobile" style="--comparison-position: 50%;">
+      <div class="tavia-comparison__mobile-stage">
+        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--after">
+          {%- if right_mobile_image != blank -%}
+            {{
+              right_mobile_image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'tavia-comparison__mobile-image tavia-comparison__mobile-image--right',
+                widths: '375, 550, 750, 900, 1200',
+                sizes: '100vw',
+                loading: 'lazy',
+                alt: right_mobile_alt
+            }}
+          {%- else -%}
+            {{ 'product-2' | placeholder_svg_tag: 'tavia-comparison__mobile-image tavia-comparison__placeholder' }}
+          {%- endif -%}
+        </div>
+
+        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--before">
+          {%- if left_mobile_image != blank -%}
+            {{
+              left_mobile_image
+              | image_url: width: 1200
+              | image_tag:
+                class: 'tavia-comparison__mobile-image tavia-comparison__mobile-image--left',
+                widths: '375, 550, 750, 900, 1200',
+                sizes: '100vw',
+                loading: 'lazy',
+                alt: left_mobile_alt
+            }}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'tavia-comparison__mobile-image tavia-comparison__placeholder' }}
+          {%- endif -%}
+        </div>
+
+        <span class="tavia-comparison__mobile-label tavia-comparison__mobile-label--left color-{{ section.settings.left_color_scheme }}">
+          {{ section.settings.left_short_label | default: section.settings.left_title | escape }}
+        </span>
+        <span class="tavia-comparison__mobile-label tavia-comparison__mobile-label--right color-{{ section.settings.right_color_scheme }}">
+          {{ section.settings.right_short_label | default: section.settings.right_title | escape }}
+        </span>
+
+        <input
+          class="tavia-comparison__range"
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          step="1"
+          aria-label="{{ section.settings.slider_label | escape }}"
+          data-comparison-range
+        >
+        <span class="tavia-comparison__divider" aria-hidden="true">
+          <span class="tavia-comparison__handle"><span>←</span><span>→</span></span>
+        </span>
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="tavia-comparison__mobile-rows">
+          {%- for block in section.blocks -%}
+            <div class="tavia-comparison__mobile-row" {{ block.shopify_attributes }}>
+              <div class="tavia-comparison__mobile-cell color-{{ section.settings.left_color_scheme }} gradient">
+                <span>{{ section.settings.left_short_label | default: section.settings.left_title | escape }}</span>
+                <p>{{ block.settings.left_text | escape }}</p>
+              </div>
+              <div class="tavia-comparison__mobile-cell color-{{ section.settings.right_color_scheme }} gradient">
+                <span>{{ section.settings.right_short_label | default: section.settings.right_title | escape }}</span>
+                <p>{{ block.settings.right_text | escape }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </tavia-comparison>
+  </div>
+</section>
+
+{% stylesheet %}
+  .tavia-comparison {
+    background: var(--gradient-background);
+    color: rgb(var(--color-foreground));
+    padding: var(--tavia-comparison-padding-top, 80px) 0 var(--tavia-comparison-padding-bottom, 80px);
+  }
+
+  .tavia-comparison,
+  .tavia-comparison * {
+    box-sizing: border-box;
+  }
+
+  .tavia-comparison__inner {
+    margin: 0 auto;
+    max-width: var(--page-width);
+    width: 100%;
+  }
+
+  .tavia-comparison__header {
+    align-items: end;
+    border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    display: grid;
+    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+    margin: 0 50px;
+    padding: 30px 0 40px;
+  }
+
+  .tavia-comparison__eyebrow,
+  .tavia-comparison__index,
+  .tavia-comparison__mobile-cell > span {
+    font-family: var(--font-mono-family);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: var(--tavia-tracking-label, 0.08em);
+    line-height: 1.5;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .tavia-comparison__eyebrow {
+    margin-bottom: 20px;
+  }
+
+  .tavia-comparison__heading {
+    color: inherit;
+    font-family: inherit;
+    font-size: clamp(34px, 4vw, 58px);
+    font-weight: 650;
+    letter-spacing: var(--tavia-tracking-display, -0.025em);
+    line-height: 1.04;
+    margin: 0;
+    max-width: 760px;
+    text-transform: uppercase;
+  }
+
+  .tavia-comparison__header-copy {
+    font-size: 16px;
+    letter-spacing: var(--tavia-tracking-body, 0.01em);
+    line-height: 1.65;
+  }
+
+  .tavia-comparison__header-copy p {
+    margin: 0;
+  }
+
+  .tavia-comparison__header-copy a {
+    border-bottom: 1px solid currentColor;
+    color: inherit;
+    display: inline-block;
+    font-family: var(--font-mono-family);
+    font-size: 10px;
+    letter-spacing: var(--tavia-tracking-label, 0.08em);
+    margin-top: 24px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .tavia-comparison__desktop {
+    position: relative;
+  }
+
+  .tavia-comparison__visuals {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    position: relative;
+  }
+
+  .tavia-comparison__visual {
+    background: var(--gradient-background);
+    color: rgb(var(--color-foreground));
+    min-width: 0;
+    padding: clamp(28px, 3.2vw, 52px) clamp(28px, 4vw, 64px) 0;
+  }
+
+  .tavia-comparison__visual + .tavia-comparison__visual {
+    border-left: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .tavia-comparison__visual h3 {
+    color: inherit;
+    font-family: inherit;
+    font-size: clamp(34px, 3.4vw, 54px);
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    line-height: 0.98;
+    margin: 0 0 24px;
+    max-width: 520px;
+    text-transform: uppercase;
+  }
+
+  .tavia-comparison__media {
+    height: var(--tavia-comparison-desktop-height, 520px);
+    overflow: hidden;
+  }
+
+  .tavia-comparison__image,
+  .tavia-comparison__placeholder {
+    display: block;
+    height: 100% !important;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .tavia-comparison__image--left {
+    object-position: var(--tavia-comparison-left-position, 50% 50%);
+  }
+
+  .tavia-comparison__image--right {
+    object-position: var(--tavia-comparison-right-position, 50% 50%);
+  }
+
+  .tavia-comparison__placeholder {
+    background: rgb(var(--color-background));
+    color: rgba(var(--color-foreground), 0.22);
+  }
+
+  .tavia-comparison__vs {
+    align-items: center;
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+    display: flex;
+    font-family: var(--font-mono-family);
+    font-size: 11px;
+    height: 48px;
+    justify-content: center;
+    left: 50%;
+    letter-spacing: 0.06em;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    z-index: 2;
+  }
+
+  .tavia-comparison__row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tavia-comparison__cell {
+    align-items: center;
+    background: var(--gradient-background);
+    border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    color: rgb(var(--color-foreground));
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 36px minmax(0, 1fr);
+    min-height: 88px;
+    padding: 20px clamp(28px, 4vw, 64px);
+  }
+
+  .tavia-comparison__cell + .tavia-comparison__cell {
+    border-left: 1px solid rgba(var(--color-foreground), 0.2);
+  }
+
+  .tavia-comparison__cell p {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    max-width: 480px;
+  }
+
+  .tavia-comparison__index {
+    align-items: center;
+    border: 1px solid currentColor;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    width: 32px;
+  }
+
+  .tavia-comparison__mobile {
+    display: none;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .tavia-comparison__header {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .tavia-comparison__header {
+      display: block;
+      margin: 0 16px;
+      padding: 24px 0 30px;
+    }
+
+    .tavia-comparison__eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .tavia-comparison__heading {
+      font-size: clamp(30px, 10vw, 40px);
+      line-height: 1;
+    }
+
+    .tavia-comparison__header-copy {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    .tavia-comparison__desktop {
+      display: none;
+    }
+
+    .tavia-comparison__mobile {
+      display: block;
+    }
+
+    .tavia-comparison__mobile-stage {
+      height: var(--tavia-comparison-mobile-height, 500px);
+      overflow: hidden;
+      position: relative;
+      touch-action: pan-y;
+    }
+
+    .tavia-comparison__mobile-layer,
+    .tavia-comparison__mobile-image {
+      height: 100% !important;
+      inset: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .tavia-comparison__mobile-layer--before {
+      clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+      z-index: 1;
+    }
+
+    .tavia-comparison__mobile-image {
+      object-fit: cover;
+    }
+
+    .tavia-comparison__mobile-image--left {
+      object-position: var(--tavia-comparison-left-mobile-position, 50% 50%);
+    }
+
+    .tavia-comparison__mobile-image--right {
+      object-position: var(--tavia-comparison-right-mobile-position, 50% 50%);
+    }
+
+    .tavia-comparison__mobile-label {
+      background: rgb(var(--color-background));
+      color: rgb(var(--color-foreground));
+      font-family: var(--font-mono-family);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      line-height: 1.3;
+      max-width: calc(50% - 24px);
+      padding: 9px 11px;
+      position: absolute;
+      text-transform: uppercase;
+      top: 14px;
+      z-index: 3;
+    }
+
+    .tavia-comparison__mobile-label--left {
+      left: 14px;
+    }
+
+    .tavia-comparison__mobile-label--right {
+      right: 14px;
+      text-align: right;
+    }
+
+    .tavia-comparison__range {
+      appearance: none;
+      background: transparent;
+      cursor: ew-resize;
+      height: 100%;
+      inset: 0;
+      margin: 0;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      z-index: 5;
+    }
+
+    .tavia-comparison__range::-webkit-slider-thumb {
+      appearance: none;
+      height: var(--tavia-comparison-mobile-height, 500px);
+      width: 44px;
+    }
+
+    .tavia-comparison__range::-moz-range-thumb {
+      background: transparent;
+      border: 0;
+      height: var(--tavia-comparison-mobile-height, 500px);
+      width: 44px;
+    }
+
+    .tavia-comparison__divider {
+      background: #ffffff;
+      bottom: 0;
+      left: var(--comparison-position);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      width: 2px;
+      z-index: 4;
+    }
+
+    .tavia-comparison__handle {
+      align-items: center;
+      background: #111111;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      display: flex;
+      font-family: var(--font-mono-family);
+      font-size: 11px;
+      gap: 5px;
+      height: 44px;
+      justify-content: center;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+    }
+
+    .tavia-comparison__range:focus-visible + .tavia-comparison__divider .tavia-comparison__handle {
+      outline: 2px solid #ffffff;
+      outline-offset: 3px;
+    }
+
+    .tavia-comparison__mobile-row {
+      border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    }
+
+    .tavia-comparison__mobile-cell {
+      background: var(--gradient-background);
+      color: rgb(var(--color-foreground));
+      display: grid;
+      gap: 14px;
+      grid-template-columns: minmax(90px, 0.34fr) minmax(0, 1fr);
+      padding: 18px 16px;
+    }
+
+    .tavia-comparison__mobile-cell + .tavia-comparison__mobile-cell {
+      border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    }
+
+    .tavia-comparison__mobile-cell p {
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('tavia-comparison')) {
+    customElements.define(
+      'tavia-comparison',
+      class TaviaComparison extends HTMLElement {
+        connectedCallback() {
+          if (this.dataset.comparisonBound === 'true') return;
+
+          const range = this.querySelector('[data-comparison-range]');
+          if (!range) return;
+
+          this.dataset.comparisonBound = 'true';
+
+          const update = () => {
+            this.style.setProperty('--comparison-position', `${range.value}%`);
+          };
+
+          range.addEventListener('input', update);
+          update();
+        }
+      }
+    );
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Tavia 3D comparison",
+  "tag": "section",
+  "class": "tavia-homepage-section",
+  "max_blocks": 5,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "03 / Why print it?" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "BUILT DIFFERENT,\nFROM THE INSIDE OUT." },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "3D printing allows performance to be designed into the structure itself." },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "Explore the process" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "text", "id": "comparison_label", "label": "Comparison accessibility label", "default": "3D-printed and traditional footwear comparison" },
+    { "type": "text", "id": "vs_label", "label": "Center label", "default": "VS" },
+    { "type": "header", "content": "3D-printed side" },
+    { "type": "color_scheme", "id": "left_color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "left_title", "label": "Title", "default": "3D-PRINTED\nFOOTWEAR" },
+    { "type": "text", "id": "left_short_label", "label": "Mobile label", "default": "3D printed" },
+    { "type": "image_picker", "id": "left_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
+    { "type": "image_picker", "id": "left_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
+    { "type": "text", "id": "left_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
+    { "type": "text", "id": "left_mobile_image_position", "label": "Mobile image position", "default": "50% 50%", "info": "CSS object position, for example: 45% 50%." },
+    { "type": "header", "content": "Traditional side" },
+    { "type": "color_scheme", "id": "right_color_scheme", "label": "Color scheme", "default": "scheme-3" },
+    { "type": "text", "id": "right_title", "label": "Title", "default": "TRADITIONAL\nFOOTWEAR" },
+    { "type": "text", "id": "right_short_label", "label": "Mobile label", "default": "Traditional" },
+    { "type": "image_picker", "id": "right_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
+    { "type": "image_picker", "id": "right_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
+    { "type": "text", "id": "right_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
+    { "type": "text", "id": "right_mobile_image_position", "label": "Mobile image position", "default": "50% 50%", "info": "CSS object position, for example: 55% 50%." },
+    { "type": "header", "content": "Mobile comparison" },
+    { "type": "text", "id": "slider_label", "label": "Slider accessibility label", "default": "Move to compare 3D-printed and traditional footwear" },
+    { "type": "range", "id": "desktop_image_height", "label": "Desktop image height", "min": 320, "max": 760, "step": 20, "unit": "px", "default": 520 },
+    { "type": "range", "id": "mobile_image_height", "label": "Mobile comparison height", "min": 360, "max": 760, "step": 20, "unit": "px", "default": 520 },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_row",
+      "name": "Comparison row",
+      "settings": [
+        { "type": "textarea", "id": "left_text", "label": "3D-printed text", "default": "Open lattice geometry lets air move through the form." },
+        { "type": "textarea", "id": "right_text", "label": "Traditional text", "default": "Closed layers can retain more heat around the foot." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tavia 3D comparison",
+      "blocks": [
+        { "type": "comparison_row", "settings": { "left_text": "Open lattice geometry lets air move through the form.", "right_text": "Closed layers can retain more heat around the foot." } },
+        { "type": "comparison_row", "settings": { "left_text": "Zoned geometry can tune softness and support by area.", "right_text": "Uniform construction offers less zone-specific control." } },
+        { "type": "comparison_row", "settings": { "left_text": "Flexible cells can move with the foot.", "right_text": "Fixed layered construction can feel more rigid." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
