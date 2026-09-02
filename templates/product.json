@@ -14,7 +14,11 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "show_preview_rating": true,
+            "preview_rating": 4.8,
+            "preview_rating_count": 128
+          }
         },
         "price": {
           "type": "price",

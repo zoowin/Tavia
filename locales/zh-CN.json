@@ -178,6 +178,7 @@
         "price_at_each_html": "{{ price }}/件"
       },
       "taxes_included": "已含税费。",
+      "rating_preview": "预览",
       "duties_included": "已含关税。",
       "duties_and_taxes_included": "已含关税和税费。"
     },

@@ -86,11 +86,24 @@
                 </h2>
               </a>
             </div>
-            {%- if product.metafields.reviews.rating.value != blank -%}
+            {%- liquid
+              assign topline_rating_value = product.metafields.reviews.rating.value.rating
+              assign topline_rating_max = product.metafields.reviews.rating.value.scale_max | default: 5
+              assign topline_rating_count = product.metafields.reviews.rating_count.value
+              assign topline_rating_is_preview = false
+
+              if topline_rating_value == blank and request.design_mode and block.settings.show_preview_rating
+                assign topline_rating_value = block.settings.preview_rating
+                assign topline_rating_max = 5
+                assign topline_rating_count = block.settings.preview_rating_count
+                assign topline_rating_is_preview = true
+              endif
+            -%}
+            {%- if topline_rating_value != blank -%}
               <div class="rating-wrapper tavia-product-topline__rating">
                 {% liquid
                   assign topline_rating_decimal = 0
-                  assign topline_decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                  assign topline_decimal = topline_rating_value | modulo: 1
                   if topline_decimal >= 0.3 and topline_decimal <= 0.7
                     assign topline_rating_decimal = 0.5
                   elsif topline_decimal > 0.7
@@ -100,27 +113,32 @@
                 <div
                   class="rating"
                   role="img"
-                  aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                  aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: topline_rating_value, rating_max: topline_rating_max }}"
                 >
                   <span
                     aria-hidden="true"
                     class="rating-star"
-                    style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ topline_rating_decimal }};"
+                    style="--rating: {{ topline_rating_value | floor }}; --rating-max: {{ topline_rating_max }}; --rating-decimal: {{ topline_rating_decimal }};"
                   ></span>
                 </div>
                 <p class="rating-text caption">
                   <span aria-hidden="true">
-                    {{- product.metafields.reviews.rating.value }} /
-                    {{ product.metafields.reviews.rating.value.scale_max -}}
+                    {{- topline_rating_value }} /
+                    {{ topline_rating_max -}}
                   </span>
                 </p>
                 <p class="rating-count caption">
-                  <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+                  <span aria-hidden="true">({{ topline_rating_count }})</span>
                   <span class="visually-hidden">
-                    {{- product.metafields.reviews.rating_count }}
+                    {{- topline_rating_count }}
                     {{ 'accessibility.total_reviews' | t -}}
                   </span>
                 </p>
+                {%- if topline_rating_is_preview -%}
+                  <span class="tavia-product-topline__rating-preview">
+                    {{- 'products.product.rating_preview' | t -}}
+                  </span>
+                {%- endif -%}
               </div>
             {%- endif -%}
           </div>
@@ -847,6 +865,19 @@
     letter-spacing: 0.02em;
   }
 
+  .tavia-product-topline__rating-preview {
+    border: 0.1rem solid rgba(var(--color-foreground), 0.24);
+    color: rgba(var(--color-foreground), 0.56);
+    font-family: var(--font-mono-family);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    margin-left: 0.25rem;
+    padding: 0.35rem 0.45rem;
+    text-transform: uppercase;
+  }
+
   .tavia-buybox [id^='price-'] {
     margin-top: 1.8rem;
   }
@@ -1123,7 +1154,31 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_preview_rating",
+          "label": "t:sections.main-product.blocks.title.settings.show_preview_rating.label",
+          "info": "t:sections.main-product.blocks.title.settings.show_preview_rating.info",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "preview_rating",
+          "label": "t:sections.main-product.blocks.title.settings.preview_rating.label",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "default": 4.8
+        },
+        {
+          "type": "number",
+          "id": "preview_rating_count",
+          "label": "t:sections.main-product.blocks.title.settings.preview_rating_count.label",
+          "default": 128
+        }
+      ]
     },
     {
       "type": "price",

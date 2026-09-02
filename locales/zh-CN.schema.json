@@ -1835,7 +1835,19 @@
           "name": "弹出窗口"
         },
         "title": {
-          "name": "标题"
+          "name": "标题",
+          "settings": {
+            "show_preview_rating": {
+              "label": "显示预览评分",
+              "info": "商品没有真实评分时，仅在主题编辑器中显示。"
+            },
+            "preview_rating": {
+              "label": "预览星级"
+            },
+            "preview_rating_count": {
+              "label": "预览评论数"
+            }
+          }
         },
         "price": {
           "name": "价格"

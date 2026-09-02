@@ -1946,7 +1946,19 @@
           }
         },
         "title": {
-          "name": "Title"
+          "name": "Title",
+          "settings": {
+            "show_preview_rating": {
+              "label": "Show preview rating",
+              "info": "Shown only in the theme editor when the product has no real rating."
+            },
+            "preview_rating": {
+              "label": "Preview rating"
+            },
+            "preview_rating_count": {
+              "label": "Preview review count"
+            }
+          }
         },
         "price": {
           "name": "Price"
