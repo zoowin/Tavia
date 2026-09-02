@@ -75,6 +75,57 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <product-component view-event-payload="{{ product | standard_event_data: 'view', context: 'page' | escape }}">
     <div class="page-width">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'title' -%}
+          <div class="tavia-product-topline" {{ block.shopify_attributes }}>
+            <div class="product__title tavia-product-topline__title">
+              <h1>{{ product.title | escape }}</h1>
+              <a href="{{ product.url }}" class="product__title">
+                <h2 class="h1">
+                  {{ product.title | escape }}
+                </h2>
+              </a>
+            </div>
+            {%- if product.metafields.reviews.rating.value != blank -%}
+              <div class="rating-wrapper tavia-product-topline__rating">
+                {% liquid
+                  assign topline_rating_decimal = 0
+                  assign topline_decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                  if topline_decimal >= 0.3 and topline_decimal <= 0.7
+                    assign topline_rating_decimal = 0.5
+                  elsif topline_decimal > 0.7
+                    assign topline_rating_decimal = 1
+                  endif
+                %}
+                <div
+                  class="rating"
+                  role="img"
+                  aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="rating-star"
+                    style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ topline_rating_decimal }};"
+                  ></span>
+                </div>
+                <p class="rating-text caption">
+                  <span aria-hidden="true">
+                    {{- product.metafields.reviews.rating.value }} /
+                    {{ product.metafields.reviews.rating.value.scale_max -}}
+                  </span>
+                </p>
+                <p class="rating-count caption">
+                  <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+                  <span class="visually-hidden">
+                    {{- product.metafields.reviews.rating_count }}
+                    {{ 'accessibility.total_reviews' | t -}}
+                  </span>
+                </p>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
       <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
         <div class="grid__item product__media-wrapper">
           {% render 'product-media-gallery', variant_images: variant_images %}
@@ -97,54 +148,6 @@
                   >
                     {{- block.settings.text -}}
                   </p>
-                {%- when 'title' -%}
-                  <div class="tavia-product-heading" {{ block.shopify_attributes }}>
-                    <div class="product__title">
-                      <h1>{{ product.title | escape }}</h1>
-                      <a href="{{ product.url }}" class="product__title">
-                        <h2 class="h1">
-                          {{ product.title | escape }}
-                        </h2>
-                      </a>
-                    </div>
-                    {%- if product.metafields.reviews.rating.value != blank -%}
-                      <div class="rating-wrapper tavia-product-heading__rating">
-                        {% liquid
-                          assign heading_rating_decimal = 0
-                          assign heading_decimal = product.metafields.reviews.rating.value.rating | modulo: 1
-                          if heading_decimal >= 0.3 and heading_decimal <= 0.7
-                            assign heading_rating_decimal = 0.5
-                          elsif heading_decimal > 0.7
-                            assign heading_rating_decimal = 1
-                          endif
-                        %}
-                        <div
-                          class="rating"
-                          role="img"
-                          aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="rating-star"
-                            style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ heading_rating_decimal }};"
-                          ></span>
-                        </div>
-                        <p class="rating-text caption">
-                          <span aria-hidden="true">
-                            {{- product.metafields.reviews.rating.value }} /
-                            {{ product.metafields.reviews.rating.value.scale_max -}}
-                          </span>
-                        </p>
-                        <p class="rating-count caption">
-                          <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                          <span class="visually-hidden">
-                            {{- product.metafields.reviews.rating_count }}
-                            {{ 'accessibility.total_reviews' | t -}}
-                          </span>
-                        </p>
-                      </div>
-                    {%- endif -%}
-                  </div>
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                     {%- render 'price',
@@ -798,21 +801,22 @@
     margin: 0 0 1.5rem;
   }
 
-  .tavia-buybox .tavia-product-heading {
+  .tavia-product-topline {
     align-items: flex-end;
     display: flex;
     gap: 2rem;
     justify-content: space-between;
-    margin: 0;
+    margin: 0 0 2.4rem;
+    width: 100%;
   }
 
-  .tavia-buybox .product__title {
+  .tavia-product-topline .product__title {
     flex: 1 1 auto;
     margin: 0;
     min-width: 0;
   }
 
-  .tavia-buybox .product__title h1 {
+  .tavia-product-topline .product__title h1 {
     font-size: clamp(2.6rem, 2.2vw, 3.6rem);
     font-weight: 400;
     letter-spacing: -0.025em;
@@ -822,7 +826,7 @@
     text-wrap: balance;
   }
 
-  .tavia-buybox .tavia-product-heading__rating {
+  .tavia-product-topline__rating {
     align-items: center;
     display: flex;
     flex: 0 0 auto;
@@ -831,12 +835,12 @@
     white-space: nowrap;
   }
 
-  .tavia-buybox .tavia-product-heading__rating .rating-star {
+  .tavia-product-topline__rating .rating-star {
     --font-size: 1.25;
     --letter-spacing: 0.35;
   }
 
-  .tavia-buybox .tavia-product-heading__rating .rating-count {
+  .tavia-product-topline__rating .rating-count {
     color: var(--tavia-buybox-muted);
     font-family: var(--font-mono-family);
     font-size: 1rem;
@@ -1063,13 +1067,14 @@
       padding-top: 2.6rem;
     }
 
-    .tavia-buybox .product__title h1 {
+    .tavia-product-topline .product__title h1 {
       font-size: clamp(2.6rem, 8vw, 3.4rem);
       max-width: 14ch;
     }
 
-    .tavia-buybox .tavia-product-heading {
+    .tavia-product-topline {
       align-items: flex-start;
+      margin-bottom: 1.8rem;
     }
   }
 {% endstylesheet %}
