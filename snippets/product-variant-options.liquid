@@ -96,7 +96,10 @@
       {{ input_dataset }}
     >
     <label for="{{ input_id }}">
-      {{ value -}}
+      {%- if swatch_value != null -%}
+        {% render 'swatch', swatch: value.swatch, shape: 'circle' %}
+      {%- endif -%}
+      <span>{{ value }}</span>
       {{ label_unavailable }}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}

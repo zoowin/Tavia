@@ -82,7 +82,7 @@
         <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
           <section
             id="ProductInfo-{{ section.id }}"
-            class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+            class="product__info-container tavia-buybox{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
           >
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
@@ -98,13 +98,52 @@
                     {{- block.settings.text -}}
                   </p>
                 {%- when 'title' -%}
-                  <div class="product__title" {{ block.shopify_attributes }}>
-                    <h1>{{ product.title | escape }}</h1>
-                    <a href="{{ product.url }}" class="product__title">
-                      <h2 class="h1">
-                        {{ product.title | escape }}
-                      </h2>
-                    </a>
+                  <div class="tavia-product-heading" {{ block.shopify_attributes }}>
+                    <div class="product__title">
+                      <h1>{{ product.title | escape }}</h1>
+                      <a href="{{ product.url }}" class="product__title">
+                        <h2 class="h1">
+                          {{ product.title | escape }}
+                        </h2>
+                      </a>
+                    </div>
+                    {%- if product.metafields.reviews.rating.value != blank -%}
+                      <div class="rating-wrapper tavia-product-heading__rating">
+                        {% liquid
+                          assign heading_rating_decimal = 0
+                          assign heading_decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                          if heading_decimal >= 0.3 and heading_decimal <= 0.7
+                            assign heading_rating_decimal = 0.5
+                          elsif heading_decimal > 0.7
+                            assign heading_rating_decimal = 1
+                          endif
+                        %}
+                        <div
+                          class="rating"
+                          role="img"
+                          aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                        >
+                          <span
+                            aria-hidden="true"
+                            class="rating-star"
+                            style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ heading_rating_decimal }};"
+                          ></span>
+                        </div>
+                        <p class="rating-text caption">
+                          <span aria-hidden="true">
+                            {{- product.metafields.reviews.rating.value }} /
+                            {{ product.metafields.reviews.rating.value.scale_max -}}
+                          </span>
+                        </p>
+                        <p class="rating-count caption">
+                          <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+                          <span class="visually-hidden">
+                            {{- product.metafields.reviews.rating_count }}
+                            {{ 'accessibility.total_reviews' | t -}}
+                          </span>
+                        </p>
+                      </div>
+                    {%- endif -%}
                   </div>
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
@@ -118,20 +157,6 @@
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                       <span>{{ 'products.product.volume_pricing.note' | t }}</span>
-                    </div>
-                  {%- endif -%}
-                  {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
-                    <div class="product__tax caption rte">
-                      {%- if cart.duties_included and cart.taxes_included -%}
-                        {{ 'products.product.duties_and_taxes_included' | t }}
-                      {%- elsif cart.taxes_included -%}
-                        {{ 'products.product.taxes_included' | t }}
-                      {%- elsif cart.duties_included -%}
-                        {{ 'products.product.duties_included' | t }}
-                      {%- endif -%}
-                      {%- if shop.shipping_policy.body != blank -%}
-                        {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                      {%- endif -%}
                     </div>
                   {%- endif -%}
                   <div {{ block.shopify_attributes }}>
@@ -585,6 +610,10 @@
                             >
                               {% assign skip_card_product_styles = false %}
                               {%- for i in (1..number_of_slides) -%}
+                                {%- assign products_offset = i
+                                  | minus: 1
+                                  | times: block.settings.products_per_page
+                                -%}
                                 <div
                                   id="Slide-{{ block.id }}-{{ forloop.index }}"
                                   class="complementary-slide complementary-slide--{{ settings.card_style }} grid__item slider__slide slideshow__slide"
@@ -598,7 +627,7 @@
                                   <ul class="list-unstyled" role="list">
                                     {%- for product in recommendations.products
                                       limit: block.settings.products_per_page
-                                      offset: continue
+                                      offset: products_offset
                                     -%}
                                       <li>
                                         {%- if block.settings.enable_quick_add -%}
@@ -738,20 +767,312 @@
         <script src="{{ 'product-model.js' | asset_url }}" defer></script>
       {%- endif -%}
 
-      {%- liquid
-        if product.selected_or_first_available_variant.featured_media
-          assign seo_media = product.selected_or_first_available_variant.featured_media
-        else
-          assign seo_media = product.featured_media
-        endif
-      -%}
-
       <script type="application/ld+json">
         {{ product | structured_data }}
       </script>
     </div>
   </product-component>
 </product-info>
+
+{% stylesheet %}
+  .tavia-buybox {
+    --tavia-buybox-line: rgba(var(--color-foreground), 0.16);
+    --tavia-buybox-muted: rgba(var(--color-foreground), 0.62);
+    margin-left: auto;
+    max-width: 46rem;
+    padding-bottom: 3rem;
+  }
+
+  .tavia-buybox > * + * {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .tavia-buybox .product__text.caption-with-letter-spacing {
+    color: var(--tavia-buybox-muted);
+    font-family: var(--font-mono-family);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.5;
+    margin: 0 0 1.5rem;
+  }
+
+  .tavia-buybox .tavia-product-heading {
+    align-items: flex-end;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .tavia-buybox .product__title {
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 0;
+  }
+
+  .tavia-buybox .product__title h1 {
+    font-size: clamp(2.6rem, 2.2vw, 3.6rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin: 0;
+    max-width: 16ch;
+    text-wrap: balance;
+  }
+
+  .tavia-buybox .tavia-product-heading__rating {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0.45rem;
+    margin: 0 0 0.15rem;
+    white-space: nowrap;
+  }
+
+  .tavia-buybox .tavia-product-heading__rating .rating-star {
+    --font-size: 1.25;
+    --letter-spacing: 0.35;
+  }
+
+  .tavia-buybox .tavia-product-heading__rating .rating-count {
+    color: var(--tavia-buybox-muted);
+    font-family: var(--font-mono-family);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .tavia-buybox [id^='price-'] {
+    margin-top: 1.8rem;
+  }
+
+  .tavia-buybox .price,
+  .tavia-buybox .price-item {
+    font-family: var(--font-mono-family);
+    font-size: 1.55rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    letter-spacing: 0.015em;
+    line-height: 1.4;
+  }
+
+  .tavia-buybox .installment {
+    color: var(--tavia-buybox-muted);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-top: 0.6rem;
+  }
+
+  .tavia-buybox variant-selects {
+    border-top: 0.1rem solid var(--tavia-buybox-line);
+    display: block;
+    margin-top: 2.8rem;
+    padding-top: 2.6rem;
+  }
+
+  .tavia-buybox .product-form__input {
+    margin: 0 0 2.2rem;
+    max-width: none;
+  }
+
+  .tavia-buybox .product-form__input .form__label {
+    color: rgb(var(--color-foreground));
+    display: block;
+    font-family: var(--font-mono-family);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .tavia-buybox .product-form__input--pill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .tavia-buybox .product-form__input--pill .form__label {
+    flex-basis: 100%;
+  }
+
+  .tavia-buybox .product-form__input--pill input[type='radio'] + label {
+    align-items: center;
+    background: transparent;
+    border-color: var(--tavia-buybox-line);
+    border-width: 0.1rem;
+    display: inline-flex;
+    font-family: var(--font-mono-family);
+    font-size: 1.2rem;
+    font-weight: 500;
+    justify-content: center;
+    letter-spacing: 0.025em;
+    line-height: 1;
+    margin: 0;
+    min-height: 4.6rem;
+    min-width: 5.6rem;
+    padding: 1.2rem 1.5rem;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+
+  .tavia-buybox .product-form__input--pill input[type='radio'] + label:hover {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .tavia-buybox .product-form__input--pill input[type='radio']:checked + label {
+    background: rgb(var(--color-foreground));
+    border-color: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  .tavia-buybox .product-form__input--pill input[type='radio'].disabled + label,
+  .tavia-buybox .product-form__input--pill input[type='radio']:disabled + label {
+    background: rgba(var(--color-foreground), 0.025);
+    border-color: rgba(var(--color-foreground), 0.08);
+    color: rgba(var(--color-foreground), 0.34);
+    text-decoration-thickness: 0.1rem;
+  }
+
+  .tavia-buybox .product-form__input--swatch {
+    gap: 1.1rem;
+  }
+
+  .tavia-buybox .product-form__input--swatch .form__label {
+    flex-basis: 100%;
+  }
+
+  .tavia-buybox .product-form__input--swatch .swatch-input__input + .swatch-input__label {
+    --swatch-input--size: 3.6rem;
+    margin: 0;
+    outline-offset: 0.35rem;
+  }
+
+  .tavia-buybox .product-form__input--pill label > .swatch {
+    --swatch--size: 1.4rem;
+    flex: 0 0 auto;
+    margin-right: 0.7rem;
+  }
+
+  .tavia-buybox .product-form__input--dropdown .select {
+    max-width: none;
+    width: 100%;
+  }
+
+  .tavia-buybox .product-form__input--dropdown .select::before,
+  .tavia-buybox .product-form__input--dropdown .select::after {
+    box-shadow: none;
+  }
+
+  .tavia-buybox .product-form__input--dropdown .select__select {
+    border: 0.1rem solid var(--tavia-buybox-line);
+    border-radius: 0;
+    font-family: var(--font-mono-family);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    min-height: 5rem;
+    padding-bottom: 1.3rem;
+    padding-top: 1.3rem;
+  }
+
+  .tavia-buybox .product-form__input--dropdown .select__select:hover,
+  .tavia-buybox .product-form__input--dropdown .select__select:focus {
+    border-color: rgb(var(--color-foreground));
+    box-shadow: none;
+  }
+
+  .tavia-buybox .product-form {
+    margin: 0;
+  }
+
+  .tavia-buybox .product-form__buttons {
+    margin-top: 0.6rem;
+    max-width: none;
+  }
+
+  .tavia-buybox .product-form__submit {
+    border: 0.1rem solid rgb(var(--color-foreground));
+    font-family: var(--font-mono-family);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    min-height: 5.8rem;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .tavia-buybox .product-form__submit:not([disabled]):hover {
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+  }
+
+  .tavia-buybox .product-form__error-message-wrapper:not([hidden]) {
+    border-top: 0.1rem solid var(--tavia-buybox-line);
+    margin: 1.2rem 0 0;
+    padding-top: 1.2rem;
+  }
+
+  .tavia-buybox .product__description {
+    border-top: 0.1rem solid var(--tavia-buybox-line);
+    color: var(--tavia-buybox-muted);
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin: 2.8rem 0 0;
+    max-width: none;
+    padding-top: 2.4rem;
+  }
+
+  .tavia-buybox .product-popup-modal__opener,
+  .tavia-buybox .product__accordion,
+  .tavia-buybox .disclosures {
+    border-color: var(--tavia-buybox-line);
+  }
+
+  .tavia-buybox .product__accordion summary,
+  .tavia-buybox .product-popup-modal__button {
+    font-family: var(--font-mono-family);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 990px) {
+    .product--medium:not(.product--no-media) .product__media-wrapper {
+      max-width: 60%;
+      width: 60%;
+    }
+
+    .product--medium:not(.product--no-media) .product__info-wrapper {
+      max-width: 40%;
+      padding-left: clamp(4rem, 5vw, 8rem);
+      width: 40%;
+    }
+
+    .tavia-buybox.product__column-sticky {
+      top: 7.5rem;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .tavia-buybox {
+      border-top: 0.1rem solid var(--tavia-buybox-line);
+      margin-top: 2.4rem;
+      max-width: none;
+      padding-top: 2.6rem;
+    }
+
+    .tavia-buybox .product__title h1 {
+      font-size: clamp(2.6rem, 8vw, 3.4rem);
+      max-width: 14ch;
+    }
+
+    .tavia-buybox .tavia-product-heading {
+      align-items: flex-start;
+    }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
@@ -881,46 +1202,7 @@
     {
       "type": "variant_picker",
       "name": "t:sections.main-product.blocks.variant_picker.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "select",
-          "id": "picker_type",
-          "options": [
-            {
-              "value": "dropdown",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
-            },
-            {
-              "value": "button",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
-            }
-          ],
-          "default": "button",
-          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
-        },
-        {
-          "id": "swatch_shape",
-          "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.label",
-          "type": "select",
-          "info": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.info",
-          "options": [
-            {
-              "value": "circle",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__1.label"
-            },
-            {
-              "value": "square",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__2.label"
-            },
-            {
-              "value": "none",
-              "label": "t:sections.main-product.blocks.variant_picker.settings.swatch_shape.options__3.label"
-            }
-          ],
-          "default": "circle"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "buy_buttons",

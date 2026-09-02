@@ -23,15 +23,11 @@
   >
     {%- for option in product.options_with_values -%}
       {%- liquid
-        assign swatch_count = option.values | map: 'swatch' | compact | size
-        assign picker_type = block.settings.picker_type
+        assign normalized_option_name = option.name | downcase
+        assign picker_type = 'button'
 
-        if swatch_count > 0 and block.settings.swatch_shape != 'none'
-          if block.settings.picker_type == 'dropdown'
-            assign picker_type = 'swatch_dropdown'
-          else
-            assign picker_type = 'swatch'
-          endif
+        if normalized_option_name contains 'size' or normalized_option_name contains '尺码' or normalized_option_name contains '尺寸'
+          assign picker_type = 'dropdown'
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
