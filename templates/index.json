@@ -363,7 +363,7 @@
         "enable_quick_add": true,
         "quick_add_label": "Add to cart",
         "padding_top": 0,
-        "padding_bottom": 100
+        "padding_bottom": 10
       }
     },
     "motion-story": {
@@ -396,6 +396,7 @@
         "motion-2",
         "motion-3"
       ],
+      "disabled": true,
       "settings": {
         "theme": "light",
         "color_scheme": "",
@@ -412,8 +413,8 @@
         "copy": "Tavia is designed around the full rhythm of the day—from long hours on your feet to the moments when you slow down and reset. Lightweight, adaptable forms bring ease to daily movement, extended wear and everyday recovery.",
         "link_label": "Discover Tavia",
         "link": "",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "technology-story": {
