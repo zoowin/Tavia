@@ -466,61 +466,6 @@
         "padding_top": 100,
         "padding_bottom": 100
       }
-    },
-    "multicolumn_V3cFP3": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_UWRXJW": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/Frame_1-LR.jpg",
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_F4Yk4n": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_cL3aad": {
-          "type": "column",
-          "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_UWRXJW",
-        "column_F4Yk4n",
-        "column_cL3aad"
-      ],
-      "name": "t:sections.multicolumn.presets.name",
-      "settings": {
-        "title": "Multicolumn",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -531,7 +476,6 @@
     "object-statement",
     "current-forms",
     "motion-story",
-    "technology-story",
-    "multicolumn_V3cFP3"
+    "technology-story"
   ]
 }
