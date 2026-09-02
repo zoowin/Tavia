@@ -24,6 +24,10 @@
           "type": "variant_picker",
           "settings": {}
         },
+        "quantity_selector_XWCHPk": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -36,6 +40,7 @@
         "title",
         "price",
         "variant_picker",
+        "quantity_selector_XWCHPk",
         "buy_buttons"
       ],
       "settings": {
@@ -67,6 +72,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
