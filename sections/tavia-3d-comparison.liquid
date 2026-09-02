@@ -95,7 +95,6 @@
       {%- if section.blocks.size > 0 -%}
         <div class="tavia-comparison__table" role="table" aria-label="{{ section.settings.comparison_label | escape }}">
           <div class="tavia-comparison__table-header" role="row">
-            <span role="columnheader">{{ section.settings.item_column_label | escape }}</span>
             <span class="color-{{ section.settings.left_color_scheme }} gradient" role="columnheader">
               {{ section.settings.left_short_label | default: section.settings.left_title | escape }}
             </span>
@@ -105,33 +104,35 @@
           </div>
           <div class="tavia-comparison__rows" role="rowgroup">
             {%- for block in section.blocks -%}
-              <div class="tavia-comparison__row" role="row" {{ block.shopify_attributes }}>
-                <div class="tavia-comparison__feature" role="rowheader">
-                  <span class="tavia-comparison__feature-icon" aria-hidden="true">
-                    {%- if block.settings.icon != blank -%}
-                      {{
-                        block.settings.icon
-                        | image_url: width: 96
-                        | image_tag:
-                          class: 'tavia-comparison__feature-image',
-                          widths: '32, 48, 64, 96',
-                          sizes: '40px',
-                          loading: 'lazy',
-                          alt: ''
-                      }}
-                    {%- else -%}
-                      <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-                    {%- endif -%}
-                  </span>
-                  <span class="tavia-comparison__feature-name">
-                    {{ block.settings.criterion | default: section.settings.item_column_label | escape }}
-                  </span>
+              <div class="tavia-comparison__item" role="rowgroup" {{ block.shopify_attributes }}>
+                <div class="tavia-comparison__feature" role="row">
+                  <div class="tavia-comparison__feature-content" role="rowheader" aria-colspan="2">
+                    <span class="tavia-comparison__feature-icon" aria-hidden="true">
+                      {%- if block.settings.icon != blank -%}
+                        {{
+                          block.settings.icon
+                          | image_url: width: 96
+                          | image_tag:
+                            class: 'tavia-comparison__feature-image',
+                            widths: '32, 48, 64, 96',
+                            sizes: '40px',
+                            loading: 'lazy',
+                            alt: ''
+                        }}
+                      {%- else -%}
+                        <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+                      {%- endif -%}
+                    </span>
+                    <span class="tavia-comparison__feature-name">{{ block.settings.criterion | escape }}</span>
+                  </div>
                 </div>
-                <div class="tavia-comparison__cell color-{{ section.settings.left_color_scheme }} gradient" role="cell">
-                  <p>{{ block.settings.left_text | escape }}</p>
-                </div>
-                <div class="tavia-comparison__cell color-{{ section.settings.right_color_scheme }} gradient" role="cell">
-                  <p>{{ block.settings.right_text | escape }}</p>
+                <div class="tavia-comparison__row" role="row">
+                  <div class="tavia-comparison__cell color-{{ section.settings.left_color_scheme }} gradient" role="cell">
+                    <p>{{ block.settings.left_text | escape }}</p>
+                  </div>
+                  <div class="tavia-comparison__cell color-{{ section.settings.right_color_scheme }} gradient" role="cell">
+                    <p>{{ block.settings.right_text | escape }}</p>
+                  </div>
                 </div>
               </div>
             {%- endfor -%}
@@ -204,7 +205,7 @@
             <div
               class="tavia-comparison__mobile-row"
               role="group"
-              aria-label="{{ block.settings.criterion | default: section.settings.item_column_label | escape }}"
+              aria-label="{{ block.settings.criterion | escape }}"
               {{ block.shopify_attributes }}
             >
               <div class="tavia-comparison__mobile-feature">
@@ -224,9 +225,7 @@
                     <span class="tavia-comparison__index">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
                   {%- endif -%}
                 </span>
-                <span class="tavia-comparison__feature-name">
-                  {{ block.settings.criterion | default: section.settings.item_column_label | escape }}
-                </span>
+                <span class="tavia-comparison__feature-name">{{ block.settings.criterion | escape }}</span>
               </div>
               <div class="tavia-comparison__mobile-cell color-{{ section.settings.left_color_scheme }} gradient">
                 <span>{{ section.settings.left_short_label | default: section.settings.left_title | escape }}</span>
@@ -410,7 +409,7 @@
   .tavia-comparison__table-header,
   .tavia-comparison__row {
     display: grid;
-    grid-template-columns: minmax(190px, 0.62fr) repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .tavia-comparison__table-header {
@@ -429,17 +428,25 @@
     border-left: 1px solid rgba(var(--color-foreground), 0.2);
   }
 
-  .tavia-comparison__row {
+  .tavia-comparison__item {
     border-top: 1px solid rgba(var(--color-foreground), 0.18);
+  }
+
+  .tavia-comparison__row {
     min-height: 104px;
   }
 
   .tavia-comparison__feature {
+    min-height: 72px;
+  }
+
+  .tavia-comparison__feature-content {
     align-items: center;
     display: grid;
     gap: 16px;
     grid-template-columns: 40px minmax(0, 1fr);
-    padding: 20px clamp(20px, 2.5vw, 40px);
+    min-height: 72px;
+    padding: 14px clamp(20px, 2.5vw, 40px);
   }
 
   .tavia-comparison__feature-icon {
@@ -461,10 +468,13 @@
   .tavia-comparison__cell {
     align-items: center;
     background: var(--gradient-background);
-    border-left: 1px solid rgba(var(--color-foreground), 0.2);
     color: rgb(var(--color-foreground));
     display: flex;
     padding: 20px clamp(20px, 2.5vw, 40px);
+  }
+
+  .tavia-comparison__cell + .tavia-comparison__cell {
+    border-left: 1px solid rgba(var(--color-foreground), 0.2);
   }
 
   .tavia-comparison__cell p {
@@ -643,12 +653,15 @@
 
     .tavia-comparison__mobile-row {
       border-top: 1px solid rgba(var(--color-foreground), 0.18);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .tavia-comparison__mobile-feature {
       align-items: center;
       display: grid;
       gap: 14px;
+      grid-column: 1 / -1;
       grid-template-columns: 40px minmax(0, 1fr);
       padding: 18px 16px;
     }
@@ -660,13 +673,12 @@
     .tavia-comparison__mobile-cell {
       background: var(--gradient-background);
       color: rgb(var(--color-foreground));
-      display: grid;
-      gap: 14px;
-      grid-template-columns: minmax(90px, 0.34fr) minmax(0, 1fr);
+      min-width: 0;
       padding: 18px 16px;
     }
 
     .tavia-comparison__mobile-cell + .tavia-comparison__mobile-cell {
+      border-left: 1px solid rgba(var(--color-foreground), 0.18);
       border-top: 1px solid rgba(var(--color-foreground), 0.18);
     }
 
@@ -677,7 +689,8 @@
     .tavia-comparison__mobile-cell p {
       font-size: 13px;
       line-height: 1.5;
-      margin: 0;
+      margin: 10px 0 0;
+      overflow-wrap: anywhere;
     }
   }
 {% endstylesheet %}
@@ -723,7 +736,6 @@
     { "type": "text", "id": "comparison_label", "label": "Comparison accessibility label", "default": "3D-printed and traditional footwear comparison" },
     { "type": "text", "id": "vs_label", "label": "Center label", "default": "VS" },
     { "type": "range", "id": "comparison_title_size", "label": "Comparison title size", "min": 24, "max": 56, "step": 2, "unit": "px", "default": 40 },
-    { "type": "text", "id": "item_column_label", "label": "Comparison item column label", "default": "Feature" },
     { "type": "header", "content": "3D-printed side" },
     { "type": "color_scheme", "id": "left_color_scheme", "label": "Color scheme", "default": "scheme-1" },
     { "type": "textarea", "id": "left_title", "label": "Title", "default": "3D-PRINTED\nFOOTWEAR" },
