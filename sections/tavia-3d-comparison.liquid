@@ -16,6 +16,7 @@
     --tavia-comparison-padding-bottom: {{ section.settings.padding_bottom }}px;
     --tavia-comparison-desktop-height: {{ section.settings.desktop_image_height }}px;
     --tavia-comparison-mobile-height: {{ section.settings.mobile_image_height }}px;
+    --tavia-comparison-title-size: {{ section.settings.comparison_title_size }}px;
     --tavia-comparison-left-position: {{ section.settings.left_image_position }};
     --tavia-comparison-right-position: {{ section.settings.right_image_position }};
     --tavia-comparison-left-mobile-position: {{ section.settings.left_mobile_image_position }};
@@ -290,12 +291,13 @@
   .tavia-comparison__visual h3 {
     color: inherit;
     font-family: inherit;
-    font-size: clamp(34px, 3.4vw, 54px);
+    font-size: var(--tavia-comparison-title-size, 40px);
     font-weight: 650;
     letter-spacing: -0.025em;
     line-height: 0.98;
     margin: 0 0 24px;
     max-width: 520px;
+    overflow-wrap: anywhere;
     text-transform: uppercase;
   }
 
@@ -604,9 +606,10 @@
     { "type": "url", "id": "link", "label": "Link" },
     { "type": "text", "id": "comparison_label", "label": "Comparison accessibility label", "default": "3D-printed and traditional footwear comparison" },
     { "type": "text", "id": "vs_label", "label": "Center label", "default": "VS" },
+    { "type": "range", "id": "comparison_title_size", "label": "Comparison title size", "min": 24, "max": 56, "step": 2, "unit": "px", "default": 40 },
     { "type": "header", "content": "3D-printed side" },
     { "type": "color_scheme", "id": "left_color_scheme", "label": "Color scheme", "default": "scheme-1" },
-    { "type": "text", "id": "left_title", "label": "Title", "default": "3D-PRINTED\nFOOTWEAR" },
+    { "type": "textarea", "id": "left_title", "label": "Title", "default": "3D-PRINTED\nFOOTWEAR" },
     { "type": "text", "id": "left_short_label", "label": "Mobile label", "default": "3D printed" },
     { "type": "image_picker", "id": "left_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
     { "type": "image_picker", "id": "left_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
@@ -614,7 +617,7 @@
     { "type": "text", "id": "left_mobile_image_position", "label": "Mobile image position", "default": "50% 50%", "info": "CSS object position, for example: 45% 50%." },
     { "type": "header", "content": "Traditional side" },
     { "type": "color_scheme", "id": "right_color_scheme", "label": "Color scheme", "default": "scheme-3" },
-    { "type": "text", "id": "right_title", "label": "Title", "default": "TRADITIONAL\nFOOTWEAR" },
+    { "type": "textarea", "id": "right_title", "label": "Title", "default": "TRADITIONAL\nFOOTWEAR" },
     { "type": "text", "id": "right_short_label", "label": "Mobile label", "default": "Traditional" },
     { "type": "image_picker", "id": "right_image", "label": "Desktop image", "info": "Recommended: 1600 × 1100 px." },
     { "type": "image_picker", "id": "right_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
