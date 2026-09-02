@@ -366,91 +366,6 @@
         "padding_bottom": 10
       }
     },
-    "tavia-testimonials": {
-      "type": "tavia-testimonials",
-      "blocks": {
-        "testimonial-1": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Add a real review about long-day comfort here.",
-            "name": "Customer 01",
-            "verified": false,
-            "context": "Long-day wear"
-          }
-        },
-        "testimonial-2": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Add a real review about breathability and fit here.",
-            "name": "Customer 02",
-            "verified": false,
-            "context": "Daily movement"
-          }
-        },
-        "testimonial-3": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Add a real review about the one-piece feel here.",
-            "name": "Customer 03",
-            "verified": false,
-            "context": "3D-printed form"
-          }
-        },
-        "testimonial-4": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Add a real review about recovery or easy wear here.",
-            "name": "Customer 04",
-            "verified": false,
-            "context": "Recovery"
-          }
-        },
-        "testimonial-5": {
-          "type": "testimonial",
-          "settings": {
-            "rating": 5,
-            "quote": "Add a real review about design and everyday use here.",
-            "name": "Customer 05",
-            "verified": false,
-            "context": "Everyday wear"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial-1",
-        "testimonial-2",
-        "testimonial-3",
-        "testimonial-4",
-        "testimonial-5"
-      ],
-      "name": "Tavia testimonials",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "eyebrow": "04 / Field notes",
-        "heading": "WORN. TESTED. REVIEWED.",
-        "trust_text": "Real wear. Real movement.",
-        "accessibility_label": "Customer testimonials",
-        "rating_suffix": "out of 5 stars",
-        "verified_label": "Verified wearer",
-        "previous_label": "Previous testimonial",
-        "next_label": "Next testimonial",
-        "initial_card": 3,
-        "card_background": "#f5f5f3",
-        "card_text": "#111111",
-        "active_background": "#d9dedb",
-        "active_text": "#111111",
-        "star_color": "#ffb800",
-        "active_rotation": 2.5,
-        "card_height": 420,
-        "mobile_card_height": 360,
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
-    },
     "motion-story": {
       "type": "tavia-brand-story",
       "blocks": {
@@ -548,8 +463,93 @@
         "copy": "3D printing lets us shape cushioning, flexibility and airflow directly into the geometry of the shoe. Thousands of connected cells become one continuous form—precisely tuned, without traditional layers or assembly.",
         "link_label": "Explore the process",
         "link": "",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "tavia-testimonials": {
+      "type": "tavia-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real review about long-day comfort here.",
+            "name": "Customer 01",
+            "verified": false,
+            "context": "Long-day wear"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real review about breathability and fit here.",
+            "name": "Customer 02",
+            "verified": false,
+            "context": "Daily movement"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real review about the one-piece feel here.",
+            "name": "Customer 03",
+            "verified": false,
+            "context": "3D-printed form"
+          }
+        },
+        "testimonial-4": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real review about recovery or easy wear here.",
+            "name": "Customer 04",
+            "verified": false,
+            "context": "Recovery"
+          }
+        },
+        "testimonial-5": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real review about design and everyday use here.",
+            "name": "Customer 05",
+            "verified": false,
+            "context": "Everyday wear"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3",
+        "testimonial-4",
+        "testimonial-5"
+      ],
+      "name": "Tavia testimonials",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "eyebrow": "04 / Field notes",
+        "heading": "WORN. TESTED. REVIEWED.",
+        "trust_text": "Real wear. Real movement.",
+        "accessibility_label": "Customer testimonials",
+        "rating_suffix": "out of 5 stars",
+        "verified_label": "Verified wearer",
+        "previous_label": "Previous testimonial",
+        "next_label": "Next testimonial",
+        "initial_card": 3,
+        "card_background": "#f5f5f3",
+        "card_text": "#111111",
+        "active_background": "#d9dedb",
+        "active_text": "#111111",
+        "star_color": "#ffb800",
+        "active_rotation": 2.5,
+        "card_height": 420,
+        "mobile_card_height": 360,
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     }
   },
@@ -560,8 +560,8 @@
     "tavia_3d_comparison_xpUMfx",
     "object-statement",
     "current-forms",
-    "tavia-testimonials",
     "motion-story",
-    "technology-story"
+    "technology-story",
+    "tavia-testimonials"
   ]
 }
