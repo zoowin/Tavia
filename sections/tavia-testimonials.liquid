@@ -1,0 +1,728 @@
+<section
+  class="tavia-testimonials color-{{ section.settings.color_scheme }} gradient"
+  style="
+    --tavia-testimonials-padding-top: {{ section.settings.padding_top }}px;
+    --tavia-testimonials-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --tavia-testimonial-card-height: {{ section.settings.card_height }}px;
+    --tavia-testimonial-card-background: {{ section.settings.card_background }};
+    --tavia-testimonial-card-text: {{ section.settings.card_text }};
+    --tavia-testimonial-active-background: {{ section.settings.active_background }};
+    --tavia-testimonial-active-text: {{ section.settings.active_text }};
+    --tavia-testimonial-star: {{ section.settings.star_color }};
+    --tavia-testimonial-rotation-negative: -{{ section.settings.active_rotation }}deg;
+    --tavia-testimonial-rotation-positive: {{ section.settings.active_rotation }}deg;
+    --tavia-testimonial-rotation-mobile: -{{ section.settings.active_rotation | times: 0.55 }}deg;
+  "
+>
+  <tavia-testimonials
+    class="tavia-testimonials__inner"
+    data-initial-index="{{ section.settings.initial_card | minus: 1 }}"
+  >
+    <header class="tavia-testimonials__header">
+      <div class="tavia-testimonials__heading-group">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tavia-testimonials__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tavia-testimonials__heading" id="TaviaTestimonialsHeading-{{ section.id }}">
+            {{ section.settings.heading | escape }}
+          </h2>
+        {%- else -%}
+          <h2 class="visually-hidden" id="TaviaTestimonialsHeading-{{ section.id }}">
+            {{ section.settings.accessibility_label | escape }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.trust_text != blank -%}
+          <div class="tavia-testimonials__trust">
+            {%- if section.settings.avatar_one != blank or section.settings.avatar_two != blank -%}
+              <div class="tavia-testimonials__avatars" aria-hidden="true">
+                {%- if section.settings.avatar_one != blank -%}
+                  {{
+                    section.settings.avatar_one
+                    | image_url: width: 96
+                    | image_tag:
+                      class: 'tavia-testimonials__avatar',
+                      widths: '48, 72, 96',
+                      sizes: '36px',
+                      loading: 'lazy',
+                      alt: ''
+                  }}
+                {%- endif -%}
+                {%- if section.settings.avatar_two != blank -%}
+                  {{
+                    section.settings.avatar_two
+                    | image_url: width: 96
+                    | image_tag:
+                      class: 'tavia-testimonials__avatar',
+                      widths: '48, 72, 96',
+                      sizes: '36px',
+                      loading: 'lazy',
+                      alt: ''
+                  }}
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            <p>{{ section.settings.trust_text | escape }}</p>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 1 -%}
+        <div class="tavia-testimonials__controls">
+          <button
+            class="tavia-testimonials__arrow"
+            type="button"
+            data-testimonial-previous
+            aria-label="{{ section.settings.previous_label | escape }}"
+          >
+            <span aria-hidden="true">←</span>
+          </button>
+          <button
+            class="tavia-testimonials__arrow tavia-testimonials__arrow--next"
+            type="button"
+            data-testimonial-next
+            aria-label="{{ section.settings.next_label | escape }}"
+          >
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      {%- endif -%}
+    </header>
+
+    <div class="tavia-testimonials__viewport">
+      <div
+        class="tavia-testimonials__rail"
+        role="list"
+        aria-labelledby="TaviaTestimonialsHeading-{{ section.id }}"
+        data-testimonial-rail
+      >
+        {%- for block in section.blocks -%}
+          <article
+            class="tavia-testimonial-card{% if forloop.index == section.settings.initial_card %} is-active{% endif %}"
+            role="listitem"
+            tabindex="0"
+            data-testimonial-card
+            data-testimonial-index="{{ forloop.index0 }}"
+            {% if forloop.index == section.settings.initial_card %}aria-current="true"{% endif %}
+            {{ block.shopify_attributes }}
+          >
+            <div class="tavia-testimonial-card__top">
+              <div
+                class="tavia-testimonial-card__stars"
+                role="img"
+                aria-label="{{ block.settings.rating }} {{ section.settings.rating_suffix | escape }}"
+              >
+                {%- for star in (1..5) -%}
+                  <span{% if star > block.settings.rating %} class="is-empty"{% endif %} aria-hidden="true">★</span>
+                {%- endfor -%}
+              </div>
+
+              {%- if block.settings.image != blank -%}
+                <div class="tavia-testimonial-card__media">
+                  {{
+                    block.settings.image
+                    | image_url: width: 480
+                    | image_tag:
+                      class: 'tavia-testimonial-card__image',
+                      widths: '160, 240, 320, 480',
+                      sizes: '96px',
+                      loading: 'lazy',
+                      alt: block.settings.image.alt
+                  }}
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.quote != blank -%}
+              <blockquote class="tavia-testimonial-card__quote">
+                <p>“{{ block.settings.quote | escape | newline_to_br }}”</p>
+              </blockquote>
+            {%- endif -%}
+
+            <footer class="tavia-testimonial-card__footer">
+              <div class="tavia-testimonial-card__author">
+                <strong>{{ block.settings.name | escape }}</strong>
+                {%- if block.settings.verified -%}
+                  <span class="tavia-testimonial-card__verified">
+                    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+                      <path d="M8 0.9 9.5 2l1.8-.1.7 1.7 1.6.8-.1 1.8L14.6 8l-1.1 1.8.1 1.8-1.6.8-.7 1.7-1.8-.1L8 15.1 6.5 14l-1.8.1-.7-1.7-1.6-.8.1-1.8L1.4 8l1.1-1.8-.1-1.8L4 3.6l.7-1.7 1.8.1L8 .9Z" fill="currentColor"/>
+                      <path class="tavia-testimonial-card__verified-check" d="m5.2 8.1 1.7 1.7 3.8-4" fill="none" stroke-width="1.4"/>
+                    </svg>
+                    <span>{{ section.settings.verified_label | escape }}</span>
+                  </span>
+                {%- endif -%}
+              </div>
+              {%- if block.settings.context != blank -%}
+                <span class="tavia-testimonial-card__context">{{ block.settings.context | escape }}</span>
+              {%- endif -%}
+            </footer>
+          </article>
+        {%- endfor -%}
+      </div>
+    </div>
+  </tavia-testimonials>
+</section>
+
+{% stylesheet %}
+  .tavia-testimonials {
+    background: var(--gradient-background);
+    color: rgb(var(--color-foreground));
+    overflow: hidden;
+    padding: var(--tavia-testimonials-padding-top, 80px) 0 var(--tavia-testimonials-padding-bottom, 80px);
+  }
+
+  .tavia-testimonials,
+  .tavia-testimonials * {
+    box-sizing: border-box;
+  }
+
+  .tavia-testimonials__inner {
+    display: block;
+    margin: 0 auto;
+    max-width: var(--page-width);
+    width: 100%;
+  }
+
+  .tavia-testimonials__header {
+    align-items: end;
+    border-top: 1px solid rgba(var(--color-foreground), 0.18);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+    padding: 28px 0 38px;
+  }
+
+  .tavia-testimonials__eyebrow {
+    font-family: var(--font-mono-family);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: var(--tavia-tracking-label, 0.08em);
+    line-height: 1.5;
+    margin: 0 0 18px;
+    text-transform: uppercase;
+  }
+
+  .tavia-testimonials__heading {
+    color: inherit;
+    font-family: inherit;
+    font-size: clamp(36px, 4vw, 60px);
+    font-weight: 650;
+    letter-spacing: var(--tavia-tracking-display, -0.025em);
+    line-height: 1;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .tavia-testimonials__trust {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .tavia-testimonials__trust p {
+    font-size: 13px;
+    letter-spacing: var(--tavia-tracking-body, 0.01em);
+    margin: 0;
+  }
+
+  .tavia-testimonials__avatars {
+    display: flex;
+    padding-left: 8px;
+  }
+
+  .tavia-testimonials__avatar {
+    border: 1px solid rgb(var(--color-background));
+    display: block;
+    height: 36px !important;
+    margin-left: -8px;
+    object-fit: cover;
+    width: 36px;
+  }
+
+  .tavia-testimonials__controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .tavia-testimonials__arrow {
+    align-items: center;
+    appearance: none;
+    background: transparent;
+    border: 1px solid rgba(var(--color-foreground), 0.2);
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    font-size: 22px;
+    height: 48px;
+    justify-content: center;
+    padding: 0;
+    transition: background-color 180ms ease, color 180ms ease, opacity 180ms ease;
+    width: 48px;
+  }
+
+  .tavia-testimonials__arrow--next,
+  .tavia-testimonials__arrow:hover:not(:disabled) {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  .tavia-testimonials__arrow:focus-visible,
+  .tavia-testimonial-card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+  .tavia-testimonials__arrow:disabled {
+    cursor: default;
+    opacity: 0.28;
+  }
+
+  .tavia-testimonials__viewport {
+    overflow: hidden;
+  }
+
+  .tavia-testimonials__rail {
+    display: grid;
+    gap: 18px;
+    grid-auto-columns: clamp(290px, 25vw, 380px);
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 28px 50px 36px;
+    scroll-padding-inline: 50px;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgb(var(--color-foreground)) transparent;
+    scrollbar-width: thin;
+  }
+
+  .tavia-testimonials__rail::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  .tavia-testimonials__rail::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-foreground));
+  }
+
+  .tavia-testimonials__rail::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tavia-testimonial-card {
+    background: var(--tavia-testimonial-card-background);
+    border: 1px solid color-mix(in srgb, var(--tavia-testimonial-card-text) 18%, transparent);
+    color: var(--tavia-testimonial-card-text);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: var(--tavia-testimonial-card-height, 420px);
+    padding: clamp(24px, 2.4vw, 34px);
+    scroll-snap-align: center;
+    transform: rotate(0) translateY(0);
+    transform-origin: center;
+    transition: background-color 240ms ease, border-color 240ms ease, color 240ms ease, opacity 240ms ease, transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .tavia-testimonial-card:not(.is-active) {
+    opacity: 0.78;
+  }
+
+  .tavia-testimonial-card.is-active {
+    background: var(--tavia-testimonial-active-background);
+    border-color: var(--tavia-testimonial-active-background);
+    color: var(--tavia-testimonial-active-text);
+    opacity: 1;
+    transform: rotate(var(--tavia-testimonial-rotation-negative)) translateY(-10px);
+  }
+
+  .tavia-testimonial-card:nth-child(even).is-active {
+    transform: rotate(var(--tavia-testimonial-rotation-positive)) translateY(-10px);
+  }
+
+  .tavia-testimonial-card__top {
+    align-items: start;
+    display: flex;
+    gap: 18px;
+    justify-content: space-between;
+    min-height: 68px;
+  }
+
+  .tavia-testimonial-card__stars {
+    color: var(--tavia-testimonial-star);
+    display: flex;
+    font-size: 20px;
+    gap: 2px;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+
+  .tavia-testimonial-card__stars .is-empty {
+    opacity: 0.25;
+  }
+
+  .tavia-testimonial-card__media {
+    border: 1px solid currentColor;
+    flex: 0 0 auto;
+    height: 72px;
+    overflow: hidden;
+    width: 96px;
+  }
+
+  .tavia-testimonial-card__image {
+    display: block;
+    height: 100% !important;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .tavia-testimonial-card__quote {
+    border: 0;
+    font-size: clamp(17px, 1.3vw, 20px);
+    font-style: normal;
+    letter-spacing: var(--tavia-tracking-body, 0.01em);
+    line-height: 1.55;
+    margin: 26px 0 42px;
+    padding: 0;
+  }
+
+  .tavia-testimonial-card__quote p {
+    margin: 0;
+  }
+
+  .tavia-testimonial-card__footer {
+    align-items: end;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .tavia-testimonial-card__author {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .tavia-testimonial-card__author strong {
+    font-size: 14px;
+    font-weight: 650;
+  }
+
+  .tavia-testimonial-card__verified {
+    align-items: center;
+    display: inline-flex;
+    gap: 5px;
+  }
+
+  .tavia-testimonial-card__verified > span,
+  .tavia-testimonial-card__context {
+    font-family: var(--font-mono-family);
+    font-size: 9px;
+    letter-spacing: var(--tavia-tracking-label, 0.08em);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .tavia-testimonial-card__verified svg {
+    flex: 0 0 auto;
+  }
+
+  .tavia-testimonial-card__verified-check {
+    stroke: var(--tavia-testimonial-card-background);
+  }
+
+  .tavia-testimonial-card.is-active .tavia-testimonial-card__verified-check {
+    stroke: var(--tavia-testimonial-active-background);
+  }
+
+  .tavia-testimonial-card__context {
+    max-width: 120px;
+    opacity: 0.7;
+    text-align: right;
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .tavia-testimonials__header {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+
+    .tavia-testimonials__rail {
+      grid-auto-columns: minmax(300px, 44vw);
+      padding-left: 32px;
+      padding-right: 32px;
+      scroll-padding-inline: 32px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .tavia-testimonials__header {
+      align-items: end;
+      margin: 0 16px;
+      padding: 22px 0 28px;
+    }
+
+    .tavia-testimonials__eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .tavia-testimonials__heading {
+      font-size: clamp(32px, 10vw, 42px);
+      max-width: 280px;
+    }
+
+    .tavia-testimonials__trust {
+      margin-top: 16px;
+    }
+
+    .tavia-testimonials__controls {
+      gap: 5px;
+      margin-left: 16px;
+    }
+
+    .tavia-testimonials__arrow {
+      height: 40px;
+      width: 40px;
+    }
+
+    .tavia-testimonials__rail {
+      gap: 12px;
+      grid-auto-columns: calc(100vw - 48px);
+      padding: 24px 16px 32px;
+      scroll-padding-inline: 16px;
+    }
+
+    .tavia-testimonial-card {
+      min-height: min(var(--tavia-testimonial-card-height, 420px), 440px);
+      padding: 24px;
+    }
+
+    .tavia-testimonial-card.is-active,
+    .tavia-testimonial-card:nth-child(even).is-active {
+      transform: rotate(var(--tavia-testimonial-rotation-mobile)) translateY(-6px);
+    }
+
+    .tavia-testimonial-card__quote {
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .tavia-testimonial-card__footer {
+      align-items: start;
+      display: block;
+    }
+
+    .tavia-testimonial-card__context {
+      display: block;
+      margin-top: 10px;
+      max-width: none;
+      text-align: left;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tavia-testimonial-card,
+    .tavia-testimonials__arrow {
+      transition: none;
+    }
+
+    .tavia-testimonial-card.is-active,
+    .tavia-testimonial-card:nth-child(even).is-active {
+      transform: none;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('tavia-testimonials')) {
+    customElements.define(
+      'tavia-testimonials',
+      class TaviaTestimonials extends HTMLElement {
+        connectedCallback() {
+          this.rail = this.querySelector('[data-testimonial-rail]');
+          this.cards = Array.from(this.querySelectorAll('[data-testimonial-card]'));
+          this.previousButton = this.querySelector('[data-testimonial-previous]');
+          this.nextButton = this.querySelector('[data-testimonial-next]');
+
+          if (!this.rail || this.cards.length === 0) return;
+
+          this.abortController = new AbortController();
+          this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+          this.activeIndex = Math.min(
+            Math.max(Number.parseInt(this.dataset.initialIndex, 10) || 0, 0),
+            this.cards.length - 1
+          );
+
+          this.previousButton?.addEventListener('click', () => this.select(this.activeIndex - 1, true), {
+            signal: this.abortController.signal,
+          });
+          this.nextButton?.addEventListener('click', () => this.select(this.activeIndex + 1, true), {
+            signal: this.abortController.signal,
+          });
+
+          this.cards.forEach((card, index) => {
+            card.addEventListener('click', () => this.select(index, true), { signal: this.abortController.signal });
+            card.addEventListener('focus', () => this.select(index, true), { signal: this.abortController.signal });
+            card.addEventListener(
+              'keydown',
+              (event) => {
+                if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                  event.preventDefault();
+                  const direction = event.key === 'ArrowLeft' ? -1 : 1;
+                  const nextIndex = Math.min(Math.max(index + direction, 0), this.cards.length - 1);
+                  this.cards[nextIndex].focus();
+                }
+              },
+              { signal: this.abortController.signal }
+            );
+          });
+
+          this.rail.addEventListener(
+            'scroll',
+            () => {
+              window.cancelAnimationFrame(this.scrollFrame);
+              this.scrollFrame = window.requestAnimationFrame(() => this.selectNearestCard());
+            },
+            { passive: true, signal: this.abortController.signal }
+          );
+
+          this.addEventListener(
+            'shopify:block:select',
+            (event) => {
+              const selectedCard = event.target.closest('[data-testimonial-card]');
+              if (!selectedCard) return;
+              this.select(Number.parseInt(selectedCard.dataset.testimonialIndex, 10), true);
+            },
+            { signal: this.abortController.signal }
+          );
+
+          this.select(this.activeIndex, false);
+          window.requestAnimationFrame(() => {
+            this.scrollToCard(this.activeIndex, 'auto');
+          });
+        }
+
+        disconnectedCallback() {
+          this.abortController?.abort();
+          window.cancelAnimationFrame(this.scrollFrame);
+        }
+
+        select(index, shouldScroll) {
+          const nextIndex = Math.min(Math.max(index, 0), this.cards.length - 1);
+          this.activeIndex = nextIndex;
+
+          this.cards.forEach((card, cardIndex) => {
+            const isActive = cardIndex === nextIndex;
+            card.classList.toggle('is-active', isActive);
+            if (isActive) {
+              card.setAttribute('aria-current', 'true');
+            } else {
+              card.removeAttribute('aria-current');
+            }
+          });
+
+          if (this.previousButton) this.previousButton.disabled = nextIndex === 0;
+          if (this.nextButton) this.nextButton.disabled = nextIndex === this.cards.length - 1;
+
+          if (shouldScroll) {
+            this.scrollToCard(nextIndex, this.reducedMotion.matches ? 'auto' : 'smooth');
+          }
+        }
+
+        scrollToCard(index, behavior) {
+          const card = this.cards[index];
+          if (!card) return;
+
+          const railRect = this.rail.getBoundingClientRect();
+          const cardRect = card.getBoundingClientRect();
+          const target =
+            this.rail.scrollLeft + cardRect.left - railRect.left - (this.rail.clientWidth - cardRect.width) / 2;
+
+          this.rail.scrollTo({ left: Math.max(target, 0), behavior });
+        }
+
+        selectNearestCard() {
+          const railRect = this.rail.getBoundingClientRect();
+          const railCenter = railRect.left + railRect.width / 2;
+          let nearestIndex = this.activeIndex;
+          let nearestDistance = Number.POSITIVE_INFINITY;
+
+          this.cards.forEach((card, index) => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + cardRect.width / 2;
+            const distance = Math.abs(cardCenter - railCenter);
+
+            if (distance < nearestDistance) {
+              nearestDistance = distance;
+              nearestIndex = index;
+            }
+          });
+
+          if (nearestIndex !== this.activeIndex) this.select(nearestIndex, false);
+        }
+      }
+    );
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Tavia testimonials",
+  "tag": "section",
+  "class": "tavia-homepage-section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "04 / Field notes" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "WORN. TESTED. REVIEWED." },
+    { "type": "text", "id": "trust_text", "label": "Trust line", "default": "Real wear. Real movement." },
+    { "type": "image_picker", "id": "avatar_one", "label": "Trust avatar 1" },
+    { "type": "image_picker", "id": "avatar_two", "label": "Trust avatar 2" },
+    { "type": "text", "id": "accessibility_label", "label": "Section accessibility label", "default": "Customer testimonials" },
+    { "type": "text", "id": "rating_suffix", "label": "Rating accessibility text", "default": "out of 5 stars" },
+    { "type": "text", "id": "verified_label", "label": "Verified label", "default": "Verified wearer" },
+    { "type": "text", "id": "previous_label", "label": "Previous button accessibility label", "default": "Previous testimonial" },
+    { "type": "text", "id": "next_label", "label": "Next button accessibility label", "default": "Next testimonial" },
+    { "type": "range", "id": "initial_card", "label": "Initially selected card", "min": 1, "max": 10, "step": 1, "default": 3 },
+    { "type": "header", "content": "Card appearance" },
+    { "type": "color", "id": "card_background", "label": "Card background", "default": "#f5f5f3" },
+    { "type": "color", "id": "card_text", "label": "Card text", "default": "#111111" },
+    { "type": "color", "id": "active_background", "label": "Selected card background", "default": "#111111" },
+    { "type": "color", "id": "active_text", "label": "Selected card text", "default": "#ffffff" },
+    { "type": "color", "id": "star_color", "label": "Star color", "default": "#ffb800" },
+    { "type": "range", "id": "active_rotation", "label": "Selected card angle", "min": 0, "max": 4, "step": 0.5, "unit": "deg", "default": 2.5 },
+    { "type": "range", "id": "card_height", "label": "Card minimum height", "min": 340, "max": 520, "step": 10, "unit": "px", "default": 420 },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "UGC image", "info": "Recommended: square or 4:3 image, at least 800 px wide." },
+        { "type": "range", "id": "rating", "label": "Star rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Review", "default": "Replace this with a real customer review or UGC caption." },
+        { "type": "text", "id": "name", "label": "Customer name", "default": "Customer name" },
+        { "type": "checkbox", "id": "verified", "label": "Show verified icon", "info": "Enable only for a confirmed customer or wearer.", "default": false },
+        { "type": "text", "id": "context", "label": "Product or wear context", "default": "Product / Wear context" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tavia testimonials",
+      "blocks": [
+        { "type": "testimonial", "settings": { "quote": "Add a real review about long-day comfort here.", "name": "Customer 01", "context": "Long-day wear" } },
+        { "type": "testimonial", "settings": { "quote": "Add a real review about breathability and fit here.", "name": "Customer 02", "context": "Daily movement" } },
+        { "type": "testimonial", "settings": { "quote": "Add a real review about the one-piece feel here.", "name": "Customer 03", "context": "3D-printed form" } },
+        { "type": "testimonial", "settings": { "quote": "Add a real review about recovery or easy wear here.", "name": "Customer 04", "context": "Recovery" } },
+        { "type": "testimonial", "settings": { "quote": "Add a real review about design and everyday use here.", "name": "Customer 05", "context": "Everyday wear" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
