@@ -193,25 +193,22 @@
         "comparison_row_HQ8ErK": {
           "type": "comparison_row",
           "settings": {
-            "criterion": "Airflow",
-            "left_text": "Open lattice lets air move through the structure.",
-            "right_text": "Closed material layers retain more heat."
+            "left_text": "Open lattice geometry lets air move through the form.",
+            "right_text": "Closed layers can retain more heat around the foot."
           }
         },
         "comparison_row_YPb6zG": {
           "type": "comparison_row",
           "settings": {
-            "criterion": "Zoned response",
-            "left_text": "Cell geometry can be tuned by zone.",
+            "left_text": "Zoned geometry can tune softness and support by area.",
             "right_text": "Uniform construction offers less zone-specific control."
           }
         },
         "comparison_row_q9pxqf": {
           "type": "comparison_row",
           "settings": {
-            "criterion": "Natural flex",
-            "left_text": "Connected cells flex with the foot.",
-            "right_text": "Bonded layers can resist natural flex."
+            "left_text": "Flexible cells can move with the foot.",
+            "right_text": "Fixed layered construction can feel more rigid."
           }
         }
       },
@@ -222,7 +219,7 @@
       ],
       "name": "Tavia 3D comparison",
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "eyebrow": "",
         "heading": "BUILT DIFFERENT,\nFROM THE INSIDE OUT.",
         "intro": "3D printing allows performance to be designed into the structure itself.",
