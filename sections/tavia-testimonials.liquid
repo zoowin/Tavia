@@ -4,6 +4,7 @@
     --tavia-testimonials-padding-top: {{ section.settings.padding_top }}px;
     --tavia-testimonials-padding-bottom: {{ section.settings.padding_bottom }}px;
     --tavia-testimonial-card-height: {{ section.settings.card_height }}px;
+    --tavia-testimonial-mobile-card-height: {{ section.settings.mobile_card_height }}px;
     --tavia-testimonial-card-background: {{ section.settings.card_background }};
     --tavia-testimonial-card-text: {{ section.settings.card_text }};
     --tavia-testimonial-active-background: {{ section.settings.active_background }};
@@ -98,6 +99,18 @@
         data-testimonial-rail
       >
         {%- for block in section.blocks -%}
+          {%- liquid
+            assign ugc_image_count = 0
+            if block.settings.image != blank
+              assign ugc_image_count = ugc_image_count | plus: 1
+            endif
+            if block.settings.image_two != blank
+              assign ugc_image_count = ugc_image_count | plus: 1
+            endif
+            if block.settings.image_three != blank
+              assign ugc_image_count = ugc_image_count | plus: 1
+            endif
+          -%}
           <article
             class="tavia-testimonial-card{% if forloop.index == section.settings.initial_card %} is-active{% endif %}"
             role="listitem"
@@ -117,27 +130,59 @@
                   <span{% if star > block.settings.rating %} class="is-empty"{% endif %} aria-hidden="true">★</span>
                 {%- endfor -%}
               </div>
-
-              {%- if block.settings.image != blank -%}
-                <div class="tavia-testimonial-card__media">
-                  {{
-                    block.settings.image
-                    | image_url: width: 480
-                    | image_tag:
-                      class: 'tavia-testimonial-card__image',
-                      widths: '160, 240, 320, 480',
-                      sizes: '96px',
-                      loading: 'lazy',
-                      alt: block.settings.image.alt
-                  }}
-                </div>
-              {%- endif -%}
             </div>
 
             {%- if block.settings.quote != blank -%}
               <blockquote class="tavia-testimonial-card__quote">
                 <p>“{{ block.settings.quote | escape | newline_to_br }}”</p>
               </blockquote>
+            {%- endif -%}
+
+            {%- if ugc_image_count > 0 -%}
+              <div class="tavia-testimonial-card__gallery" style="--tavia-ugc-count: {{ ugc_image_count }};">
+                {%- if block.settings.image != blank -%}
+                  <div class="tavia-testimonial-card__media">
+                    {{
+                      block.settings.image
+                      | image_url: width: 480
+                      | image_tag:
+                        class: 'tavia-testimonial-card__image',
+                        widths: '160, 240, 320, 480',
+                        sizes: '(max-width: 749px) 28vw, 96px',
+                        loading: 'lazy',
+                        alt: block.settings.image.alt
+                    }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.image_two != blank -%}
+                  <div class="tavia-testimonial-card__media">
+                    {{
+                      block.settings.image_two
+                      | image_url: width: 480
+                      | image_tag:
+                        class: 'tavia-testimonial-card__image',
+                        widths: '160, 240, 320, 480',
+                        sizes: '(max-width: 749px) 28vw, 96px',
+                        loading: 'lazy',
+                        alt: block.settings.image_two.alt
+                    }}
+                  </div>
+                {%- endif -%}
+                {%- if block.settings.image_three != blank -%}
+                  <div class="tavia-testimonial-card__media">
+                    {{
+                      block.settings.image_three
+                      | image_url: width: 480
+                      | image_tag:
+                        class: 'tavia-testimonial-card__image',
+                        widths: '160, 240, 320, 480',
+                        sizes: '(max-width: 749px) 28vw, 96px',
+                        loading: 'lazy',
+                        alt: block.settings.image_three.alt
+                    }}
+                  </div>
+                {%- endif -%}
+              </div>
             {%- endif -%}
 
             <footer class="tavia-testimonial-card__footer">
@@ -341,11 +386,7 @@
   }
 
   .tavia-testimonial-card__top {
-    align-items: start;
-    display: flex;
-    gap: 18px;
-    justify-content: space-between;
-    min-height: 68px;
+    min-height: 20px;
   }
 
   .tavia-testimonial-card__stars {
@@ -363,10 +404,9 @@
 
   .tavia-testimonial-card__media {
     border: 1px solid currentColor;
-    flex: 0 0 auto;
-    height: 72px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    width: 96px;
+    width: 100%;
   }
 
   .tavia-testimonial-card__image {
@@ -382,12 +422,19 @@
     font-style: normal;
     letter-spacing: var(--tavia-tracking-body, 0.01em);
     line-height: 1.55;
-    margin: 26px 0 42px;
+    margin: 26px 0 24px;
     padding: 0;
   }
 
   .tavia-testimonial-card__quote p {
     margin: 0;
+  }
+
+  .tavia-testimonial-card__gallery {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(var(--tavia-ugc-count), minmax(0, 96px));
+    margin: 0 0 32px;
   }
 
   .tavia-testimonial-card__footer {
@@ -489,14 +536,14 @@
 
     .tavia-testimonials__rail {
       gap: 12px;
-      grid-auto-columns: calc(100vw - 48px);
+      grid-auto-columns: max(270px, calc(100vw - 88px));
       padding: 24px 16px 32px;
       scroll-padding-inline: 16px;
     }
 
     .tavia-testimonial-card {
-      min-height: min(var(--tavia-testimonial-card-height, 420px), 440px);
-      padding: 24px;
+      min-height: var(--tavia-testimonial-mobile-card-height, 360px);
+      padding: 20px;
     }
 
     .tavia-testimonial-card.is-active,
@@ -506,7 +553,13 @@
 
     .tavia-testimonial-card__quote {
       font-size: 17px;
-      margin-bottom: 30px;
+      margin: 22px 0 20px;
+    }
+
+    .tavia-testimonial-card__gallery {
+      gap: 6px;
+      grid-template-columns: repeat(var(--tavia-ugc-count), minmax(0, 72px));
+      margin-bottom: 24px;
     }
 
     .tavia-testimonial-card__footer {
@@ -689,11 +742,12 @@
     { "type": "header", "content": "Card appearance" },
     { "type": "color", "id": "card_background", "label": "Card background", "default": "#f5f5f3" },
     { "type": "color", "id": "card_text", "label": "Card text", "default": "#111111" },
-    { "type": "color", "id": "active_background", "label": "Selected card background", "default": "#111111" },
-    { "type": "color", "id": "active_text", "label": "Selected card text", "default": "#ffffff" },
+    { "type": "color", "id": "active_background", "label": "Selected card background", "default": "#d9dedb" },
+    { "type": "color", "id": "active_text", "label": "Selected card text", "default": "#111111" },
     { "type": "color", "id": "star_color", "label": "Star color", "default": "#ffb800" },
     { "type": "range", "id": "active_rotation", "label": "Selected card angle", "min": 0, "max": 4, "step": 0.5, "unit": "deg", "default": 2.5 },
     { "type": "range", "id": "card_height", "label": "Card minimum height", "min": 340, "max": 520, "step": 10, "unit": "px", "default": 420 },
+    { "type": "range", "id": "mobile_card_height", "label": "Mobile card minimum height", "min": 300, "max": 440, "step": 10, "unit": "px", "default": 360 },
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 },
     { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 }
@@ -703,7 +757,9 @@
       "type": "testimonial",
       "name": "Testimonial",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "UGC image", "info": "Recommended: square or 4:3 image, at least 800 px wide." },
+        { "type": "image_picker", "id": "image", "label": "UGC image 1", "info": "Recommended: square or 4:3 image, at least 800 px wide." },
+        { "type": "image_picker", "id": "image_two", "label": "UGC image 2" },
+        { "type": "image_picker", "id": "image_three", "label": "UGC image 3" },
         { "type": "range", "id": "rating", "label": "Star rating", "min": 1, "max": 5, "step": 1, "default": 5 },
         { "type": "textarea", "id": "quote", "label": "Review", "default": "Replace this with a real customer review or UGC caption." },
         { "type": "text", "id": "name", "label": "Customer name", "default": "Customer name" },
