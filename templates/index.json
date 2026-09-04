@@ -469,14 +469,34 @@
     "tavia-testimonials": {
       "type": "tavia-testimonials",
       "blocks": {
+        "testimonial_wfDD3F": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "Light, airy, and surprisingly supportive. I wear them around the house all day, and my feet never feel hot or weighed down.",
+            "name": "Emma Collins",
+            "verified": true,
+            "context": "Oasis Cove"
+          }
+        },
+        "testimonial_zD9PGx": {
+          "type": "testimonial",
+          "settings": {
+            "rating": 5,
+            "quote": "These passed the all day test. I wore them to a weekend event with almost no chance to sit down, and my feet felt supported from morning to evening. They are now the pair I reach for whenever I know I will be standing for hours.",
+            "name": "Claire Bennett",
+            "verified": true,
+            "context": "Atlas Wave"
+          }
+        },
         "testimonial-1": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
             "quote": "My feet usually feel tired after cooking or standing for a long time, and most slippers become stuffy within an hour. The Oasis Cove feels cushioned without being bulky, and the breathable knit keeps my feet comfortable. Now slipping them on genuinely feels like a reset.",
             "name": "Rachel Morgan",
-            "verified": false,
-            "context": ""
+            "verified": true,
+            "context": "Oasis Cove"
           }
         },
         "testimonial-2": {
@@ -484,43 +504,45 @@
           "settings": {
             "rating": 5,
             "quote": "I bought the Oasis Halo because the sculpted texture looked so different from anything else I owned. In person, it feels modern without being overdesigned, and the black color makes it surprisingly easy to style. I have already had two people ask me where I got them.",
-            "name": "Customer 02",
-            "verified": false,
-            "context": "Daily movement"
+            "name": "Jordan Lee",
+            "verified": true,
+            "context": "Oasis Halo"
           }
         },
         "testimonial-3": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Add a real review about the one-piece feel here.",
-            "name": "Customer 03",
-            "verified": false,
-            "context": "3D-printed form"
+            "quote": "This was my first time trying a 3D-printed mule, and I honestly did not know what to expect. It feels lighter and more flexible than a traditional shoe, with a soft, springy feel underfoot. Surprisingly comfortable from the first wear.",
+            "name": "Lauren Mitchell",
+            "verified": true,
+            "context": "Oasis Loom"
           }
         },
         "testimonial-4": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Add a real review about recovery or easy wear here.",
-            "name": "Customer 04",
-            "verified": false,
-            "context": "Recovery"
+            "quote": "I work in retail, so I spend most of my shift standing and walking across a hard floor. By the end of the day, my feet usually feel tired and heavy. The Atlas Wave gives me steady support without feeling stiff, and I still feel comfortable during the final hours of my shift.",
+            "name": "Megan Foster",
+            "verified": true,
+            "context": "Atlas Wave"
           }
         },
         "testimonial-5": {
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Add a real review about design and everyday use here.",
-            "name": "Customer 05",
-            "verified": false,
-            "context": "Everyday wear"
+            "quote": "The Orbit Core fits into almost every part of my day. I can wear it to work, run errands, take a long walk, or meet friends without changing shoes. The clean design works with everything from jeans to casual workwear, and it stays comfortable wherever the day takes me.",
+            "name": "Ethan Parker",
+            "verified": true,
+            "context": "Orbit Core"
           }
         }
       },
       "block_order": [
+        "testimonial_wfDD3F",
+        "testimonial_zD9PGx",
         "testimonial-1",
         "testimonial-2",
         "testimonial-3",
