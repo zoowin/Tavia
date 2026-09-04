@@ -321,7 +321,6 @@
           "type": "product_card",
           "settings": {
             "product": "asset-pack-69501812738-example-product-1",
-            "image": "shopify://shop_images/Frame_3-LR.jpg",
             "title": "The 01 / Mono",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -474,10 +473,10 @@
           "type": "testimonial",
           "settings": {
             "rating": 5,
-            "quote": "Add a real review about long-day comfort here.",
-            "name": "Customer 01",
+            "quote": "My feet usually feel tired after cooking or standing for a long time, and most slippers become stuffy within an hour. The Oasis Cove feels cushioned without being bulky, and the breathable knit keeps my feet comfortable. Now slipping them on genuinely feels like a reset.",
+            "name": "Rachel Morgan",
             "verified": false,
-            "context": "Long-day wear"
+            "context": ""
           }
         },
         "testimonial-2": {
