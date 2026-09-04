@@ -10,7 +10,7 @@
 -%}
 
 <section
-  class="tavia-comparison color-{{ section.settings.color_scheme }} gradient"
+  class="tavia-comparison tavia-comparison--desktop-{{ section.settings.desktop_image_fit }} tavia-comparison--mobile-{{ section.settings.mobile_image_fit }} color-{{ section.settings.color_scheme }} gradient"
   style="
     --tavia-comparison-padding-top: {{ section.settings.padding_top }}px;
     --tavia-comparison-padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -138,7 +138,7 @@
 
     <tavia-comparison class="tavia-comparison__mobile" style="--comparison-position: 50%;">
       <div class="tavia-comparison__mobile-stage">
-        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--after">
+        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--after color-{{ section.settings.right_color_scheme }} gradient">
           {%- if right_mobile_image != blank -%}
             {{
               right_mobile_image
@@ -155,7 +155,7 @@
           {%- endif -%}
         </div>
 
-        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--before">
+        <div class="tavia-comparison__mobile-layer tavia-comparison__mobile-layer--before color-{{ section.settings.left_color_scheme }} gradient">
           {%- if left_mobile_image != blank -%}
             {{
               left_mobile_image
@@ -241,6 +241,11 @@
     background: var(--gradient-background);
     color: rgb(var(--color-foreground));
     padding: var(--tavia-comparison-padding-top, 80px) 0 var(--tavia-comparison-padding-bottom, 80px);
+    scroll-margin-top: 110px;
+  }
+
+  .shopify-section.tavia-comparison-section {
+    scroll-margin-top: 110px;
   }
 
   .tavia-comparison,
@@ -356,6 +361,11 @@
     overflow: hidden;
   }
 
+  .tavia-comparison--desktop-contain .tavia-comparison__media {
+    aspect-ratio: 16 / 11;
+    height: auto;
+  }
+
   .tavia-comparison__image,
   .tavia-comparison__placeholder {
     display: block;
@@ -370,6 +380,10 @@
 
   .tavia-comparison__image--right {
     object-position: var(--tavia-comparison-right-position, 50% 50%);
+  }
+
+  .tavia-comparison--desktop-contain .tavia-comparison__image {
+    object-fit: contain;
   }
 
   .tavia-comparison__placeholder {
@@ -498,7 +512,7 @@
     }
   }
 
-  @media screen and (max-width: 749px) {
+  @media screen and (max-width: 989px) {
     .tavia-comparison__header {
       display: block;
       margin: 0 16px;
@@ -550,6 +564,10 @@
 
     .tavia-comparison__mobile-image {
       object-fit: cover;
+    }
+
+    .tavia-comparison--mobile-contain .tavia-comparison__mobile-image {
+      object-fit: contain;
     }
 
     .tavia-comparison__mobile-image--left {
@@ -688,6 +706,20 @@
       overflow-wrap: anywhere;
     }
   }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .tavia-comparison__header {
+      margin-left: 32px;
+      margin-right: 32px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .tavia-comparison,
+    .shopify-section.tavia-comparison-section {
+      scroll-margin-top: 84px;
+    }
+  }
 {% endstylesheet %}
 
 {% javascript %}
@@ -719,7 +751,7 @@
 {
   "name": "Tavia 3D comparison",
   "tag": "section",
-  "class": "tavia-homepage-section",
+  "class": "tavia-homepage-section tavia-comparison-section",
   "max_blocks": 5,
   "settings": [
     { "type": "color_scheme", "id": "color_scheme", "label": "Section color scheme", "default": "scheme-1" },
@@ -748,9 +780,18 @@
     { "type": "image_picker", "id": "right_mobile_image", "label": "Mobile image", "info": "Recommended: 1200 × 1500 px. Uses the desktop image when empty." },
     { "type": "text", "id": "right_image_position", "label": "Desktop image position", "default": "50% 50%", "info": "CSS object position, for example: 50% 50%." },
     { "type": "text", "id": "right_mobile_image_position", "label": "Mobile image position", "default": "50% 50%", "info": "CSS object position, for example: 55% 50%." },
+    { "type": "header", "content": "Image display" },
+    { "type": "select", "id": "desktop_image_fit", "label": "Desktop image display", "options": [
+      { "value": "contain", "label": "Show full image" },
+      { "value": "cover", "label": "Fill frame (may crop)" }
+    ], "default": "contain" },
+    { "type": "select", "id": "mobile_image_fit", "label": "Mobile image display", "options": [
+      { "value": "contain", "label": "Show full image" },
+      { "value": "cover", "label": "Fill frame (may crop)" }
+    ], "default": "contain" },
     { "type": "header", "content": "Mobile comparison" },
     { "type": "text", "id": "slider_label", "label": "Slider accessibility label", "default": "Move to compare 3D-printed and traditional footwear" },
-    { "type": "range", "id": "desktop_image_height", "label": "Desktop image height", "min": 320, "max": 760, "step": 20, "unit": "px", "default": 520 },
+    { "type": "range", "id": "desktop_image_height", "label": "Desktop image height (fill frame only)", "min": 320, "max": 760, "step": 20, "unit": "px", "default": 520 },
     { "type": "range", "id": "mobile_image_height", "label": "Mobile comparison height", "min": 360, "max": 760, "step": 20, "unit": "px", "default": 520 },
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 20, "max": 160, "step": 10, "unit": "px", "default": 80 },
