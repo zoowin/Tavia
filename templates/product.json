@@ -14,7 +14,10 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "display_title": "",
+            "subtitle": ""
+          }
         },
         "rating": {
           "type": "rating",
@@ -30,25 +33,54 @@
         },
         "product_intro": {
           "type": "product_intro",
-          "settings": { "use_description": true }
+          "settings": {
+            "content": "",
+            "use_description": true
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": {}
+          "settings": {
+            "size_guide": "",
+            "fit_note": ""
+          }
         },
         "quantity_selector_XWCHPk": {
           "type": "quantity_selector",
           "settings": {}
         },
-        "policy_summary": { "type": "policy_summary", "settings": {} },
-        "product_details": { "type": "product_details", "settings": { "open_by_default": false } },
-        "materials_care": { "type": "materials_care", "settings": { "open_by_default": false } },
-        "shipping_returns": { "type": "shipping_returns", "settings": { "open_by_default": false } },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
+          }
+        },
+        "policy_summary": {
+          "type": "policy_summary",
+          "settings": {
+            "shipping_text": "",
+            "returns_text": ""
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "open_by_default": false
+          }
+        },
+        "materials_care": {
+          "type": "materials_care",
+          "settings": {
+            "content": "",
+            "page": "",
+            "open_by_default": false
+          }
+        },
+        "shipping_returns": {
+          "type": "shipping_returns",
+          "settings": {
+            "open_by_default": false
           }
         }
       },
@@ -68,7 +100,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
-        "media_size": "small",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "cover",
         "gallery_layout": "thumbnail",
