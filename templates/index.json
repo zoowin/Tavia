@@ -494,6 +494,7 @@
         "testimonial-1": {
           "type": "testimonial",
           "settings": {
+            "image": "shopify://shop_images/Main-04-Oasis_Cove_Cocoon-Knit_Slide.jpg",
             "rating": 5,
             "quote": "My feet usually feel tired after cooking or standing for a long time, and most slippers become stuffy within an hour. The Oasis Cove feels cushioned without being bulky, and the breathable knit keeps my feet comfortable. Now slipping them on genuinely feels like a reset.",
             "name": "Rachel Morgan",
@@ -504,6 +505,7 @@
         "testimonial-2": {
           "type": "testimonial",
           "settings": {
+            "image": "shopify://shop_images/Main-06-LR_Oasis_Halo_Open-Knit_Slide.jpg",
             "rating": 5,
             "quote": "I bought the Oasis Halo because the sculpted texture looked so different from anything else I owned. In person, it feels modern without being overdesigned, and the black color makes it surprisingly easy to style. I have already had two people ask me where I got them.",
             "name": "Jordan Lee",
@@ -514,6 +516,7 @@
         "testimonial-3": {
           "type": "testimonial",
           "settings": {
+            "image": "shopify://shop_images/Main-04-LR_Oasis_Loom_Closed-Toe_Knit_Mule.jpg",
             "rating": 5,
             "quote": "This was my first time trying a 3D-printed mule, and I honestly did not know what to expect. It feels lighter and more flexible than a traditional shoe, with a soft, springy feel underfoot. Surprisingly comfortable from the first wear.",
             "name": "Lauren Mitchell",
