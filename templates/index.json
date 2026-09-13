@@ -278,7 +278,7 @@
           "type": "product_card",
           "settings": {
             "product": "atlas-wave-sculpted-sole-knit-slip-on",
-            "image": "shopify://shop_images/Main-08-Atlas_Wave_Sculpted-Sole_Knit_Slip-On.jpg",
+            "image": "shopify://shop_images/Main-07-Atlas_Wave_Sculpted-Sole_Knit_Slip-On.jpg",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -293,7 +293,7 @@
           "type": "product_card",
           "settings": {
             "product": "orbit-shift-high-collar-knit-sneaker",
-            "image": "shopify://shop_images/Main-03-LR_Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
+            "image": "shopify://shop_images/Main-01-Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -308,7 +308,7 @@
           "type": "product_card",
           "settings": {
             "product": "atlas-grid-structured-knit-slip-on",
-            "image": "shopify://shop_images/Main-05-LR_Atlas_Grid_Structured-Knit_Slip-On.jpg",
+            "image": "shopify://shop_images/Main-03-LR_Atlas_Grid_Structured-Knit_Slip-On.jpg",
             "title": "The 01 / Earth",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -322,8 +322,8 @@
         "form-2": {
           "type": "product_card",
           "settings": {
-            "product": "oasis-halo-open-knit-slide",
-            "image": "shopify://shop_images/Main-06-LR_Oasis_Halo_Open-Knit_Slide.jpg",
+            "product": "oasis-cove-cocoon-knit-slide",
+            "image": "shopify://shop_images/Main-06-Oasis_Cove_Cocoon-Knit_Slide.jpg",
             "title": "The 01 / Mono",
             "description": "One-piece everyday shoe",
             "price": "$—",
