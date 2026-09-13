@@ -8,6 +8,27 @@
  * ------------------------------------------------------------
  */
 {
+  "tavia_pdp": {
+    "display_title": "Display title (optional)",
+    "subtitle": "Product subtitle",
+    "per_product": "Use a dynamic source for product-specific content. Manually entered text applies to every product using this template.",
+    "intro": "Short introduction",
+    "content": "Content",
+    "use_description": "Use the first description paragraph when empty (up to 180 characters)",
+    "details": "Product Details",
+    "description_info": "Automatically uses this product's Description from Shopify admin.",
+    "open_default": "Open by default",
+    "materials": "Materials & Care",
+    "fallback_page": "Fallback content page",
+    "policy_summary": "Policy summary",
+    "policy_info": "Policies are read from Settings > Policies. Enter only confirmed promises. Summary text is shared by all products using this template.",
+    "shipping_text": "Shipping summary",
+    "returns_text": "Returns summary",
+    "shipping_returns": "Shipping & Returns",
+    "size_guide": "Size guide page",
+    "guide_info": "Shown next to size options only when the selected page has content. Connect a dynamic source to use a different page per product.",
+    "fit_note": "Fit note"
+  },
   "settings_schema": {
     "global": {
       "settings": {

@@ -85,12 +85,15 @@
               {%- case block.type -%}
                 {%- when 'title' -%}
                   <div class="product__title tavia-product-topline__title" {{ block.shopify_attributes }}>
-                    <h1>{{ product.title | escape }}</h1>
+                    <h1>{{ block.settings.display_title | default: product.title | escape }}</h1>
                     <a href="{{ product.url }}" class="product__title">
                       <h2 class="h1">
-                        {{ product.title | escape }}
+                        {{ block.settings.display_title | default: product.title | escape }}
                       </h2>
                     </a>
+                    {%- if block.settings.subtitle != blank -%}
+                      <p class="tavia-product-subtitle">{{ block.settings.subtitle | escape }}</p>
+                    {%- endif -%}
                   </div>
                 {%- when 'rating' -%}
                   {%- liquid
@@ -154,6 +157,8 @@
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {% render block %}
+                {%- when 'product_intro', 'product_details', 'materials_care', 'policy_summary', 'shipping_returns' -%}
+                  {% render 'tavia-buybox-content', product: product, block: block, section_id: section.id %}
                 {%- when 'text' -%}
                   <p
                     class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -733,6 +738,22 @@
         </modal-dialog>
       {%- endfor -%}
 
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'variant_picker' and block.settings.size_guide.content != blank -%}
+          <modal-dialog id="SizeGuide-{{ section.id }}-{{ block.id }}" class="product-popup-modal">
+            <div role="dialog" aria-modal="true" aria-label="{{ 'tavia_pdp.size_guide' | t }}" class="product-popup-modal__content" tabindex="-1">
+              <button id="ModalClose-SizeGuide-{{ section.id }}-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">
+                {{- 'icon-close.svg' | inline_asset_content -}}
+              </button>
+              <div class="product-popup-modal__content-info rte">
+                <h2>{{ block.settings.size_guide.title | escape }}</h2>
+                {{ block.settings.size_guide.content }}
+              </div>
+            </div>
+          </modal-dialog>
+        {%- endif -%}
+      {%- endfor -%}
+
       {%- if product.media.size > 0 -%}
         <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
         <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
@@ -753,6 +774,112 @@
 </product-info>
 
 {% stylesheet %}
+  .tavia-product-layout .tavia-product-subtitle {
+    margin: 0.8rem 0 0;
+    color: rgba(var(--color-foreground), 0.62);
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  .tavia-buybox .tavia-product-intro {
+    margin: 1.4rem 0 0;
+    color: rgba(var(--color-foreground), 0.75);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 0;
+  }
+
+  .tavia-buybox .tavia-size-label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .tavia-buybox .tavia-size-guide {
+    padding: 0.8rem 0;
+    min-height: 4.4rem;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+
+  .tavia-buybox .tavia-fit-note {
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: rgba(var(--color-foreground), 0.65);
+  }
+
+  .tavia-buybox .product-form__quantity {
+    margin: 0 0 1.6rem;
+  }
+
+  .tavia-buybox .quantity {
+    width: 12rem;
+    min-height: 4.4rem;
+  }
+
+  .tavia-buybox .quantity__button {
+    width: 4rem;
+  }
+
+  .tavia-buybox .tavia-policy-summary {
+    margin: 1.6rem 0 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .tavia-policy-summary p {
+    margin: 0.3rem 0;
+  }
+
+  .tavia-policy-summary a {
+    color: inherit;
+    text-underline-offset: 0.3rem;
+  }
+
+  .tavia-buybox .tavia-buybox-panel {
+    margin: 2rem 0 0;
+  }
+
+  .tavia-buybox .tavia-buybox-panel + .tavia-buybox-panel {
+    border-top: 0;
+    margin-top: 0;
+  }
+
+  .tavia-buybox .tavia-buybox-panel summary {
+    min-height: 5.2rem;
+    padding: 1.6rem 0;
+  }
+
+  .tavia-buybox .tavia-buybox-panel .accordion__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .tavia-buybox .tavia-buybox-panel .accordion__content {
+    padding: 0 0 1.6rem;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .tavia-buybox .tavia-buybox-panel .accordion__content h3 {
+    font-size: 1.4rem;
+  }
+
+  .tavia-buybox .tavia-editor-note {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px dashed rgba(var(--color-foreground), 0.25);
+    font-size: 1.2rem;
+  }
+
   .tavia-buybox {
     --tavia-buybox-line: rgba(var(--color-foreground), 0.16);
     --tavia-buybox-muted: rgba(var(--color-foreground), 0.62);
@@ -1150,7 +1277,48 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "display_title", "label": "t:tavia_pdp.display_title", "info": "t:tavia_pdp.per_product" },
+        { "type": "text", "id": "subtitle", "label": "t:tavia_pdp.subtitle", "info": "t:tavia_pdp.per_product" }
+      ]
+    },
+    {
+      "type": "product_intro", "name": "t:tavia_pdp.intro", "limit": 1,
+      "settings": [
+        { "type": "inline_richtext", "id": "content", "label": "t:tavia_pdp.content", "info": "t:tavia_pdp.per_product" },
+        { "type": "checkbox", "id": "use_description", "label": "t:tavia_pdp.use_description", "default": true }
+      ]
+    },
+    {
+      "type": "product_details", "name": "t:tavia_pdp.details", "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "t:tavia_pdp.description_info" },
+        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+      ]
+    },
+    {
+      "type": "materials_care", "name": "t:tavia_pdp.materials", "limit": 1,
+      "settings": [
+        { "type": "richtext", "id": "content", "label": "t:tavia_pdp.content", "info": "t:tavia_pdp.per_product" },
+        { "type": "page", "id": "page", "label": "t:tavia_pdp.fallback_page" },
+        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+      ]
+    },
+    {
+      "type": "policy_summary", "name": "t:tavia_pdp.policy_summary", "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "t:tavia_pdp.policy_info" },
+        { "type": "text", "id": "shipping_text", "label": "t:tavia_pdp.shipping_text" },
+        { "type": "text", "id": "returns_text", "label": "t:tavia_pdp.returns_text" }
+      ]
+    },
+    {
+      "type": "shipping_returns", "name": "t:tavia_pdp.shipping_returns", "limit": 1,
+      "settings": [
+        { "type": "paragraph", "content": "t:tavia_pdp.policy_info" },
+        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+      ]
     },
     {
       "type": "price",
@@ -1234,7 +1402,11 @@
     {
       "type": "variant_picker",
       "name": "t:sections.main-product.blocks.variant_picker.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        { "type": "page", "id": "size_guide", "label": "t:tavia_pdp.size_guide", "info": "t:tavia_pdp.guide_info" },
+        { "type": "inline_richtext", "id": "fit_note", "label": "t:tavia_pdp.fit_note", "info": "t:tavia_pdp.per_product" }
+      ]
     },
     {
       "type": "buy_buttons",

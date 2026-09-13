@@ -57,9 +57,14 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
+          <div class="tavia-size-label">
+            <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+            {%- if block.settings.size_guide.content != blank -%}
+              <modal-opener data-modal="#SizeGuide-{{ section.id }}-{{ block.id }}">
+                <button type="button" class="link tavia-size-guide" aria-haspopup="dialog">{{ 'tavia_pdp.size_guide' | t }}</button>
+              </modal-opener>
+            {%- endif -%}
+          </div>
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
@@ -86,6 +91,9 @@
               {{- 'icon-caret.svg' | inline_asset_content -}}
             </span>
           </div>
+          {%- if block.settings.fit_note != blank -%}
+            <div class="tavia-fit-note">{{ block.settings.fit_note }}</div>
+          {%- endif -%}
         </div>
       {%- endif -%}
     {%- endfor -%}

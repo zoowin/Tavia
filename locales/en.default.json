@@ -8,6 +8,15 @@
  * ------------------------------------------------------------
  */
 {
+  "tavia_pdp": {
+    "details": "Product Details",
+    "materials": "Materials & Care",
+    "shipping_returns": "Shipping & Returns",
+    "size_guide": "Size Guide",
+    "intro_setup": "Add a short introduction or connect a product source.",
+    "policy_setup": "Add your confirmed shipping and returns summary.",
+    "content_setup": "Add content in the block settings or product/store admin. Empty blocks are hidden from customers."
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",

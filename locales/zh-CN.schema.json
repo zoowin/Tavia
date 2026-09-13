@@ -8,6 +8,27 @@
  * ------------------------------------------------------------
  */
 {
+  "tavia_pdp": {
+    "display_title": "显示标题（可选）",
+    "subtitle": "产品副标题",
+    "per_product": "产品专属内容请连接动态来源。手动填写的文字将用于所有使用此模板的产品。",
+    "intro": "简短产品介绍",
+    "content": "内容",
+    "use_description": "留空时使用描述首段（最多 180 个字符）",
+    "details": "产品详情",
+    "description_info": "自动读取 Shopify 后台当前产品的 Description。",
+    "open_default": "默认展开",
+    "materials": "材质与护理",
+    "fallback_page": "备用内容页面",
+    "policy_summary": "政策摘要",
+    "policy_info": "完整政策读取自「设置 > 政策」。请只填写已确认的承诺，摘要将用于所有使用此模板的产品。",
+    "shipping_text": "配送摘要",
+    "returns_text": "退换摘要",
+    "shipping_returns": "配送与退换",
+    "size_guide": "尺码表页面",
+    "guide_info": "所选页面有内容时，在尺码选项旁显示入口。可连接动态来源，让不同产品使用不同尺码表。",
+    "fit_note": "尺码适配提示"
+  },
   "settings_schema": {
     "colors": {
       "name": "颜色",

@@ -8,6 +8,15 @@
  * ------------------------------------------------------------
  */
 {
+  "tavia_pdp": {
+    "details": "产品详情",
+    "materials": "材质与护理",
+    "shipping_returns": "配送与退换",
+    "size_guide": "尺码表",
+    "intro_setup": "填写简短介绍，或连接产品动态来源。",
+    "policy_setup": "填写已确认的配送与退换摘要。",
+    "content_setup": "请在区块设置或产品／商店后台补充内容，空栏目不会向顾客显示。"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "使用密码进入商店：",

@@ -28,6 +28,10 @@
           "type": "price",
           "settings": {}
         },
+        "product_intro": {
+          "type": "product_intro",
+          "settings": { "use_description": true }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {}
@@ -36,6 +40,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "policy_summary": { "type": "policy_summary", "settings": {} },
+        "product_details": { "type": "product_details", "settings": { "open_by_default": false } },
+        "materials_care": { "type": "materials_care", "settings": { "open_by_default": false } },
+        "shipping_returns": { "type": "shipping_returns", "settings": { "open_by_default": false } },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -48,9 +56,14 @@
         "title",
         "rating",
         "price",
+        "product_intro",
         "variant_picker",
         "quantity_selector_XWCHPk",
-        "buy_buttons"
+        "buy_buttons",
+        "policy_summary",
+        "product_details",
+        "materials_care",
+        "shipping_returns"
       ],
       "settings": {
         "enable_sticky_info": true,
