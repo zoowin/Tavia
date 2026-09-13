@@ -292,8 +292,8 @@
         "product_card_Jj8YCm": {
           "type": "product_card",
           "settings": {
-            "product": "asset-pack-69501812738-example-product-3",
-            "image": "shopify://shop_images/Frame_2-LR.jpg",
+            "product": "orbit-shift-high-collar-knit-sneaker",
+            "image": "shopify://shop_images/Main-03-LR_Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -307,8 +307,8 @@
         "form-1": {
           "type": "product_card",
           "settings": {
-            "product": "asset-pack-69501812738-example-product-2",
-            "image": "shopify://shop_images/Frame_4-LR.jpg",
+            "product": "atlas-grid-structured-knit-slip-on",
+            "image": "shopify://shop_images/Main-05-LR_Atlas_Grid_Structured-Knit_Slip-On.jpg",
             "title": "The 01 / Earth",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -322,12 +322,13 @@
         "form-2": {
           "type": "product_card",
           "settings": {
-            "product": "asset-pack-69501812738-example-product-1",
+            "product": "oasis-halo-open-knit-slide",
+            "image": "shopify://shop_images/Main-06-LR_Oasis_Halo_Open-Knit_Slide.jpg",
             "title": "The 01 / Mono",
             "description": "One-piece everyday shoe",
             "price": "$—",
             "link": "",
-            "fallback_tone": "mono",
+            "fallback_tone": "natural",
             "background": "#d8d8d5",
             "swatch_one": "#171717",
             "swatch_two": "#f2f1ec"
