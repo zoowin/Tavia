@@ -46,7 +46,7 @@
           %}
         </fieldset>
       {%- elsif picker_type == 'button' -%}
-        <fieldset class="js product-form__input product-form__input--pill">
+        <fieldset class="js product-form__input product-form__input--pill{% if normalized_option_name contains 'color' or normalized_option_name contains 'colour' or normalized_option_name contains '颜色' %} product-form__input--color{% endif %}">
           <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
