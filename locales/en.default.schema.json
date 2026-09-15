@@ -9,6 +9,7 @@
  */
 {
   "tavia_pdp": {
+    "split_product_title": "Split known Tavia names and product descriptors into title and subtitle",
     "display_title": "Display title (optional)",
     "subtitle": "Product subtitle",
     "per_product": "Use a dynamic source for product-specific content. Manually entered text applies to every product using this template.",

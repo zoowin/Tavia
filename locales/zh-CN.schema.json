@@ -9,6 +9,7 @@
  */
 {
   "tavia_pdp": {
+    "split_product_title": "将已命名的 Tavia 产品长标题自动拆分为标题和副标题",
     "display_title": "显示标题（可选）",
     "subtitle": "产品副标题",
     "per_product": "产品专属内容请连接动态来源。手动填写的文字将用于所有使用此模板的产品。",
