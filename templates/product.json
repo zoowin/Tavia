@@ -15,6 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
+            "split_product_title": true,
             "display_title": "",
             "subtitle": ""
           }
@@ -56,13 +57,6 @@
             "show_gift_card_recipient": true
           }
         },
-        "policy_summary": {
-          "type": "policy_summary",
-          "settings": {
-            "shipping_text": "",
-            "returns_text": ""
-          }
-        },
         "product_details": {
           "type": "product_details",
           "settings": {
@@ -92,7 +86,6 @@
         "variant_picker",
         "quantity_selector_XWCHPk",
         "buy_buttons",
-        "policy_summary",
         "product_details",
         "materials_care",
         "shipping_returns"
