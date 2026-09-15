@@ -57,6 +57,14 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
+          <tavia-us-sizes
+            data-system-label="{{ 'tavia_pdp.size_system' | t | escape }}"
+            data-female-label="{{ 'tavia_pdp.female' | t | escape }}"
+            data-male-label="{{ 'tavia_pdp.male' | t | escape }}"
+            data-size-label="{{ 'tavia_pdp.us_size' | t | escape }}"
+            data-reference-note="{{ 'tavia_pdp.size_reference' | t | escape }}"
+            data-required-message="{{ 'tavia_pdp.select_size' | t | escape }}"
+          >
           <div class="tavia-size-label">
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
             {%- if block.settings.size_guide.content != blank -%}
@@ -94,6 +102,7 @@
           {%- if block.settings.fit_note != blank -%}
             <div class="tavia-fit-note">{{ block.settings.fit_note }}</div>
           {%- endif -%}
+          </tavia-us-sizes>
         </div>
       {%- endif -%}
     {%- endfor -%}

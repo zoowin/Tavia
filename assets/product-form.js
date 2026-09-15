@@ -21,6 +21,9 @@ if (!customElements.get('product-form')) {
         evt.preventDefault();
         if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
 
+        const sizePicker = this.closest('product-info')?.querySelector('tavia-us-sizes[data-enhanced]');
+        if (sizePicker && !sizePicker.validateSelection()) return;
+
         this.handleErrorMessage();
 
         this.submitButton.setAttribute('aria-disabled', true);

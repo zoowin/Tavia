@@ -1,0 +1,39 @@
+tavia-us-sizes { display: block; }
+.tavia-us-system { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin-bottom: 2.2rem; }
+.tavia-us-system .form__label { grid-column: 1 / -1; margin: 0 0 .2rem; }
+.tavia-us-system button,
+.tavia-us-grid button {
+  appearance: none;
+  border: 1px solid var(--tavia-buybox-line, rgba(var(--color-foreground), .2));
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  border-radius: 0;
+  min-height: 46px;
+  padding: 1.2rem .8rem;
+  font-family: var(--font-mono-family, var(--font-body-family));
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .025em;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+.tavia-us-system button { width: 100%; }
+.tavia-us-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin-top: 1rem; }
+.tavia-us-system button[aria-pressed='true'],
+.tavia-us-grid button[aria-pressed='true'] { background: rgb(var(--color-foreground)); color: rgb(var(--color-background)); border-color: rgb(var(--color-foreground)); }
+.tavia-us-grid button:disabled { opacity: .4; cursor: not-allowed; text-decoration: line-through; }
+.tavia-us-system button:focus-visible,
+.tavia-us-grid button:focus-visible { outline: 2px solid rgb(var(--color-foreground)); outline-offset: 3px; }
+.tavia-us-summary { font-size: 1.3rem; margin: 1rem 0; }
+.tavia-us-error { color: #a32020; font-size: 1.3rem; }
+.tavia-us-note { font-size: 1.2rem; line-height: 1.5; opacity: .7; }
+tavia-us-sizes [hidden] { display: none !important; }
+@media (hover: hover) {
+  .tavia-us-system button:hover,
+  .tavia-us-grid button:not(:disabled):hover { border-color: rgb(var(--color-foreground)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tavia-us-system button,
+  .tavia-us-grid button { transition: none; }
+}

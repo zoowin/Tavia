@@ -126,7 +126,10 @@ if (!customElements.get('product-info')) {
             const html = new DOMParser().parseFromString(responseText, 'text/html');
             callback(html);
             // set focus to last clicked option value
-            document.querySelector(`#${targetId}`)?.focus();
+            const target = document.getElementById(targetId);
+            const sizePicker = target?.closest('tavia-us-sizes[data-enhanced]');
+            const focusTarget = sizePicker?.querySelector('.tavia-us-grid button[aria-pressed="true"]:not(:disabled)');
+            (focusTarget || target)?.focus({ preventScroll: true });
           })
           .catch((error) => {
             if (error.name === 'AbortError') {
