@@ -102,7 +102,7 @@
             "link": "",
             "wide_card": false,
             "color_scheme": "",
-            "overlay_opacity": 20
+            "overlay_opacity": 10
           }
         },
         "vector": {
@@ -118,7 +118,7 @@
             "link": "",
             "wide_card": false,
             "color_scheme": "",
-            "overlay_opacity": 20
+            "overlay_opacity": 10
           }
         },
         "atlas": {
@@ -134,7 +134,7 @@
             "link": "",
             "wide_card": false,
             "color_scheme": "",
-            "overlay_opacity": 20
+            "overlay_opacity": 10
           }
         },
         "orbit": {
