@@ -27,7 +27,6 @@ tavia-us-sizes { display: block; }
 .tavia-us-grid button:focus-visible { outline: 2px solid rgb(var(--color-foreground)); outline-offset: 3px; }
 .tavia-us-summary { font-size: 1.3rem; margin: 1rem 0; }
 .tavia-us-error { color: #a32020; font-size: 1.3rem; }
-.tavia-us-note { font-size: 1.2rem; line-height: 1.5; opacity: .7; }
 tavia-us-sizes [hidden] { display: none !important; }
 @media (hover: hover) {
   .tavia-us-system button:hover,

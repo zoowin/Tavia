@@ -85,10 +85,7 @@ if (!customElements.get('tavia-us-sizes')) {
       this.error.className = 'tavia-us-error';
       this.error.setAttribute('role', 'alert');
       this.error.hidden = true;
-      const note = document.createElement('p');
-      note.className = 'tavia-us-note';
-      note.textContent = this.dataset.referenceNote;
-      this.grid.after(this.summary, this.error, note);
+      this.grid.after(this.summary, this.error);
       this.refresh();
     }
 
