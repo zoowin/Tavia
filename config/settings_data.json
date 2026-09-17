@@ -9,7 +9,8 @@
  */
 {
   "current": {
-    "logo_width": 60,
+    "logo": "shopify://shop_images/tavia-logo-white.png",
+    "logo_width": 160,
     "use_tavia_font_system": true,
     "type_header_font": "lato_n7",
     "heading_scale": 125,
