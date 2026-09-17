@@ -134,8 +134,8 @@
         "column_UHbk4K": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Sculpted underfoot.",
+            "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
             "link_label": "",
             "link": ""
           }
@@ -143,8 +143,8 @@
         "column_ngCDUH": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "A contoured surround.",
+            "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,8 +152,8 @@
         "column_DiDHnr": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Open by design.",
+            "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
             "link_label": "",
             "link": ""
           }
@@ -166,27 +166,27 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Multicolumn",
+        "title": "The details behind Atlas Wave.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "Button label",
+        "image_ratio": "portrait",
+        "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
         "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
     "main",
+    "multicolumn_FmaeVL",
     "disclosures",
-    "related-products",
-    "multicolumn_FmaeVL"
+    "related-products"
   ]
 }

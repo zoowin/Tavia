@@ -1,6 +1,39 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  assign atlas_highlights = false
+  if template.suffix == 'atlas-wave' and section.id contains 'multicolumn_FmaeVL'
+    assign atlas_highlights = true
+  endif
+-%}
+{%- if atlas_highlights -%}
+  {%- style -%}
+    #shopify-section-{{ section.id }} .multicolumn__title { justify-content: center; text-align: center; margin-bottom: 4rem; padding: 0; }
+    #shopify-section-{{ section.id }} .title { font-size: clamp(2.6rem, 3vw, 4.2rem); letter-spacing: -.035em; }
+    #shopify-section-{{ section.id }} .multicolumn-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; padding: 0; counter-reset: atlas-feature; }
+    #shopify-section-{{ section.id }} .multicolumn-list__item { width: 100%; max-width: none; margin: 0; counter-increment: atlas-feature; }
+    #shopify-section-{{ section.id }} .multicolumn-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+    #shopify-section-{{ section.id }} .multicolumn-card::after { display: none; }
+    #shopify-section-{{ section.id }} .multicolumn-card__image-wrapper { margin: 0; padding: 0; }
+    #shopify-section-{{ section.id }} .media { aspect-ratio: 4 / 5; padding-bottom: 0 !important; background: #f2f2f0; border-radius: 0; }
+    #shopify-section-{{ section.id }} .multicolumn-card__image { width: 100%; height: 100%; object-fit: contain; }
+    #shopify-section-{{ section.id }} .multicolumn-card__info { padding: 2.4rem 0 0; }
+    #shopify-section-{{ section.id }} .multicolumn-card__info::before { content: "0" counter(atlas-feature); display: block; margin-bottom: 1.4rem; font-family: var(--font-mono-family); font-size: 1.1rem; letter-spacing: .12em; opacity: .55; }
+    #shopify-section-{{ section.id }} h3 { font-size: clamp(2rem, 2vw, 2.6rem); line-height: 1.2; letter-spacing: -.025em; }
+    #shopify-section-{{ section.id }} .rte { max-width: 38ch; margin-top: 1.2rem; font-size: 1.5rem; line-height: 1.65; color: rgba(var(--color-foreground), .72); }
+    @media (max-width: 989px) {
+      #shopify-section-{{ section.id }} .page-width { padding-inline: 2.4rem; }
+    }
+    @media (max-width: 749px) {
+      #shopify-section-{{ section.id }} .multicolumn-list { grid-template-columns: minmax(0, 1fr); gap: 3.6rem; }
+      #shopify-section-{{ section.id }} .multicolumn__title { margin-bottom: 2.8rem; }
+      #shopify-section-{{ section.id }} .slider-mobile-gutter { margin: 0; }
+      #shopify-section-{{ section.id }} .multicolumn-card__info { padding-top: 2rem; }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -117,6 +150,9 @@
                     }}
                   </div>
                 </div>
+              {%- endif -%}
+              {%- if atlas_highlights and request.design_mode and block.settings.image == blank -%}
+                <div class="media" aria-hidden="true"></div>
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
