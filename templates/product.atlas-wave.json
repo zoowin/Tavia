@@ -184,26 +184,11 @@
         "padding_top": 24,
         "padding_bottom": 80
       }
-    },
-    "atlas_video_text": {
-      "type": "tavia-video-text",
-      "settings": {
-        "eyebrow": "Atlas Wave / In motion",
-        "heading": "Sculpted beneath every step.",
-        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
-        "ratio": "adapt",
-        "video_position": "left",
-        "loop": true,
-        "color_scheme": "scheme-1",
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
     }
   },
   "order": [
     "main",
     "multicolumn_FmaeVL",
-    "atlas_video_text",
     "disclosures",
     "related-products"
   ]
