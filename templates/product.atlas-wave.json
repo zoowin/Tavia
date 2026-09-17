@@ -104,6 +104,7 @@
         "column_UHbk4K": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
             "title": "Sculpted underfoot.",
             "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
             "link_label": "",
@@ -113,6 +114,7 @@
         "column_ngCDUH": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-02-LR.jpg",
             "title": "A contoured surround.",
             "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
             "link_label": "",
@@ -122,6 +124,7 @@
         "column_DiDHnr": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-03-LR.jpg",
             "title": "Open by design.",
             "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
             "link_label": "",
