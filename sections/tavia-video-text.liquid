@@ -1,0 +1,81 @@
+{%- if section.settings.video != blank or request.design_mode -%}
+  {%- liquid
+    assign video_label = section.settings.video_description | default: section.settings.heading | strip_html
+    assign video_poster = section.settings.cover_image | default: section.settings.video.preview_image
+    assign video_ratio = section.settings.video.aspect_ratio | default: 1.5
+    if section.settings.ratio != 'adapt'
+      assign video_ratio = section.settings.ratio
+    endif
+  -%}
+  <div class="tavia-video-text color-{{ section.settings.color_scheme }} gradient" style="--video-ratio: {{ video_ratio }}; --section-top: {{ section.settings.padding_top }}px; --section-bottom: {{ section.settings.padding_bottom }}px;">
+    <div class="page-width">
+      <div class="tavia-video-text__grid{% if section.settings.video_position == 'right' %} tavia-video-text__grid--reverse{% endif %}">
+        <div class="tavia-video-text__media">
+          {%- if section.settings.video != blank -%}
+            {%- assign poster_url = video_poster | image_url: width: 1800 -%}
+            {{ section.settings.video | video_tag: image_size: '1800x', poster: poster_url, controls: true, autoplay: false, loop: section.settings.loop, muted: true, playsinline: true, preload: 'none', aria-label: video_label }}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'tavia-video-text__placeholder' }}
+          {%- endif -%}
+        </div>
+        <div class="tavia-video-text__copy">
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="tavia-video-text__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+          {%- endif -%}
+          {%- if section.settings.heading != blank -%}
+            <h2>{{ section.settings.heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="rte">{{ section.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .tavia-video-text { padding-block: var(--section-top) var(--section-bottom); }
+  .tavia-video-text__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(3.2rem, 5vw, 8rem); align-items: center; }
+  .tavia-video-text__media { min-width: 0; aspect-ratio: var(--video-ratio); background: #f2f2f0; overflow: hidden; }
+  .tavia-video-text__media video, .tavia-video-text__placeholder { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .tavia-video-text__copy { padding-block: 2rem; }
+  .tavia-video-text__eyebrow { font-family: var(--font-mono-family, monospace); font-size: 1.1rem; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 1.8rem; }
+  .tavia-video-text__copy h2 { margin: 0; font-size: clamp(2.8rem, 3.5vw, 4.8rem); line-height: 1.12; letter-spacing: -.035em; }
+  .tavia-video-text__copy .rte { max-width: 42ch; margin-top: 2.4rem; font-size: 1.6rem; line-height: 1.7; color: rgba(var(--color-foreground), .75); }
+  @media (min-width: 750px) {
+    .tavia-video-text__grid--reverse { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
+    .tavia-video-text__grid--reverse .tavia-video-text__media { grid-column: 2; grid-row: 1; }
+    .tavia-video-text__grid--reverse .tavia-video-text__copy { grid-column: 1; grid-row: 1; }
+  }
+  @media (max-width: 749px) {
+    .tavia-video-text { padding-block: calc(var(--section-top) * .75) calc(var(--section-bottom) * .75); }
+    .tavia-video-text__grid { grid-template-columns: minmax(0, 1fr); gap: 2.8rem; }
+    .tavia-video-text__copy { padding: 0; }
+    .tavia-video-text__copy .rte { margin-top: 1.6rem; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Tavia video + text",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "video", "id": "video", "label": "Video", "info": "Select a Shopify-hosted video. This section is hidden on the storefront until a video is selected." },
+    { "type": "image_picker", "id": "cover_image", "label": "Video cover image", "info": "Optional. Use the same aspect ratio as the video." },
+    { "type": "text", "id": "video_description", "label": "Video accessibility description", "default": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground." },
+    { "type": "checkbox", "id": "loop", "label": "Loop video", "default": true },
+    { "type": "select", "id": "ratio", "label": "Video frame ratio", "default": "adapt", "options": [{ "value": "adapt", "label": "Adapt to video" }, { "value": "1.5", "label": "3:2" }, { "value": "1", "label": "1:1" }, { "value": "1.7777778", "label": "16:9" }] },
+    { "type": "select", "id": "video_position", "label": "Desktop video position", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }] },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Atlas Wave / In motion" },
+    { "type": "inline_richtext", "id": "heading", "label": "Heading", "default": "Sculpted beneath every step." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [{ "name": "Tavia video + text" }]
+}
+{% endschema %}
