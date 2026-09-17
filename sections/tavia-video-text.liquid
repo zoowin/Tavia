@@ -7,7 +7,7 @@
       assign video_ratio = section.settings.ratio
     endif
   -%}
-  <div class="tavia-video-text color-{{ section.settings.color_scheme }} gradient" style="--video-ratio: {{ video_ratio }}; --section-top: {{ section.settings.padding_top }}px; --section-bottom: {{ section.settings.padding_bottom }}px;">
+  <tavia-video-text data-autoplay="{{ section.settings.autoplay }}" class="tavia-video-text{% if section.settings.mobile_full_width %} tavia-video-text--mobile-full{% endif %} color-{{ section.settings.color_scheme }} gradient" style="--video-ratio: {{ video_ratio }}; --section-top: {{ section.settings.padding_top }}px; --section-bottom: {{ section.settings.padding_bottom }}px;">
     <div class="page-width">
       <div class="tavia-video-text__grid{% if section.settings.video_position == 'right' %} tavia-video-text__grid--reverse{% endif %}">
         <div class="tavia-video-text__media">
@@ -31,11 +31,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </tavia-video-text>
 {%- endif -%}
 
 {% stylesheet %}
-  .tavia-video-text { padding-block: var(--section-top) var(--section-bottom); }
+  .tavia-video-text { display: block; padding-block: var(--section-top) var(--section-bottom); }
   .tavia-video-text__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(3.2rem, 5vw, 8rem); align-items: center; }
   .tavia-video-text__media { min-width: 0; aspect-ratio: var(--video-ratio); background: #f2f2f0; overflow: hidden; }
   .tavia-video-text__media video, .tavia-video-text__placeholder { display: block; width: 100%; height: 100%; object-fit: contain; }
@@ -53,8 +53,42 @@
     .tavia-video-text__grid { grid-template-columns: minmax(0, 1fr); gap: 2.8rem; }
     .tavia-video-text__copy { padding: 0; }
     .tavia-video-text__copy .rte { margin-top: 1.6rem; }
+    .tavia-video-text--mobile-full > .page-width { max-width: none; padding-inline: 0; }
+    .tavia-video-text--mobile-full .tavia-video-text__copy { padding-inline: 2.4rem; }
   }
 {% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('tavia-video-text')) {
+    customElements.define('tavia-video-text', class extends HTMLElement {
+      connectedCallback() {
+        const video = this.querySelector('video');
+        if (!video || this.dataset.autoplay !== 'true' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const start = () => {
+          if (!this.isConnected) return;
+          video.muted = true;
+          video.playsInline = true;
+          video.play().catch(() => {});
+        };
+        if ('IntersectionObserver' in window) {
+          this.observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+              this.observer.disconnect();
+              start();
+            }
+          }, { threshold: 0.25 });
+          this.observer.observe(video);
+        } else {
+          start();
+        }
+      }
+      disconnectedCallback() {
+        this.observer?.disconnect();
+        this.querySelector('video')?.pause();
+      }
+    });
+  }
+{% endjavascript %}
 
 {% schema %}
 {
@@ -67,6 +101,8 @@
     { "type": "image_picker", "id": "cover_image", "label": "Video cover image", "info": "Optional. Use the same aspect ratio as the video." },
     { "type": "text", "id": "video_description", "label": "Video accessibility description", "default": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground." },
     { "type": "checkbox", "id": "loop", "label": "Loop video", "default": true },
+    { "type": "checkbox", "id": "autoplay", "label": "Autoplay muted", "default": true, "info": "Starts when visible. Respects reduced-motion preferences and browser playback restrictions." },
+    { "type": "checkbox", "id": "mobile_full_width", "label": "Full-width video on mobile", "default": true },
     { "type": "select", "id": "ratio", "label": "Video frame ratio", "default": "adapt", "options": [{ "value": "adapt", "label": "Adapt to video" }, { "value": "1.5", "label": "3:2" }, { "value": "1", "label": "1:1" }, { "value": "1.7777778", "label": "16:9" }] },
     { "type": "select", "id": "video_position", "label": "Desktop video position", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "right", "label": "Right" }] },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Atlas Wave / In motion" },
