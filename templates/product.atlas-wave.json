@@ -155,6 +155,23 @@
         "padding_bottom": 64
       }
     },
+    "tavia_video_text_JTWetN": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video": "shopify://files/videos/Atlas on foot.mp4",
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "Atlas Wave / In motion",
+        "heading": "Sculpted beneath every step.",
+        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "disclosures": {
       "type": "disclosures",
       "settings": {
@@ -189,6 +206,7 @@
   "order": [
     "main",
     "multicolumn_FmaeVL",
+    "tavia_video_text_JTWetN",
     "disclosures",
     "related-products"
   ]
