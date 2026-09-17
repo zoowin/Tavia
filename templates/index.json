@@ -368,6 +368,22 @@
         "padding_bottom": 10
       }
     },
+    "video_eUffbH": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video": "shopify://files/videos/Brand-vid-01.mp4",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": true,
+        "color_scheme": "",
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    },
     "motion-story": {
       "type": "tavia-brand-story",
       "blocks": {
@@ -587,6 +603,7 @@
     "tavia_3d_comparison_xpUMfx",
     "object-statement",
     "current-forms",
+    "video_eUffbH",
     "motion-story",
     "technology-story",
     "tavia-testimonials"
