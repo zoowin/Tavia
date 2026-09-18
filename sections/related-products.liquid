@@ -1,3 +1,32 @@
+{% liquid
+  assign atlas_carousel = false
+  if template.suffix == 'atlas-wave'
+    assign atlas_carousel = true
+  endif
+%}
+{% if atlas_carousel %}
+{% style %}
+#shopify-section-{{ section.id }} .related-products__heading { font-family: var(--font-heading-family); font-size: clamp(2.6rem, 3vw, 4.2rem); font-weight: 500; line-height: 1.2; letter-spacing: -.035em; margin-bottom: 3.2rem; }
+#shopify-section-{{ section.id }} .atlas-recommendation-slider { display: block; }
+#shopify-section-{{ section.id }} .atlas-recommendation-track { position: relative; display: flex; flex-wrap: nowrap; gap: 2.4rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; padding: 0 0 1.2rem; margin: 0; list-style: none; }
+#shopify-section-{{ section.id }} .atlas-recommendation-track > .grid__item { flex: 0 0 calc((100% - 7.2rem) / 4); width: calc((100% - 7.2rem) / 4); max-width: none; min-width: 0; scroll-snap-align: start; }
+#shopify-section-{{ section.id }} .card__heading { font-family: var(--font-body-family); font-size: 1.5rem; font-weight: 500; line-height: 1.45; letter-spacing: 0; text-transform: none; }
+#shopify-section-{{ section.id }} .price { font-size: 1.4rem; font-weight: 400; }
+#shopify-section-{{ section.id }} .card__information { padding-block: 1.6rem; }
+#shopify-section-{{ section.id }} .card__media .media img { object-fit: contain; }
+#shopify-section-{{ section.id }} .atlas-recommendation-controls { display: flex; justify-content: flex-end; gap: .8rem; margin-top: 1.6rem; }
+#shopify-section-{{ section.id }} .atlas-recommendation-controls button { display: grid; place-items: center; width: 4.4rem; height: 4.4rem; border: 1px solid rgba(var(--color-foreground), .25); background: transparent; color: rgb(var(--color-foreground)); cursor: pointer; }
+#shopify-section-{{ section.id }} .atlas-recommendation-controls button:disabled { opacity: .3; cursor: default; }
+#shopify-section-{{ section.id }} .atlas-recommendation-controls svg { width: 1.2rem; height: .8rem; }
+#shopify-section-{{ section.id }} button[name="previous"] svg { transform: rotate(90deg); }
+#shopify-section-{{ section.id }} button[name="next"] svg { transform: rotate(-90deg); }
+@media (max-width: 989px) { #shopify-section-{{ section.id }} .related-products.page-width { padding-inline: 2.4rem; } }
+@media (max-width: 749px) {
+#shopify-section-{{ section.id }} .atlas-recommendation-track > .grid__item { flex-basis: 100%; width: 100%; }
+#shopify-section-{{ section.id }} .related-products__heading { margin-bottom: 2.4rem; }
+}
+{% endstyle %}
+{% endif %}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
@@ -26,10 +55,11 @@
     <div class="color-{{ section.settings.color_scheme }} gradient">
       <div class="related-products page-width section-{{ section.id }}-padding isolate">
         <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
-        <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+        {% if atlas_carousel %}<slider-component class="atlas-recommendation-slider">{% endif %}
+        <ul {% if atlas_carousel %}id="Slider-{{ section.id }}" tabindex="0" aria-label="{{ section.settings.heading | escape }}"{% endif %} class="{% if atlas_carousel %}atlas-recommendation-track {% endif %}grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
           {%- assign skip_card_product_styles = false -%}
           {%- for recommendation in selected_products limit: section.settings.products_to_show -%}
-            <li class="grid__item">
+            <li {% if atlas_carousel %}id="Slide-{{ section.id }}-{{ forloop.index }}"{% endif %} class="grid__item">
               {% render 'card-product',
                 card_product: recommendation,
                 media_aspect_ratio: section.settings.image_ratio,
@@ -46,12 +76,19 @@
           {%- else -%}
             {%- if request.design_mode -%}
               {%- for i in (1..section.settings.products_to_show) -%}
-                <li class="grid__item">{% render 'card-product', media_aspect_ratio: section.settings.image_ratio, show_vendor: false, skip_styles: skip_card_product_styles %}</li>
+                <li {% if atlas_carousel %}id="Slide-{{ section.id }}-{{ forloop.index }}"{% endif %} class="grid__item">{% render 'card-product', media_aspect_ratio: section.settings.image_ratio, show_vendor: false, skip_styles: skip_card_product_styles %}</li>
                 {%- assign skip_card_product_styles = true -%}
               {%- endfor -%}
             {%- endif -%}
           {%- endfor -%}
         </ul>
+        {% if atlas_carousel %}
+          <div class="atlas-recommendation-controls">
+            <button type="button" name="previous" aria-controls="Slider-{{ section.id }}" aria-label="{{ 'general.slider.previous_slide' | t }}" disabled>{{ 'icon-caret.svg' | inline_asset_content }}</button>
+            <button type="button" name="next" aria-controls="Slider-{{ section.id }}" aria-label="{{ 'general.slider.next_slide' | t }}"{% if selected_products.size == 1 %} disabled{% endif %}>{{ 'icon-caret.svg' | inline_asset_content }}</button>
+          </div>
+        </slider-component>
+        {% endif %}
       </div>
       {% if section.settings.image_shape == 'arch' %}
         {{ 'mask-arch.svg' | inline_asset_content }}
