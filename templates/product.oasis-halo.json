@@ -158,10 +158,65 @@
         "padding_top": 24,
         "padding_bottom": 80
       }
+    },
+    "halo_benefits": {
+      "type": "multicolumn",
+      "blocks": {
+        "softness": {
+          "type": "column",
+          "settings": {
+            "title": "Softness underfoot.",
+            "text": "<p>A responsive lattice structure delivers soft cushioning underfoot, bringing a springy feel to your everyday steps.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "airflow": {
+          "type": "column",
+          "settings": {
+            "title": "Open to airflow.",
+            "text": "<p>An open toe and airy lattice let air move around your foot, helping heat and moisture escape.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "onepiece": {
+          "type": "column",
+          "settings": {
+            "title": "Made in one piece.",
+            "text": "<p>A continuous lattice connects the upper and sole in a single structure, with no stitched seams to come apart.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "softness",
+        "airflow",
+        "onepiece"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "The details behind Oasis Halo.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
+    "halo_benefits",
     "disclosures",
     "related-products"
   ]
