@@ -172,7 +172,7 @@
         "title": "Made for the way the day changes.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
