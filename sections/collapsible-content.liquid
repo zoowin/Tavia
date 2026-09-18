@@ -1,3 +1,16 @@
+{% if template.suffix == 'atlas-wave' and section.id contains 'atlas_faq' %}
+{% style %}
+#shopify-section-{{ section.id }} .collapsible-content-wrapper-narrow { max-width: var(--page-width); padding-inline: 5rem; }
+#shopify-section-{{ section.id }} .collapsible-content__heading { font-family: var(--font-heading-family); font-size: clamp(2.6rem, 3vw, 4.2rem); font-weight: 500; line-height: 1.2; letter-spacing: -.035em; margin: 0 0 3.2rem; }
+#shopify-section-{{ section.id }} .accordion__title { font-family: var(--font-body-family); font-size: 1.8rem; font-weight: 500; line-height: 1.45; letter-spacing: 0; text-transform: none; }
+#shopify-section-{{ section.id }} .accordion summary { padding-block: 2rem; }
+#shopify-section-{{ section.id }} .accordion__content { padding: 0 3rem 2rem 0; margin: 0; font-family: var(--font-body-family); font-size: 1.5rem; font-weight: 400; line-height: 1.65; }
+#shopify-section-{{ section.id }} .accordion__content p { margin-block: 0 1rem; }
+#shopify-section-{{ section.id }} .collapsible-content__grid { margin-bottom: 0; }
+@media (max-width: 989px) { #shopify-section-{{ section.id }} .collapsible-content-wrapper-narrow { padding-inline: 2.4rem; } }
+@media (max-width: 749px) { #shopify-section-{{ section.id }} .accordion__title { font-size: 1.6rem; } #shopify-section-{{ section.id }} .collapsible-content__heading { margin-bottom: 2.4rem; } }
+{% endstyle %}
+{% endif %}
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 
