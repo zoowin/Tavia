@@ -1,10 +1,77 @@
 if (!customElements.get('tavia-us-sizes')) {
   class TaviaUsSizes extends HTMLElement {
     static conversion = {
-      35: [3, 4.5], 36: [4, 5.5], 37: [4.5, 6], 38: [5.5, 7],
-      39: [6.5, 8], 40: [7, 8.5], 41: [8, 9.5], 42: [8.5, 10],
-      43: [9.5, 11], 44: [10, 11.5], 45: [11, 12.5], 46: [11.5, 13],
-    };
+  "35": [
+    3.5,
+    5,
+    226
+  ],
+  "36": [
+    4,
+    5.5,
+    232
+  ],
+  "37": [
+    5,
+    6.5,
+    239
+  ],
+  "38": [
+    5.5,
+    7,
+    246
+  ],
+  "39": [
+    6.5,
+    8,
+    252
+  ],
+  "40": [
+    7,
+    8.5,
+    259
+  ],
+  "41": [
+    8,
+    9.5,
+    266
+  ],
+  "42": [
+    8.5,
+    10,
+    272
+  ],
+  "43": [
+    9.5,
+    11,
+    279
+  ],
+  "44": [
+    10,
+    11.5,
+    288
+  ],
+  "45": [
+    11,
+    12.5,
+    292
+  ],
+  "46": [
+    12,
+    13.5,
+    299
+  ],
+  "47": [
+    12.5,
+    14,
+    305
+  ],
+  "48": [
+    13.5,
+    15,
+    312
+  ]
+};
 
     connectedCallback() {
       if (this.dataset.enhanced) return;
@@ -117,4 +184,50 @@ if (!customElements.get('tavia-us-sizes')) {
     }
   }
   customElements.define('tavia-us-sizes', TaviaUsSizes);
+}
+
+if (!customElements.get('tavia-size-chart')) {
+  class TaviaSizeChart extends HTMLElement {
+    connectedCallback() {
+      if (this.initialized) return;
+      this.initialized = true;
+      this.unit = 'cm';
+      const conversion = customElements.get('tavia-us-sizes').conversion;
+      let sizes = [];
+      try { sizes = JSON.parse(this.dataset.sizes || '[]'); } catch {}
+      this.rows = [...new Set(sizes.map(value => String(value).trim().replace(/^EU\s*/i, '')))]
+        .filter(eu => conversion[eu]).sort((a, b) => Number(a) - Number(b));
+      this.querySelector('tbody').replaceChildren(...this.rows.map(eu => {
+        const [male, female, mm] = conversion[eu];
+        const tr = document.createElement('tr');
+        [female, male, mm / 10, eu].forEach((value, index) => {
+          const cell = document.createElement(index === 3 ? 'th' : 'td');
+          if (index === 3) cell.scope = 'row';
+          if (index === 2) cell.dataset.lengthMm = String(mm);
+          cell.textContent = String(value);
+          tr.append(cell);
+        });
+        return tr;
+      }));
+      this.querySelector('[data-chart-empty]').hidden = this.rows.length > 0;
+      this.querySelector('[data-chart-table]').hidden = this.rows.length === 0;
+      this.querySelectorAll('[data-chart-unit]').forEach(button => {
+        button.addEventListener('click', () => this.setUnit(button.dataset.chartUnit));
+      });
+      this.setUnit('cm');
+    }
+    setUnit(unit) {
+      if (!['cm', 'in'].includes(unit)) return;
+      this.unit = unit;
+      this.querySelectorAll('[data-chart-unit]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.chartUnit === unit));
+      });
+      this.querySelector('[data-length-heading]').textContent = this.dataset[unit === 'cm' ? 'headingCm' : 'headingIn'];
+      this.querySelectorAll('[data-length-mm]').forEach(cell => {
+        const mm = Number(cell.dataset.lengthMm);
+        cell.textContent = unit === 'cm' ? (mm / 10).toFixed(1) : (mm / 25.4).toFixed(2);
+      });
+    }
+  }
+  customElements.define('tavia-size-chart', TaviaSizeChart);
 }
