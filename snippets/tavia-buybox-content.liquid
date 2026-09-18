@@ -13,16 +13,6 @@ Renders configurable product information and store policies in the buy box.
       if content == blank and block.settings.use_description
         assign content = product.description | split: '</p>' | first | strip_html | strip | truncate: 180
       endif
-    when 'product_details'
-      assign content = product.description
-      assign heading = 'tavia_pdp.details' | t
-    when 'materials_care'
-      assign heading = 'tavia_pdp.materials' | t
-      if content == blank
-        assign content = block.settings.page.content
-      endif
-    when 'shipping_returns'
-      assign heading = 'tavia_pdp.shipping_returns' | t
   endcase
 -%}
 
@@ -46,25 +36,12 @@ Renders configurable product information and store policies in the buy box.
     <p class="tavia-editor-note" {{ block.shopify_attributes }}>{{ 'tavia_pdp.intro_setup' | t }}</p>
   {%- endif -%}
 {%- else -%}
-  {%- capture panel_content -%}
-    {%- if block.type == 'shipping_returns' -%}
-      {%- if shop.shipping_policy != blank -%}
-        <h3>{{ shop.shipping_policy.title | escape }}</h3>
-        {{ shop.shipping_policy.body }}
-      {%- endif -%}
-      {%- if shop.refund_policy != blank -%}
-        <h3>{{ shop.refund_policy.title | escape }}</h3>
-        {{ shop.refund_policy.body }}
-      {%- endif -%}
-    {%- else -%}
-      {{ content }}
-    {%- endif -%}
-  {%- endcapture -%}
+  {%- assign panel_content = block.settings.content -%}
   {%- if panel_content != blank -%}
     <div class="product__accordion accordion tavia-buybox-panel" {{ block.shopify_attributes }}>
       <details id="Details-{{ block.id }}-{{ section_id }}" {% if block.settings.open_by_default %}open{% endif %}>
         <summary>
-          <div class="summary__title"><h2 class="h4 accordion__title">{{ heading | escape }}</h2></div>
+          <div class="summary__title"><h2 class="h4 accordion__title">{{ block.settings.heading | escape }}</h2></div>
           {{- 'icon-caret.svg' | inline_asset_content -}}
         </summary>
         <div class="accordion__content rte">{{ panel_content }}</div>
