@@ -176,7 +176,7 @@
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "none",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 20,
@@ -187,7 +187,7 @@
       "type": "related-products",
       "settings": {
         "horizontal_carousel": false,
-        "manual_selection": false,
+        "manual_selection": true,
         "selected_products": [
           "atlas-grid-structured-knit-slip-on",
           "oasis-loom-closed-toe-knit-mule",
@@ -206,7 +206,7 @@
         "show_vendor": false,
         "show_rating": false,
         "padding_top": 24,
-        "padding_bottom": 80
+        "padding_bottom": 24
       }
     },
     "disclosures": {
