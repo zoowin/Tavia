@@ -22,6 +22,7 @@
         },
         "rating": {
           "type": "rating",
+          "disabled": true,
           "settings": {
             "show_preview_rating": true,
             "preview_rating": 4.8,
