@@ -134,8 +134,8 @@
         "structure": {
           "type": "column",
           "settings": {
-            "title": "A familiar lace-up, reworked.",
-            "text": "<p>A fine-knit upper and adjustable laces give Orbit Core an everyday shape, set over Tavia’s open lattice sole.</p>",
+            "title": "Knit upper. Your fit.",
+            "text": "<p>A fine-knit upper with adjustable laces lets you fine-tune the fit across the instep.</p>",
             "link_label": "",
             "link": ""
           }
@@ -143,8 +143,8 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "title": "Clean enough for work. Relaxed enough after.",
-            "text": "<p>The monochrome profile sits naturally with wool trousers, denim, and relaxed layers when the setting changes.</p>",
+            "title": "<strong>A sole, built in 3D.</strong>",
+            "text": "<p>An open, 3D-printed lattice gives the sole its distinctive structure beneath a familiar lace-up silhouette.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,8 +152,8 @@
         "overhead": {
           "type": "column",
           "settings": {
-            "title": "Open structure, kept understated.",
-            "text": "<p>The lattice sole adds visible depth beneath a simple all-black upper without turning the shoe into a statement piece.</p>",
+            "title": "From workdays to weekends.",
+            "text": "<p>Pair with tailored trousers for a casual workday, or denim when the plans are more relaxed.</p>",
             "link_label": "",
             "link": ""
           }
