@@ -183,24 +183,17 @@
         "padding_bottom": 20
       }
     },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "heading": "Disclosures",
-        "heading_size": "h2",
-        "open_by_default": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "related-products": {
       "type": "related-products",
-      "disabled": true,
       "settings": {
         "horizontal_carousel": false,
         "manual_selection": false,
-        "selected_products": [],
+        "selected_products": [
+          "atlas-grid-structured-knit-slip-on",
+          "oasis-loom-closed-toe-knit-mule",
+          "vector-drift-low-profile-knit-slip-on",
+          "module-nest-3d-printed-lumbar-cushion"
+        ],
         "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
@@ -215,12 +208,23 @@
         "padding_top": 24,
         "padding_bottom": 80
       }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "multicolumn_9aeWM6",
-    "disclosures",
-    "related-products"
+    "related-products",
+    "disclosures"
   ]
 }
