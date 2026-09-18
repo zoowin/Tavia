@@ -142,6 +142,7 @@
         "column_JngVeP": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Oasis-halo-detail-02_LR.jpg",
             "title": "Open to airflow.",
             "text": "<p>An open toe and airy lattice let air move around your foot, helping heat and moisture escape.</p>",
             "link_label": "",
@@ -151,6 +152,7 @@
         "column_x6wzzW": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Oasis-halo-detail-03_LR.jpg",
             "title": "Made in one piece.",
             "text": "<p>A continuous lattice connects the upper and sole in a single structure, with no stitched seams to come apart.</p>",
             "link_label": "",
