@@ -1,3 +1,10 @@
+{% doc %}
+  Renders the product variant selector.
+  @param {product} product - Product to select.
+  @param {object} [section] - Parent product section.
+  @param {object} block - Variant picker settings.
+  @param {string} product_form_id - Product form ID.
+{% enddoc %}
 {% comment %}
   Renders product variant-picker
 
@@ -39,7 +46,6 @@
             </span>
           </legend>
           {% render 'product-variant-options',
-            product: product,
             option: option,
             block: block,
             picker_type: picker_type
@@ -47,9 +53,8 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="js product-form__input product-form__input--pill{% if normalized_option_name contains 'color' or normalized_option_name contains 'colour' or normalized_option_name contains '颜色' %} product-form__input--color{% endif %}">
-          <legend class="form__label">{{ option.name }}</legend>
+          <legend class="form__label">{{ option.name }}{% if normalized_option_name contains 'color' or normalized_option_name contains 'colour' or normalized_option_name contains '颜色' %}<span class="tavia-color-selection"> - <span data-selected-value>{{ option.selected_value | escape }}</span></span>{% endif %}</legend>
           {% render 'product-variant-options',
-            product: product,
             option: option,
             block: block,
             picker_type: picker_type
@@ -88,8 +93,7 @@
               form="{{ product_form_id }}"
             >
               {% render 'product-variant-options',
-                product: product,
-                option: option,
+                    option: option,
                 block: block,
                 picker_type: picker_type
               %}
