@@ -50,6 +50,25 @@
             "show_gift_card_recipient": true
           }
         },
+        "trust_marks_yETydX": {
+          "type": "trust_marks",
+          "settings": {
+            "heading": "",
+            "label_1": "",
+            "link_1": "",
+            "label_2": "",
+            "link_2": "",
+            "label_3": "",
+            "link_3": "",
+            "label_4": "",
+            "link_4": "",
+            "label_5": "",
+            "link_5": "",
+            "label_6": "",
+            "link_6": "",
+            "note": ""
+          }
+        },
         "product_details": {
           "type": "product_details",
           "settings": {
@@ -78,6 +97,7 @@
         "variant_picker",
         "quantity_selector_XWCHPk",
         "buy_buttons",
+        "trust_marks_yETydX",
         "product_details",
         "materials_care",
         "shipping_returns"
