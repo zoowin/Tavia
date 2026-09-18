@@ -285,17 +285,6 @@
         "padding_bottom": 20
       }
     },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "heading": "Disclosures",
-        "heading_size": "h2",
-        "open_by_default": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "related_products": {
       "type": "related-products",
       "settings": {
@@ -318,8 +307,19 @@
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
       }
     }
   },
@@ -328,7 +328,7 @@
     "orbit_editorial",
     "tavia_video_text_89mUAW",
     "orbit_faq",
-    "disclosures",
-    "related_products"
+    "related_products",
+    "disclosures"
   ]
 }
