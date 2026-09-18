@@ -17,7 +17,7 @@
     "details": "Product Details",
     "materials": "Materials & Care",
     "shipping_returns": "Shipping & Returns",
-    "size_guide": "Size Guide",
+    "size_guide": "Size Chart",
     "intro_setup": "Add a short introduction or connect a product source.",
     "policy_setup": "Add your confirmed shipping and returns summary.",
     "content_setup": "Add content in the block settings or product/store admin. Empty blocks are hidden from customers."
@@ -240,6 +240,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
       "page": "Page",
@@ -283,10 +287,6 @@
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
-    },
-    "404": {
-      "title": "Page not found",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -297,7 +297,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -552,5 +551,25 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "tavia_size_chart": {
+    "title": "Size chart",
+    "women": "US Women",
+    "men": "US Men",
+    "eu": "EU",
+    "length_cm": "Shoe inner length (cm)",
+    "length_in": "Shoe inner length (in)",
+    "units": "Length unit",
+    "cm": "CM",
+    "inch": "IN",
+    "intro": "Lengths shown are measured inside the shoe, not the length of your foot.",
+    "measure": "How to measure",
+    "step_1": "Place a sheet of paper on a hard floor against a wall.",
+    "step_2": "Stand on the paper with your heel lightly touching the wall.",
+    "step_3": "Mark the end of your longest toe, then measure from the wall to the mark.",
+    "step_4": "Measure both feet and use the longer measurement.",
+    "tip": "Allow room beyond your measured foot length. If you are between sizes, or have wide feet or a high instep, contact us for help before ordering.",
+    "empty": "Please contact us for sizing guidance for this product.",
+    "no_js": "Enable JavaScript to view the size chart."
   }
 }
