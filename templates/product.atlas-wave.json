@@ -15,7 +15,7 @@
         "title": {
           "type": "title",
           "settings": {
-            "split_product_title": true,
+            "split_product_title": false,
             "display_title": "Atlas Wave Sculpted-Sole Knit Slip-On",
             "subtitle": ""
           }
