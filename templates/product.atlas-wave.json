@@ -75,22 +75,26 @@
         "product_details": {
           "type": "product_details",
           "settings": {
-            "open_by_default": false
+            "open_by_default": false,
+            "heading": "Product Details",
+            "content": "<p>A sculpted silhouette for everyday movement. Atlas Wave pairs a wave-like lattice sole with a contoured slip-on upper.</p><ul><li>Open lattice upper lets air move around your foot.</li><li>Curved heel and lace-free design for easy everyday styling.</li><li>Unisex design, with US sizing options for women and men.</li><li>Wear with or without socks. Check the Size Chart before choosing your size.</li></ul>"
           }
         },
         "materials_care": {
           "type": "materials_care",
           "name": "Materials & Tech",
           "settings": {
-            "content": "<p><strong>Stack Height:</strong> 3.5 cm</p><p><strong>Material:</strong> ELASTO 1000 BIO</p><p><strong>Technology:</strong> HALS 3D Printing (DLP-based system)</p>",
-            "page": "",
-            "open_by_default": false
+            "content": "<p><strong>Material:</strong> ELASTO 1000 BIO<br/><strong>Technology:</strong> HALS 3D Printing (DLP-based system)<br/><strong>Stack height:</strong> 3.5 cm</p><p>For light surface dirt, gently wipe with a soft, damp cloth. Let your shoes air dry away from direct heat. Contact us for guidance before machine washing or using cleaning chemicals.</p>",
+            "open_by_default": false,
+            "heading": "Materials & Care"
           }
         },
         "shipping_returns": {
           "type": "shipping_returns",
           "settings": {
-            "open_by_default": false
+            "open_by_default": false,
+            "heading": "Shipping & Returns",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>"
           }
         }
       },
