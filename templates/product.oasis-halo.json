@@ -93,7 +93,7 @@
           "type": "shipping_returns",
           "settings": {
             "heading": "Shipping & Returns",
-            "content": "",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
             "open_by_default": false
           }
         }
