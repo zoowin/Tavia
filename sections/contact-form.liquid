@@ -99,18 +99,34 @@
           {%- endif -%}
         </div>
       </div>
-      <div class="field">
+      <div class="contact__phone-row">
+        <div class="field contact__dial-code">
+          <label class="visually-hidden" for="ContactForm-dial-code-{{ section.id }}">{{ 'localization.country_label' | t }} (+)</label>
+          <div class="select">
+            <select class="select__select" id="ContactForm-dial-code-{{ section.id }}" name="contact[Country calling code]" autocomplete="tel-country-code">
+              <option value="">+…</option>
+              {%- assign dial_codes = '1:US/CA,44:GB,61:AU,64:NZ,33:FR,49:DE,39:IT,34:ES,31:NL,32:BE,41:CH,43:AT,353:IE,351:PT,45:DK,46:SE,47:NO,358:FI,48:PL,420:CZ,30:GR,36:HU,40:RO,90:TR,380:UA,7:RU/KZ,86:CN,852:HK,853:MO,886:TW,81:JP,82:KR,65:SG,60:MY,66:TH,84:VN,62:ID,63:PH,91:IN,92:PK,880:BD,971:AE,966:SA,972:IL,27:ZA,234:NG,20:EG,52:MX,55:BR,54:AR' | split: ',' -%}
+              {%- for entry in dial_codes -%}
+                {%- assign dial_parts = entry | split: ':' -%}
+                {%- assign dial_value = '+' | append: dial_parts.first -%}
+                <option value="{{ dial_value }}"{% if form['Country calling code'] == dial_value %} selected{% elsif form['Country calling code'] == blank and forloop.first %} selected{% endif %}>{{ dial_value }} {{ dial_parts.last }}</option>
+              {%- endfor -%}
+            </select>
+            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+          </div>
+        </div>
+        <div class="field contact__phone-number">
         <input
           type="tel"
           id="ContactForm-phone"
           class="field__input"
           autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          name="contact[phone]"
+          value="{% if form.phone %}{{ form.phone | escape }}{% elsif customer %}{{ customer.phone | escape }}{% endif %}"
           placeholder="{{ 'templates.contact.form.phone' | t }}"
         >
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+        </div>
       </div>
       <div class="field">
         <textarea
@@ -134,6 +150,41 @@
     {%- endform -%}
   </div>
 </div>
+
+{% javascript %}
+  document.addEventListener('formdata', (event) => {
+    const code = event.target.querySelector('.contact__dial-code select');
+    const phone = event.target.querySelector('.contact__phone-number input');
+    if (!code || !phone) return;
+    const number = phone.value.trim();
+    if (!number || /^(\+|00)/.test(number)) {
+      event.formData.delete(code.name);
+      event.formData.set(phone.name, number);
+      return;
+    }
+    event.formData.set(phone.name, [code.value, number].filter(Boolean).join(' '));
+  }, true);
+{% endjavascript %}
+
+{% stylesheet %}
+  .contact__phone-row {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .contact__phone-row .field { min-width: 0; }
+  .contact__dial-code .select { width: 100%; }
+  .contact__dial-code .select__select {
+    min-height: 4.5rem;
+    height: 100%;
+    padding: 0 2.8rem 0 1.2rem;
+    font-size: 1.6rem;
+    letter-spacing: 0;
+  }
+  @media (max-width: 749px) {
+    .contact__phone-row { grid-template-columns: 11rem minmax(0, 1fr); gap: 0.8rem; }
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
