@@ -71,11 +71,9 @@
           >
           <div class="tavia-size-label">
             <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
-            {%- if block.settings.size_guide.content != blank -%}
               <modal-opener data-modal="#SizeGuide-{{ section.id }}-{{ block.id }}">
                 <button type="button" class="link tavia-size-guide" aria-haspopup="dialog">{{ 'tavia_pdp.size_guide' | t }}</button>
               </modal-opener>
-            {%- endif -%}
           </div>
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
