@@ -1325,6 +1325,34 @@
       width: 7.2rem;
     }
   }
+
+  .tavia-color-selection { display: none; }
+  @media screen and (max-width: 749px) {
+    .tavia-buybox { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 0; }
+    .tavia-buybox [id^='price-'] { margin-block: 0; }
+    .tavia-buybox .installment { margin-block: .4rem 0; }
+    .tavia-buybox .installment:not(:has(shopify-payment-terms)) { margin: 0; }
+    .tavia-buybox variant-selects { margin-top: 1.6rem; padding-top: 0; border-top: 0; }
+    .tavia-buybox .product-form__input--color { gap: 1rem; margin-bottom: 1.8rem; }
+    .tavia-buybox .product-form__input--color .form__label { font-family: var(--font-body-family); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; text-transform: none; margin-bottom: 1rem; }
+    .tavia-buybox .tavia-color-selection { display: inline; color: var(--tavia-buybox-muted); }
+    .tavia-buybox .product-form__input--color input[type='radio'] + label.tavia-option-has-swatch {
+      position: relative; flex: 0 0 4.4rem; width: 4.4rem; height: 4.4rem; min-width: 4.4rem; min-height: 4.4rem;
+      padding: .3rem; border: 1px solid transparent; border-radius: 50%; background: transparent;
+    }
+    .tavia-buybox .product-form__input--color label.tavia-option-has-swatch > .swatch {
+      --swatch--size: 3.6rem; width: 3.6rem; height: 3.6rem; flex: 0 0 3.6rem; margin: 0; border-radius: 50%; border: 1px solid rgba(0,0,0,.12);
+    }
+    .tavia-buybox .product-form__input--color input[type='radio']:checked + label.tavia-option-has-swatch { background: transparent; border-color: rgb(var(--color-foreground)); }
+    .tavia-buybox .product-form__input--color input[type='radio']:focus-visible + label.tavia-option-has-swatch { outline: 2px solid rgb(var(--color-foreground)); outline-offset: 3px; box-shadow: none; }
+    .tavia-buybox .product-form__input--color label.tavia-option-has-swatch > .tavia-option-name {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    .tavia-buybox .product-form__input--color input[type='radio'].disabled + label.tavia-option-has-swatch > .swatch { opacity: .35; }
+    .tavia-buybox .product-form__input--color input[type='radio'].disabled + label.tavia-option-has-swatch::after {
+      content: ''; position: absolute; left: .6rem; right: .6rem; top: 50%; height: 1px; background: rgb(var(--color-foreground)); transform: rotate(-45deg);
+    }
+  }
 {% endstylesheet %}
 
 {% stylesheet %}
