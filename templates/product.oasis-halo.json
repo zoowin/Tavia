@@ -132,8 +132,9 @@
         "column_pk9bTf": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/Oasis-halo-detail-01_LR.jpg",
+            "title": "Softness underfoot.",
+            "text": "<p>A responsive lattice structure delivers soft cushioning underfoot, bringing a springy feel to your everyday steps.</p>",
             "link_label": "",
             "link": ""
           }
@@ -141,8 +142,8 @@
         "column_JngVeP": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Open to airflow.",
+            "text": "<p>An open toe and airy lattice let air move around your foot, helping heat and moisture escape.</p>",
             "link_label": "",
             "link": ""
           }
@@ -150,8 +151,8 @@
         "column_x6wzzW": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Made in one piece.",
+            "text": "<p>A continuous lattice connects the upper and sole in a single structure, with no stitched seams to come apart.</p>",
             "link_label": "",
             "link": ""
           }
@@ -164,7 +165,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The details behind Oasis Halo.",
+        "title": "Every detail, designed for everyday comfort.",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
