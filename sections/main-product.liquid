@@ -803,16 +803,20 @@
       {%- endfor -%}
 
       {%- for block in section.blocks -%}
-        {%- if block.type == 'variant_picker' and block.settings.size_guide.content != blank -%}
-          <modal-dialog id="SizeGuide-{{ section.id }}-{{ block.id }}" class="product-popup-modal">
+        {%- if block.type == 'variant_picker' -%}
+          <modal-dialog id="SizeGuide-{{ section.id }}-{{ block.id }}" class="product-popup-modal tavia-size-modal">
             <div role="dialog" aria-modal="true" aria-label="{{ 'tavia_pdp.size_guide' | t }}" class="product-popup-modal__content" tabindex="-1">
               <button id="ModalClose-SizeGuide-{{ section.id }}-{{ block.id }}" type="button" class="product-popup-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">
                 {{- 'icon-close.svg' | inline_asset_content -}}
               </button>
+              {% if block.settings.size_guide.content != blank %}
               <div class="product-popup-modal__content-info rte">
                 <h2>{{ block.settings.size_guide.title | escape }}</h2>
                 {{ block.settings.size_guide.content }}
               </div>
+              {% else %}
+                {% render 'tavia-size-chart', product: product %}
+              {% endif %}
             </div>
           </modal-dialog>
         {%- endif -%}
