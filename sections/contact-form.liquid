@@ -15,13 +15,18 @@
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="contact contact--refined page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
       </h2>
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+    {%- endif -%}
+    {%- if section.settings.support_email != blank -%}
+      <p class="contact__email">
+        <a href="mailto:{{ section.settings.support_email | strip | escape }}">{{ section.settings.support_email | escape }}</a>
+      </p>
     {%- endif -%}
     {%- liquid
       assign contact_form_class = 'isolate'
@@ -60,7 +65,6 @@
             id="ContactForm-name"
             name="contact[{{ 'templates.contact.form.name' | t }}]"
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
           >
           <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
         </div>
@@ -79,7 +83,7 @@
               aria-invalid="true"
               aria-describedby="ContactForm-email-error"
             {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
+            required
           >
           <label class="field__label" for="ContactForm-email">
             {{- 'templates.contact.form.email' | t }}
@@ -101,7 +105,7 @@
       </div>
       <div class="contact__phone-row">
         <div class="field contact__dial-code">
-          <label class="visually-hidden" for="ContactForm-dial-code-{{ section.id }}">{{ 'localization.country_label' | t }} (+)</label>
+          <label class="field__label" for="ContactForm-dial-code-{{ section.id }}">{{ 'localization.country_label' | t }}</label>
           <div class="select">
             <select class="select__select" id="ContactForm-dial-code-{{ section.id }}" name="contact[Country calling code]" autocomplete="tel-country-code">
               <option value="">+…</option>
@@ -123,7 +127,6 @@
           autocomplete="tel"
           name="contact[phone]"
           value="{% if form.phone %}{{ form.phone | escape }}{% elsif customer %}{{ customer.phone | escape }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
         >
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
         </div>
@@ -134,7 +137,6 @@
           id="ContactForm-body"
           class="text-area field__input"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
         >
           {{- form.body -}}
         </textarea>
@@ -167,13 +169,81 @@
 {% endjavascript %}
 
 {% stylesheet %}
+  .contact--refined .title { margin-bottom: 1.2rem; }
+  .contact--refined form { margin-top: 3.2rem; }
+  .contact--refined .contact__email { margin: 0; font-size: 1.6rem; line-height: 1.5; }
+  .contact__email a { color: inherit; text-underline-offset: 0.4rem; text-decoration-thickness: 1px; }
+  .contact--refined .field {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+    margin-bottom: 2.4rem;
+  }
+  .contact--refined .field::before,
+  .contact--refined .field::after,
+  .contact--refined .select::before,
+  .contact--refined .select::after { display: none; }
+  .contact--refined .field .field__label {
+    position: static;
+    order: -1;
+    transform: none;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: rgba(var(--color-foreground), 0.75);
+    pointer-events: auto;
+  }
+  .contact--refined .field .field__input,
+  .contact--refined .field .select__select {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 5rem;
+    height: 5rem;
+    margin: 0;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid rgba(var(--color-foreground), 0.3);
+    border-radius: 0;
+    box-shadow: none;
+    background: rgb(var(--color-background));
+    color: rgb(var(--color-foreground));
+    font-family: var(--font-body-family);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    letter-spacing: 0;
+    transition: border-color 160ms ease;
+  }
+  .contact--refined .field .text-area { height: 16rem; min-height: 12rem; resize: vertical; }
+  .contact--refined .field__input:hover,
+  .contact--refined .select__select:hover { border-color: rgba(var(--color-foreground), 0.65); }
+  .contact--refined .field .field__input:focus,
+  .contact--refined .field .select__select:focus {
+    border-color: rgb(var(--color-foreground));
+    outline: 2px solid rgba(var(--color-foreground), 0.5);
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+  .contact--refined .contact__button { margin-top: 0.8rem; }
+  .contact--refined .contact__button .button { min-height: 4.8rem; min-width: 14rem; }
   .contact__phone-row {
     display: grid;
     grid-template-columns: 14rem minmax(0, 1fr);
     gap: 1rem;
   }
   .contact__phone-row .field { min-width: 0; }
-  .contact__dial-code .select { width: 100%; }
+  .contact__dial-code .select { width: 100%; position: relative; }
+  .contact--refined .contact__dial-code .select__select { padding-right: 3.6rem; }
+  .contact--refined .contact__dial-code .select > .svg-wrapper {
+    position: absolute;
+    inset: 50% 1.4rem auto auto;
+    width: 1rem;
+    height: 0.6rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .contact--refined .contact__dial-code .svg-wrapper .icon-caret { position: static; width: 100%; height: 100%; }
   .contact__dial-code .select__select {
     min-height: 4.5rem;
     height: 100%;
@@ -182,7 +252,7 @@
     letter-spacing: 0;
   }
   @media (max-width: 749px) {
-    .contact__phone-row { grid-template-columns: 11rem minmax(0, 1fr); gap: 0.8rem; }
+    .contact__phone-row { grid-template-columns: 13rem minmax(0, 1fr); gap: 0.8rem; }
   }
 {% endstylesheet %}
 
@@ -195,6 +265,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support email",
+      "default": "support@tavialab.com"
+    },
     {
       "type": "inline_richtext",
       "id": "heading",
