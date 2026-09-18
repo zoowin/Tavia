@@ -563,6 +563,44 @@
                     block: block,
                     product_form_id: product_form_id
                   %}
+                {%- when 'trust_marks' -%}
+                  {% liquid
+                    assign has_trust_marks = false
+                    for i in (1..6)
+                      assign image_key = 'mark_' | append: i
+                      if block.settings[image_key] != blank
+                        assign has_trust_marks = true
+                      endif
+                    endfor
+                  %}
+                  {% if has_trust_marks or request.design_mode %}
+                    <div class="tavia-trust-box" {{ block.shopify_attributes }}>
+                      {% if block.settings.heading != blank %}
+                        <h3 class="tavia-trust-box__heading">{{ block.settings.heading | escape }}</h3>
+                      {% endif %}
+                      <div class="tavia-trust-box__marks">
+                        {% for i in (1..6) %}
+                          {% liquid
+                            assign image_key = 'mark_' | append: i
+                            assign label_key = 'label_' | append: i
+                            assign link_key = 'link_' | append: i
+                            assign mark = block.settings[image_key]
+                            assign mark_label = block.settings[label_key] | default: mark.alt
+                          %}
+                          {% if mark != blank %}
+                            <div class="tavia-trust-box__mark">
+                              {% if block.settings[link_key] != blank %}<a href="{{ block.settings[link_key] }}">{% endif %}
+                                {{ mark | image_url: width: 240 | image_tag: loading: 'lazy', widths: '80, 160, 240', sizes: '80px', alt: mark_label }}
+                              {% if block.settings[link_key] != blank %}</a>{% endif %}
+                            </div>
+                          {% elsif request.design_mode and has_trust_marks == false %}
+                            <div class="tavia-trust-box__placeholder" aria-hidden="true"></div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      {% if block.settings.note != blank %}<div class="tavia-trust-box__note rte">{{ block.settings.note }}</div>{% endif %}
+                    </div>
+                  {% endif %}
                 {%- when 'buy_buttons' -%}
                   {%- render 'buy-buttons',
                     block: block,
@@ -1289,12 +1327,140 @@
   }
 {% endstylesheet %}
 
+{% stylesheet %}
+.tavia-trust-box { border: 1px solid rgba(var(--color-foreground), .16); padding: 1.6rem; margin-block: 2rem; background: #fff; color: #161616; }
+.tavia-trust-box .tavia-trust-box__heading { margin: 0 0 1.4rem; font-family: var(--font-body-family); font-size: 1.4rem; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; }
+.tavia-trust-box__marks { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 1.2rem; }
+.tavia-trust-box__mark { flex: 0 0 calc((100% - 6rem) / 6); min-width: 0; height: 5.2rem; display: grid; place-items: center; }
+.tavia-trust-box__mark a { display: grid; place-items: center; width: 100%; height: 100%; border-radius: 2px; }
+.tavia-trust-box__mark a:focus-visible { outline: 2px solid #161616; outline-offset: 3px; }
+.tavia-trust-box__mark img { display: block; width: 100%; height: 5.2rem; object-fit: contain; }
+.tavia-trust-box__note { margin-top: 1.2rem; font-family: var(--font-body-family); font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
+.tavia-trust-box__note p { margin: 0; }
+.tavia-trust-box__placeholder { flex: 0 0 calc((100% - 6rem) / 6); height: 5.2rem; border: 1px dashed #c7c7c7; background: #f5f5f5; }
+@media (max-width: 749px) {
+  .tavia-trust-box__mark, .tavia-trust-box__placeholder { flex-basis: calc((100% - 2.4rem) / 3); }
+}
+{% endstylesheet %}
+
 {% schema %}
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
   "class": "section",
   "blocks": [
+{
+  "type": "trust_marks",
+  "name": "Materials & testing",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Upload approved marks that apply to this product or its materials. Add a descriptive name and optionally link each mark to its supporting report. Empty slots are hidden on the storefront."
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Materials & testing"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_1",
+      "label": "Mark 1"
+    },
+    {
+      "type": "text",
+      "id": "label_1",
+      "label": "Mark 1 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_1",
+      "label": "Mark 1 report link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_2",
+      "label": "Mark 2"
+    },
+    {
+      "type": "text",
+      "id": "label_2",
+      "label": "Mark 2 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_2",
+      "label": "Mark 2 report link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_3",
+      "label": "Mark 3"
+    },
+    {
+      "type": "text",
+      "id": "label_3",
+      "label": "Mark 3 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_3",
+      "label": "Mark 3 report link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_4",
+      "label": "Mark 4"
+    },
+    {
+      "type": "text",
+      "id": "label_4",
+      "label": "Mark 4 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_4",
+      "label": "Mark 4 report link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_5",
+      "label": "Mark 5"
+    },
+    {
+      "type": "text",
+      "id": "label_5",
+      "label": "Mark 5 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_5",
+      "label": "Mark 5 report link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mark_6",
+      "label": "Mark 6"
+    },
+    {
+      "type": "text",
+      "id": "label_6",
+      "label": "Mark 6 accessible name"
+    },
+    {
+      "type": "url",
+      "id": "link_6",
+      "label": "Mark 6 report link"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Supporting information"
+    }
+  ]
+},
     {
       "type": "@app"
     },
