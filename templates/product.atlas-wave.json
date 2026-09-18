@@ -198,8 +198,8 @@
         "heading": "Sculpted beneath every step.",
         "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
         "color_scheme": "scheme-4",
-        "padding_top": 32,
-        "padding_bottom": 32
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "atlas_faq": {
@@ -279,8 +279,8 @@
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "disclosures": {
