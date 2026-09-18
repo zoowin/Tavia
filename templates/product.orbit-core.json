@@ -16,7 +16,7 @@
           "type": "title",
           "settings": {
             "split_product_title": true,
-            "display_title": "Orbit Core",
+            "display_title": "Orbit Core Everyday Lace-Up Sneaker",
             "subtitle": "Everyday Lace-Up Sneaker"
           }
         },
@@ -143,7 +143,7 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "title": "<strong>A sole, built in 3D.</strong>",
+            "title": "A sole, built in 3D.",
             "text": "<p>An open, 3D-printed lattice gives the sole its distinctive structure beneath a familiar lace-up silhouette.</p>",
             "link_label": "",
             "link": ""
