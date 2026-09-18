@@ -7,7 +7,7 @@
   --tavia-tracking-display: -0.02em;
   --tavia-tracking-heading: -0.02em;
   --tavia-tracking-label: 0.06em;
-  --tavia-type-display: clamp(5.6rem, 4.7vw, 7.2rem);
+  --tavia-type-display: clamp(4.2rem, 3.4vw, 5.2rem);
   --tavia-type-section: clamp(3.6rem, 3vw, 4.4rem);
   --tavia-type-card: clamp(2rem, 1.8vw, 2.4rem);
   --tavia-type-body: 1.7rem;
@@ -224,7 +224,7 @@ body .tavia-product-layout .tavia-product-subtitle {
 
 @media screen and (max-width: 749px) {
   :root {
-    --tavia-type-display: clamp(3.6rem, 9vw, 4.4rem);
+    --tavia-type-display: clamp(2.8rem, 7.5vw, 3.4rem);
     --tavia-type-section: clamp(2.8rem, 7vw, 3.2rem);
     --tavia-type-card: 2rem;
     --tavia-type-body: 1.6rem;
