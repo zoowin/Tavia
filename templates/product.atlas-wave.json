@@ -203,12 +203,74 @@
         "padding_top": 24,
         "padding_bottom": 80
       }
+    },
+    "atlas_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "unisex": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Atlas Wave unisex?",
+            "icon": "none",
+            "row_content": "<p>Yes. Atlas Wave uses the same shoe design for men and women. The Female and Male options change the US size display, not the shoe design.</p>",
+            "page": ""
+          }
+        },
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I choose my size?",
+            "icon": "none",
+            "row_content": "<p>Select Female or Male under US Sizing, then choose your size. If you are between sizes or unsure about the fit, contact us before ordering rather than guessing a size up or down.</p>",
+            "page": ""
+          }
+        },
+        "socks": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear them with socks?",
+            "icon": "none",
+            "row_content": "<p>Yes. Choose socks for extra coverage or wear them without socks, depending on your preference. Keep in mind that thicker socks take up more room inside the shoe.</p>",
+            "page": ""
+          }
+        },
+        "water": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the open design keep my feet dry in the rain?",
+            "icon": "none",
+            "row_content": "<p>No. The open lattice allows water to pass through, so Atlas Wave is not a waterproof shoe. Choose covered footwear when you need protection from rain.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "unisex",
+        "sizing",
+        "socks",
+        "water"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently asked questions",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-1",
+        "container_color_scheme": "scheme-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
     "main",
     "multicolumn_FmaeVL",
     "tavia_video_text_JTWetN",
+    "atlas_faq",
     "disclosures",
     "related-products"
   ]
