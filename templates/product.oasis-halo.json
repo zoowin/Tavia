@@ -16,7 +16,7 @@
           "type": "title",
           "settings": {
             "split_product_title": true,
-            "display_title": "Atlas Wave Sculpted-Sole Knit Slip-On",
+            "display_title": "Oasis Halo Open-Knit Slide",
             "subtitle": ""
           }
         },
@@ -53,20 +53,24 @@
         "product_details": {
           "type": "product_details",
           "settings": {
+            "heading": "Product Details",
+            "content": "",
             "open_by_default": false
           }
         },
         "materials_care": {
           "type": "materials_care",
           "settings": {
+            "heading": "Materials & Care",
             "content": "",
-            "page": "",
             "open_by_default": false
           }
         },
         "shipping_returns": {
           "type": "shipping_returns",
           "settings": {
+            "heading": "Shipping & Returns",
+            "content": "",
             "open_by_default": false
           }
         }
@@ -113,6 +117,9 @@
       "type": "related-products",
       "disabled": true,
       "settings": {
+        "horizontal_carousel": false,
+        "manual_selection": false,
+        "selected_products": [],
         "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
