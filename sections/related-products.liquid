@@ -6,12 +6,12 @@
 %}
 {% if atlas_carousel %}
 {% style %}
-#shopify-section-{{ section.id }} .related-products__heading { font-family: var(--font-heading-family); font-size: clamp(2.6rem, 3vw, 4.2rem); font-weight: 500; line-height: 1.2; letter-spacing: -.035em; margin-bottom: 3.2rem; }
+#shopify-section-{{ section.id }} .related-products__heading { font-family: var(--font-heading-family); font-size: var(--tavia-type-section); font-weight: 600; line-height: 1.18; letter-spacing: var(--tavia-tracking-heading); margin-bottom: 3.2rem; }
 #shopify-section-{{ section.id }} .atlas-recommendation-slider { display: block; width: 100%; min-width: 0; }
 #shopify-section-{{ section.id }} .atlas-recommendation-track { position: relative; display: grid; grid-auto-flow: column; grid-template-rows: auto; grid-template-columns: none; grid-auto-columns: calc((100% - 7.2rem) / 4); gap: 2.4rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; padding: 0 0 1.2rem; margin: 0; list-style: none; }
 #shopify-section-{{ section.id }} .atlas-recommendation-track > .grid__item { grid-row: 1; width: 100%; max-width: none; min-width: 0; scroll-snap-align: start; }
-#shopify-section-{{ section.id }} .card__heading { font-family: var(--font-body-family); font-size: 1.5rem; font-weight: 500; line-height: 1.45; letter-spacing: 0; text-transform: none; }
-#shopify-section-{{ section.id }} .price { font-size: 1.4rem; font-weight: 400; }
+#shopify-section-{{ section.id }} .card__heading { font-family: var(--font-body-family); font-size: var(--tavia-type-product); font-weight: 500; line-height: 1.45; letter-spacing: 0; text-transform: none; }
+#shopify-section-{{ section.id }} .price { font-size: var(--tavia-type-product); font-weight: 500; }
 #shopify-section-{{ section.id }} .card__information { padding-block: 1.6rem; }
 #shopify-section-{{ section.id }} .card__media .media img { object-fit: contain; }
 #shopify-section-{{ section.id }} .atlas-recommendation-controls { display: flex; justify-content: flex-end; gap: .8rem; margin-top: 1.6rem; }

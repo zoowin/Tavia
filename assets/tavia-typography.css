@@ -1,0 +1,222 @@
+/* Shared type roles. Rem values retain Theme Editor body scaling and browser
+   text-size preferences. Do not reset the root: layout spacing also uses rem.
+   Body-scoped component selectors intentionally outrank section styles loaded
+   later. Hero and comparison image-title size controls remain independent. */
+:root {
+  --tavia-tracking-body: 0;
+  --tavia-tracking-display: -0.02em;
+  --tavia-tracking-heading: -0.02em;
+  --tavia-tracking-label: 0.06em;
+  --tavia-type-display: clamp(5.6rem, 4.7vw, 7.2rem);
+  --tavia-type-section: clamp(3.6rem, 3vw, 4.4rem);
+  --tavia-type-card: clamp(2rem, 1.8vw, 2.4rem);
+  --tavia-type-body: 1.7rem;
+  --tavia-type-small: 1.4rem;
+  --tavia-type-label: 1.2rem;
+  --tavia-type-product: 1.6rem;
+  --tavia-type-leading: 1.6;
+}
+
+body {
+  font-size: var(--tavia-type-body);
+  line-height: var(--tavia-type-leading);
+  letter-spacing: 0;
+}
+
+body :is(h1, h2, h3, h4, .h0, .h1, .h2, .h3, .h4) {
+  line-height: 1.2;
+  letter-spacing: var(--tavia-tracking-heading);
+}
+
+body :is(.tavia-directions__heading, .tavia-products__title,
+  .tavia-comparison__heading, .tavia-testimonials__heading,
+  .tavia-video-text__copy h2) {
+  font-size: var(--tavia-type-section);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: var(--tavia-tracking-heading);
+  text-transform: none;
+  max-width: 24ch;
+}
+
+body :is(.tavia-story__heading, .tavia-statement__heading) {
+  font-size: var(--tavia-type-display);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: var(--tavia-tracking-display);
+  overflow-wrap: break-word;
+}
+
+body .tavia-hero__heading {
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: var(--tavia-tracking-display);
+}
+
+body .tavia-directions__title {
+  font-size: clamp(2.8rem, 2.5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: var(--tavia-tracking-heading);
+}
+
+body :is(.tavia-hero__copy, .tavia-story__copy, .tavia-statement__copy,
+  .tavia-directions__intro, .tavia-comparison__header-copy,
+  .tavia-video-text__copy .rte, .product__description, .article-template__content) {
+  font-size: var(--tavia-type-body);
+  font-weight: 400;
+  line-height: var(--tavia-type-leading);
+  letter-spacing: 0;
+  max-width: 60ch;
+}
+
+body :is(.tavia-story__copy, .tavia-statement__copy) { margin-top: 2.4rem; }
+body .tavia-story__copy { margin-bottom: 3.2rem; }
+body .tavia-hero__copy { margin-top: 2.4rem; }
+
+body :is(.tavia-directions__description, .tavia-story__feature-text,
+  .tavia-product-card__description, .tavia-comparison__cell p,
+  .tavia-comparison__mobile-cell p, .tavia-testimonials__trust p) {
+  font-size: var(--tavia-type-small);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+body :is(.tavia-kicker, .tavia-directions__number, .tavia-directions__function,
+  .tavia-story__feature-title, .tavia-comparison__eyebrow,
+  .tavia-comparison__index, .tavia-testimonials__eyebrow,
+  .tavia-video-text__eyebrow) {
+  font-family: var(--font-mono-family);
+  font-size: var(--tavia-type-label);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: var(--tavia-tracking-label);
+}
+
+body :is(.tavia-comparison__table-header, .tavia-comparison__feature-name,
+  .tavia-comparison__mobile-cell > span, .tavia-testimonial-card__context,
+  .tavia-testimonial-card__verified > span) {
+  font-family: var(--font-body-family);
+  font-size: var(--tavia-type-label);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+body .tavia-comparison__visual h3 {
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: var(--tavia-tracking-heading);
+}
+
+body .tavia-testimonial-card__quote {
+  font-size: var(--tavia-type-body);
+  font-weight: 400;
+  line-height: var(--tavia-type-leading);
+  letter-spacing: 0;
+}
+body .tavia-testimonial-card__author strong { font-size: 1.4rem; font-weight: 500; }
+
+body :is(.button, .shopify-challenge__button, .customer button,
+  .tavia-underlined-link, .tavia-directions__link, .tavia-hero__button,
+  .tavia-product-card__button, .tavia-comparison__header-copy a) {
+  font-family: var(--font-body-family);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  white-space: normal;
+}
+
+body :is(.tavia-product-card__title, .card__heading, .cart-item__name) {
+  font-family: var(--font-body-family);
+  font-size: var(--tavia-type-product);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+body :is(.price, .price-item, .tavia-product-card__price) {
+  font-family: var(--font-body-family);
+  font-size: var(--tavia-type-product);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+body .header .header__menu-item {
+  font-size: 1.3rem; font-weight: 500; letter-spacing: 0.04em; line-height: 1.5;
+}
+body .mega-menu .mega-menu__link { font-size: 1.4rem; line-height: 1.6; }
+body .mega-menu .mega-menu__link--level-2 { font-weight: 500; letter-spacing: 0.02em; }
+body .menu-drawer__menu-item { font-size: 1.6rem; line-height: 1.5; letter-spacing: 0; }
+body .drawer__heading { font-size: 2.4rem; font-weight: 600; line-height: 1.25; }
+body .footer .footer-block__heading {
+  font-family: var(--font-body-family); font-size: 1.4rem; font-weight: 500;
+  line-height: 1.5; letter-spacing: 0.02em; text-transform: none;
+}
+body .footer :is(.footer-block__details-content, .list-menu__item--link) {
+  font-size: 1.4rem; line-height: 1.7; letter-spacing: 0;
+}
+body .footer :is(.footer__copyright, .copyright__content, .policies) {
+  font-size: 1.2rem; line-height: 1.6; letter-spacing: 0;
+}
+body :is(.field__input, .select__select, .customer .field input, .customer select) {
+  font-family: var(--font-body-family); font-size: 1.6rem; line-height: 1.5; letter-spacing: 0;
+}
+
+body .tavia-product-topline .product__title h1 {
+  font-size: clamp(3.2rem, 2.5vw, 3.6rem); font-weight: 500;
+  line-height: 1.2; letter-spacing: var(--tavia-tracking-heading);
+}
+body .tavia-buybox :is(.tavia-product-intro, .product__description, .tavia-buybox-summary) {
+  font-size: var(--tavia-type-body); line-height: 1.6; letter-spacing: 0;
+}
+body .tavia-buybox :is(.tavia-fit-note, .tavia-policy-summary, .installment,
+  .tavia-buybox-panel .accordion__content) {
+  font-size: 1.4rem; line-height: 1.6; letter-spacing: 0;
+}
+body .tavia-buybox :is(.price, .price-item) {
+  font-family: var(--font-body-family); font-size: 1.8rem; letter-spacing: 0;
+}
+body .tavia-buybox :is(.product-form__input .form__label, .tavia-size-guide,
+  .product-form__submit, .tavia-buybox-panel .accordion__title) {
+  font-family: var(--font-body-family); font-size: 1.4rem; font-weight: 500;
+  line-height: 1.5; letter-spacing: 0.02em; text-transform: none;
+}
+body .tavia-buybox .product-form__input--pill input[type='radio'] + label {
+  font-family: var(--font-body-family); font-size: 1.4rem; line-height: 1.4; letter-spacing: 0;
+}
+body .tavia-buybox .product-form__input--dropdown .select__select {
+  font-family: var(--font-body-family); font-size: 1.6rem; line-height: 1.5; letter-spacing: 0;
+}
+body :is(.collection-hero__title, .main-page-title, .related-products__heading,
+  .collapsible-content__heading, .multicolumn__title .title) {
+  font-size: var(--tavia-type-section); font-weight: 600;
+  line-height: 1.18; letter-spacing: var(--tavia-tracking-heading);
+}
+body .tavia-product-layout .tavia-product-subtitle { font-size: 1.4rem; line-height: 1.6; }
+body .tavia-product-topline__rating .rating-count { font-family: var(--font-body-family); font-size: 1.2rem; }
+
+@media screen and (max-width: 749px) {
+  :root {
+    --tavia-type-display: clamp(3.6rem, 9vw, 4.4rem);
+    --tavia-type-section: clamp(2.8rem, 7vw, 3.2rem);
+    --tavia-type-card: 2rem;
+    --tavia-type-body: 1.6rem;
+    --tavia-type-product: 1.5rem;
+    --tavia-type-leading: 1.625;
+    --tavia-tracking-display: -0.01em;
+    --tavia-tracking-heading: -0.01em;
+  }
+  body .tavia-directions__title { font-size: clamp(2.6rem, 7vw, 3.2rem); }
+  body .tavia-testimonials__heading { max-width: 24ch; }
+  body :is(.tavia-story__copy, .tavia-statement__copy, .tavia-hero__copy) { margin-top: 1.8rem; }
+  body .tavia-story__copy { margin-bottom: 2.4rem; }
+  body .tavia-product-topline .product__title h1 { font-size: clamp(2.6rem, 7vw, 3rem); line-height: 1.23; }
+  body .tavia-testimonial-card__footer { flex-wrap: wrap; gap: 1.2rem; }
+  body .tavia-comparison__mobile-feature .tavia-comparison__feature-name { font-size: var(--tavia-type-label); }
+}

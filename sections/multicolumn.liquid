@@ -10,7 +10,7 @@
 {%- if atlas_highlights -%}
   {%- style -%}
     #shopify-section-{{ section.id }} .multicolumn__title { justify-content: center; text-align: center; margin-bottom: 4rem; padding: 0; }
-    #shopify-section-{{ section.id }} .title { font-size: clamp(2.6rem, 3vw, 4.2rem); letter-spacing: -.035em; }
+    #shopify-section-{{ section.id }} .title { font-size: var(--tavia-type-section); font-weight: 600; line-height: 1.18; letter-spacing: var(--tavia-tracking-heading); }
     #shopify-section-{{ section.id }} .multicolumn-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem; padding: 0; counter-reset: atlas-feature; }
     #shopify-section-{{ section.id }} .multicolumn-list__item { width: 100%; max-width: none; margin: 0; counter-increment: atlas-feature; }
     #shopify-section-{{ section.id }} .multicolumn-card { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
@@ -21,8 +21,8 @@
     #shopify-section-{{ section.id }} .media[aria-hidden="true"] { aspect-ratio: 1; background: #f2f2f0; }
     #shopify-section-{{ section.id }} .multicolumn-card__info { padding: 2.4rem 0 0; }
     #shopify-section-{{ section.id }} .multicolumn-card__info::before { content: "0" counter(atlas-feature); display: block; margin-bottom: 1.4rem; font-family: var(--font-mono-family); font-size: 1.1rem; letter-spacing: .12em; opacity: .55; }
-    #shopify-section-{{ section.id }} h3 { font-size: clamp(2rem, 2vw, 2.6rem); line-height: 1.2; letter-spacing: -.025em; }
-    #shopify-section-{{ section.id }} .rte { max-width: 38ch; margin-top: 1.2rem; font-size: 1.5rem; line-height: 1.65; color: rgba(var(--color-foreground), .72); }
+    #shopify-section-{{ section.id }} h3 { font-size: var(--tavia-type-card); font-weight: 500; line-height: 1.3; letter-spacing: var(--tavia-tracking-heading); }
+    #shopify-section-{{ section.id }} .rte { max-width: 38ch; margin-top: 1.8rem; font-size: var(--tavia-type-body); line-height: var(--tavia-type-leading); color: rgba(var(--color-foreground), .72); }
     @media (max-width: 989px) {
       #shopify-section-{{ section.id }} .page-width { padding-inline: 2.4rem; }
     }
