@@ -20,6 +20,45 @@
   }
 {%- endstyle -%}
 
+{%- if section.settings.manual_selection -%}
+  {%- assign selected_products = section.settings.selected_products | reject: 'id', product.id -%}
+  {%- if selected_products.size > 0 or request.design_mode -%}
+    <div class="color-{{ section.settings.color_scheme }} gradient">
+      <div class="related-products page-width section-{{ section.id }}-padding isolate">
+        <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">{{ section.settings.heading }}</h2>
+        <ul class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
+          {%- assign skip_card_product_styles = false -%}
+          {%- for recommendation in selected_products limit: section.settings.products_to_show -%}
+            <li class="grid__item">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                image_shape: section.settings.image_shape,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                skip_styles: skip_card_product_styles,
+                section_id: section.id,
+                product_view_context: 'recommendation'
+              %}
+            </li>
+            {%- assign skip_card_product_styles = true -%}
+          {%- else -%}
+            {%- if request.design_mode -%}
+              {%- for i in (1..section.settings.products_to_show) -%}
+                <li class="grid__item">{% render 'card-product', media_aspect_ratio: section.settings.image_ratio, show_vendor: false, skip_styles: skip_card_product_styles %}</li>
+                {%- assign skip_card_product_styles = true -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      {% if section.settings.image_shape == 'arch' %}
+        {{ 'mask-arch.svg' | inline_asset_content }}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+{%- else -%}
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -59,12 +98,16 @@
   {%- endif -%}
 </div>
 
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:sections.related-products.name",
   "tag": "section",
   "class": "section",
   "settings": [
+    { "type": "checkbox", "id": "manual_selection", "label": "Choose products manually", "default": false },
+    { "type": "product_list", "id": "selected_products", "label": "Recommended products", "limit": 10, "info": "Used when manual selection is enabled. Select and reorder products here. The current product is excluded. Without eligible selections, this section is hidden on the storefront; sample cards appear only in the editor." },
     {
       "type": "paragraph",
       "content": "t:sections.related-products.settings.paragraph__1.content"
