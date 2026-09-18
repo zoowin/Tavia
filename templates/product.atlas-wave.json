@@ -207,47 +207,67 @@
     "atlas_faq": {
       "type": "collapsible-content",
       "blocks": {
-        "unisex": {
+        "long_days": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is Atlas Wave unisex?",
+            "heading": "Can I wear Atlas Wave for long days on my feet?",
             "icon": "none",
-            "row_content": "<p>Yes. Atlas Wave uses the same shoe design for men and women. The Female and Male options change the US size display, not the shoe design.</p>",
+            "row_content": "<p>Atlas Wave’s sculpted lattice extends from heel to toe, with a continuous upper that surrounds your foot. For longer days, the right fit matters—start with shorter wears to see how they feel before making them your all-day pair.</p>",
+            "page": ""
+          }
+        },
+        "break_in": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do they need breaking in?",
+            "icon": "none",
+            "row_content": "<p>A new pair may feel different from your usual shoes. Start with short periods of wear and check for rubbing or pressure around the toes, instep and heel. A good fit should feel secure, not painfully tight—don’t rely on breaking them in to fix the wrong size.</p>",
             "page": ""
           }
         },
         "sizing": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How do I choose my size?",
+            "heading": "Is Atlas Wave unisex, and how do I choose my size?",
             "icon": "none",
-            "row_content": "<p>Select Female or Male under US Sizing, then choose your size. If you are between sizes or unsure about the fit, contact us before ordering rather than guessing a size up or down.</p>",
+            "row_content": "<p>Yes—the shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your size. If you’re between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
             "page": ""
           }
         },
         "socks": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear them with socks?",
+            "heading": "Can I wear them with or without socks?",
             "icon": "none",
-            "row_content": "<p>Yes. Choose socks for extra coverage or wear them without socks, depending on your preference. Keep in mind that thicker socks take up more room inside the shoe.</p>",
+            "row_content": "<p>Either way. Wear them without socks for an open look, or add socks for extra coverage and a different color contrast. Thicker socks take up more room, so consider how you plan to wear them when checking the fit.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I clean them?",
+            "icon": "none",
+            "row_content": "<p>For light surface dirt, gently wipe with a soft, damp cloth and let them air dry away from direct heat. For deeper cleaning, contact us for care guidance before using a washing machine or cleaning chemicals.</p>",
             "page": ""
           }
         },
         "water": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Will the open design keep my feet dry in the rain?",
+            "heading": "Are they waterproof?",
             "icon": "none",
-            "row_content": "<p>No. The open lattice allows water to pass through, so Atlas Wave is not a waterproof shoe. Choose covered footwear when you need protection from rain.</p>",
+            "row_content": "<p>No. The open lattice allows water to pass through, so your feet can get wet in rain or puddles. Choose waterproof footwear when you need to keep your feet dry.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "unisex",
+        "long_days",
+        "break_in",
         "sizing",
         "socks",
+        "care",
         "water"
       ],
       "settings": {
