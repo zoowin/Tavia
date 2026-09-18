@@ -1544,18 +1544,51 @@
       ]
     },
     {
-      "type": "product_details", "name": "t:tavia_pdp.details", "limit": 1,
+      "type": "product_details",
+      "name": "t:tavia_pdp.details",
+      "limit": 1,
       "settings": [
-        { "type": "paragraph", "content": "t:tavia_pdp.description_info" },
-        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "default": "t:tavia_pdp.details"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:tavia_pdp.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "t:tavia_pdp.open_default",
+          "default": false
+        }
       ]
     },
     {
-      "type": "materials_care", "name": "t:tavia_pdp.materials", "limit": 1,
+      "type": "materials_care",
+      "name": "t:tavia_pdp.materials",
+      "limit": 1,
       "settings": [
-        { "type": "richtext", "id": "content", "label": "t:tavia_pdp.content", "info": "t:tavia_pdp.per_product" },
-        { "type": "page", "id": "page", "label": "t:tavia_pdp.fallback_page" },
-        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "default": "t:tavia_pdp.materials"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:tavia_pdp.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "t:tavia_pdp.open_default",
+          "default": false
+        }
       ]
     },
     {
@@ -1567,10 +1600,27 @@
       ]
     },
     {
-      "type": "shipping_returns", "name": "t:tavia_pdp.shipping_returns", "limit": 1,
+      "type": "shipping_returns",
+      "name": "t:tavia_pdp.shipping_returns",
+      "limit": 1,
       "settings": [
-        { "type": "paragraph", "content": "t:tavia_pdp.policy_info" },
-        { "type": "checkbox", "id": "open_by_default", "label": "t:tavia_pdp.open_default", "default": false }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "default": "t:tavia_pdp.shipping_returns"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:tavia_pdp.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "t:tavia_pdp.open_default",
+          "default": false
+        }
       ]
     },
     {
