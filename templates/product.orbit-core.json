@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -56,7 +65,7 @@
           "type": "materials_care",
           "settings": {
             "heading": "Materials & care",
-            "content": "<p><strong>Upper:</strong> Engineered knit textile<br><strong>Sole:</strong> 3D-printed lattice structure<br><strong>Laces:</strong> Textile</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Do not machine wash or use harsh cleaning chemicals.</p>",
+            "content": "<p><strong>Upper:</strong> Engineered knit textile<br/><strong>Sole:</strong> 3D-printed lattice structure<br/><strong>Laces:</strong> Textile</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Do not machine wash or use harsh cleaning chemicals.</p>",
             "open_by_default": false
           }
         },
@@ -64,7 +73,7 @@
           "type": "shipping_returns",
           "settings": {
             "heading": "Shipping & returns",
-            "content": "<p>Shipping and return terms vary by destination. Please review our current Shipping Policy and Return Policy before ordering.</p>",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
             "open_by_default": false
           }
         }
@@ -102,7 +111,6 @@
         "structure": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/orbit-core-stone-pair.png",
             "title": "A familiar lace-up, reworked.",
             "text": "<p>A fine-knit upper and adjustable laces give Orbit Core an everyday shape, set over Tavia’s open lattice sole.</p>",
             "link_label": "",
@@ -112,7 +120,6 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/orbit-core-wool-walnut.png",
             "title": "Clean enough for work. Relaxed enough after.",
             "text": "<p>The monochrome profile sits naturally with wool trousers, denim, and relaxed layers when the setting changes.</p>",
             "link_label": "",
@@ -122,7 +129,6 @@
         "overhead": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/orbit-core-overhead-pair.png",
             "title": "Open structure, kept understated.",
             "text": "<p>The lattice sole adds visible depth beneath a simple all-black upper without turning the shoe into a statement piece.</p>",
             "link_label": "",
@@ -148,8 +154,8 @@
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 24,
+        "padding_bottom": 20
       }
     },
     "orbit_scene": {
@@ -184,9 +190,8 @@
         "text"
       ],
       "settings": {
-        "image": "shopify://shop_images/orbit-core-cafe-candid.png",
         "height": "adapt",
-        "desktop_image_width": "medium",
+        "desktop_image_width": "small",
         "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
@@ -294,8 +299,8 @@
     "related_products": {
       "type": "related-products",
       "settings": {
-        "manual_selection": true,
         "horizontal_carousel": true,
+        "manual_selection": true,
         "selected_products": [
           "orbit-shift-high-collar-knit-sneaker",
           "atlas-wave-sculpted-sole-knit-slip-on",
