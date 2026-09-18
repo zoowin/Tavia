@@ -80,8 +80,9 @@
         },
         "materials_care": {
           "type": "materials_care",
+          "name": "Materials & Tech",
           "settings": {
-            "content": "",
+            "content": "<p><strong>Stack Height:</strong> 3.5 cm</p><p><strong>Material:</strong> ELASTO 1000 BIO</p><p><strong>Technology:</strong> HALS 3D Printing (DLP-based system)</p>",
             "page": "",
             "open_by_default": false
           }
