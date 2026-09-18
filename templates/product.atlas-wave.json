@@ -277,6 +277,7 @@
       "type": "related-products",
       "settings": {
         "manual_selection": true,
+        "horizontal_carousel": true,
         "selected_products": [
           "atlas-grid-structured-knit-slip-on",
           "oasis-cove-cocoon-knit-slide",
