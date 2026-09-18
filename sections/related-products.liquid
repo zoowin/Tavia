@@ -22,7 +22,7 @@
 #shopify-section-{{ section.id }} button[name="next"] svg { transform: rotate(-90deg); }
 @media (max-width: 989px) { #shopify-section-{{ section.id }} .related-products.page-width { padding-inline: 2.4rem; } }
 @media (max-width: 749px) {
-#shopify-section-{{ section.id }} .atlas-recommendation-track { grid-auto-columns: 100%; }
+#shopify-section-{{ section.id }} .atlas-recommendation-track { grid-auto-columns: 78%; column-gap: 1.6rem; }
 #shopify-section-{{ section.id }} .related-products__heading { margin-bottom: 2.4rem; }
 }
 {% endstyle %}
@@ -152,7 +152,7 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    { "type": "checkbox", "id": "horizontal_carousel", "label": "Single-row carousel", "default": false, "info": "One product per screen on mobile; four on desktop. Additional products scroll horizontally." },
+    { "type": "checkbox", "id": "horizontal_carousel", "label": "Single-row carousel", "default": false, "info": "Compact cards with a next-card preview on mobile; four on desktop. Additional products scroll horizontally." },
     { "type": "checkbox", "id": "manual_selection", "label": "Choose products manually", "default": false },
     { "type": "product_list", "id": "selected_products", "label": "Recommended products", "limit": 10, "info": "Used when manual selection is enabled. Select and reorder products here. The current product is excluded. Without eligible selections, this section is hidden on the storefront; sample cards appear only in the editor." },
     {
