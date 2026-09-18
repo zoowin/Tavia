@@ -54,10 +54,13 @@
           "type": "trust_marks",
           "settings": {
             "heading": "",
+            "mark_1": "shopify://shop_images/reach.png",
             "label_1": "",
             "link_1": "",
+            "mark_2": "shopify://shop_images/SGS.png",
             "label_2": "",
             "link_2": "",
+            "mark_3": "shopify://shop_images/usda.png",
             "label_3": "",
             "link_3": "",
             "label_4": "",
