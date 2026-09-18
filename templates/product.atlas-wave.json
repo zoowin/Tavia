@@ -281,7 +281,8 @@
         "show_vendor": false,
         "show_rating": false,
         "padding_top": 24,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "manual_selection": true
       }
     }
   },
