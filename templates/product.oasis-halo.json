@@ -63,7 +63,7 @@
           "type": "materials_care",
           "settings": {
             "heading": "Materials & Care",
-            "content": "",
+            "content": "<p><strong>Material:</strong> ELASTO 1000 BIO<br/><strong>Technology:</strong> HALS 3D Printing (DLP-based system)<br/><strong>Stack height:</strong> 3.5 cm</p><p>For light surface dirt, gently wipe with a soft, damp cloth. Let your slides air dry away from direct heat. Contact us for guidance before machine washing or using cleaning chemicals.</p>",
             "open_by_default": false
           }
         },
