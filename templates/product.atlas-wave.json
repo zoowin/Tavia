@@ -69,6 +69,12 @@
           "settings": {
             "open_by_default": false
           }
+        },
+        "trust_marks": {
+          "type": "trust_marks",
+          "settings": {
+            "heading": "Materials & testing"
+          }
         }
       },
       "block_order": [
@@ -78,6 +84,7 @@
         "variant_picker",
         "quantity_selector_XWCHPk",
         "buy_buttons",
+        "trust_marks",
         "product_details",
         "materials_care",
         "shipping_returns"
