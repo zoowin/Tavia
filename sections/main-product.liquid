@@ -1326,13 +1326,13 @@
     }
   }
 
-  .tavia-color-selection { display: none; }
   @media screen and (max-width: 749px) {
     .tavia-buybox { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 0; }
     .tavia-buybox [id^='price-'] { margin-block: 0; }
     .tavia-buybox .installment { margin-block: .4rem 0; }
     .tavia-buybox .installment:not(:has(shopify-payment-terms)) { margin: 0; }
     .tavia-buybox variant-selects { margin-top: 1.6rem; padding-top: 0; border-top: 0; }
+  }
     .tavia-buybox .product-form__input--color { gap: 1rem; margin-bottom: 1.8rem; }
     .tavia-buybox .product-form__input--color .form__label { font-family: var(--font-body-family); font-size: 1.5rem; font-weight: 400; letter-spacing: 0; text-transform: none; margin-bottom: 1rem; }
     .tavia-buybox .tavia-color-selection { display: inline; color: var(--tavia-buybox-muted); }
@@ -1352,10 +1352,8 @@
     .tavia-buybox .product-form__input--color input[type='radio'].disabled + label.tavia-option-has-swatch::after {
       content: ''; position: absolute; left: .6rem; right: .6rem; top: 50%; height: 1px; background: rgb(var(--color-foreground)); transform: rotate(-45deg);
     }
-  }
-{% endstylesheet %}
 
-{% stylesheet %}
+
 .tavia-trust-box { border: 1px solid rgba(var(--color-foreground), .16); padding: 1.6rem; margin-block: 2rem; background: #fff; color: #161616; }
 .tavia-trust-box .tavia-trust-box__heading { margin: 0 0 1.4rem; font-family: var(--font-body-family); font-size: 1.4rem; font-weight: 500; line-height: 1.4; letter-spacing: 0; text-transform: none; }
 .tavia-trust-box__marks { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 1.2rem; }
