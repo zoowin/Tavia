@@ -1,0 +1,230 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "split_product_title": true,
+            "display_title": "Oasis Halo Open-Knit Slide",
+            "subtitle": ""
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_preview_rating": true,
+            "preview_rating": 4.8,
+            "preview_rating_count": 128
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_guide": "",
+            "fit_note": ""
+          }
+        },
+        "quantity_selector_XWCHPk": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "trust_marks_kCW4rw": {
+          "type": "trust_marks",
+          "settings": {
+            "heading": "",
+            "mark_1": "shopify://shop_images/usda.png",
+            "label_1": "",
+            "link_1": "",
+            "mark_2": "shopify://shop_images/SGS.png",
+            "label_2": "",
+            "link_2": "",
+            "mark_3": "shopify://shop_images/reach.png",
+            "label_3": "",
+            "link_3": "",
+            "label_4": "",
+            "link_4": "",
+            "label_5": "",
+            "link_5": "",
+            "label_6": "",
+            "link_6": "",
+            "note": ""
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "heading": "Product Details",
+            "content": "<p>A bold, rounded take on the everyday slide. Oasis Halo pairs a broad toe opening with a curved upper and a geometric lattice structure.</p><ul><li>Broad front opening leaves the toes exposed.</li><li>Rounded upper and thick sole create a sculptural silhouette.</li><li>Repeating lattice openings define the upper and sides.</li><li>Slip-on design with no laces or straps to adjust.</li></ul><p>Check the Size Chart before choosing your size.</p>",
+            "open_by_default": false
+          }
+        },
+        "materials_care": {
+          "type": "materials_care",
+          "settings": {
+            "heading": "Materials & Care",
+            "content": "<p><strong>Material:</strong> ELASTO 1000 BIO<br/><strong>Technology:</strong> HALS 3D Printing (DLP-based system)<br/><strong>Stack height:</strong> 3.5 cm</p><p>For light surface dirt, gently wipe with a soft, damp cloth. Let your slides air dry away from direct heat. Contact us for guidance before machine washing or using cleaning chemicals.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_returns": {
+          "type": "shipping_returns",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector_XWCHPk",
+        "buy_buttons",
+        "trust_marks_kCW4rw",
+        "product_details",
+        "materials_care",
+        "shipping_returns"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "multicolumn_9aeWM6": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_pk9bTf": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Oasis-halo-detail-01_LR.jpg",
+            "title": "Softness underfoot.",
+            "text": "<p>A responsive lattice structure delivers soft cushioning underfoot, bringing a springy feel to your everyday steps.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_JngVeP": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Oasis-halo-detail-02_LR.jpg",
+            "title": "Open to airflow.",
+            "text": "<p>An open toe and airy lattice let air move around your foot, helping heat and moisture escape.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_x6wzzW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Oasis-halo-detail-03_LR.jpg",
+            "title": "Made in one piece.",
+            "text": "<p>A continuous lattice connects the upper and sole in a single structure, with no stitched seams to come apart.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_pk9bTf",
+        "column_JngVeP",
+        "column_x6wzzW"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Every detail, designed for everyday comfort.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "horizontal_carousel": false,
+        "manual_selection": true,
+        "selected_products": [
+          "atlas-grid-structured-knit-slip-on",
+          "oasis-loom-closed-toe-knit-mule",
+          "vector-drift-low-profile-knit-slip-on",
+          "module-nest-3d-printed-lumbar-cushion"
+        ],
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_9aeWM6",
+    "related-products",
+    "disclosures"
+  ]
+}
