@@ -183,6 +183,24 @@
         "padding_bottom": 20
       }
     },
+    "tavia_video_text_JM4Jb3": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "",
+        "heading": "Slip on. Settle into your day.",
+        "text": "<p>Soft cushioning underfoot. Airflow through an open lattice. Oasis Halo brings an easy, relaxed feel to your everyday steps, from your morning stretch to whatever comes next.</p>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -224,6 +242,7 @@
   "order": [
     "main",
     "multicolumn_9aeWM6",
+    "tavia_video_text_JM4Jb3",
     "related-products",
     "disclosures"
   ]
