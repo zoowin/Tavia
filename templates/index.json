@@ -89,6 +89,22 @@
     "shop-by-direction": {
       "type": "tavia-collections",
       "blocks": {
+        "atlas": {
+          "type": "direction",
+          "settings": {
+            "collection": "atlas",
+            "image": "shopify://shop_images/atlas-dp-LR.jpg",
+            "mobile_image": "shopify://shop_images/atlas-mb-LR.jpg",
+            "title": "FUTURE MOTION",
+            "function_line": "ATLAS",
+            "copy": "Progressive 3D-printed forms for movement beyond the familiar.",
+            "link_label": "Explore collection",
+            "link": "",
+            "wide_card": false,
+            "color_scheme": "",
+            "overlay_opacity": 10
+          }
+        },
         "oasis": {
           "type": "direction",
           "settings": {
@@ -114,22 +130,6 @@
             "title": "LONG DAYS",
             "function_line": "VECTOR",
             "copy": "Lightweight forms for long hours on your feet.",
-            "link_label": "Explore collection",
-            "link": "",
-            "wide_card": false,
-            "color_scheme": "",
-            "overlay_opacity": 10
-          }
-        },
-        "atlas": {
-          "type": "direction",
-          "settings": {
-            "collection": "atlas",
-            "image": "shopify://shop_images/atlas-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/atlas-mb-LR.jpg",
-            "title": "FUTURE MOTION",
-            "function_line": "ATLAS",
-            "copy": "Progressive 3D-printed forms for movement beyond the familiar.",
             "link_label": "Explore collection",
             "link": "",
             "wide_card": false,
@@ -171,9 +171,9 @@
         }
       },
       "block_order": [
+        "atlas",
         "oasis",
         "vector",
-        "atlas",
         "orbit",
         "module"
       ],
