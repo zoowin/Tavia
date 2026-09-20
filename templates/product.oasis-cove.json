@@ -132,9 +132,9 @@
         "column_pk9bTf": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Oasis-halo-detail-01_LR.jpg",
-            "title": "Softness underfoot.",
-            "text": "<p>A responsive lattice structure delivers soft cushioning underfoot, bringing a springy feel to your everyday steps.</p>",
+            "image": "shopify://shop_images/Oasis-cove-detail-01_LR.jpg",
+            "title": "Soft underfoot.",
+            "text": "<p>A soft lattice footbed cushions your steps, while Cove’s rounded shape wraps around your foot for an easy, comfortable feel.</p>",
             "link_label": "",
             "link": ""
           }
@@ -142,9 +142,9 @@
         "column_JngVeP": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Oasis-halo-detail-02_LR.jpg",
-            "title": "Open to airflow.",
-            "text": "<p>An open toe and airy lattice let air move around your foot, helping heat and moisture escape.</p>",
+            "image": "shopify://shop_images/Oasis-cove-detail-02_LR.jpg",
+            "title": "Covered, yet airy.",
+            "text": "<p>Fine lattice openings and a signature oval toe opening let air move around your foot, combining a covered silhouette with an open feel.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,9 +152,9 @@
         "column_x6wzzW": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Oasis-halo-detail-03_LR.jpg",
-            "title": "Made in one piece.",
-            "text": "<p>A continuous lattice connects the upper and sole in a single structure, with no stitched seams to come apart.</p>",
+            "image": "shopify://shop_images/Oasis-cove-detail-03_LR.jpg",
+            "title": "One continuous form.",
+            "text": "<p>The upper and sole flow together in a single 3D-printed structure. A rounded, seamless shape that slips easily into your everyday routine.</p>",
             "link_label": "",
             "link": ""
           }
@@ -167,7 +167,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Every detail, designed for everyday comfort.",
+        "title": "A cocoon-like shape. Everyday comfort.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
