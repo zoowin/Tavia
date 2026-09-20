@@ -170,7 +170,7 @@
         "title": "The details behind Atlas Wave.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
