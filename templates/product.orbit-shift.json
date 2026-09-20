@@ -135,7 +135,7 @@
         "structure": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-01_LR.jpg",
+            "image": "shopify://shop_images/orbit-shift-detail-01_LR.jpg",
             "title": "Knit upper. Your fit.",
             "text": "<p>A fine-knit upper with adjustable laces lets you fine-tune the fit across the instep.</p>",
             "link_label": "",
@@ -145,7 +145,7 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-02_LR.jpg",
+            "image": "shopify://shop_images/orbit-shift-detail-02_LR.jpg",
             "title": "A sole, built in 3D.",
             "text": "<p>An open, 3D-printed lattice gives the sole its distinctive structure beneath a familiar lace-up silhouette.</p>",
             "link_label": "",
@@ -155,7 +155,7 @@
         "overhead": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-03_LR.jpg",
+            "image": "shopify://shop_images/orbit-shift-detail-03_LR.jpg",
             "title": "From workdays to weekends.",
             "text": "<p>Pair with tailored trousers for a casual workday, or denim when the plans are more relaxed.</p>",
             "link_label": "",
