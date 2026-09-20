@@ -141,8 +141,8 @@
           "type": "direction",
           "settings": {
             "collection": "orbit",
-            "image": "shopify://shop_images/orbit-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/orbit-mb-LR.jpg",
+            "image": "shopify://shop_images/collection-orbit-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-orbit-mb_LR.jpg",
             "title": "EVERYDAY MOBILITY",
             "function_line": "ORBIT",
             "copy": "Versatile forms for city, travel and weekends.",
