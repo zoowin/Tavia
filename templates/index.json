@@ -109,8 +109,8 @@
           "type": "direction",
           "settings": {
             "collection": "oasis",
-            "image": "shopify://shop_images/oasis-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/oasis-mb-LR.jpg",
+            "image": "shopify://shop_images/collection-oasis-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-oasis-mb_LR.jpg",
             "title": "RESET",
             "function_line": "OASIS",
             "copy": "Easy-on forms for downtime, travel and in-between moments.",
