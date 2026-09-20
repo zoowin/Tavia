@@ -205,7 +205,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "horizontal_carousel": false,
+        "horizontal_carousel": true,
         "manual_selection": true,
         "selected_products": [
           "atlas-grid-structured-knit-slip-on",
