@@ -205,71 +205,71 @@
     "atlas_faq": {
       "type": "collapsible-content",
       "blocks": {
-        "long_days": {
+        "designed_for": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear Atlas Wave for long days on my feet?",
+            "heading": "What is Atlas Grid designed for?",
             "icon": "none",
-            "row_content": "<p>Atlas Wave’s sculpted lattice extends from heel to toe, with a continuous upper that surrounds your foot. For longer days, the right fit matters—start with shorter wears to see how they feel before making them your all-day pair.</p>",
+            "row_content": "<p>Atlas Grid is a statement slip-on designed for everyday movement and sport-inspired styling. Its open lattice gives the shoe a distinctive sculptural look. It is not intended to replace technical running, safety, or protective footwear.</p>",
             "page": ""
           }
         },
-        "break_in": {
+        "fit": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do they need breaking in?",
+            "heading": "How should Atlas Grid fit?",
             "icon": "none",
-            "row_content": "<p>A new pair may feel different from your usual shoes. Start with short periods of wear and check for rubbing or pressure around the toes, instep and heel. A good fit should feel secure, not painfully tight—don’t rely on breaking them in to fix the wrong size.</p>",
+            "row_content": "<p>The shoe should feel secure around the heel and instep without painful pressure around the toes. The correct size should feel comfortable from the start—do not rely on breaking in the shoe to correct a poor fit.</p>",
             "page": ""
           }
         },
         "sizing": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is Atlas Wave unisex, and how do I choose my size?",
+            "heading": "Is Atlas Grid unisex, and how do I choose my size?",
             "icon": "none",
-            "row_content": "<p>Yes—the shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your size. If you’re between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
+            "row_content": "<p>Yes. The shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your usual size. If you are between sizes or have a wider foot or higher instep, contact us before ordering for sizing guidance.</p>",
             "page": ""
           }
         },
         "socks": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear them with or without socks?",
+            "heading": "Can I wear Atlas Grid with socks?",
             "icon": "none",
-            "row_content": "<p>Either way. Wear them without socks for an open look, or add socks for extra coverage and a different color contrast. Thicker socks take up more room, so consider how you plan to wear them when checking the fit.</p>",
+            "row_content": "<p>Yes. Wear it without socks for a more open look, or add socks for extra coverage and color contrast. Thicker socks take up more room, so consider how you plan to style the shoe when choosing your size.</p>",
             "page": ""
           }
         },
         "care": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How should I clean them?",
+            "heading": "How should I clean Atlas Grid?",
             "icon": "none",
-            "row_content": "<p>For light surface dirt, gently wipe with a soft, damp cloth and let them air dry away from direct heat. For deeper cleaning, contact us for care guidance before using a washing machine or cleaning chemicals.</p>",
+            "row_content": "<p>For light dirt, gently wipe the shoe with a soft, damp cloth. Allow it to air dry away from direct sunlight and heat. Avoid washing machines, harsh brushes, bleach, and strong cleaning chemicals.</p>",
             "page": ""
           }
         },
         "water": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are they waterproof?",
+            "heading": "Is Atlas Grid waterproof?",
             "icon": "none",
-            "row_content": "<p>No. The open lattice allows water to pass through, so your feet can get wet in rain or puddles. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "row_content": "<p>No. The open lattice allows water to pass through, so your feet may get wet in rain or puddles. Choose waterproof footwear when you need to keep your feet dry.</p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "long_days",
-        "break_in",
+        "designed_for",
         "sizing",
+        "fit",
         "socks",
         "care",
         "water"
       ],
       "settings": {
-        "caption": "",
+        "caption": "ATLAS GRID / DETAILS",
         "heading": "Frequently asked questions",
         "heading_size": "h2",
         "heading_alignment": "left",
