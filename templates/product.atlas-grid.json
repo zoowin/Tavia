@@ -133,8 +133,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
-            "title": "Sculpted underfoot.",
-            "text": "<p>A bold lattice silhouette designed for everyday movement—open, sculptural, and impossible to overlook.</p>",
+            "title": "Style in motion.",
+            "text": "<p>From open spaces to city streets, Atlas Grid brings a distinctive edge to every step.</p>",
             "link_label": "",
             "link": ""
           }
@@ -167,7 +167,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "Section headingMade to move differently.",
+        "title": "Made to move differently.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "square",
