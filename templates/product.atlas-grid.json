@@ -170,7 +170,7 @@
         "title": "Made to move differently.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
@@ -214,21 +214,21 @@
             "page": ""
           }
         },
-        "fit": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How should Atlas Grid fit?",
-            "icon": "none",
-            "row_content": "<p>The shoe should feel secure around the heel and instep without painful pressure around the toes. The correct size should feel comfortable from the start—do not rely on breaking in the shoe to correct a poor fit.</p>",
-            "page": ""
-          }
-        },
         "sizing": {
           "type": "collapsible_row",
           "settings": {
             "heading": "Is Atlas Grid unisex, and how do I choose my size?",
             "icon": "none",
             "row_content": "<p>Yes. The shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your usual size. If you are between sizes or have a wider foot or higher instep, contact us before ordering for sizing guidance.</p>",
+            "page": ""
+          }
+        },
+        "fit": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should Atlas Grid fit?",
+            "icon": "none",
+            "row_content": "<p>The shoe should feel secure around the heel and instep without painful pressure around the toes. The correct size should feel comfortable from the start—do not rely on breaking in the shoe to correct a poor fit.</p>",
             "page": ""
           }
         },
