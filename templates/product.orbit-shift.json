@@ -1,0 +1,334 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "split_product_title": true,
+            "display_title": "Orbit Core Everyday Lace-Up Sneaker",
+            "subtitle": "Everyday Lace-Up Sneaker"
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_preview_rating": true,
+            "preview_rating": 4.8,
+            "preview_rating_count": 128
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "product_intro": {
+          "type": "product_intro",
+          "settings": {
+            "content": "An everyday lace-up pairing an engineered knit upper with a 3D-printed lattice sole.",
+            "use_description": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_guide": "",
+            "fit_note": "Choose Female or Male under US sizing, then select your size."
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "trust_marks_xi79d8": {
+          "type": "trust_marks",
+          "settings": {
+            "heading": "",
+            "mark_1": "shopify://shop_images/usda.png",
+            "label_1": "",
+            "link_1": "",
+            "mark_2": "shopify://shop_images/SGS.png",
+            "label_2": "",
+            "link_2": "",
+            "mark_3": "shopify://shop_images/reach.png",
+            "label_3": "",
+            "link_3": "",
+            "label_4": "",
+            "link_4": "",
+            "label_5": "",
+            "link_5": "",
+            "label_6": "",
+            "link_6": "",
+            "note": ""
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "heading": "Product details",
+            "content": "<ul><li>Low-profile everyday lace-up silhouette</li><li>Engineered knit upper</li><li>Adjustable textile laces</li><li>3D-printed open lattice sole</li><li>Monochrome black finish</li></ul>",
+            "open_by_default": false
+          }
+        },
+        "materials_care": {
+          "type": "materials_care",
+          "settings": {
+            "heading": "Materials & care",
+            "content": "<p><strong>Upper:</strong> Engineered knit textile<br/><strong>Sole:</strong> 3D-printed lattice structure<br/><strong>Laces:</strong> Textile</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Do not machine wash or use harsh cleaning chemicals.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_returns": {
+          "type": "shipping_returns",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating",
+        "price",
+        "product_intro",
+        "variant_picker",
+        "buy_buttons",
+        "trust_marks_xi79d8",
+        "product_details",
+        "materials_care",
+        "shipping_returns"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "orbit_editorial": {
+      "type": "multicolumn",
+      "blocks": {
+        "structure": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Orbit_Core-detail-01_LR.jpg",
+            "title": "Knit upper. Your fit.",
+            "text": "<p>A fine-knit upper with adjustable laces lets you fine-tune the fit across the instep.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "wardrobe": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Orbit_Core-detail-02_LR.jpg",
+            "title": "A sole, built in 3D.",
+            "text": "<p>An open, 3D-printed lattice gives the sole its distinctive structure beneath a familiar lace-up silhouette.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "overhead": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Orbit_Core-detail-03_LR.jpg",
+            "title": "From workdays to weekends.",
+            "text": "<p>Pair with tailored trousers for a casual workday, or denim when the plans are more relaxed.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "structure",
+        "wardrobe",
+        "overhead"
+      ],
+      "settings": {
+        "title": "Made for the way the day changes.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "tavia_video_text_89mUAW": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video": "shopify://files/videos/oribt-motion.mp4",
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "",
+        "heading": "See Orbit Core in motion.",
+        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "orbit_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "occasions": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where does Orbit Core fit into the day?",
+            "icon": "none",
+            "row_content": "<p>Orbit Core is styled as an everyday lace-up for commuting, casual workwear, errands, and social plans. It is not intended to replace technical athletic, safety, or protective footwear.</p>",
+            "page": ""
+          }
+        },
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I choose my size?",
+            "icon": "none",
+            "row_content": "<p>Choose Female or Male under US Sizing, then select your size. If you are between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
+            "page": ""
+          }
+        },
+        "fit": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should the fit feel?",
+            "icon": "none",
+            "row_content": "<p>The shoe should feel secure at the heel and instep without painful pressure around the toes. Do not rely on breaking in the shoe to correct the wrong size.</p>",
+            "page": ""
+          }
+        },
+        "socks": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What socks work with Orbit Core?",
+            "icon": "none",
+            "row_content": "<p>Fine everyday socks keep the fit closest to your selected size. Thicker socks take up more room, so consider how you plan to wear the shoe when choosing.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I clean them?",
+            "icon": "none",
+            "row_content": "<p>For light surface dirt, wipe gently with a soft damp cloth and let the shoes air dry away from direct heat. Check the product care information before using a washing machine or cleaning chemicals.</p>",
+            "page": ""
+          }
+        },
+        "water": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are they waterproof?",
+            "icon": "none",
+            "row_content": "<p>No. The knit upper and open lattice construction are not waterproof. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "occasions",
+        "sizing",
+        "fit",
+        "socks",
+        "care",
+        "water"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently asked questions",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "horizontal_carousel": true,
+        "manual_selection": true,
+        "selected_products": [
+          "orbit-shift-high-collar-knit-sneaker",
+          "atlas-wave-sculpted-sole-knit-slip-on",
+          "atlas-grid-structured-knit-slip-on",
+          "oasis-cove-cocoon-knit-slide"
+        ],
+        "heading": "More everyday forms",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "orbit_editorial",
+    "tavia_video_text_89mUAW",
+    "orbit_faq",
+    "related_products",
+    "disclosures"
+  ]
+}
