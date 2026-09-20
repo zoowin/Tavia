@@ -22,8 +22,9 @@
         },
         "rating": {
           "type": "rating",
+          "disabled": true,
           "settings": {
-            "show_preview_rating": true,
+            "show_preview_rating": false,
             "preview_rating": 4.8,
             "preview_rating_count": 128
           }
@@ -297,7 +298,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "horizontal_carousel": false,
+        "horizontal_carousel": true,
         "manual_selection": true,
         "selected_products": [
           "atlas-grid-structured-knit-slip-on",
@@ -311,7 +312,7 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
