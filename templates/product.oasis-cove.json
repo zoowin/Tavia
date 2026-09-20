@@ -238,12 +238,94 @@
         "padding_top": 36,
         "padding_bottom": 0
       }
+    },
+    "cove_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "difference": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What makes Oasis Cove different from Oasis Halo?",
+            "icon": "none",
+            "row_content": "<p>Cove has a more covered, cocoon-like shape with a small oval toe opening. Halo has a wider front opening that leaves more of the toes exposed. Choose Cove if you prefer a rounded, more enclosed look.</p>",
+            "page": ""
+          }
+        },
+        "airflow": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does the covered shape still allow airflow?",
+            "icon": "none",
+            "row_content": "<p>Yes. Fine lattice openings across the upper and sides, together with the oval toe opening, allow air to move around your foot while keeping Cove’s covered silhouette.</p>",
+            "page": ""
+          }
+        },
+        "comfort": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What does Oasis Cove feel like underfoot?",
+            "icon": "none",
+            "row_content": "<p>The lattice footbed provides soft cushioning, while the rounded upper wraps around your foot. How it feels will vary with your foot shape and chosen size.</p>",
+            "page": ""
+          }
+        },
+        "outdoors": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear Oasis Cove outside?",
+            "icon": "none",
+            "row_content": "<p>Cove is designed for relaxed everyday wear, from time at home to short outings nearby. It is not intended as a running or performance sports shoe.</p>",
+            "page": ""
+          }
+        },
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I choose my size?",
+            "icon": "none",
+            "row_content": "<p>Check the Size Chart before ordering and compare it with your foot measurements. If you are between sizes or unsure about the fit, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> with your measurements for guidance.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I clean my pair?",
+            "icon": "none",
+            "row_content": "<p>Gently wipe away light surface dirt with a soft, damp cloth, then let your shoes air dry away from direct heat. Contact us before machine washing or using cleaning chemicals.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "difference",
+        "airflow",
+        "comfort",
+        "outdoors",
+        "sizing",
+        "care"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently asked questions",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "main",
     "multicolumn_9aeWM6",
     "tavia_video_text_wEKdFL",
+    "cove_faq",
     "related-products",
     "disclosures"
   ]
