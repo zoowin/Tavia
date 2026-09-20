@@ -15,8 +15,8 @@
         "title": {
           "type": "title",
           "settings": {
-            "split_product_title": false,
-            "display_title": "Atlas Wave Sculpted-Sole Knit Slip-On",
+            "split_product_title": true,
+            "display_title": "Oasis Loom Closed-Toe Knit Mule",
             "subtitle": ""
           }
         },
