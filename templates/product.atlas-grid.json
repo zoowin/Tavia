@@ -178,7 +178,7 @@
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -297,7 +297,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
-        "horizontal_carousel": false,
+        "horizontal_carousel": true,
         "manual_selection": true,
         "selected_products": [
           "atlas-grid-structured-knit-slip-on",
