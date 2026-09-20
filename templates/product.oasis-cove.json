@@ -183,6 +183,24 @@
         "padding_bottom": 20
       }
     },
+    "tavia_video_text_wEKdFL": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "",
+        "heading": "From slow mornings to a step outside.",
+        "text": "<p>Slip into Oasis Cove and move through your day. Soft cushioning, an airy lattice and a rounded, foot-hugging shape bring everyday comfort from home to a stroll around the block.</p>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -224,6 +242,7 @@
   "order": [
     "main",
     "multicolumn_9aeWM6",
+    "tavia_video_text_wEKdFL",
     "related-products",
     "disclosures"
   ]
