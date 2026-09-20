@@ -187,7 +187,7 @@
       "type": "tavia-video-text",
       "name": "Tavia video + text",
       "settings": {
-        "video": "shopify://files/videos/Atlas on foot.mp4",
+        "video": "shopify://files/videos/oasis-loom-motion.mp4",
         "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
         "loop": true,
         "autoplay": true,
