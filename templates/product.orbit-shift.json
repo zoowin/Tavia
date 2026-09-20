@@ -36,7 +36,7 @@
         "product_intro": {
           "type": "product_intro",
           "settings": {
-            "content": "An everyday lace-up pairing an engineered knit upper with a 3D-printed lattice sole.",
+            "content": "An everyday lace-up pairing a grid-textured upper with an open lattice sole.",
             "use_description": false
           }
         },
@@ -190,15 +190,15 @@
       "name": "Tavia video + text",
       "settings": {
         "video": "shopify://files/videos/oribt-motion.mp4",
-        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "video_description": "Orbit Shift sneakers shown on foot, with a closer look at their fit and lattice sole.",
         "loop": true,
         "autoplay": true,
         "mobile_full_width": true,
         "ratio": "adapt",
         "video_position": "left",
         "eyebrow": "",
-        "heading": "See Orbit Core in motion.",
-        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
+        "heading": "See Orbit Shift in motion.",
+        "text": "<p>Take a closer look at Orbit Shift on foot—from the lace-up fit to the open lattice sole, and how it comes together with everyday styling.</p>",
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
@@ -210,9 +210,9 @@
         "occasions": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Where does Orbit Core fit into the day?",
+            "heading": "What is Orbit Shift designed for?",
             "icon": "none",
-            "row_content": "<p>Orbit Core is styled as an everyday lace-up for commuting, casual workwear, errands, and social plans. It is not intended to replace technical athletic, safety, or protective footwear.</p>",
+            "row_content": "<p>Orbit Shift is an everyday lace-up sneaker for commutes, casual workdays, and weekend plans. Its streamlined shape pairs easily with denim or tailored trousers.</p>",
             "page": ""
           }
         },
@@ -221,7 +221,7 @@
           "settings": {
             "heading": "How do I choose my size?",
             "icon": "none",
-            "row_content": "<p>Choose Female or Male under US Sizing, then select your size. If you are between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
+            "row_content": "<p>Check the size guide before ordering and measure your feet while wearing your usual socks. If you’re between sizes or have wider feet or a higher instep, contact us for sizing advice.</p>",
             "page": ""
           }
         },
@@ -230,34 +230,34 @@
           "settings": {
             "heading": "How should the fit feel?",
             "icon": "none",
-            "row_content": "<p>The shoe should feel secure at the heel and instep without painful pressure around the toes. Do not rely on breaking in the shoe to correct the wrong size.</p>",
+            "row_content": "<p>Your heel should feel secure, with room for your toes to move comfortably. Adjust the laces for a close fit without pinching or pressure. Don’t rely on breaking in the shoes to correct the wrong size.</p>",
             "page": ""
           }
         },
         "socks": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What socks work with Orbit Core?",
+            "heading": "What socks should I wear?",
             "icon": "none",
-            "row_content": "<p>Fine everyday socks keep the fit closest to your selected size. Thicker socks take up more room, so consider how you plan to wear the shoe when choosing.</p>",
+            "row_content": "<p>Lightweight everyday socks are a good starting point. If you prefer thicker socks, wear them when checking the fit, as they take up more room inside the shoe.</p>",
             "page": ""
           }
         },
         "care": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How should I clean them?",
+            "heading": "How should I clean Orbit Shift?",
             "icon": "none",
-            "row_content": "<p>For light surface dirt, wipe gently with a soft damp cloth and let the shoes air dry away from direct heat. Check the product care information before using a washing machine or cleaning chemicals.</p>",
+            "row_content": "<p>Gently remove loose dirt with a soft brush, then spot clean with a soft, damp cloth. Air dry away from direct heat. Avoid soaking, machine washing, tumble drying, and harsh cleaning products.</p>",
             "page": ""
           }
         },
         "water": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are they waterproof?",
+            "heading": "Is Orbit Shift waterproof?",
             "icon": "none",
-            "row_content": "<p>No. The knit upper and open lattice construction are not waterproof. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "row_content": "<p>Orbit Shift is not sold as waterproof footwear. For wet-weather protection, choose footwear specifically designed to keep water out.</p>",
             "page": ""
           }
         }
