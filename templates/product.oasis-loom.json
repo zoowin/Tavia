@@ -132,7 +132,7 @@
         "column_UHbk4K": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
+            "image": "shopify://shop_images/Oasis-loom-detail-01_LR.jpg",
             "title": "Sculpted underfoot.",
             "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
             "link_label": "",
@@ -167,7 +167,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The details behind Atlas Wave.",
+        "title": "Everyday ease. A closer look.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "portrait",
@@ -178,7 +178,7 @@
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 40,
         "padding_bottom": 40
       }
