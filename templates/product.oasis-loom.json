@@ -133,8 +133,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/Oasis-loom-detail-01_LR.jpg",
-            "title": "Sculpted underfoot.",
-            "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
+            "title": "Slip into your day.",
+            "text": "<p>An easy slip-on shape and a clean, low profile make Loom a natural match for relaxed everyday outfits.</p>",
             "link_label": "",
             "link": ""
           }
@@ -142,9 +142,9 @@
         "column_ngCDUH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-02-LR.jpg",
-            "title": "A contoured surround.",
-            "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
+            "image": "shopify://shop_images/Oasis-loom-detail-02_LR.jpg",
+            "title": "Distinctive in every detail.",
+            "text": "<p>A fine geometric lattice wraps around the rounded, closed toe, creating a textured finish with a simple, understated silhouette.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,9 +152,9 @@
         "column_DiDHnr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-03-LR.jpg",
-            "title": "Open by design.",
-            "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
+            "image": "shopify://shop_images/Oasis-loom-detail-03_LR.jpg",
+            "title": "Covered toes. Open to airflow.",
+            "text": "<p>Small openings throughout the upper let air pass through, pairing closed-toe coverage with an airy lattice design.</p>",
             "link_label": "",
             "link": ""
           }
@@ -170,7 +170,7 @@
         "title": "Everyday ease. A closer look.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
