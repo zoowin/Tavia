@@ -88,7 +88,7 @@
           "type": "materials_care",
           "settings": {
             "heading": "Materials & care",
-            "content": "<p><strong>Upper:</strong> Engineered knit textile<br/><strong>Sole:</strong> 3D-printed lattice structure<br/><strong>Laces:</strong> Textile</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Do not machine wash or use harsh cleaning chemicals.</p>",
+            "content": "<p><strong>Upper: </strong>Grid-textured textile with layered overlays.<br/><strong>Collar & tongue: </strong>Knit textile.<br/><strong>Sole:</strong> Open lattice construction.</p><p>Gently remove loose dirt with a soft brush, then spot clean with a soft, damp cloth. Allow to air dry away from direct heat. Avoid soaking, machine washing, tumble drying, bleach, and harsh cleaning products.</p>",
             "open_by_default": false
           }
         },
