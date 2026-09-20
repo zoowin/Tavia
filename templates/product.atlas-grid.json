@@ -134,7 +134,7 @@
           "settings": {
             "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
             "title": "Sculpted underfoot.",
-            "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
+            "text": "<p>A bold lattice silhouette designed for everyday movement—open, sculptural, and impossible to overlook.</p>",
             "link_label": "",
             "link": ""
           }
@@ -167,7 +167,7 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The details behind Atlas Wave.",
+        "title": "Section headingMade to move differently.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "square",
