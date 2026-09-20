@@ -1,0 +1,332 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "split_product_title": false,
+            "display_title": "Atlas Wave Sculpted-Sole Knit Slip-On",
+            "subtitle": ""
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_preview_rating": true,
+            "preview_rating": 4.8,
+            "preview_rating_count": 128
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_guide": "",
+            "fit_note": ""
+          }
+        },
+        "quantity_selector_XWCHPk": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "trust_marks_yETydX": {
+          "type": "trust_marks",
+          "settings": {
+            "heading": "",
+            "mark_1": "shopify://shop_images/reach.png",
+            "label_1": "",
+            "link_1": "",
+            "mark_2": "shopify://shop_images/SGS.png",
+            "label_2": "",
+            "link_2": "",
+            "mark_3": "shopify://shop_images/usda.png",
+            "label_3": "",
+            "link_3": "",
+            "label_4": "",
+            "link_4": "",
+            "label_5": "",
+            "link_5": "",
+            "label_6": "",
+            "link_6": "",
+            "note": ""
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "heading": "Product Details",
+            "content": "<p>A sculpted silhouette for everyday movement. Atlas Wave pairs a wave-like lattice sole with a contoured slip-on upper.</p><ul><li>Open lattice upper lets air move around your foot.</li><li>Curved heel and lace-free design for easy everyday styling.</li><li>Unisex design, with US sizing options for women and men.</li><li>Wear with or without socks. Check the Size Chart before choosing your size.</li></ul>",
+            "open_by_default": false
+          }
+        },
+        "materials_care": {
+          "type": "materials_care",
+          "name": "Materials & Tech",
+          "settings": {
+            "heading": "Materials & Care",
+            "content": "<p><strong>Material:</strong> ELASTO 1000 BIO<br/><strong>Technology:</strong> HALS 3D Printing (DLP-based system)<br/><strong>Stack height:</strong> 3.5 cm</p><p>For light surface dirt, gently wipe with a soft, damp cloth. Let your shoes air dry away from direct heat. Contact us for guidance before machine washing or using cleaning chemicals.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_returns": {
+          "type": "shipping_returns",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "rating",
+        "price",
+        "variant_picker",
+        "quantity_selector_XWCHPk",
+        "buy_buttons",
+        "trust_marks_yETydX",
+        "product_details",
+        "materials_care",
+        "shipping_returns"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "multicolumn_FmaeVL": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_UHbk4K": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
+            "title": "Sculpted underfoot.",
+            "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ngCDUH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-02-LR.jpg",
+            "title": "A contoured surround.",
+            "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DiDHnr": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Atlas-wave-detial-03-LR.jpg",
+            "title": "Open by design.",
+            "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_UHbk4K",
+        "column_ngCDUH",
+        "column_DiDHnr"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "The details behind Atlas Wave.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "tavia_video_text_JTWetN": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video": "shopify://files/videos/Atlas on foot.mp4",
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "Atlas Wave / In motion",
+        "heading": "Sculpted beneath every step.",
+        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
+        "color_scheme": "scheme-4",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "atlas_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "long_days": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear Atlas Wave for long days on my feet?",
+            "icon": "none",
+            "row_content": "<p>Atlas Wave’s sculpted lattice extends from heel to toe, with a continuous upper that surrounds your foot. For longer days, the right fit matters—start with shorter wears to see how they feel before making them your all-day pair.</p>",
+            "page": ""
+          }
+        },
+        "break_in": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do they need breaking in?",
+            "icon": "none",
+            "row_content": "<p>A new pair may feel different from your usual shoes. Start with short periods of wear and check for rubbing or pressure around the toes, instep and heel. A good fit should feel secure, not painfully tight—don’t rely on breaking them in to fix the wrong size.</p>",
+            "page": ""
+          }
+        },
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Atlas Wave unisex, and how do I choose my size?",
+            "icon": "none",
+            "row_content": "<p>Yes—the shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your size. If you’re between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
+            "page": ""
+          }
+        },
+        "socks": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear them with or without socks?",
+            "icon": "none",
+            "row_content": "<p>Either way. Wear them without socks for an open look, or add socks for extra coverage and a different color contrast. Thicker socks take up more room, so consider how you plan to wear them when checking the fit.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I clean them?",
+            "icon": "none",
+            "row_content": "<p>For light surface dirt, gently wipe with a soft, damp cloth and let them air dry away from direct heat. For deeper cleaning, contact us for care guidance before using a washing machine or cleaning chemicals.</p>",
+            "page": ""
+          }
+        },
+        "water": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are they waterproof?",
+            "icon": "none",
+            "row_content": "<p>No. The open lattice allows water to pass through, so your feet can get wet in rain or puddles. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "long_days",
+        "break_in",
+        "sizing",
+        "socks",
+        "care",
+        "water"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently asked questions",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "horizontal_carousel": false,
+        "manual_selection": true,
+        "selected_products": [
+          "atlas-grid-structured-knit-slip-on",
+          "oasis-cove-cocoon-knit-slide",
+          "oasis-loom-closed-toe-knit-mule",
+          "orbit-core-everyday-lace-up-sneaker"
+        ],
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_FmaeVL",
+    "tavia_video_text_JTWetN",
+    "atlas_faq",
+    "disclosures",
+    "related-products"
+  ]
+}
