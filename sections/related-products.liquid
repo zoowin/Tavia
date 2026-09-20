@@ -151,6 +151,8 @@
   "name": "t:sections.related-products.name",
   "tag": "section",
   "class": "section",
+  "enabled_on": { "templates": ["product"] },
+  "presets": [{ "name": "t:sections.related-products.name" }],
   "settings": [
     { "type": "checkbox", "id": "horizontal_carousel", "label": "Single-row carousel", "default": false, "info": "Compact cards with a next-card preview on mobile; four on desktop. Additional products scroll horizontally." },
     { "type": "checkbox", "id": "manual_selection", "label": "Choose products manually", "default": false },
