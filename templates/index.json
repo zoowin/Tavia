@@ -93,8 +93,8 @@
           "type": "direction",
           "settings": {
             "collection": "atlas",
-            "image": "shopify://shop_images/atlas-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/atlas-mb-LR.jpg",
+            "image": "shopify://shop_images/collection-vector-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-atlas-mb_LR.jpg",
             "title": "FUTURE MOTION",
             "function_line": "ATLAS",
             "copy": "Progressive 3D-printed forms for movement beyond the familiar.",
@@ -125,8 +125,8 @@
           "type": "direction",
           "settings": {
             "collection": "vector",
-            "image": "shopify://shop_images/vector-dp-LR.jpg",
-            "mobile_image": "shopify://shop_images/vector-mb-LR.jpg",
+            "image": "shopify://shop_images/collection-atlas-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-vector-mb_LR.jpg",
             "title": "LONG DAYS",
             "function_line": "VECTOR",
             "copy": "Lightweight forms for long hours on your feet.",
