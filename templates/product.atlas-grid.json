@@ -132,7 +132,7 @@
         "column_UHbk4K": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
+            "image": "shopify://shop_images/atlas-grid-detail-01_LR.jpg",
             "title": "Style in motion.",
             "text": "<p>From open spaces to city streets, Atlas Grid brings a distinctive edge to every step.</p>",
             "link_label": "",
@@ -142,9 +142,9 @@
         "column_ngCDUH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-02-LR.jpg",
-            "title": "A contoured surround.",
-            "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
+            "image": "shopify://shop_images/atlas-grid-detail-02_LR.jpg",
+            "title": "Open by design.",
+            "text": "<p>The intricate lattice defines the look, revealing the shoe’s sculptural construction from every angle.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,9 +152,9 @@
         "column_DiDHnr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-03-LR.jpg",
-            "title": "Open by design.",
-            "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
+            "image": "shopify://shop_images/atlas-grid-detail-03_LR.jpg",
+            "title": "One continuous form.",
+            "text": "<p>From the rounded toe to the sculpted heel, the grid flows into the sole as one uninterrupted silhouette.</p>",
             "link_label": "",
             "link": ""
           }
