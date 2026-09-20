@@ -16,7 +16,7 @@
           "type": "title",
           "settings": {
             "split_product_title": true,
-            "display_title": "Oasis Halo Open-Knit Slide",
+            "display_title": "Oasis Cove Cocoon-Knit Slide",
             "subtitle": ""
           }
         },
@@ -202,43 +202,6 @@
         "padding_bottom": 64
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "horizontal_carousel": true,
-        "manual_selection": true,
-        "selected_products": [
-          "atlas-grid-structured-knit-slip-on",
-          "oasis-loom-closed-toe-knit-mule",
-          "vector-drift-low-profile-knit-slip-on",
-          "module-nest-3d-printed-lumbar-cushion"
-        ],
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
-    "disclosures": {
-      "type": "disclosures",
-      "settings": {
-        "heading": "Disclosures",
-        "heading_size": "h2",
-        "open_by_default": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 0
-      }
-    },
     "cove_faq": {
       "type": "collapsible-content",
       "blocks": {
@@ -318,6 +281,43 @@
         "desktop_layout": "image_first",
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "horizontal_carousel": true,
+        "manual_selection": true,
+        "selected_products": [
+          "atlas-grid-structured-knit-slip-on",
+          "oasis-loom-closed-toe-knit-mule",
+          "vector-drift-low-profile-knit-slip-on",
+          "module-nest-3d-printed-lumbar-cushion"
+        ],
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
       }
     }
   },
