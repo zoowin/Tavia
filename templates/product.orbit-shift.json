@@ -189,7 +189,7 @@
       "type": "tavia-video-text",
       "name": "Tavia video + text",
       "settings": {
-        "video": "shopify://files/videos/oribt-motion.mp4",
+        "video": "shopify://files/videos/Orbit Shift.mp4",
         "video_description": "Orbit Shift sneakers shown on foot, with a closer look at their fit and lattice sole.",
         "loop": true,
         "autoplay": true,
