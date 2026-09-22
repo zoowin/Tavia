@@ -132,9 +132,9 @@
         "column_UHbk4K": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-01-LR.jpg",
-            "title": "Sculpted underfoot.",
-            "text": "<p>A deep lattice sole carries the wave-like structure beneath your foot, from heel to toe.</p>",
+            "image": "shopify://shop_images/module-nest-detail-01_LR.jpg",
+            "title": "Airflow Through Every Cell",
+            "text": "<p>The open 3D lattice allows air to circulate freely through the support, helping reduce trapped heat during long hours of sitting.</p>",
             "link_label": "",
             "link": ""
           }
@@ -142,9 +142,9 @@
         "column_ngCDUH": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-02-LR.jpg",
-            "title": "A contoured surround.",
-            "text": "<p>A curved heel and continuous upper form a slip-on silhouette around your foot. No laces to adjust.</p>",
+            "image": "shopify://shop_images/module-nest-detail-02_LR.jpg",
+            "title": "Follows Your Natural Curve",
+            "text": "<p>The sculpted center fills the gap behind your lower back, while the raised wings rest comfortably along both sides for a close, balanced fit.</p>",
             "link_label": "",
             "link": ""
           }
@@ -152,9 +152,9 @@
         "column_DiDHnr": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Atlas-wave-detial-03-LR.jpg",
-            "title": "Open by design.",
-            "text": "<p>Openings extend across the upper, leaving space for air to move around your foot.</p>",
+            "image": "shopify://shop_images/module-nest-detail-03_LR.jpg",
+            "title": "Fits the Chair You Already Use",
+            "text": "<p>Lightweight and easy to reposition, Cloud Support settles naturally into your office chair—ready whenever it’s time to sit down and focus.</p>",
             "link_label": "",
             "link": ""
           }
@@ -167,10 +167,10 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "The details behind Atlas Wave.",
+        "title": "Breathable Comfort. Support That Moves With You.",
         "heading_size": "h2",
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "button_label": "",
         "button_link": "",
         "columns_desktop": 3,
