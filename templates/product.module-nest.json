@@ -178,28 +178,9 @@
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 40,
         "padding_bottom": 40
-      }
-    },
-    "tavia_video_text_JTWetN": {
-      "type": "tavia-video-text",
-      "name": "Tavia video + text",
-      "settings": {
-        "video": "shopify://files/videos/Atlas on foot.mp4",
-        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
-        "loop": true,
-        "autoplay": true,
-        "mobile_full_width": true,
-        "ratio": "adapt",
-        "video_position": "left",
-        "eyebrow": "",
-        "heading": "Sculpted beneath every step.",
-        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
-        "color_scheme": "scheme-4",
-        "padding_top": 20,
-        "padding_bottom": 20
       }
     },
     "atlas_faq": {
@@ -273,9 +254,9 @@
         "heading": "Frequently asked questions",
         "heading_size": "h2",
         "heading_alignment": "left",
-        "layout": "none",
-        "container_color_scheme": "scheme-4",
-        "color_scheme": "scheme-4",
+        "layout": "row",
+        "container_color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_first",
@@ -324,7 +305,6 @@
   "order": [
     "main",
     "multicolumn_FmaeVL",
-    "tavia_video_text_JTWetN",
     "atlas_faq",
     "disclosures",
     "related-products"
