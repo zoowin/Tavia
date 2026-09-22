@@ -16,14 +16,14 @@
           "type": "title",
           "settings": {
             "split_product_title": false,
-            "display_title": "Atlas Wave Sculpted-Sole Knit Slip-On",
+            "display_title": "Module Nest — 3D-Printed Lumbar Cushion",
             "subtitle": ""
           }
         },
         "rating": {
           "type": "rating",
           "settings": {
-            "show_preview_rating": true,
+            "show_preview_rating": false,
             "preview_rating": 4.8,
             "preview_rating_count": 128
           }
