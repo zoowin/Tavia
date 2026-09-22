@@ -76,7 +76,7 @@
           "type": "product_details",
           "settings": {
             "heading": "Product Details",
-            "content": "<p>Designed to fill the gap between your lower back and the seat, the Tavia Cloud Support uses a sculpted dual-wing shape to cradle the lumbar area without locking you into one position. Its flexible 3D lattice responds as you shift, helping spread contact pressure while the open structure keeps air moving. Lightweight and easy to reposition, it fits naturally into desk chairs, sofas, and car seats.</p><ul><li>Sculpted dual-wing lumbar profile</li><li>Responsive open-cell 3D lattice</li><li>Lightweight, one-piece construction</li><li>Easy to move between chairs, sofas, and car seats</li></ul>",
+            "content": "<p>Designed to fill the gap between your lower back and the seat, Module Nest uses a sculpted dual-wing shape to cradle the lumbar area without locking you into one position. Its flexible 3D lattice responds as you shift, helping spread contact pressure while the open structure keeps air moving. Lightweight and easy to reposition, it fits naturally into desk chairs, sofas, and car seats.</p><ul><li>Sculpted dual-wing lumbar profile</li><li>Responsive open-cell 3D lattice</li><li>Lightweight, one-piece construction</li><li>Easy to move between chairs, sofas, and car seats</li></ul>",
             "open_by_default": false
           }
         },
@@ -85,7 +85,7 @@
           "name": "Materials & Tech",
           "settings": {
             "heading": "Materials & Care",
-            "content": "<p>Made from a flexible 3D-printed elastomer with an open-cell lattice structure.</p><p>Wipe clean with a soft, damp cloth. For a deeper clean, rinse gently with cool water and mild soap, then allow it to air-dry completely in a shaded, well-ventilated area before use. Do not machine wash, tumble dry, bleach, iron, dry clean, or expose to high heat for extended periods.</p><p>Slight variations in surface texture are a natural result of the 3D-printing process.</p>",
+            "content": "<p>Made from a flexible 3D-printed elastomer with an open-cell lattice structure.<br/><br/>Wipe clean with a soft, damp cloth. For a deeper clean, rinse gently with cool water and mild soap, then allow it to air-dry completely in a shaded, well-ventilated area before use. Do not machine wash, tumble dry, bleach, iron, dry clean, or expose to high heat for extended periods.<br/><br/>Slight variations in surface texture are a natural result of the 3D-printing process.</p>",
             "open_by_default": false
           }
         },
@@ -134,7 +134,7 @@
           "settings": {
             "image": "shopify://shop_images/module-nest-detail-01_LR.jpg",
             "title": "Airflow Through Every Cell",
-            "text": "<p>The open 3D lattice allows air to circulate freely through the support, helping reduce trapped heat during long hours of sitting.</p>",
+            "text": "<p>The open lattice lets air circulate through the support, helping reduce trapped heat during long workdays, drives, or downtime.</p>",
             "link_label": "",
             "link": ""
           }
@@ -144,7 +144,7 @@
           "settings": {
             "image": "shopify://shop_images/module-nest-detail-02_LR.jpg",
             "title": "Follows Your Natural Curve",
-            "text": "<p>The sculpted center fills the gap behind your lower back, while the raised wings rest comfortably along both sides for a close, balanced fit.</p>",
+            "text": "<p>The sculpted center fills the gap between your lower back and the seat, while the raised wings rest comfortably along both sides for balanced, everyday support.</p>",
             "link_label": "",
             "link": ""
           }
@@ -154,7 +154,7 @@
           "settings": {
             "image": "shopify://shop_images/module-nest-detail-03_LR.jpg",
             "title": "Fits the Chair You Already Use",
-            "text": "<p>Lightweight and easy to reposition, Cloud Support settles naturally into your office chair—ready whenever it’s time to sit down and focus.</p>",
+            "text": "<p>The responsive lattice compresses and rebounds as your posture shifts, bringing flexible support to the chair you use every day without concentrating contact at one rigid point.</p>",
             "link_label": "",
             "link": ""
           }
@@ -189,54 +189,90 @@
         "long_days": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear Atlas Wave for long days on my feet?",
+            "heading": "What is Module Nest designed to do?",
             "icon": "none",
-            "row_content": "<p>Atlas Wave’s sculpted lattice extends from heel to toe, with a continuous upper that surrounds your foot. For longer days, the right fit matters—start with shorter wears to see how they feel before making them your all-day pair.</p>",
+            "row_content": "<p>Module Nest fills the space between your lower back and the seat, providing flexible everyday support without holding you in one rigid position.</p>",
             "page": ""
           }
         },
         "break_in": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Do they need breaking in?",
+            "heading": "How should I position it?",
             "icon": "none",
-            "row_content": "<p>A new pair may feel different from your usual shoes. Start with short periods of wear and check for rubbing or pressure around the toes, instep and heel. A good fit should feel secure, not painfully tight—don’t rely on breaking them in to fix the wrong size.</p>",
+            "row_content": "<p>Place it against the chair back at the natural inward curve of your lower back. Sit back, then adjust it slightly higher or lower until the support feels balanced and comfortable.</p>",
             "page": ""
           }
         },
         "sizing": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is Atlas Wave unisex, and how do I choose my size?",
+            "heading": "Will it fit my chair?",
             "icon": "none",
-            "row_content": "<p>Yes—the shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your size. If you’re between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
+            "row_content": "<p>Its freestanding, one-piece design works with most office chairs, dining chairs, sofas, and car seats. Fit may vary on very narrow, deeply curved, or unusually shaped backrests.</p>",
             "page": ""
           }
         },
         "socks": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear them with or without socks?",
+            "heading": "What does the support feel like?",
             "icon": "none",
-            "row_content": "<p>Either way. Wear them without socks for an open look, or add socks for extra coverage and a different color contrast. Thicker socks take up more room, so consider how you plan to wear them when checking the fit.</p>",
+            "row_content": "<p>It feels responsive rather than pillow-soft. The flexible lattice compresses as you lean back and rebounds as you shift, providing support without the dense feel of a solid cushion.</p>",
             "page": ""
           }
         },
         "care": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "How should I clean them?",
+            "heading": "What is it made from?",
             "icon": "none",
-            "row_content": "<p>For light surface dirt, gently wipe with a soft, damp cloth and let them air dry away from direct heat. For deeper cleaning, contact us for care guidance before using a washing machine or cleaning chemicals.</p>",
+            "row_content": "<p>Module Nest is made from a flexible 3D-printed elastomer formed into a continuous open-cell lattice. Slight variations in surface texture are a natural part of the printing process.</p>",
             "page": ""
           }
         },
         "water": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Are they waterproof?",
+            "heading": "Will it feel hot after sitting for a long time?",
             "icon": "none",
-            "row_content": "<p>No. The open lattice allows water to pass through, so your feet can get wet in rain or puddles. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "row_content": "<p>The open-cell lattice allows air to move through the support instead of trapping it inside a solid layer. Your experience may still vary depending on clothing, room temperature, and the chair material.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Uqmjc8": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Does it need straps?",
+            "icon": "none",
+            "row_content": "<p>No straps are required for normal use. Simply place it between your lower back and the seat. Depending on your chair surface and how often you move, occasional repositioning may be needed.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_G4VFFd": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I clean it?",
+            "icon": "none",
+            "row_content": "<p>Wipe it with a soft, damp cloth. For a deeper clean, rinse gently with cool water and mild soap, then allow it to air-dry completely in a shaded, well-ventilated area. Do not machine wash, tumble dry, bleach, iron, or expose it to high heat.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_baGVGM": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use it in the car?",
+            "icon": "none",
+            "row_content": "<p>It can be used with many car seats. Adjust it before driving and make sure it does not interfere with your seat belt, driving position, or any built-in safety features.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_a4JBpA": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Module Nest a medical device?",
+            "icon": "none",
+            "row_content": "<p>No. Module Nest is designed for everyday sitting comfort and is not intended to diagnose, treat, or prevent any medical condition. If you have ongoing or severe back discomfort, consult a qualified healthcare professional.</p>",
             "page": ""
           }
         }
@@ -247,7 +283,11 @@
         "sizing",
         "socks",
         "care",
-        "water"
+        "water",
+        "collapsible_row_Uqmjc8",
+        "collapsible_row_G4VFFd",
+        "collapsible_row_baGVGM",
+        "collapsible_row_a4JBpA"
       ],
       "settings": {
         "caption": "",
