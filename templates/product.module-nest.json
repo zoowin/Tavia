@@ -76,7 +76,7 @@
           "type": "product_details",
           "settings": {
             "heading": "Product Details",
-            "content": "<p>A sculpted silhouette for everyday movement. Atlas Wave pairs a wave-like lattice sole with a contoured slip-on upper.</p><ul><li>Open lattice upper lets air move around your foot.</li><li>Curved heel and lace-free design for easy everyday styling.</li><li>Unisex design, with US sizing options for women and men.</li><li>Wear with or without socks. Check the Size Chart before choosing your size.</li></ul>",
+            "content": "<p>Designed to fill the gap between your lower back and the seat, the Tavia Cloud Support uses a sculpted dual-wing shape to cradle the lumbar area without locking you into one position. Its flexible 3D lattice responds as you shift, helping spread contact pressure while the open structure keeps air moving. Lightweight and easy to reposition, it fits naturally into desk chairs, sofas, and car seats.</p><ul><li>Sculpted dual-wing lumbar profile</li><li>Responsive open-cell 3D lattice</li><li>Lightweight, one-piece construction</li><li>Easy to move between chairs, sofas, and car seats</li></ul>",
             "open_by_default": false
           }
         },
@@ -85,7 +85,7 @@
           "name": "Materials & Tech",
           "settings": {
             "heading": "Materials & Care",
-            "content": "<p><strong>Material:</strong> ELASTO 1000 BIO<br/><strong>Technology:</strong> HALS 3D Printing (DLP-based system)<br/><strong>Stack height:</strong> 3.5 cm</p><p>For light surface dirt, gently wipe with a soft, damp cloth. Let your shoes air dry away from direct heat. Contact us for guidance before machine washing or using cleaning chemicals.</p>",
+            "content": "<p>Made from a flexible 3D-printed elastomer with an open-cell lattice structure.</p><p>Wipe clean with a soft, damp cloth. For a deeper clean, rinse gently with cool water and mild soap, then allow it to air-dry completely in a shaded, well-ventilated area before use. Do not machine wash, tumble dry, bleach, iron, dry clean, or expose to high heat for extended periods.</p><p>Slight variations in surface texture are a natural result of the 3D-printing process.</p>",
             "open_by_default": false
           }
         },
