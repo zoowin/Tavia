@@ -1,0 +1,37 @@
+{% doc %}
+  @param {article} entry - Article whose product links provide fallback recommendations.
+  @param {product[]} [selected_products] - Optional merchant-selected products.
+  @param {string} heading - Editable section heading.
+{% enddoc %}
+{%- liquid
+  assign shown_handles = '|'
+  assign product_count = 0
+  assign product_segments = entry.content | split: '/products/'
+-%}
+{%- capture product_cards -%}
+  {%- for product_segment in product_segments offset: 1 limit: 20 -%}
+    {%- if selected_products != blank or product_count >= 3 -%}{%- break -%}{%- endif -%}
+    {%- liquid
+      assign product_handle = product_segment | split: '"' | first | split: "'" | first | split: '?' | first | split: '#' | first | split: '/' | first
+      assign handle_key = product_handle | prepend: '|' | append: '|'
+    -%}
+    {%- unless shown_handles contains handle_key -%}
+      {%- assign related_product = all_products[product_handle] -%}
+      {%- if related_product != blank -%}
+        {%- render 'tavia-journal-product', product: related_product -%}
+        {%- assign product_count = product_count | plus: 1 -%}
+      {%- endif -%}
+      {%- assign shown_handles = shown_handles | append: product_handle | append: '|' -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  {%- for related_product in selected_products limit: 3 -%}
+    {%- render 'tavia-journal-product', product: related_product -%}
+    {%- assign product_count = product_count | plus: 1 -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if product_count > 0 -%}
+  <section class="tavia-journal-post__related" aria-labelledby="JournalProducts-{{ entry.id }}">
+    <h2 id="JournalProducts-{{ entry.id }}">{{ heading | escape }}</h2>
+    <div class="tavia-journal__products">{{ product_cards }}</div>
+  </section>
+{%- endif -%}

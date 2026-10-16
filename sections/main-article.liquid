@@ -1,6 +1,8 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'tavia-journal.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template">
+<article class="article-template tavia-journal tavia-journal-post">
+  <div class="tavia-journal-post__back"><a href="{{ blog.url }}" class="tavia-journal__text-link"><span aria-hidden="true">←</span> {{ 'blogs.article.back_to_blog' | t }} / {{ blog.title | escape }}</a></div>
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
@@ -61,6 +63,9 @@
               <span>{{ article.author }}</span>
             </span>
           {%- endif -%}
+          {%- if block.settings.show_excerpt and article.excerpt != blank -%}
+            <p class="tavia-journal-post__excerpt">{{ article.excerpt | strip_html | escape }}</p>
+          {%- endif -%}
         </header>
 
       {%- when 'content' -%}
@@ -71,6 +76,26 @@
           {{ article.content }}
         </div>
 
+      {%- when 'related_products' -%}
+        <div {{ block.shopify_attributes }}>
+          {%- render 'tavia-journal-products', entry: article, selected_products: block.settings.products, heading: block.settings.heading -%}
+        </div>
+      {%- when 'related_articles' -%}
+        {%- if blog.articles_count > 1 -%}
+          <section class="tavia-journal-post__related" aria-labelledby="JournalRelated-{{ block.id }}" {{ block.shopify_attributes }}>
+            <h2 id="JournalRelated-{{ block.id }}">{{ block.settings.heading | escape }}</h2>
+            <div class="tavia-journal__grid">
+              {%- assign related_count = 0 -%}
+              {%- for entry in blog.articles limit: 3 -%}
+                {%- if entry.id != article.id -%}
+                  {%- render 'tavia-journal-card', entry: entry, show_image: true, show_date: false, heading_tag: 'h3', link_label: block.settings.read_label -%}
+                  {%- assign related_count = related_count | plus: 1 -%}
+                {%- endif -%}
+                {%- if related_count == 2 -%}{%- break -%}{%- endif -%}
+              {%- endfor -%}
+            </div>
+          </section>
+        {%- endif -%}
       {%- when 'share' -%}
         <div
           class="article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -82,16 +107,6 @@
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class="article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">
-        <span class="svg-wrapper">
-          {{- 'icon-arrow.svg' | inline_asset_content -}}
-        </span>
-      </span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title | escape }}
-    </a>
-  </div>
   {%- if blog.comments_enabled? -%}
     <div class="article-template__comment-wrapper background-secondary">
       <div
@@ -99,7 +114,7 @@
         class="page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
       >
         {%- if article.comments_count > 0 -%}
-          {%- assign anchorId = '#Comments-' | append: article.id -%}
+          {%- assign anchor_id = '#Comments-' | append: article.id -%}
 
           <h2 id="Comments-{{ article.id }}" tabindex="-1">
             {{ 'blogs.article.comments' | t: count: article.comments_count }}
@@ -126,7 +141,7 @@
                   </footer>
                 </article>
               {%- endfor -%}
-              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+              {% render 'pagination', paginate: paginate, anchor: anchor_id %}
             </div>
           {% endpaginate %}
         {%- endif -%}
@@ -292,6 +307,19 @@
   {{ article | structured_data }}
 </script>
 
+{% javascript %}
+  document.querySelectorAll('.tavia-journal-post .article-template__content table').forEach((table) => {
+    if (table.parentElement.classList.contains('tavia-journal__table-wrap')) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'tavia-journal__table-wrap';
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', table.caption?.textContent.trim() || document.querySelector('.article-template__title')?.textContent.trim() || '');
+    wrapper.tabIndex = 0;
+    table.before(wrapper);
+    wrapper.append(table);
+  });
+{% endjavascript %}
+
 {% schema %}
 {
   "name": "t:sections.main-article.name",
@@ -348,6 +376,12 @@
           "id": "blog_show_author",
           "default": false,
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_excerpt",
+          "label": "Show article excerpt",
+          "default": true
         }
       ]
     },
@@ -366,6 +400,45 @@
           "id": "share_label",
           "label": "t:sections.main-article.blocks.share.settings.text.label",
           "default": "t:sections.main-article.blocks.share.settings.text.default"
+        }
+      ]
+    },
+    {
+      "type": "related_products",
+      "name": "Related products",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Explore the forms"
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Products",
+          "limit": 3,
+          "info": "Leave blank to use up to three published products linked in the article."
+        }
+      ]
+    },
+    {
+      "type": "related_articles",
+      "name": "Related articles",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Keep exploring"
+        },
+        {
+          "type": "text",
+          "id": "read_label",
+          "label": "Article link label",
+          "default": "Read article"
         }
       ]
     }

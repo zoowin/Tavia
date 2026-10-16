@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -22,7 +13,8 @@
           "type": "title",
           "settings": {
             "blog_show_date": true,
-            "blog_show_author": false
+            "blog_show_author": false,
+            "show_excerpt": true
           }
         },
         "share": {
@@ -34,13 +26,29 @@
         "content": {
           "type": "content",
           "settings": {}
+        },
+        "journal_products": {
+          "type": "related_products",
+          "settings": {
+            "heading": "Explore the forms",
+            "products": []
+          }
+        },
+        "journal_articles": {
+          "type": "related_articles",
+          "settings": {
+            "heading": "Keep exploring",
+            "read_label": "Read article"
+          }
         }
       },
       "block_order": [
-        "featured_image",
         "title",
-        "share",
-        "content"
+        "featured_image",
+        "content",
+        "journal_products",
+        "journal_articles",
+        "share"
       ],
       "settings": {}
     }

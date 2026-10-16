@@ -1,54 +1,29 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
-
+{{ 'tavia-journal.css' | asset_url | stylesheet_tag }}
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
+  #Journal-{{ section.id }} { padding-bottom: {{ section.settings.padding_bottom }}px; }
+  #Journal-{{ section.id }} .tavia-journal__intro { padding-top: {{ section.settings.padding_top }}px; }
 {%- endstyle -%}
-
-{%- paginate blog.articles by 6 -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
-        <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
-      {%- endfor -%}
-    </div>
-
-    {%- if paginate.pages > 1 -%}
-      {%- render 'pagination', paginate: paginate -%}
+<div id="Journal-{{ section.id }}" class="tavia-journal page-width">
+  <header class="tavia-journal__intro">
+    {%- if section.settings.eyebrow != blank -%}<p class="tavia-journal__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+    <h1 class="tavia-journal__title">{{ blog.title | escape }}</h1>
+    {%- if section.settings.introduction != blank -%}<div class="tavia-journal__description">{{ section.settings.introduction }}</div>{%- endif -%}
+  </header>
+  {%- paginate blog.articles by 6 -%}
+    {%- if blog.articles_count > 0 -%}
+      <div class="tavia-journal__grid">
+        {%- for entry in blog.articles -%}
+          {%- assign eager_image = false -%}
+          {%- if forloop.first -%}{%- assign eager_image = true -%}{%- endif -%}
+          {%- render 'tavia-journal-card', entry: entry, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author, link_label: section.settings.read_label, eager_image: eager_image -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="tavia-journal__empty">{{ section.settings.empty_message | escape }}</p>
     {%- endif -%}
-  </div>
-{%- endpaginate -%}
+    {%- if paginate.pages > 1 -%}{%- render 'pagination', paginate: paginate -%}{%- endif -%}
+  {%- endpaginate -%}
+</div>
 
 {% schema %}
 {
@@ -57,50 +32,34 @@
   "class": "section",
   "settings": [
     {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label"
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "TAVIA LAB / JOURNAL"
+    },
+    {
+      "type": "richtext",
+      "id": "introduction",
+      "label": "Introduction",
+      "default": "<p>Product guides, visible structures and new ways to approach everyday objects.</p>"
+    },
+    {
+      "type": "text",
+      "id": "read_label",
+      "label": "Article link label",
+      "default": "Read article"
+    },
+    {
+      "type": "text",
+      "id": "empty_message",
+      "label": "Empty blog message",
+      "default": "New product guides and stories are on the way."
     },
     {
       "type": "checkbox",
       "id": "show_image",
       "default": true,
       "label": "t:sections.main-blog.settings.show_image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-blog.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.main-blog.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-blog.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-blog.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.main-blog.settings.image_height.label"
     },
     {
       "type": "checkbox",

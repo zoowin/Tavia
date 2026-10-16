@@ -1,0 +1,15 @@
+{% doc %}
+  @param {product} product - Published related product.
+{% enddoc %}
+<div class="tavia-journal__product">
+  {%- if product.featured_image -%}
+    {%- assign product_alt = product.featured_image.alt | default: product.title -%}
+    <a href="{{ product.url }}" tabindex="-1" aria-hidden="true">
+      {{ product.featured_image | image_url: width: 600 | image_tag: widths: '240, 360, 600', sizes: '(min-width: 750px) 28vw, 120px', loading: 'lazy', alt: product_alt }}
+    </a>
+  {%- endif -%}
+  <div>
+    <h3><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>
+    <a href="{{ product.url }}" class="tavia-journal__text-link">{{ 'products.product.view_full_details' | t }} <span aria-hidden="true">↗</span></a>
+  </div>
+</div>

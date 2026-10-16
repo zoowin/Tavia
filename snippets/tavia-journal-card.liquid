@@ -1,0 +1,39 @@
+{% doc %}
+  @param {article} entry - Article to display.
+  @param {boolean} [show_image] - Show the article cover.
+  @param {boolean} [show_date] - Show the published date.
+  @param {boolean} [show_author] - Show the author.
+  @param {string} [heading_tag] - Card heading element.
+  @param {string} [link_label] - Editable reading link text.
+  @param {boolean} [eager_image] - Load the first cover eagerly.
+{% enddoc %}
+{%- liquid
+  assign card_heading_tag = heading_tag | default: 'h2'
+  assign card_excerpt = entry.excerpt | strip_html | strip
+  if card_excerpt == blank
+    assign card_excerpt = entry.content | strip_html | truncatewords: 28
+  endif
+  assign image_loading = 'lazy'
+  if eager_image
+    assign image_loading = 'eager'
+  endif
+  assign cover_alt = entry.image.alt | default: entry.title
+-%}
+<article class="tavia-journal-card">
+  {%- if show_image and entry.image -%}
+    <a href="{{ entry.url }}" class="tavia-journal-card__media" tabindex="-1" aria-hidden="true">
+      {{ entry.image | image_url: width: 1200 | image_tag: widths: '360, 540, 800, 1200', sizes: '(min-width: 990px) 40vw, (min-width: 750px) 45vw, 100vw', loading: image_loading, alt: cover_alt }}
+    </a>
+  {%- endif -%}
+  <div class="tavia-journal-card__copy">
+    {%- if show_date or show_author -%}
+      <div class="tavia-journal__meta">
+        {%- if show_date -%}{{ entry.published_at | time_tag: format: 'date' }}{%- endif -%}
+        {%- if show_author -%}<span>{{ entry.author | escape }}</span>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <{{ card_heading_tag }} class="tavia-journal-card__title"><a href="{{ entry.url }}">{{ entry.title | escape }}</a></{{ card_heading_tag }}>
+    {%- if card_excerpt != blank -%}<p class="tavia-journal-card__excerpt">{{ card_excerpt | escape }}</p>{%- endif -%}
+    {%- if link_label != blank -%}<a class="tavia-journal__text-link" href="{{ entry.url }}" aria-label="{{ 'blogs.article.read_more_title' | t: title: entry.title | escape }}">{{ link_label | escape }} <span aria-hidden="true">↗</span></a>{%- endif -%}
+  </div>
+</article>
