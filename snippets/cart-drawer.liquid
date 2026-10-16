@@ -1,12 +1,12 @@
-{% comment %}
-  Renders cart drawer
-
-  Usage:
+{% doc %}
+  TAVIA LAB cart drawer. Uses Shopify cart lines, prices and tax settings.
+  @example
   {% render 'cart-drawer' %}
-{% endcomment %}
+{% enddoc %}
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'tavia-cart-drawer.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
@@ -17,31 +17,45 @@
   }
 </style>
 
-<cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
+<cart-drawer class="drawer tavia-cart{% if cart == empty %} is-empty{% endif %}" inert aria-hidden="true">
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div>
     <div
       class="drawer__inner gradient color-{{ settings.cart_color_scheme }}"
       role="dialog"
       aria-modal="true"
-      aria-label="{{ 'sections.cart.title' | t }}"
+      aria-labelledby="CartDrawer-Heading"
       tabindex="-1"
     >
+      <div class="drawer__header">
+        <div>
+          <p class="tavia-cart__eyebrow">TAVIA LAB</p>
+          <h2 id="CartDrawer-Heading" class="drawer__heading">{{ 'sections.cart.title' | t }} <span class="tavia-cart__count">({{ cart.item_count }})</span></h2>
+        </div>
+        <button
+          class="drawer__close"
+          type="button"
+          onclick="this.closest('cart-drawer').close()"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          <span class="svg-wrapper">
+            {{- 'icon-close.svg' | inline_asset_content -}}
+          </span>
+        </button>
+      </div>
       {%- if cart == empty -%}
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
+              <div class="tavia-cart__empty-mark" aria-hidden="true">
+                <svg viewBox="0 0 144 144" fill="none">
+                  <path class="tavia-cart__empty-grid" d="M24 0v144M48 0v144M72 0v144M96 0v144M120 0v144M0 24h144M0 48h144M0 72h144M0 96h144M0 120h144" stroke="currentColor" stroke-width=".5"/>
+                  <path d="m72 35 35 20v40l-35 20-35-20V55l35-20Z M37 55l35 20 35-20M72 75v40M54 45l35 20v14" stroke="currentColor" stroke-width="1.1"/>
+                  <path d="M6 12V6h6M132 6h6v6M138 132v6h-6M12 138H6v-6" stroke="currentColor"/>
+                </svg>
+              </div>
+              <p class="tavia-cart__eyebrow">READY WHEN YOU ARE</p>
               <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-              <button
-                class="drawer__close"
-                type="button"
-                onclick="this.closest('cart-drawer').close()"
-                aria-label="{{ 'accessibility.close' | t }}"
-              >
-                <span class="svg-wrapper">
-                  {{- 'icon-close.svg' | inline_asset_content -}}
-                </span>
-              </button>
               <a href="{{ routes.all_products_collection_url }}" class="button">
                 {{ 'general.continue_shopping' | t }}
               </a>
@@ -61,19 +75,6 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
-        <button
-          class="drawer__close"
-          type="button"
-          onclick="this.closest('cart-drawer').close()"
-          aria-label="{{ 'accessibility.close' | t }}"
-        >
-          <span class="svg-wrapper">
-            {{- 'icon-close.svg' | inline_asset_content -}}
-          </span>
-        </button>
-      </div>
       <cart-drawer-items
         view-event-payload="{{ cart | standard_event_data: 'view', context: 'dialog' | escape }}"
         view-event-trigger="manual"
@@ -91,7 +92,7 @@
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
-                  <thead role="rowgroup">
+                  <thead class="visually-hidden" role="rowgroup">
                     <tr role="row">
                       <th id="CartDrawer-ColumnProductImage" role="columnheader">
                         <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
@@ -128,6 +129,19 @@
                           aria-label="{{- 'products.product.nested_label' | t: title: item.product.title, parent_title: item.parent_relationship.parent.title | escape -}}"
                         {% endif %}
                       >
+                        {%- liquid
+                          assign unassigned_color_image = false
+                          if item.variant.featured_image == blank
+                            for product_option in item.product.options_with_values
+                              assign product_option_name = product_option.name | downcase
+                              if product_option_name == 'color' or product_option_name == 'colour'
+                                if product_option.values.size > 1
+                                  assign unassigned_color_image = true
+                                endif
+                              endif
+                            endfor
+                          endif
+                        -%}
                         <td
                           class="cart-item__media"
                           role="cell"
@@ -139,12 +153,15 @@
                             <img
                               class="cart-item__image"
                               src="{{ item.image | image_url: width: 300 }}"
-                              alt="{{ item.image.alt | escape }}"
+                              alt="{{ item.image.alt | default: item.product.title | escape }}"
                               loading="lazy"
                               width="150"
                               height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
                             >
                           {% endif %}
+                          {%- if unassigned_color_image and item.image -%}
+                            <span class="tavia-cart__image-caption">{{ 'sections.cart.headings.image' | t }}</span>
+                          {%- endif -%}
                         </td>
 
                         <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
@@ -153,8 +170,21 @@
                           {%- endif -%}
 
                           <div class="cart-item__title">
-                            <a href="{{ item.url }}" class="cart-item__name h4 break">
-                              {{- item.product.title | escape -}}
+                            {%- liquid
+                              assign title_words = item.product.title | split: ' '
+                              assign product_families = 'Atlas,Orbit,Oasis,Vector,Module' | split: ','
+                              assign model_title = item.product.title
+                              assign model_description = ''
+                              if product_families contains title_words.first and title_words.size > 2
+                                assign model_title = title_words[0] | append: ' ' | append: title_words[1]
+                                assign model_description = item.product.title | remove_first: model_title | strip
+                              endif
+                            -%}
+                            <a href="{{ item.url }}" class="cart-item__name h4 break" aria-label="{{ item.product.title | escape }}">
+                              <span class="tavia-cart__model">{{ model_title | escape }}</span>
+                              {%- if model_description != blank -%}
+                                <span class="tavia-cart__description">{{ model_description | escape }}</span>
+                              {%- endif -%}
                             </a>
                             {%- assign cart_disclosure_modal_id = 'CartDisclosureModal-drawer-' | append: item.key | replace: ':', '-' -%}
                             {%- render 'cart-disclosure-indicator',
@@ -192,10 +222,12 @@
                               {%- if item.product.has_only_default_variant == false -%}
                                 {%- for option in item.options_with_values -%}
                                   <div class="product-option">
-                                    <dt>{{ option.name }}:</dt>
+                                    <dt>{{ option.name | escape }}:</dt>
                                     <dd>
-                                      {{ option.value -}}
-                                      {%- unless forloop.last %}, {% endunless %}
+                                      {%- assign option_name = option.name | downcase -%}
+                                      {%- assign eu_sizes = '35,36,37,38,39,40,41,42,43,44,45,46,47,48' | split: ',' -%}
+                                      {%- if option_name contains 'size' and eu_sizes contains option.value -%}EU {% endif -%}
+                                      {{ option.value | escape }}
                                     </dd>
                                   </div>
                                 {%- endfor -%}
@@ -363,15 +395,17 @@
                               >
                                 <button
                                   type="button"
-                                  class="button button--tertiary cart-remove-button"
+                                  class="button button--tertiary cart-remove-button{% if item.instructions and item.instructions.can_remove == false %} hidden{% endif %}"
                                   aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
                                   data-variant-id="{{ item.variant.id }}"
                                   {% if item.instructions and item.instructions.can_remove == false %}
-                                    class="hidden"
+                                    disabled
                                   {% endif %}
                                 >
                                   <span class="svg-wrapper">
                                     {{- 'icon-remove.svg' | inline_asset_content -}}
+                                  </span>
+                                  <span>{{ 'sections.cart.remove_title' | t: title: '' | strip }}
                                   </span>
                                 </button>
                               </cart-remove-button>
@@ -484,10 +518,11 @@
               {{ 'accessibility.loading' | t }}
             </p>
           </div>
-          <div id="CartDrawer-CartErrors" role="alert"></div>
+          <div id="CartDrawer-CartErrors" role="alert" tabindex="-1"></div>
         </form>
       </cart-drawer-items>
       <div class="drawer__footer">
+        <p class="tavia-cart__status" role="status" aria-live="polite" data-cart-status data-updating="Updating your cart…" data-updated="Cart updated." data-error="Your cart could not be updated. Please try again." hidden></p>
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
             <summary>
@@ -527,8 +562,8 @@
           </div>
 
           <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+            <h2 class="totals__total">{{ 'customer.order.subtotal' | t }}</h2>
+            <p class="totals__total-value"><span class="tavia-cart__amount">{{ cart.total_price | money }}</span> <span class="tavia-cart__currency">{{ cart.currency.iso_code | escape }}</span></p>
           </div>
 
           <small class="tax-note caption-large rte">
@@ -585,8 +620,13 @@
               disabled
             {% endif %}
           >
-            {{ 'sections.cart.checkout' | t }}
+            <span>{{ 'sections.cart.checkout' | t }}</span>
+            <span class="tavia-cart__checkout-arrow" aria-hidden="true">{{ 'icon-arrow.svg' | inline_asset_content }}</span>
           </button>
+        </div>
+        <div class="tavia-cart__secondary">
+          <button type="button" onclick="this.closest('cart-drawer').close()">{{ 'general.continue_shopping' | t }}</button>
+          <a href="{{ routes.cart_url }}">{{ 'sections.quick_order_list.view_cart' | t }} <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </div>
