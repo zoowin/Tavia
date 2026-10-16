@@ -1,12 +1,97 @@
 {
   "sections": {
-    "main-collection-banner": {
-      "type": "main-collection-banner",
-      "settings": {
-        "show_collection_description": false,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
-      }
+    "tavia-collection-intro": {
+      "type": "tavia-collection-intro",
+      "blocks": {
+        "atlas": {
+          "type": "profile",
+          "settings": {
+            "collection": "atlas",
+            "heading": "Future Motion",
+            "intro": "Sculptural forms. Structure you can see.",
+            "image": "shopify://shop_images/collection-vector-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-atlas-mb_LR.jpg",
+            "benefit_1_title": "Sculpted openings",
+            "benefit_1_text": "Wave-like openings make the structure part of the silhouette.",
+            "benefit_2_title": "Lace-free entry",
+            "benefit_2_text": "A slip-on shape, without separate laces or a tongue.",
+            "benefit_3_title": "One continuous form",
+            "benefit_3_text": "An open printed structure flows from upper to sole."
+          }
+        },
+        "oasis": {
+          "type": "profile",
+          "settings": {
+            "collection": "oasis",
+            "heading": "Reset",
+            "intro": "Easy-on shapes for slower moments.",
+            "image": "shopify://shop_images/collection-oasis-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-oasis-mb_LR.jpg",
+            "benefit_1_title": "Choose your coverage",
+            "benefit_1_text": "Open-toe Halo, cocoon-shaped Cove or closed-toe Loom.",
+            "benefit_2_title": "Open at the heel",
+            "benefit_2_text": "Slide and mule shapes keep the back open for easy entry.",
+            "benefit_3_title": "Lattice in view",
+            "benefit_3_text": "Repeating printed geometry gives each shape its texture."
+          }
+        },
+        "vector": {
+          "type": "profile",
+          "settings": {
+            "collection": "vector",
+            "heading": "Long Days",
+            "intro": "A clean slip-on for your daily rhythm.",
+            "image": "shopify://shop_images/collection-atlas-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-vector-mb_LR.jpg",
+            "benefit_1_title": "A low-profile shape",
+            "benefit_1_text": "A streamlined outline that pairs with trousers or denim.",
+            "benefit_2_title": "Slip straight in",
+            "benefit_2_text": "A lace-free opening keeps the daily routine simple.",
+            "benefit_3_title": "Fine open geometry",
+            "benefit_3_text": "A repeating printed lattice runs across the form."
+          }
+        },
+        "orbit": {
+          "type": "profile",
+          "settings": {
+            "collection": "orbit",
+            "heading": "Everyday Mobility",
+            "intro": "Familiar uppers. A different foundation.",
+            "image": "shopify://shop_images/collection-orbit-dp_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-orbit-mb_LR.jpg",
+            "benefit_1_title": "Two materials, one design",
+            "benefit_1_text": "Textile uppers meet a separate 3D-printed lattice sole.",
+            "benefit_2_title": "Lace it your way",
+            "benefit_2_text": "Adjustable laces let you change how the upper closes.",
+            "benefit_3_title": "An everyday silhouette",
+            "benefit_3_text": "Core and Shift bring the lattice sole into a lace-up shape."
+          }
+        },
+        "module": {
+          "type": "profile",
+          "settings": {
+            "collection": "module",
+            "heading": "System Utility",
+            "intro": "Printed objects for everyday spaces.",
+            "image": "shopify://shop_images/Main-02-YT-LR.jpg",
+            "mobile_image": "shopify://shop_images/Main-01-YT-LR.jpg",
+            "benefit_1_title": "A contoured profile",
+            "benefit_1_text": "Nest has a recessed center and raised sides for the lower back.",
+            "benefit_2_title": "Structure as texture",
+            "benefit_2_text": "An open 3D-printed lattice defines the cushion’s surface.",
+            "benefit_3_title": "Place it your way",
+            "benefit_3_text": "Position Nest against a chair back to suit your seating setup."
+          }
+        }
+      },
+      "block_order": [
+        "atlas",
+        "oasis",
+        "vector",
+        "orbit",
+        "module"
+      ],
+      "settings": {}
     },
     "main-collection-product-grid": {
       "type": "main-collection-product-grid",
@@ -14,23 +99,23 @@
         "products_per_page": 24,
         "columns_desktop": 3,
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": true,
+        "show_vendor": false,
         "show_rating": false,
         "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
         "columns_mobile": "2",
-        "padding_top": 8,
+        "padding_top": 24,
         "padding_bottom": 80
       }
     }
   },
   "order": [
-    "main-collection-banner",
+    "tavia-collection-intro",
     "main-collection-product-grid"
   ]
 }

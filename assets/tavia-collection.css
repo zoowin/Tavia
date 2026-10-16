@@ -1,0 +1,233 @@
+.tavia-collection-intro {
+  --tc-ink: #111111;
+  --tc-paper: #f5f5f3;
+  --tc-line: #d9d9d5;
+  --tc-muted: #6f6f69;
+  color: var(--tc-ink);
+  background: var(--tc-paper);
+  font-family: var(--font-body-family);
+}
+
+.tavia-collection-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  max-width: 1600px;
+  min-height: 440px;
+  margin-inline: auto;
+}
+
+.tavia-collection-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(32px, 4.2vw, 68px);
+}
+
+.tavia-collection-hero__heading {
+  margin: 0;
+  color: inherit;
+}
+
+.tavia-collection-hero__name {
+  display: block;
+  font-family: var(--font-mono-family, monospace);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .12em;
+}
+
+.tavia-collection-hero__theme {
+  display: block;
+  margin-top: 28px;
+  font-size: clamp(38px, 4.6vw, 74px);
+  font-weight: 550;
+  line-height: .98;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.tavia-collection-hero__intro {
+  max-width: 330px;
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+}
+
+.tavia-collection-hero__media {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: #e9e9e5;
+}
+
+.tavia-collection-hero__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--tavia-collection-desktop-position, center);
+}
+
+.tavia-collection-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 30px clamp(24px, 4.2vw, 68px);
+  list-style: none;
+  border-top: 1px solid var(--tc-line);
+  border-bottom: 1px solid var(--tc-line);
+}
+
+.tavia-collection-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 0 28px;
+  border-left: 1px solid var(--tc-line);
+}
+
+.tavia-collection-benefit:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.tavia-collection-benefit:last-child {
+  padding-right: 0;
+}
+
+.tavia-collection-benefit__index {
+  padding-top: 2px;
+  color: var(--tc-muted);
+  font-family: var(--font-mono-family, monospace);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.tavia-collection-benefit__title {
+  margin: 0;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+
+.tavia-collection-benefit__text {
+  max-width: 310px;
+  margin: 7px 0 0;
+  color: var(--tc-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
+.tavia-collection-intro--text-only .tavia-collection-hero {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 240px;
+}
+
+.tavia-collection-intro--no-theme .tavia-collection-hero__name {
+  font-family: var(--font-heading-family);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 550;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+
+.tavia-collection-intro-section + .shopify-section .card__heading {
+  font-family: var(--font-body-family);
+  letter-spacing: -.02em;
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .tavia-collection-hero { min-height: 360px; }
+  .tavia-collection-hero__content { padding: 28px; }
+  .tavia-collection-hero__theme { font-size: 38px; }
+  .tavia-collection-benefit { gap: 12px; padding-inline: 18px; }
+}
+
+@media screen and (max-width: 749px) {
+  .tavia-collection-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    isolation: isolate;
+    color: #ffffff;
+  }
+
+  .tavia-collection-hero__media,
+  .tavia-collection-hero__content {
+    grid-area: 1 / 1;
+  }
+
+  .tavia-collection-hero__media {
+    aspect-ratio: 4 / 5;
+    max-height: 620px;
+  }
+
+  .tavia-collection-hero__media::after {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: linear-gradient(180deg, transparent 28%, rgb(0 0 0 / .1) 46%, rgb(0 0 0 / .82) 100%);
+  }
+
+  .tavia-collection-hero__image {
+    object-fit: cover;
+    object-position: var(--tavia-collection-mobile-position, center);
+  }
+
+  .tavia-collection-hero__content {
+    position: relative;
+    z-index: 1;
+    justify-content: flex-end;
+    padding: 26px 24px;
+  }
+
+  .tavia-collection-hero__name { font-size: 11px; }
+  .tavia-collection-hero__theme {
+    max-width: 400px;
+    margin-top: 13px;
+    font-size: clamp(38px, 9.6vw, 64px);
+    line-height: .98;
+  }
+  .tavia-collection-hero__intro {
+    max-width: 320px;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .tavia-collection-benefits {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 6px 24px;
+    border-top: 0;
+  }
+
+  .tavia-collection-benefit,
+  .tavia-collection-benefit:first-child,
+  .tavia-collection-benefit:last-child {
+    gap: 18px;
+    padding: 17px 0;
+    border-left: 0;
+  }
+
+  .tavia-collection-benefit + .tavia-collection-benefit {
+    border-top: 1px solid var(--tc-line);
+  }
+
+  .tavia-collection-benefit__title { font-size: 15px; }
+  .tavia-collection-benefit__text { max-width: none; margin-top: 4px; }
+  .tavia-collection-intro--text-only .tavia-collection-hero {
+    min-height: 180px;
+    color: var(--tc-ink);
+  }
+  .tavia-collection-intro--text-only .tavia-collection-hero__content { justify-content: center; }
+}
