@@ -1,0 +1,162 @@
+.mega-menu .tavia-mega-menu__content {
+  max-height: calc(100dvh - var(--header-height, 80px) - 24px);
+  padding: 28px 0 32px;
+  background: #f5f5f3;
+  color: #111111;
+  border-bottom: 1px solid #d9d9d5;
+  box-shadow: 0 20px 28px rgb(0 0 0 / .08);
+  overscroll-behavior: contain;
+}
+
+.tavia-mega-menu__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.tavia-mega-menu__heading {
+  margin: 0;
+  font-family: var(--font-mono-family, monospace);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tavia-mega-menu__all {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 28px;
+  color: inherit;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.tavia-mega-menu__all:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.mega-menu .tavia-mega-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--tavia-menu-columns, 5), minmax(0, 1fr));
+  gap: 22px;
+  margin-block: 0;
+  list-style: none;
+}
+
+.header--top-center .tavia-mega-menu__grid > li {
+  width: auto;
+  padding: 0;
+}
+
+.mega-menu .tavia-mega-menu__card {
+  padding: 0;
+  color: #111111;
+  text-decoration: none;
+}
+
+.tavia-menu-card__media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: #e9e9e5;
+}
+
+.tavia-menu-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 220ms ease;
+}
+
+.tavia-menu-card__label {
+  display: block;
+  min-width: 0;
+}
+
+.tavia-menu-card__title {
+  display: block;
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+}
+
+.tavia-menu-card__caption {
+  display: block;
+  margin-top: 4px;
+  color: #6f6f69;
+  font-family: var(--font-mono-family, monospace);
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+.tavia-mega-menu__card:hover .tavia-menu-card__title,
+.tavia-mega-menu__card:focus-visible .tavia-menu-card__title,
+.tavia-mega-menu__card[aria-current="page"] .tavia-menu-card__title {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.tavia-mega-menu__card:focus-visible,
+.tavia-mega-menu__all:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 5px;
+}
+
+.mega-menu.tavia-mega-menu--single {
+  position: relative;
+}
+
+.tavia-mega-menu--single .tavia-mega-menu__content {
+  left: 0;
+  right: auto;
+  width: 300px;
+  padding: 20px;
+}
+
+.mega-menu .tavia-mega-menu__grid--single {
+  padding: 0;
+}
+
+.tavia-menu-drawer-link {
+  gap: 16px;
+}
+
+.tavia-menu-card__media--drawer {
+  flex: 0 0 56px;
+  width: 56px;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.tavia-menu-drawer-link .tavia-menu-card__title {
+  font-size: 16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tavia-mega-menu__card:hover .tavia-menu-card__image {
+    transform: scale(1.035);
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  .mega-menu .tavia-mega-menu__grid { gap: 14px; }
+  .tavia-menu-card__title { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tavia-menu-card__image { transition: none; }
+}

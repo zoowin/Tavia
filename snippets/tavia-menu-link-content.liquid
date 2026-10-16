@@ -1,0 +1,53 @@
+{% doc %}
+  Renders a navigation image and label using editable header collection profiles.
+  @param {link} navigation_link - The navigation item to display.
+  @param {block[]} image_profiles - Header collection image blocks.
+  @param {image} [overview_image] - Image for a link to all collections.
+  @param {string} [layout] - Use drawer for compact mobile thumbnails.
+{% enddoc %}
+
+{%- liquid
+  assign menu_image = navigation_link.object.image | default: navigation_link.object.featured_image
+  assign menu_caption = blank
+  assign active_image_profile = nil
+  for image_profile in image_profiles
+    if image_profile.settings.collection != blank and image_profile.settings.collection.handle == navigation_link.object.handle
+      assign menu_image = image_profile.settings.image | default: menu_image
+      assign menu_caption = image_profile.settings.caption
+      assign active_image_profile = image_profile
+      break
+    endif
+  endfor
+  if navigation_link.type == 'collections_link'
+    assign menu_image = overview_image | default: menu_image
+  endif
+  assign image_size = '(min-width: 1600px) 280px, (min-width: 990px) 18vw, 56px'
+  assign image_widths = '160, 240, 360, 480, 560'
+  assign image_width = 560
+  if layout == 'drawer'
+    assign image_size = '56px'
+    assign image_widths = '56, 112, 168'
+    assign image_width = 168
+  endif
+-%}
+
+{%- if menu_image != blank -%}
+  <span class="tavia-menu-card__media{% if layout == 'drawer' %} tavia-menu-card__media--drawer{% endif %}" {% if active_image_profile != blank %}{{ active_image_profile.shopify_attributes }}{% endif %}>
+    {{
+      menu_image
+      | image_url: width: image_width
+      | image_tag:
+        class: 'tavia-menu-card__image',
+        sizes: image_size,
+        widths: image_widths,
+        loading: 'lazy',
+        alt: ''
+    }}
+  </span>
+{%- endif -%}
+<span class="tavia-menu-card__label">
+  <span class="tavia-menu-card__title">{{ navigation_link.title | escape }}</span>
+  {%- if menu_caption != blank -%}
+    <span class="tavia-menu-card__caption">{{ menu_caption | escape }}</span>
+  {%- endif -%}
+</span>

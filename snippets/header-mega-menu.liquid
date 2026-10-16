@@ -1,17 +1,16 @@
-{% comment %}
-  Renders a megamenu for the header.
-
-  Usage:
-  {% render 'header-mega-menu' %}
-{% endcomment %}
-
+{% doc %}
+  Renders the desktop navigation with editable collection image cards.
+{% enddoc %}
+{{ 'tavia-mega-menu.css' | asset_url | stylesheet_tag }}
+{%- assign image_profiles = section.blocks | where: 'type', 'menu_collection' -%}
 <nav class="header__inline-menu">
+  <tavia-mega-menu-controller hidden></tavia-mega-menu-controller>
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu{% if link.links.size == 1 %} tavia-mega-menu--single{% endif %}">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
@@ -27,11 +26,22 @@
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                class="mega-menu__content tavia-mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+                {%- if link.links.size > 1 -%}
+                  <div class="tavia-mega-menu__topline page-width">
+                    <p class="tavia-mega-menu__heading">{{ section.settings.mega_menu_heading | escape }}</p>
+                    {%- if section.settings.mega_menu_all_label != blank -%}
+                      <a class="tavia-mega-menu__all" href="{{ routes.all_products_collection_url }}">
+                        {{ section.settings.mega_menu_all_label | escape }} <span aria-hidden="true">↗</span>
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
                 <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  class="mega-menu__list tavia-mega-menu__grid page-width{% if link.links.size == 1 %} tavia-mega-menu__grid--single{% endif %}"
+                  style="--tavia-menu-columns: {{ link.links.size | at_most: 5 }};"
                   role="list"
                 >
                   {%- for childlink in link.links -%}
@@ -39,12 +49,12 @@
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
+                        class="mega-menu__link mega-menu__link--level-2 tavia-mega-menu__card link{% if childlink.current %} mega-menu__link--active{% endif %}"
                         {% if childlink.current %}
                           aria-current="page"
                         {% endif %}
                       >
-                        {{ childlink.title | escape }}
+                        {% render 'tavia-menu-link-content', navigation_link: childlink, image_profiles: image_profiles, overview_image: section.settings.mega_menu_overview_image %}
                       </a>
                       {%- if childlink.links != blank -%}
                         <ul class="list-unstyled" role="list">
@@ -92,3 +102,5 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+<script src="{{ 'tavia-mega-menu.js' | asset_url }}" defer="defer"></script>
