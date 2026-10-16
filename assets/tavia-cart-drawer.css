@@ -12,6 +12,8 @@ cart-drawer.tavia-cart {
   transition: background-color 320ms ease, visibility 420ms;
 }
 cart-drawer.tavia-cart.active { background: rgb(18 18 17 / .28); }
+/* Keep the storefront chat launcher from covering cart actions. */
+body:has(cart-drawer.tavia-cart.active) shopify-chat { display: none; }
 .tavia-cart .drawer__inner {
   width: 56rem;
   max-width: 100vw;
