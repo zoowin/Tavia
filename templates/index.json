@@ -187,6 +187,86 @@
         "padding_bottom": 40
       }
     },
+    "current-forms": {
+      "type": "tavia-product-gallery",
+      "blocks": {
+        "product_card_6GtGhA": {
+          "type": "product_card",
+          "settings": {
+            "product": "orbit-core-everyday-lace-up-sneaker",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
+        },
+        "form-2": {
+          "type": "product_card",
+          "settings": {
+            "product": "oasis-cove-cocoon-knit-slide",
+            "image": "shopify://shop_images/Main-06-Oasis_Cove_Cocoon-Knit_Slide.jpg",
+            "title": "The 01 / Mono",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#d8d8d5",
+            "swatch_one": "#171717",
+            "swatch_two": "#f2f1ec"
+          }
+        },
+        "product_card_XR8NLK": {
+          "type": "product_card",
+          "settings": {
+            "product": "atlas-wave-sculpted-sole-knit-slip-on",
+            "image": "shopify://shop_images/Main-07-Atlas_Wave_Sculpted-Sole_Knit_Slip-On.jpg",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
+        },
+        "product_card_Jj8YCm": {
+          "type": "product_card",
+          "settings": {
+            "product": "orbit-shift-high-collar-knit-sneaker",
+            "image": "shopify://shop_images/Main-01-Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
+        }
+      },
+      "block_order": [
+        "product_card_6GtGhA",
+        "form-2",
+        "product_card_XR8NLK",
+        "product_card_Jj8YCm"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "heading": "Current forms",
+        "link_label": "View all",
+        "link": "",
+        "enable_quick_add": true,
+        "quick_add_label": "Add to cart",
+        "padding_top": 0,
+        "padding_bottom": 10
+      }
+    },
     "tavia_3d_comparison_xpUMfx": {
       "type": "tavia-3d-comparison",
       "blocks": {
@@ -269,71 +349,6 @@
         "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
         "link_label": "Read the product note",
         "link": "/blogs/news/3d-printed-footwear-lattice-and-textile-uppers-tavia-lab"
-      }
-    },
-    "current-forms": {
-      "type": "tavia-product-gallery",
-      "blocks": {
-        "product_card_XR8NLK": {
-          "type": "product_card",
-          "settings": {
-            "product": "atlas-wave-sculpted-sole-knit-slip-on",
-            "image": "shopify://shop_images/Main-07-Atlas_Wave_Sculpted-Sole_Knit_Slip-On.jpg",
-            "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
-            "price": "$—",
-            "link": "",
-            "fallback_tone": "natural",
-            "background": "#efefed",
-            "swatch_one": "#f3f2ed",
-            "swatch_two": "#171717"
-          }
-        },
-        "product_card_Jj8YCm": {
-          "type": "product_card",
-          "settings": {
-            "product": "orbit-shift-high-collar-knit-sneaker",
-            "image": "shopify://shop_images/Main-01-Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
-            "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
-            "price": "$—",
-            "link": "",
-            "fallback_tone": "natural",
-            "background": "#efefed",
-            "swatch_one": "#f3f2ed",
-            "swatch_two": "#171717"
-          }
-        },
-        "form-2": {
-          "type": "product_card",
-          "settings": {
-            "product": "oasis-cove-cocoon-knit-slide",
-            "image": "shopify://shop_images/Main-06-Oasis_Cove_Cocoon-Knit_Slide.jpg",
-            "title": "The 01 / Mono",
-            "description": "One-piece everyday shoe",
-            "price": "$—",
-            "link": "",
-            "fallback_tone": "natural",
-            "background": "#d8d8d5",
-            "swatch_one": "#171717",
-            "swatch_two": "#f2f1ec"
-          }
-        }
-      },
-      "block_order": [
-        "form-2",
-        "product_card_XR8NLK",
-        "product_card_Jj8YCm"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "heading": "Current forms",
-        "link_label": "View all",
-        "link": "",
-        "enable_quick_add": true,
-        "quick_add_label": "Add to cart",
-        "padding_top": 0,
-        "padding_bottom": 10
       }
     },
     "video_eUffbH": {

@@ -187,9 +187,9 @@
     },
     "tavia_video_text_89mUAW": {
       "type": "tavia-video-text",
+      "disabled": true,
       "name": "Tavia video + text",
       "settings": {
-        "video": "",
         "video_description": "Vector Drift shown on foot.",
         "loop": true,
         "autoplay": true,
@@ -202,8 +202,7 @@
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "orbit_faq": {
       "type": "collapsible-content",
