@@ -835,7 +835,7 @@
       {%- endif -%}
 
       <script type="application/ld+json">
-        {{ product | structured_data }}
+        {% render 'tavia-product-structured-data', product: product %}
       </script>
     </div>
   </product-component>

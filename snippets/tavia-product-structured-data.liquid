@@ -1,0 +1,21 @@
+{% doc %}
+Preserves Shopify's native product graph and fills variant descriptions only
+when the native graph contains a single, group-level description.
+@param {product} product - Product whose native structured data is rendered
+{% enddoc %}
+{%- liquid
+  assign native_schema = product | structured_data
+  assign description = product.description | strip_html | strip
+  assign description_parts = native_schema | split: '"description":'
+  assign product_marker = '"@type":"Product",'
+
+  if description != blank and description_parts.size == 2
+    if native_schema contains '"@type":"ProductGroup"' and native_schema contains '"hasVariant":'
+      assign description_json = description | json | replace: '<', '\u003c'
+      assign enriched_marker = product_marker | append: '"description":' | append: description_json | append: ','
+      assign native_schema = native_schema | replace: product_marker, enriched_marker
+    endif
+  endif
+
+  echo native_schema
+-%}
