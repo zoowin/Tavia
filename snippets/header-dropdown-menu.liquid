@@ -1,15 +1,47 @@
-{% comment %}
-  Renders a standard dropdown style menu for the header.
+{% doc %}
+Renders the primary navigation.
+{% enddoc %}
+{%- liquid
+  assign navigation_journal = blogs.news
+  assign add_journal = false
+  if navigation_journal.articles_count > 0
+    assign add_journal = true
+    for navigation_item in section.settings.menu.links
+      if navigation_item.url == navigation_journal.url
+        assign add_journal = false
+      endif
+    endfor
+  endif
+-%}
 
-  Usage:
-  {% render 'header-dropdown-menu' %}
-{% endcomment %}
 
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
+      {%- liquid
+        assign menu_title = link.title
+        assign menu_url = link.url
+        assign menu_current = link.current
+        assign is_home = false
+        if link.type == 'frontpage_link' or link.url == routes.root_url
+          assign is_home = true
+          assign menu_url = routes.root_url
+          assign menu_current = false
+          if request.page_type == 'index'
+            assign menu_current = true
+          endif
+        endif
+        if link.type == 'catalog_link' or link.handle == 'catalog'
+          assign menu_title = 'tavia_navigation.shop' | t
+        endif
+      -%}
+      {%- if add_journal and link.url contains '/pages/contact' -%}
+        {% render 'tavia-journal-navigation', journal: navigation_journal, layout: 'desktop' %}
+        {%- assign add_journal = false -%}
+      {%- endif -%}
+
       <li>
-        {%- if link.links != blank -%}
+        {%- if link.links != blank and is_home == false -%}
           <header-menu>
             <details id="Details-HeaderMenu-{{ forloop.index }}">
               <summary
@@ -21,7 +53,7 @@
                     class="header__active-menu-item"
                   {% endif %}
                 >
-                  {{- link.title | escape -}}
+                  {{- menu_title | escape -}}
                 </span>
                 {{- 'icon-caret.svg' | inline_asset_content -}}
               </summary>
@@ -54,7 +86,7 @@
                           {{- 'icon-caret.svg' | inline_asset_content -}}
                         </summary>
                         <ul
-                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                          id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}"
                           class="header__submenu list-menu motion-reduce"
                         >
                           {%- for grandchildlink in childlink.links -%}
@@ -82,22 +114,23 @@
         {%- else -%}
           <a
             id="HeaderMenu-{{ link.handle }}"
-            href="{{ link.url }}"
+            href="{{ menu_url }}"
             class="header__menu-item list-menu__item link link--text focus-inset"
-            {% if link.current %}
+            {% if menu_current %}
               aria-current="page"
             {% endif %}
           >
             <span
-              {%- if link.current %}
+              {%- if menu_current %}
                 class="header__active-menu-item"
               {% endif %}
             >
-              {{- link.title | escape -}}
+              {{- menu_title | escape -}}
             </span>
           </a>
         {%- endif -%}
       </li>
     {%- endfor -%}
+    {%- if add_journal -%}{% render 'tavia-journal-navigation', journal: navigation_journal, layout: 'desktop' %}{%- endif -%}
   </ul>
 </nav>

@@ -1,9 +1,19 @@
-{% comment %}
-  Renders a header drawer menu for mobile and desktop.
+{% doc %}
+Renders the primary navigation.
+{% enddoc %}
+{%- liquid
+  assign navigation_journal = blogs.news
+  assign add_journal = false
+  if navigation_journal.articles_count > 0
+    assign add_journal = true
+    for navigation_item in section.settings.menu.links
+      if navigation_item.url == navigation_journal.url
+        assign add_journal = false
+      endif
+    endfor
+  endif
+-%}
 
-  Usage:
-  {% render 'header-drawer' %}
-{% endcomment %}
 
 {%- assign image_profiles = section.blocks | where: 'type', 'menu_collection' -%}
 
@@ -24,14 +34,36 @@
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
+      {%- liquid
+        assign menu_title = link.title
+        assign menu_url = link.url
+        assign menu_current = link.current
+        assign is_home = false
+        if link.type == 'frontpage_link' or link.url == routes.root_url
+          assign is_home = true
+          assign menu_url = routes.root_url
+          assign menu_current = false
+          if request.page_type == 'index'
+            assign menu_current = true
+          endif
+        endif
+        if link.type == 'catalog_link' or link.handle == 'catalog'
+          assign menu_title = 'tavia_navigation.shop' | t
+        endif
+      -%}
+      {%- if add_journal and link.url contains '/pages/contact' -%}
+        {% render 'tavia-journal-navigation', journal: navigation_journal, layout: 'drawer' %}
+        {%- assign add_journal = false -%}
+      {%- endif -%}
+
                 <li>
-                  {%- if link.links != blank -%}
+                  {%- if link.links != blank and is_home == false -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
-                        {{ link.title | escape }}
+                        {{ menu_title | escape }}
                         <span class="svg-wrapper">
                           {{- 'icon-arrow.svg' | inline_asset_content -}}
                         </span>
@@ -49,7 +81,7 @@
                             <span class="svg-wrapper">
                               {{- 'icon-arrow.svg' | inline_asset_content -}}
                             </span>
-                            {{ link.title | escape }}
+                            {{ menu_title | escape }}
                           </button>
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
@@ -128,17 +160,18 @@
                   {%- else -%}
                     <a
                       id="HeaderDrawer-{{ link.handle }}"
-                      href="{{ link.url }}"
-                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
-                      {% if link.current %}
+                      href="{{ menu_url }}"
+                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if menu_current %} menu-drawer__menu-item--active{% endif %}"
+                      {% if menu_current %}
                         aria-current="page"
                       {% endif %}
                     >
-                      {{ link.title | escape }}
+                      {{ menu_title | escape }}
                     </a>
                   {%- endif -%}
                 </li>
               {%- endfor -%}
+    {%- if add_journal -%}{% render 'tavia-journal-navigation', journal: navigation_journal, layout: 'drawer' %}{%- endif -%}
             </ul>
           </nav>
           <div class="menu-drawer__utility-links">

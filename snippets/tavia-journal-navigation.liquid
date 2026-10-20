@@ -1,0 +1,18 @@
+{% doc %}
+Renders the Journal entry in primary navigation.
+@param {blog} journal - Published editorial blog.
+@param {string} layout - Desktop or drawer presentation.
+{% enddoc %}
+{%- liquid
+  assign journal_active = false
+  if request.path == journal.url or request.path contains '/blogs/news/'
+    assign journal_active = true
+  endif
+-%}
+<li>
+  <a href="{{ journal.url }}"
+    class="{% if layout == 'drawer' %}menu-drawer__menu-item list-menu__item link link--text focus-inset{% if journal_active %} menu-drawer__menu-item--active{% endif %}{% else %}header__menu-item list-menu__item link link--text focus-inset{% endif %}"
+    {% if request.path == journal.url %}aria-current="page"{% endif %}>
+    <span{% if layout != 'drawer' and journal_active %} class="header__active-menu-item"{% endif %}>{{ 'tavia_navigation.journal' | t }}</span>
+  </a>
+</li>

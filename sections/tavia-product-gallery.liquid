@@ -31,6 +31,9 @@
     {%- for block in section.blocks -%}
       {%- liquid
         assign card_product = block.settings.product
+        if card_product == blank
+          continue
+        endif
         assign card_image = block.settings.image
         assign card_url = block.settings.link
         assign card_title = block.settings.title
@@ -68,7 +71,7 @@
           </div>
           <div class="tavia-product-card__meta">
             <span class="tavia-product-card__title" id="TaviaProductTitle-{{ section.id }}-{{ block.id }}">{{ card_title | default: 'Tavia form' | escape }}</span>
-            <span class="tavia-product-card__price">{%- if card_product != blank -%}{{ card_product.price | money }}{%- else -%}{{ block.settings.price | escape }}{%- endif -%}</span>
+            <div class="tavia-product-card__price">{%- if card_product != blank -%}{% render 'price', product: card_product %}{%- else -%}{{ block.settings.price | escape }}{%- endif -%}</div>
             <span class="tavia-product-card__description">{{ card_description | escape }}</span>
             <span class="tavia-product-card__swatches" aria-label="Available colors">
               <span class="tavia-product-card__swatch" style="--swatch: {{ block.settings.swatch_one }};"></span>
@@ -159,6 +162,11 @@
     {%- endfor -%}
   </div>
 </section>
+
+{% stylesheet %}
+  .tavia-product-card__price .price { font: inherit; line-height: inherit; white-space: nowrap; }
+  .tavia-product-card__price .price-item { margin: 0; }
+{% endstylesheet %}
 
 {% schema %}
 {

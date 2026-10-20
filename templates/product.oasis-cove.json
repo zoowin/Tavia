@@ -77,7 +77,7 @@
           "type": "product_details",
           "settings": {
             "heading": "Product Details",
-            "content": "<p>A bold, rounded take on the everyday slide. Oasis Halo pairs a broad toe opening with a curved upper and a geometric lattice structure.</p><ul><li>Broad front opening leaves the toes exposed.</li><li>Rounded upper and thick sole create a sculptural silhouette.</li><li>Repeating lattice openings define the upper and sides.</li><li>Slip-on design with no laces or straps to adjust.</li></ul><p>Check the Size Chart before choosing your size.</p>",
+            "content": "<p>A rounded, cocoon-like slide for everyday wear. Oasis Cove combines a covered lattice upper with a distinctive oval toe opening.</p><ul><li>Rounded upper creates a foot-hugging silhouette.</li><li>Small oval opening at the front provides a signature detail.</li><li>Fine lattice openings extend across the upper and sides.</li><li>Open-back, slip-on design with no laces or straps to adjust.</li></ul><p>Check the Size Chart before choosing your size.</p>",
             "open_by_default": false
           }
         },
@@ -188,7 +188,7 @@
       "name": "Tavia video + text",
       "settings": {
         "video": "shopify://files/videos/tavia-oasis-cove-motion.mp4",
-        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "video_description": "Oasis Cove shown on foot, with a closer look at its shape and structure.",
         "loop": true,
         "autoplay": true,
         "mobile_full_width": true,

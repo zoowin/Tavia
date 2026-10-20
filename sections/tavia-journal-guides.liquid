@@ -1,0 +1,52 @@
+{%- assign journal = section.settings.blog -%}
+{%- if journal.articles_count > 0 -%}
+  {{ 'tavia-journal.css' | asset_url | stylesheet_tag }}
+  <section class="tavia-journal tavia-journal-guides color-{{ section.settings.color_scheme }} gradient" style="--guides-top: {{ section.settings.padding_top }}px; --guides-bottom: {{ section.settings.padding_bottom }}px;" aria-labelledby="JournalGuides-{{ section.id }}">
+    <div class="page-width">
+      <header class="tavia-journal-guides__header">
+        <div>
+          <h2 id="JournalGuides-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+          {%- if section.settings.introduction != blank -%}<p>{{ section.settings.introduction | escape }}</p>{%- endif -%}
+        </div>
+        {%- if section.settings.link_label != blank -%}<a class="tavia-journal__text-link" href="{{ journal.url }}">{{ section.settings.link_label | escape }} <span aria-hidden="true">↗</span></a>{%- endif -%}
+      </header>
+      <div class="tavia-journal-guides__grid">
+        {%- for entry in journal.articles limit: 3 -%}
+          {%- render 'tavia-journal-card', entry: entry, show_image: true, show_date: false, show_author: false, heading_tag: 'h3', link_label: section.settings.read_label -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% stylesheet %}
+  .tavia-journal-guides { padding-block: var(--guides-top) var(--guides-bottom); }
+  .tavia-journal-guides__header { display: flex; align-items: end; justify-content: space-between; gap: 2.4rem; margin-bottom: 3.2rem; }
+  .tavia-journal-guides__header h2 { margin: 0; font-size: clamp(3.2rem, 4vw, 5.2rem); line-height: 1.1; letter-spacing: -.035em; }
+  .tavia-journal-guides__header p { max-width: 58ch; margin: 1.6rem 0 0; font-size: 1.6rem; line-height: 1.65; color: var(--journal-muted); }
+  .tavia-journal-guides__header > a { flex-shrink: 0; }
+  .tavia-journal-guides__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.2rem; }
+  @media (max-width: 989px) {
+    .tavia-journal-guides__header { align-items: start; flex-direction: column; }
+    .tavia-journal-guides__grid { grid-template-columns: minmax(0, 1fr); gap: 3.6rem; }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Journal guides",
+  "tag": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find your TAVIA" },
+    { "type": "textarea", "id": "introduction", "label": "Introduction", "default": "Compare the collections, explore the shapes and take a closer look at how they are made." },
+    { "type": "text", "id": "link_label", "label": "Journal link label", "default": "Explore the Journal" },
+    { "type": "text", "id": "read_label", "label": "Article link label", "default": "Read guide" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 }
+  ],
+  "presets": [{ "name": "Journal guides" }]
+}
+{% endschema %}

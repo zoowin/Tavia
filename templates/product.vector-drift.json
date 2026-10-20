@@ -17,7 +17,7 @@
           "settings": {
             "split_product_title": true,
             "display_title": "Vector Drift Low-Profile Knit Slip-On",
-            "subtitle": "Everyday Lace-Up Sneaker"
+            "subtitle": "Low-Profile Lattice Slip-On"
           }
         },
         "rating": {
@@ -36,7 +36,7 @@
         "product_intro": {
           "type": "product_intro",
           "settings": {
-            "content": "An everyday lace-up pairing an engineered knit upper with a 3D-printed lattice sole.",
+            "content": "A clean, low-profile slip-on with a fine open lattice. Pair Vector Drift with workday trousers or off-duty denim for your everyday rhythm.",
             "use_description": false
           }
         },
@@ -80,7 +80,7 @@
           "type": "product_details",
           "settings": {
             "heading": "Product details",
-            "content": "<ul><li>Low-profile everyday lace-up silhouette</li><li>Engineered knit upper</li><li>Adjustable textile laces</li><li>3D-printed open lattice sole</li><li>Monochrome black finish</li></ul>",
+            "content": "<ul><li>Low-profile, closed-heel slip-on silhouette.</li><li>Fine, repeating open lattice across the upper.</li><li>Rounded toe and smooth collar rim.</li><li>No laces or straps to adjust.</li><li>A clean shape for everyday outfits.</li></ul>",
             "open_by_default": false
           }
         },
@@ -88,7 +88,7 @@
           "type": "materials_care",
           "settings": {
             "heading": "Materials & care",
-            "content": "<p><strong>Upper:</strong> Engineered knit textile<br/><strong>Sole:</strong> 3D-printed lattice structure<br/><strong>Laces:</strong> Textile</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Do not machine wash or use harsh cleaning chemicals.</p>",
+            "content": "<p><strong>Construction:</strong> 3D-printed open lattice<br/><strong>Closure:</strong> Slip-on, with no laces</p><p>For light surface dirt, wipe gently with a soft damp cloth. Air dry away from direct heat. Contact us for care guidance before machine washing or using cleaning chemicals.</p>",
             "open_by_default": false
           }
         },
@@ -135,9 +135,9 @@
         "structure": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-01_LR.jpg",
-            "title": "Knit upper. Your fit.",
-            "text": "<p>A fine-knit upper with adjustable laces lets you fine-tune the fit across the instep.</p>",
+            "image": "shopify://shop_images/Main-02-VectorDriftLow-Profile-LR.jpg",
+            "title": "Open by design.",
+            "text": "<p>A fine, repeating lattice gives Drift its distinctive texture and open structure.</p>",
             "link_label": "",
             "link": ""
           }
@@ -145,9 +145,9 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-02_LR.jpg",
-            "title": "A sole, built in 3D.",
-            "text": "<p>An open, 3D-printed lattice gives the sole its distinctive structure beneath a familiar lace-up silhouette.</p>",
+            "image": "shopify://shop_images/Main-07-VectorDriftLow-Profile-LR.jpg",
+            "title": "Slip on. Get going.",
+            "text": "<p>A low-profile shape with no laces or straps makes getting dressed one less thing to think about.</p>",
             "link_label": "",
             "link": ""
           }
@@ -155,9 +155,9 @@
         "overhead": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Orbit_Core-detail-03_LR.jpg",
-            "title": "From workdays to weekends.",
-            "text": "<p>Pair with tailored trousers for a casual workday, or denim when the plans are more relaxed.</p>",
+            "image": "shopify://shop_images/Main-09-VectorDriftLow-Profile-LR.jpg",
+            "title": "Workday to weekend.",
+            "text": "<p>A clean silhouette that pairs with tailored trousers, relaxed denim and the everyday plans in between.</p>",
             "link_label": "",
             "link": ""
           }
@@ -169,7 +169,7 @@
         "overhead"
       ],
       "settings": {
-        "title": "Made for the way the day changes.",
+        "title": "A clean shape. Your everyday rhythm.",
         "heading_size": "h2",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -189,20 +189,21 @@
       "type": "tavia-video-text",
       "name": "Tavia video + text",
       "settings": {
-        "video": "shopify://files/videos/oribt-motion.mp4",
-        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "video": "",
+        "video_description": "Vector Drift shown on foot.",
         "loop": true,
         "autoplay": true,
         "mobile_full_width": true,
         "ratio": "adapt",
         "video_position": "left",
         "eyebrow": "",
-        "heading": "See Orbit Core in motion.",
-        "text": "<p>See Atlas Wave on foot. Follow the wave-like structure from the curved heel to the forefoot, and watch how the shoe meets the ground as you move.</p>",
+        "heading": "See Vector Drift in motion.",
+        "text": "<p>Take a closer look at the low-profile slip-on shape and fine open lattice.</p>",
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
-      }
+      },
+      "disabled": true
     },
     "orbit_faq": {
       "type": "collapsible-content",
@@ -210,9 +211,9 @@
         "occasions": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Where does Orbit Core fit into the day?",
+            "heading": "Where does Vector Drift fit into the day?",
             "icon": "none",
-            "row_content": "<p>Orbit Core is styled as an everyday lace-up for commuting, casual workwear, errands, and social plans. It is not intended to replace technical athletic, safety, or protective footwear.</p>",
+            "row_content": "<p>Vector Drift is a low-profile slip-on for everyday outfits, from workday trousers to relaxed denim. Compare the current fit and sizing information before choosing your pair.</p>",
             "page": ""
           }
         },
@@ -237,7 +238,7 @@
         "socks": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "What socks work with Orbit Core?",
+            "heading": "What socks work with Vector Drift?",
             "icon": "none",
             "row_content": "<p>Fine everyday socks keep the fit closest to your selected size. Thicker socks take up more room, so consider how you plan to wear the shoe when choosing.</p>",
             "page": ""
@@ -257,7 +258,7 @@
           "settings": {
             "heading": "Are they waterproof?",
             "icon": "none",
-            "row_content": "<p>No. The knit upper and open lattice construction are not waterproof. Choose waterproof footwear when you need to keep your feet dry.</p>",
+            "row_content": "<p>No. The open lattice allows water to pass through. Choose waterproof footwear when you need to keep your feet dry.</p>",
             "page": ""
           }
         }

@@ -571,5 +571,9 @@
     "tip": "Allow room beyond your measured foot length. If you are between sizes, or have wide feet or a high instep, contact us for help before ordering.",
     "empty": "Please contact us for sizing guidance for this product.",
     "no_js": "Enable JavaScript to view the size chart."
+  },
+  "tavia_navigation": {
+    "shop": "Shop",
+    "journal": "Journal"
   }
 }

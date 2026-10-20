@@ -6,7 +6,7 @@
 <div id="Journal-{{ section.id }}" class="tavia-journal page-width">
   <header class="tavia-journal__intro">
     {%- if section.settings.eyebrow != blank -%}<p class="tavia-journal__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-    <h1 class="tavia-journal__title">{{ blog.title | escape }}</h1>
+    <h1 class="tavia-journal__title">{{ section.settings.heading | default: blog.title | escape }}</h1>
     {%- if section.settings.introduction != blank -%}<div class="tavia-journal__description">{{ section.settings.introduction }}</div>{%- endif -%}
   </header>
   {%- paginate blog.articles by 6 -%}
@@ -31,6 +31,11 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
     {
       "type": "text",
       "id": "eyebrow",

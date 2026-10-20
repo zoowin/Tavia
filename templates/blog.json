@@ -10,7 +10,8 @@
         "padding_bottom": 60,
         "eyebrow": "TAVIA LAB / JOURNAL",
         "introduction": "<p>Product guides, visible structures and new ways to approach everyday objects.</p>",
-        "read_label": "Read article"
+        "read_label": "Read article",
+        "heading": "Journal"
       }
     }
   },

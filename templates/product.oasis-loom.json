@@ -77,7 +77,7 @@
           "type": "product_details",
           "settings": {
             "heading": "Product Details",
-            "content": "<p>A sculpted silhouette for everyday movement. Atlas Wave pairs a wave-like lattice sole with a contoured slip-on upper.</p><ul><li>Open lattice upper lets air move around your foot.</li><li>Curved heel and lace-free design for easy everyday styling.</li><li>Unisex design, with US sizing options for women and men.</li><li>Wear with or without socks. Check the Size Chart before choosing your size.</li></ul>",
+            "content": "<p>A closed-toe mule with an easy, open-back shape. Oasis Loom pairs a rounded toe with a fine, repeating lattice for an understated everyday silhouette.</p><ul><li>Covered toe and open heel.</li><li>Fine geometric lattice across the upper.</li><li>Low-profile, slip-on shape with no laces.</li><li>Wear with or without socks. Check the Size Chart before choosing your size.</li></ul>",
             "open_by_default": false
           }
         },
@@ -189,7 +189,7 @@
       "name": "Tavia video + text",
       "settings": {
         "video": "shopify://files/videos/oasis-loom-motion.mp4",
-        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "video_description": "Oasis Loom shown on foot, with a closer look at its shape and structure.",
         "loop": true,
         "autoplay": true,
         "mobile_full_width": true,
@@ -209,9 +209,9 @@
         "long_days": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Can I wear Atlas Wave for long days on my feet?",
+            "heading": "When can I wear Oasis Loom?",
             "icon": "none",
-            "row_content": "<p>Atlas Wave’s sculpted lattice extends from heel to toe, with a continuous upper that surrounds your foot. For longer days, the right fit matters—start with shorter wears to see how they feel before making them your all-day pair.</p>",
+            "row_content": "<p>Oasis Loom is an open-back mule for relaxed everyday outfits, from slow mornings at home to casual plans outside. Check the fit and start with shorter wears to see how the shape feels on your foot.</p>",
             "page": ""
           }
         },
@@ -227,7 +227,7 @@
         "sizing": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Is Atlas Wave unisex, and how do I choose my size?",
+            "heading": "Is Oasis Loom unisex, and how do I choose my size?",
             "icon": "none",
             "row_content": "<p>Yes—the shoe design is the same for men and women. Choose Female or Male under US Sizing, then select your size. If you’re between sizes or have a wider foot or higher instep, contact us before ordering for help choosing.</p>",
             "page": ""

@@ -180,7 +180,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "FIND YOUR MOTION",
-        "intro": "Four approaches to movement, designed around different moments of the day.",
+        "intro": "Five collections for daily movement, downtime and the objects around you.",
         "color_scheme": "",
         "grid_gap": 4,
         "padding_top": 40,
@@ -268,7 +268,7 @@
         "heading_width_mobile": 300,
         "copy": "At Tavia, we turn 3D printing into a new design language,shaping structure, flexibility and feel with a freedom traditional footwear can’t offer.",
         "link_label": "Read the product note",
-        "link": ""
+        "link": "/blogs/news/3d-printed-footwear-lattice-and-textile-uppers-tavia-lab"
       }
     },
     "current-forms": {
@@ -304,21 +304,6 @@
             "swatch_two": "#171717"
           }
         },
-        "form-1": {
-          "type": "product_card",
-          "settings": {
-            "product": "atlas-grid-structured-knit-slip-on",
-            "image": "shopify://shop_images/Main-07-LR_Atlas_Grid_Structured-Knit_Slip-On.jpg",
-            "title": "The 01 / Earth",
-            "description": "One-piece everyday shoe",
-            "price": "$—",
-            "link": "",
-            "fallback_tone": "natural",
-            "background": "#eeeeec",
-            "swatch_one": "#8b624c",
-            "swatch_two": "#171717"
-          }
-        },
         "form-2": {
           "type": "product_card",
           "settings": {
@@ -333,29 +318,12 @@
             "swatch_one": "#171717",
             "swatch_two": "#f2f1ec"
           }
-        },
-        "form-3": {
-          "type": "product_card",
-          "settings": {
-            "product": "asset-pack-69501812738-example-product-2",
-            "image": "shopify://shop_images/Frame_5-LR.jpg",
-            "title": "The 01 / Sand",
-            "description": "Open form for home and away",
-            "price": "$—",
-            "link": "",
-            "fallback_tone": "sand",
-            "background": "#e8e5df",
-            "swatch_one": "#b89b7e",
-            "swatch_two": "#171717"
-          }
         }
       },
       "block_order": [
-        "product_card_XR8NLK",
-        "product_card_Jj8YCm",
-        "form-1",
         "form-2",
-        "form-3"
+        "product_card_XR8NLK",
+        "product_card_Jj8YCm"
       ],
       "settings": {
         "color_scheme": "",
@@ -430,7 +398,7 @@
         "heading": "BUILT FOR MOTION.\nMADE FOR RECOVERY.",
         "copy": "Tavia is designed around the full rhythm of the day—from long hours on your feet to the moments when you slow down and reset. Lightweight, adaptable forms bring ease to daily movement, extended wear and everyday recovery.",
         "link_label": "Discover Tavia",
-        "link": "",
+        "link": "/blogs/news/find-your-tavia-a-guide-to-atlas-oasis-vector-and-orbit",
         "padding_top": 20,
         "padding_bottom": 20
       }
@@ -594,18 +562,32 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "journal-guides": {
+      "type": "tavia-journal-guides",
+      "settings": {
+        "blog": "news",
+        "heading": "Find your TAVIA",
+        "introduction": "Compare the collections, explore the shapes and take a closer look at how they are made.",
+        "link_label": "Explore the Journal",
+        "read_label": "Read guide",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "tavia-hero",
     "tavia-marquee",
     "shop-by-direction",
+    "current-forms",
     "tavia_3d_comparison_xpUMfx",
     "object-statement",
-    "current-forms",
     "video_eUffbH",
     "motion-story",
     "technology-story",
-    "tavia-testimonials"
+    "tavia-testimonials",
+    "journal-guides"
   ]
 }
