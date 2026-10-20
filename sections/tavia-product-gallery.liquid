@@ -164,8 +164,24 @@
 </section>
 
 {% stylesheet %}
-  .tavia-product-card__price .price { font: inherit; line-height: inherit; white-space: nowrap; }
+  .tavia-products .tavia-product-card { --tavia-card-info-inset: 16px; }
+  .tavia-products .tavia-product-card__meta {
+    grid-template-columns: minmax(0, 1fr);
+    padding-inline: var(--tavia-card-info-inset);
+    row-gap: 0.8rem;
+  }
+  .tavia-products .tavia-product-card__meta > * { min-width: 0; }
+  .tavia-products .tavia-product-card__title,
+  .tavia-products .tavia-product-card__description {
+    overflow-wrap: anywhere;
+    text-align: start;
+  }
+  .tavia-products .tavia-product-card__quick-add { padding-inline: var(--tavia-card-info-inset); }
+  .tavia-product-card__price .price { font: inherit; line-height: inherit; white-space: normal; }
   .tavia-product-card__price .price-item { margin: 0; }
+  @media (max-width: 749px) {
+    .tavia-products .tavia-product-card { --tavia-card-info-inset: 12px; }
+  }
 {% endstylesheet %}
 
 {% schema %}
