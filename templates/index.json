@@ -190,10 +190,38 @@
     "current-forms": {
       "type": "tavia-product-gallery",
       "blocks": {
+        "product_card_9R3kRE": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
+        },
         "product_card_6GtGhA": {
           "type": "product_card",
           "settings": {
             "product": "orbit-core-everyday-lace-up-sneaker",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
+        },
+        "product_card_6gziet": {
+          "type": "product_card",
+          "settings": {
+            "product": "",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -251,16 +279,18 @@
         }
       },
       "block_order": [
+        "product_card_9R3kRE",
         "product_card_6GtGhA",
+        "product_card_6gziet",
         "form-2",
         "product_card_XR8NLK",
         "product_card_Jj8YCm"
       ],
       "settings": {
         "color_scheme": "",
-        "heading": "Current forms",
+        "heading": "Find your first pair",
         "link_label": "View all",
-        "link": "",
+        "link": "shopify://collections",
         "enable_quick_add": true,
         "quick_add_label": "Add to cart",
         "padding_top": 0,
