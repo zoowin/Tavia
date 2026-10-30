@@ -1,0 +1,80 @@
+.tavia-directions .tavia-directions__card {
+  color: #fff !important;
+}
+
+.tavia-directions .tavia-directions__media::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, .32) 30%, transparent 55%, rgba(0, 0, 0, .12) 72%, rgba(0, 0, 0, .5) 100%), linear-gradient(rgba(0, 0, 0, var(--tavia-direction-card-overlay-opacity, .1)), rgba(0, 0, 0, var(--tavia-direction-card-overlay-opacity, .1)));
+  opacity: 1;
+}
+
+.tavia-directions .tavia-directions__content {
+  padding: clamp(2rem, 2.5vw, 4rem);
+  gap: 2rem;
+}
+
+.tavia-directions .tavia-directions__title {
+  font-size: clamp(3.2rem, 3.6vw, 5.2rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.tavia-directions .tavia-directions__function {
+  font-family: inherit;
+  font-size: clamp(1.3rem, 1.2vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: .06em;
+  margin-top: .8rem;
+}
+
+.tavia-directions .tavia-directions__description {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  max-width: 32rem;
+  margin-top: 1.2rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+}
+
+.tavia-directions .tavia-directions__card-footer {
+  justify-content: flex-end;
+}
+
+.tavia-directions .tavia-directions__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 4.8rem;
+  padding: 1.2rem 2rem;
+  max-width: 100%;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #161616;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  line-height: 1.4;
+  text-transform: none;
+  transition: background .2s, color .2s;
+}
+
+.tavia-directions .tavia-directions__card:is(:hover, :focus-visible) .tavia-directions__link {
+  background: #161616;
+  color: #fff;
+}
+
+.tavia-directions .tavia-directions__card:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -6px;
+}
+
+@media (max-width: 989px) {
+  .tavia-directions .tavia-directions__card-heading { display: block; }
+  .tavia-directions .tavia-directions__number { display: none; }
+  .tavia-directions .tavia-directions__description { font-size: 1.5rem; max-width: 28rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tavia-directions .tavia-directions__image, .tavia-directions .tavia-directions__link { transition: none; }
+  .tavia-directions .tavia-directions__card:hover .tavia-directions__image { transform: none; }
+}

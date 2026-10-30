@@ -575,5 +575,10 @@
   "tavia_navigation": {
     "shop": "Shop",
     "journal": "Journal"
+  },
+  "tavia": {
+    "collection_cards": {
+      "shop_collection": "Shop {{ collection }}"
+    }
   }
 }
