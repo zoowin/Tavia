@@ -9,9 +9,16 @@
     endif
   endfor
   assign profile = active_profile.settings
+  assign hero_title = collection.title
+  if collection.handle == 'all'
+    assign profile = section.settings
+    assign active_profile = nil
+    assign hero_title = section.settings.title | default: collection.title
+  endif
   assign hero_image = profile.image | default: collection.image
   assign mobile_image = profile.mobile_image
-  assign hero_alt = hero_image.alt | default: collection.title
+  assign hero_image = hero_image | default: mobile_image
+  assign hero_alt = hero_image.alt | default: hero_title
   assign desktop_position = hero_image.presentation.focal_point | default: 'center center'
   assign mobile_position = mobile_image.presentation.focal_point | default: desktop_position
   assign hero_loading = 'eager'
@@ -34,7 +41,7 @@
   <header class="tavia-collection-hero" aria-labelledby="TaviaCollectionTitle-{{ section.id }}">
     <div class="tavia-collection-hero__content">
       <h1 class="tavia-collection-hero__heading" id="TaviaCollectionTitle-{{ section.id }}">
-        <span class="tavia-collection-hero__name">{{ collection.title | escape }}</span>
+        <span class="tavia-collection-hero__name">{{ hero_title | escape }}</span>
         {%- if profile.heading != blank -%}
           <span class="tavia-collection-hero__theme">{{ profile.heading | escape }}</span>
         {%- endif -%}
@@ -101,7 +108,13 @@
   "enabled_on": { "templates": ["collection"] },
   "max_blocks": 12,
   "settings": [
-    { "type": "paragraph", "content": "One profile per collection. The matching profile supplies its banner and up to three highlights. Other collections use their own title and image." }
+    { "type": "paragraph", "content": "Use the settings below for All products (/collections/all). For other collections, select the matching Collection profile block to edit its banner and highlights." },
+    { "type": "header", "content": "All products banner" },
+    { "type": "image_picker", "id": "image", "label": "Desktop banner", "info": "Only for All products. Recommended: 1600 × 1200 px (4:3)." },
+    { "type": "image_picker", "id": "mobile_image", "label": "Mobile banner", "info": "Only for All products. Recommended: 1000 × 1250 px (4:5). Uses the desktop image when empty." },
+    { "type": "text", "id": "title", "label": "Collection title", "info": "Leave empty to use the current collection title." },
+    { "type": "text", "id": "heading", "label": "Theme heading" },
+    { "type": "textarea", "id": "intro", "label": "Short introduction" }
   ],
   "blocks": [
     {
