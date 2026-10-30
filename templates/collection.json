@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "tavia-collection-intro": {
@@ -9,8 +18,8 @@
             "collection": "atlas",
             "heading": "Future Motion",
             "intro": "Sculptural forms. Structure you can see.",
-            "image": "shopify://shop_images/collection-vector-dp_LR.jpg",
-            "mobile_image": "shopify://shop_images/collection-atlas-mb_LR.jpg",
+            "image": "shopify://shop_images/collection-futuremotion-desk_LR.jpg",
+            "mobile_image": "shopify://shop_images/collection-futuremotion-mb_LR.jpg",
             "benefit_1_title": "Sculpted openings",
             "benefit_1_text": "Wave-like openings make the structure part of the silhouette.",
             "benefit_2_title": "Lace-free entry",
@@ -98,6 +107,7 @@
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 3,
+        "columns_mobile": "2",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
@@ -108,7 +118,6 @@
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
-        "columns_mobile": "2",
         "padding_top": 24,
         "padding_bottom": 80
       }

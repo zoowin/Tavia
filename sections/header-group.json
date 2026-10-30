@@ -43,6 +43,13 @@
         "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_type_desktop": "mega",
+        "mega_menu_heading": "Explore the collections",
+        "mega_menu_all_label": "Shop all",
+        "mega_caption_atlas": "Future Motion",
+        "mega_caption_oasis": "Reset",
+        "mega_caption_vector": "Long Days",
+        "mega_caption_orbit": "Everyday Mobility",
+        "mega_caption_module": "System Utility",
         "sticky_header_type": "on-scroll-up",
         "sticky_background_opacity": 25,
         "show_line_separator": true,
@@ -53,60 +60,8 @@
         "enable_customer_avatar": true,
         "margin_bottom": 0,
         "padding_top": 12,
-        "padding_bottom": 12,
-        "mega_menu_heading": "Explore collections",
-        "mega_menu_all_label": "Shop all",
-        "mega_menu_overview_image": "shopify://shop_images/hero-dp_LR.jpg"
-      },
-      "blocks": {
-        "menu_atlas": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "atlas",
-            "image": "shopify://shop_images/collection-vector-dp_LR.jpg",
-            "caption": "Future Motion"
-          }
-        },
-        "menu_oasis": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "oasis",
-            "image": "shopify://shop_images/collection-oasis-dp_LR.jpg",
-            "caption": "Reset"
-          }
-        },
-        "menu_vector": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "vector",
-            "image": "shopify://shop_images/collection-atlas-dp_LR.jpg",
-            "caption": "Long Days"
-          }
-        },
-        "menu_orbit": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "orbit",
-            "image": "shopify://shop_images/collection-orbit-dp_LR.jpg",
-            "caption": "Everyday Mobility"
-          }
-        },
-        "menu_module": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "module",
-            "image": "shopify://shop_images/Main-02-YT-LR.jpg",
-            "caption": "System Utility"
-          }
-        }
-      },
-      "block_order": [
-        "menu_atlas",
-        "menu_oasis",
-        "menu_vector",
-        "menu_orbit",
-        "menu_module"
-      ]
+        "padding_bottom": 12
+      }
     }
   },
   "order": [
