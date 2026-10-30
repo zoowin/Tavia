@@ -290,7 +290,7 @@
         "color_scheme": "",
         "heading": "Find your first pair",
         "link_label": "View all",
-        "link": "shopify://collections",
+        "link": "shopify://collections/all",
         "enable_quick_add": true,
         "quick_add_label": "Add to cart",
         "padding_top": 0,
