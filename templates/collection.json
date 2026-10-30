@@ -100,7 +100,11 @@
         "orbit",
         "module"
       ],
-      "settings": {}
+      "settings": {
+        "title": "All Products",
+        "heading": "",
+        "intro": ""
+      }
     },
     "main-collection-product-grid": {
       "type": "main-collection-product-grid",
