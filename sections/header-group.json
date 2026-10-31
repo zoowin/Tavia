@@ -39,16 +39,17 @@
     "header": {
       "type": "header",
       "blocks": {
-        "menu_collection_rGNrrR": {
+        "menu_collection_GghUVx": {
           "type": "menu_collection",
           "settings": {
-            "collection": "",
+            "collection": "atlas",
+            "image": "shopify://shop_images/collection-futuremotion-mb_LR.jpg",
             "caption": ""
           }
         }
       },
       "block_order": [
-        "menu_collection_rGNrrR"
+        "menu_collection_GghUVx"
       ],
       "settings": {
         "logo_position": "middle-left",
