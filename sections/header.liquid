@@ -471,7 +471,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 12,
+  "max_blocks": 40,
   "settings": [
     {
       "type": "select",
@@ -540,8 +540,14 @@
       "default": "dropdown",
       "label": "t:sections.header.settings.menu_type_desktop.label"
     },
-    { "type": "header", "content": "Mega menu cards" },
-    { "type": "paragraph", "content": "Menu links control the card order. Images follow each collection by default. Add a Collection menu card block only to override its image or caption; use one block per collection." },
+    {
+      "type": "header",
+      "content": "Mega menu cards"
+    },
+    {
+      "type": "paragraph",
+      "content": "Menu links control card order. Add Menu card blocks to set images for any child link. Add Mega menu group blocks to customize each top-level dropdown heading and action link."
+    },
     {
       "type": "text",
       "id": "mega_menu_heading",
@@ -721,25 +727,69 @@
     },
     {
       "type": "menu_collection",
-      "name": "Collection menu card",
-      "limit": 8,
+      "name": "Menu card",
+      "limit": 30,
       "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Editor label",
+          "info": "Optional name for this block, e.g. About — Our story. Not shown on the storefront."
+        },
+        {
+          "type": "url",
+          "id": "menu_link",
+          "label": "Match menu link",
+          "info": "Select the same destination as the child menu item. Supports pages, blogs, products, collections and external links. Takes priority over Collection below."
+        },
         {
           "type": "collection",
           "id": "collection",
-          "label": "Collection"
+          "label": "Collection",
+          "info": "For existing collection cards, keep this selected. Not required when Match menu link is set."
         },
         {
           "type": "image_picker",
           "id": "image",
           "label": "Menu image override",
-          "info": "Optional. Recommended: 800 × 600 px (4:3). Leave empty to follow the collection image. Selecting an image here overrides future collection image changes."
+          "info": "Optional. Recommended: 800 × 600 px (4:3). Overrides the linked resource image. Pages and external links need an image selected here."
         },
         {
           "type": "text",
           "id": "caption",
           "label": "Caption override",
           "info": "Optional. Leave empty to use the default caption in Header settings."
+        }
+      ]
+    },
+    {
+      "type": "mega_group",
+      "name": "Mega menu group",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Match top-level menu name",
+          "info": "Enter the visible parent menu name, e.g. Shop or About. Update this if the menu is renamed."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Dropdown heading",
+          "info": "Optional. Leave empty to hide the heading."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Action link label",
+          "info": "Optional, e.g. Read our story."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Action link destination",
+          "info": "The action appears only when both label and destination are set."
         }
       ]
     }

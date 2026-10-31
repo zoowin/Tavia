@@ -10,7 +10,10 @@
   assign menu_image = navigation_link.object.image | default: navigation_link.object.featured_image
   assign menu_caption = ''
   assign active_image_profile = nil
-  assign collection_handle = navigation_link.object.handle
+  assign collection_handle = ''
+  if navigation_link.type == 'collection_link'
+    assign collection_handle = navigation_link.object.handle
+  endif
   if collection_handle == blank and navigation_link.url contains '/collections/'
     assign collection_handle = navigation_link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first
   endif
@@ -32,7 +35,7 @@
   endcase
   for image_profile in image_profiles
     assign profile_handle = image_profile.settings.collection.handle | default: image_profile.settings.collection
-    if image_profile.settings.collection != blank and profile_handle == collection_handle
+    if image_profile.settings.menu_link == blank and image_profile.settings.collection != blank and profile_handle == collection_handle
       assign menu_image = image_profile.settings.image | default: menu_image
       assign menu_caption = image_profile.settings.caption | default: menu_caption
       assign active_image_profile = image_profile
@@ -42,6 +45,14 @@
   if navigation_link.type == 'collections_link' or navigation_link.url == routes.collections_url
     assign menu_image = overview_image | default: images['hero-dp_LR.jpg'] | default: menu_image
   endif
+  for image_profile in image_profiles
+    if image_profile.settings.menu_link != blank and image_profile.settings.menu_link == navigation_link.url
+      assign menu_image = image_profile.settings.image | default: menu_image
+      assign menu_caption = image_profile.settings.caption | default: menu_caption
+      assign active_image_profile = image_profile
+      break
+    endif
+  endfor
   assign image_size = '(min-width: 1600px) 280px, (min-width: 990px) 18vw, 56px'
   assign image_widths = '160, 240, 360, 480, 560'
   assign image_width = 560

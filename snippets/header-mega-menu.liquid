@@ -33,6 +33,28 @@
             assign menu_current = true
           endif
         endif
+        assign dropdown_heading = link.title
+        assign dropdown_label = ''
+        assign dropdown_url = ''
+        assign menu_group = nil
+        if link.type == 'catalog_link' or link.handle == 'catalog' or link.handle == 'shop'
+          assign dropdown_heading = section.settings.mega_menu_heading
+          assign dropdown_label = section.settings.mega_menu_all_label
+          assign dropdown_url = routes.all_products_collection_url
+        endif
+        assign normalized_menu_title = link.title | strip | downcase
+        for group in section.blocks
+          if group.type == 'mega_group'
+            assign normalized_group_title = group.settings.title | strip | downcase
+            if normalized_group_title != blank and normalized_group_title == normalized_menu_title
+              assign dropdown_heading = group.settings.heading
+              assign dropdown_label = group.settings.link_label
+              assign dropdown_url = group.settings.link
+              assign menu_group = group
+              break
+            endif
+          endif
+        endfor
         if link.type == 'catalog_link' or link.handle == 'catalog'
           assign menu_title = 'tavia_navigation.shop' | t
         endif
@@ -64,12 +86,12 @@
                 class="mega-menu__content tavia-mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
-                {%- if link.links.size > 1 -%}
-                  <div class="tavia-mega-menu__topline page-width">
-                    <p class="tavia-mega-menu__heading">{{ section.settings.mega_menu_heading | escape }}</p>
-                    {%- if section.settings.mega_menu_all_label != blank -%}
-                      <a class="tavia-mega-menu__all" href="{{ routes.all_products_collection_url }}">
-                        {{ section.settings.mega_menu_all_label | escape }} <span aria-hidden="true">↗</span>
+                {%- if dropdown_heading != blank or dropdown_label != blank and dropdown_url != blank -%}
+                  <div class="tavia-mega-menu__topline page-width"{% if menu_group != blank %} {{ menu_group.shopify_attributes }}{% endif %}>
+                    {%- if dropdown_heading != blank -%}<p class="tavia-mega-menu__heading">{{ dropdown_heading | escape }}</p>{%- endif -%}
+                    {%- if dropdown_label != blank and dropdown_url != blank -%}
+                      <a class="tavia-mega-menu__all" href="{{ dropdown_url }}">
+                        {{ dropdown_label | escape }} <span aria-hidden="true">↗</span>
                       </a>
                     {%- endif -%}
                   </div>
