@@ -14,21 +14,20 @@
   if collection_handle == blank and navigation_link.url contains '/collections/'
     assign collection_handle = navigation_link.url | split: '/collections/' | last | split: '?' | first | split: '/' | first
   endif
+  if collection_handle != blank
+    assign menu_collection = collections[collection_handle]
+    assign menu_image = menu_collection.image | default: menu_collection.featured_image | default: menu_image
+  endif
   case collection_handle
     when 'atlas'
-      assign menu_image = images['collection-vector-dp_LR.jpg'] | default: menu_image
       assign menu_caption = section.settings.mega_caption_atlas
     when 'oasis'
-      assign menu_image = images['collection-oasis-dp_LR.jpg'] | default: menu_image
       assign menu_caption = section.settings.mega_caption_oasis
     when 'vector'
-      assign menu_image = images['collection-atlas-dp_LR.jpg'] | default: menu_image
       assign menu_caption = section.settings.mega_caption_vector
     when 'orbit'
-      assign menu_image = images['collection-orbit-dp_LR.jpg'] | default: menu_image
       assign menu_caption = section.settings.mega_caption_orbit
     when 'module'
-      assign menu_image = images['Main-02-YT-LR.jpg'] | default: menu_image
       assign menu_caption = section.settings.mega_caption_module
   endcase
   for image_profile in image_profiles

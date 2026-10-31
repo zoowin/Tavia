@@ -471,7 +471,7 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
+  "max_blocks": 12,
   "settings": [
     {
       "type": "select",
@@ -540,6 +540,8 @@
       "default": "dropdown",
       "label": "t:sections.header.settings.menu_type_desktop.label"
     },
+    { "type": "header", "content": "Mega menu cards" },
+    { "type": "paragraph", "content": "Menu links control the card order. Images follow each collection by default. Add a Collection menu card block only to override its image or caption; use one block per collection." },
     {
       "type": "text",
       "id": "mega_menu_heading",
@@ -719,7 +721,7 @@
     },
     {
       "type": "menu_collection",
-      "name": "Menu collection image",
+      "name": "Collection menu card",
       "limit": 8,
       "settings": [
         {
@@ -730,13 +732,14 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Menu image",
-          "info": "Recommended: 800 × 600 px. Uses the collection image when empty."
+          "label": "Menu image override",
+          "info": "Optional. Recommended: 800 × 600 px (4:3). Leave empty to follow the collection image. Selecting an image here overrides future collection image changes."
         },
         {
           "type": "text",
           "id": "caption",
-          "label": "Short caption"
+          "label": "Caption override",
+          "info": "Optional. Leave empty to use the default caption in Header settings."
         }
       ]
     }
