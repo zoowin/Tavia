@@ -39,6 +39,14 @@
     "header": {
       "type": "header",
       "blocks": {
+        "menu_collection_WaWbKj": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "oasis",
+            "image": "shopify://shop_images/collection-rest-desk_LR.jpg",
+            "caption": ""
+          }
+        },
         "menu_collection_GghUVx": {
           "type": "menu_collection",
           "settings": {
@@ -46,10 +54,20 @@
             "image": "shopify://shop_images/collection-futuremotion-mb_LR.jpg",
             "caption": ""
           }
+        },
+        "menu_collection_qjxUwy": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "module",
+            "image": "shopify://shop_images/module-dp-LR.jpg",
+            "caption": ""
+          }
         }
       },
       "block_order": [
-        "menu_collection_GghUVx"
+        "menu_collection_WaWbKj",
+        "menu_collection_GghUVx",
+        "menu_collection_qjxUwy"
       ],
       "settings": {
         "logo_position": "middle-left",
