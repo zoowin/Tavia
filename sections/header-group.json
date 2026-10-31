@@ -38,6 +38,18 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "menu_collection_rGNrrR": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "",
+            "caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_collection_rGNrrR"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
