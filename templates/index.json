@@ -234,12 +234,27 @@
             "swatch_one": "#f3f2ed",
             "swatch_two": "#171717"
           }
+        },
+        "product_card_gL4PC4": {
+          "type": "product_card",
+          "settings": {
+            "product": "tavia-squeeze-stress-ball",
+            "title": "The 01 / Chalk",
+            "description": "One-piece everyday shoe",
+            "price": "$—",
+            "link": "",
+            "fallback_tone": "natural",
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
+          }
         }
       },
       "block_order": [
         "form-2",
         "product_card_XR8NLK",
-        "product_card_Jj8YCm"
+        "product_card_Jj8YCm",
+        "product_card_gL4PC4"
       ],
       "settings": {
         "color_scheme": "",
