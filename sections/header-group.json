@@ -47,6 +47,14 @@
             "caption": ""
           }
         },
+        "menu_collection_vector": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "vector",
+            "image": "shopify://shop_images/collection-longday-desk_LR.jpg",
+            "caption": ""
+          }
+        },
         "menu_collection_GghUVx": {
           "type": "menu_collection",
           "settings": {
@@ -55,25 +63,19 @@
             "caption": ""
           }
         },
+        "menu_collection_orbit": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "orbit",
+            "image": "shopify://shop_images/collection-everyday-desk_LR.jpg",
+            "caption": ""
+          }
+        },
         "menu_collection_qjxUwy": {
           "type": "menu_collection",
           "settings": {
             "collection": "module",
             "image": "shopify://shop_images/module-dp-LR.jpg",
-            "caption": ""
-          }
-        },
-        "menu_collection_vector": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "vector",
-            "caption": ""
-          }
-        },
-        "menu_collection_orbit": {
-          "type": "menu_collection",
-          "settings": {
-            "collection": "orbit",
             "caption": ""
           }
         }
