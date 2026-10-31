@@ -62,11 +62,27 @@
             "image": "shopify://shop_images/module-dp-LR.jpg",
             "caption": ""
           }
+        },
+        "menu_collection_vector": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "vector",
+            "caption": ""
+          }
+        },
+        "menu_collection_orbit": {
+          "type": "menu_collection",
+          "settings": {
+            "collection": "orbit",
+            "caption": ""
+          }
         }
       },
       "block_order": [
         "menu_collection_WaWbKj",
+        "menu_collection_vector",
         "menu_collection_GghUVx",
+        "menu_collection_orbit",
         "menu_collection_qjxUwy"
       ],
       "settings": {
