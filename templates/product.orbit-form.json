@@ -1,0 +1,332 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "split_product_title": true,
+            "display_title": "Orbit Form",
+            "subtitle": "Sculpted-Sole Knit Sneaker"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "product_intro": {
+          "type": "product_intro",
+          "settings": {
+            "content": "A textured knit upper meets a sculptural 3D-printed sole. Familiar lace-up styling, with a different foundation.",
+            "use_description": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_guide": "",
+            "fit_note": "Check the size guide and measure your feet before ordering. Contact us if you need help choosing."
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "product_details": {
+          "type": "product_details",
+          "settings": {
+            "heading": "Product details",
+            "content": "<ul><li>Textured knit upper with a heathered finish</li><li>Adjustable flat laces</li><li>Ribbed collar with a rear pull loop</li><li>3D-printed sole with an open, chevron-like structure</li><li>Agate Gray and Ivory Beige, each paired with a white sole</li></ul>",
+            "open_by_default": false
+          }
+        },
+        "materials_care": {
+          "type": "materials_care",
+          "settings": {
+            "heading": "Materials & care",
+            "content": "<p><strong>Upper:</strong> Knit textile<br><strong>Sole:</strong> 3D-printed open lattice structure<br><strong>Laces:</strong> Textile</p><p>Gently remove loose dirt with a soft brush, then spot clean with a soft, damp cloth. Air dry away from direct heat. Avoid soaking, machine washing, tumble drying, bleach, and harsh cleaning products.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_returns": {
+          "type": "shipping_returns",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p><strong>Shipping:</strong> Shipping charges are calculated at checkout. For delivery estimates to your location, email <a href=\"mailto:support@tavialab.com\">support@tavialab.com</a> before ordering.</p><p><strong>30-day returns:</strong> Email us within 30 days of delivery to request a return. Items must be unused, clean, and complete with their original tags and packaging. Please try your shoes indoors on a clean surface.</p><p>Wait for return approval before sending items back. Return postage for a change of mind or sizing preference is paid by the customer. For confirmed defects, arrival damage, or incorrect items, we cover reasonable return shipping costs.</p><p><a href=\"/policies/refund-policy\">View the full returns policy</a>.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "product_intro",
+        "variant_picker",
+        "buy_buttons",
+        "product_details",
+        "materials_care",
+        "shipping_returns"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "mobile_thumbnails": "show",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "orbit_editorial": {
+      "type": "tavia-orbit-form-cards",
+      "blocks": {
+        "structure": {
+          "type": "column",
+          "settings": {
+            "image_asset": "orbit-form-sole-detail.jpg",
+            "image_alt": "Close-up of the white Orbit Form sole with curved, chevron-like lattice ribs.",
+            "title": "Structure worth a closer look.",
+            "text": "<p>Curving ribs form a repeating pattern around the white 3D-printed sole, giving Orbit Form its distinctive profile from heel to toe.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "wardrobe": {
+          "type": "column",
+          "settings": {
+            "image_asset": "orbit-form-knit-overhead.jpg",
+            "image_alt": "Overhead view of Agate Gray Orbit Form sneakers showing the knit uppers and flat laces.",
+            "title": "Textured knit. Adjustable fit.",
+            "text": "<p>A heathered knit upper brings subtle texture, while flat laces let you adjust the fit across the instep.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "overhead": {
+          "type": "column",
+          "settings": {
+            "image_asset": "orbit-form-ivory-beige.jpg",
+            "image_alt": "Ivory Beige Orbit Form sneaker with a white sculptural lattice sole.",
+            "title": "Two neutrals. More ways to wear them.",
+            "text": "<p>Choose cool Agate Gray or warm Ivory Beige. Both pair naturally with denim, relaxed tailoring, and the pieces already in your wardrobe.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "structure",
+        "wardrobe",
+        "overhead"
+      ],
+      "settings": {
+        "title": "Everyday form. A different perspective.",
+        "heading_size": "h2",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "button_link": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "tavia_video_text_89mUAW": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video_description": "Orbit Form sneakers shown on foot, with a closer look at the knit upper and sculpted sole.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "",
+        "heading": "See Orbit Form in motion.",
+        "text": "<p>Take a closer look at the knit texture, lace-up fit, and sculpted sole as Orbit Form moves through everyday steps.</p>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      },
+      "disabled": true
+    },
+    "orbit_faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "occasions": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is Orbit Form designed for?",
+            "icon": "none",
+            "row_content": "<p>Orbit Form is an everyday sneaker for commutes, casual workdays, and weekend plans. Its neutral colors and familiar lace-up shape make it easy to style across different settings.</p>",
+            "page": ""
+          }
+        },
+        "construction": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is the entire shoe 3D printed?",
+            "icon": "none",
+            "row_content": "<p>The sole is 3D printed. The upper is knit textile, paired with adjustable textile laces.</p>",
+            "page": ""
+          }
+        },
+        "sizing": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I choose my size?",
+            "icon": "none",
+            "row_content": "<p>Check the product size guide and measure your feet before ordering. If you are between sizes or have wider feet or a higher instep, contact us for sizing advice.</p>",
+            "page": ""
+          }
+        },
+        "care": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How should I clean Orbit Form?",
+            "icon": "none",
+            "row_content": "<p>Gently remove loose dirt with a soft brush, then spot clean with a soft, damp cloth. Air dry away from direct heat. Avoid soaking, machine washing, tumble drying, bleach, and harsh cleaning products.</p>",
+            "page": ""
+          }
+        },
+        "water": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is Orbit Form waterproof?",
+            "icon": "none",
+            "row_content": "<p>Orbit Form is not sold as waterproof footwear. Choose footwear specifically designed for wet-weather protection when you need to keep water out.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "occasions",
+        "construction",
+        "sizing",
+        "care",
+        "water"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Frequently asked questions",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "layout": "none",
+        "container_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_first",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "settings": {
+        "horizontal_carousel": true,
+        "manual_selection": true,
+        "selected_products": [
+          "orbit-core-everyday-lace-up-sneaker",
+          "orbit-shift-high-collar-knit-sneaker"
+        ],
+        "heading": "More from Orbit",
+        "heading_size": "h2",
+        "products_to_show": 2,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "disclosures": {
+      "type": "disclosures",
+      "settings": {
+        "heading": "Disclosures",
+        "heading_size": "h2",
+        "open_by_default": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "orbit_scene": {
+      "type": "tavia-orbit-form-scene",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "ORBIT / EVERYDAY MOBILITY",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "A familiar shape, seen differently.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Orbit Form brings a sculptural detail to the everyday lace-up. A simple knit upper keeps the look understated, while the repeating lines of the sole give it a character of its own.</p><p>Wear it with relaxed trousers for the workday, then denim when the plans change.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "image_asset": "orbit-form-everyday-onfoot.jpg",
+        "image_alt": "Agate Gray Orbit Form sneakers worn with charcoal trousers beside a pale stone bench.",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "orbit_editorial",
+    "orbit_scene",
+    "tavia_video_text_89mUAW",
+    "orbit_faq",
+    "related_products",
+    "disclosures"
+  ]
+}
