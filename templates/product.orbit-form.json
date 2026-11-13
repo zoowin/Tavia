@@ -88,13 +88,11 @@
       }
     },
     "orbit_editorial": {
-      "type": "tavia-orbit-form-cards",
+      "type": "multicolumn",
       "blocks": {
         "structure": {
           "type": "column",
           "settings": {
-            "image_asset": "orbit-form-sole-detail.jpg",
-            "image_alt": "Close-up of the white Orbit Form sole with curved, chevron-like lattice ribs.",
             "title": "Structure worth a closer look.",
             "text": "<p>Curving ribs form a repeating pattern around the white 3D-printed sole, giving Orbit Form its distinctive profile from heel to toe.</p>",
             "link_label": "",
@@ -104,8 +102,6 @@
         "wardrobe": {
           "type": "column",
           "settings": {
-            "image_asset": "orbit-form-knit-overhead.jpg",
-            "image_alt": "Overhead view of Agate Gray Orbit Form sneakers showing the knit uppers and flat laces.",
             "title": "Textured knit. Adjustable fit.",
             "text": "<p>A heathered knit upper brings subtle texture, while flat laces let you adjust the fit across the instep.</p>",
             "link_label": "",
@@ -115,8 +111,6 @@
         "overhead": {
           "type": "column",
           "settings": {
-            "image_asset": "orbit-form-ivory-beige.jpg",
-            "image_alt": "Ivory Beige Orbit Form sneaker with a white sculptural lattice sole.",
             "title": "Two neutrals. More ways to wear them.",
             "text": "<p>Choose cool Agate Gray or warm Ivory Beige. Both pair naturally with denim, relaxed tailoring, and the pieces already in your wardrobe.</p>",
             "link_label": "",
@@ -272,7 +266,7 @@
       }
     },
     "orbit_scene": {
-      "type": "tavia-orbit-form-scene",
+      "type": "image-with-text",
       "blocks": {
         "caption": {
           "type": "caption",
@@ -303,8 +297,6 @@
         "text"
       ],
       "settings": {
-        "image_asset": "orbit-form-everyday-onfoot.jpg",
-        "image_alt": "Agate Gray Orbit Form sneakers worn with charcoal trousers beside a pale stone bench.",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "image_first",
