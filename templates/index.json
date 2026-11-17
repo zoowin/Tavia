@@ -183,8 +183,8 @@
         "intro": "Five collections for daily movement, downtime and the objects around you.",
         "color_scheme": "",
         "grid_gap": 4,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "current-forms": {
@@ -329,8 +329,8 @@
         "slider_label": "Move to compare 3D-printed and traditional footwear",
         "desktop_image_height": 520,
         "mobile_image_height": 520,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 20,
+        "padding_bottom": 20
       }
     },
     "object-statement": {
