@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -93,6 +102,7 @@
         "structure": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/orbit-form-01-sculpted-sole-v01_1_LR.jpg",
             "title": "Structure worth a closer look.",
             "text": "<p>Curving ribs form a repeating pattern around the white 3D-printed sole, giving Orbit Form its distinctive profile from heel to toe.</p>",
             "link_label": "",
@@ -102,6 +112,7 @@
         "wardrobe": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/orbit-form-02-knit-lacing-v01_1_LR.jpg",
             "title": "Textured knit. Adjustable fit.",
             "text": "<p>A heathered knit upper brings subtle texture, while flat laces let you adjust the fit across the instep.</p>",
             "link_label": "",
@@ -111,6 +122,7 @@
         "overhead": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/orbit-form-04-everyday-walking-v01_1_LR.jpg",
             "title": "Two neutrals. More ways to wear them.",
             "text": "<p>Choose cool Agate Gray or warm Ivory Beige. Both pair naturally with denim, relaxed tailoring, and the pieces already in your wardrobe.</p>",
             "link_label": "",
@@ -140,8 +152,55 @@
         "padding_bottom": 20
       }
     },
+    "orbit_scene": {
+      "type": "image-with-text",
+      "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "ORBIT / EVERYDAY MOBILITY",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "A familiar shape, seen differently.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Orbit Form brings a sculptural detail to the everyday lace-up. A simple knit upper keeps the look understated, while the repeating lines of the sole give it a character of its own.</p><p>Wear it with relaxed trousers for the workday, then denim when the plans change.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "caption",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-4",
+        "color_scheme": "scheme-4",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
     "tavia_video_text_89mUAW": {
       "type": "tavia-video-text",
+      "disabled": true,
       "name": "Tavia video + text",
       "settings": {
         "video_description": "Orbit Form sneakers shown on foot, with a closer look at the knit upper and sculpted sole.",
@@ -156,8 +215,7 @@
         "color_scheme": "",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "orbit_faq": {
       "type": "collapsible-content",
@@ -263,52 +321,6 @@
         "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 0
-      }
-    },
-    "orbit_scene": {
-      "type": "image-with-text",
-      "blocks": {
-        "caption": {
-          "type": "caption",
-          "settings": {
-            "caption": "ORBIT / EVERYDAY MOBILITY",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "A familiar shape, seen differently.",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Orbit Form brings a sculptural detail to the everyday lace-up. A simple knit upper keeps the look understated, while the repeating lines of the sole give it a character of its own.</p><p>Wear it with relaxed trousers for the workday, then denim when the plans change.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "caption",
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-4",
-        "color_scheme": "scheme-4",
-        "padding_top": 20,
-        "padding_bottom": 20
       }
     }
   },
