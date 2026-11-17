@@ -152,6 +152,24 @@
         "padding_bottom": 20
       }
     },
+    "tavia_video_text_jBUW8A": {
+      "type": "tavia-video-text",
+      "name": "Tavia video + text",
+      "settings": {
+        "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
+        "loop": true,
+        "autoplay": true,
+        "mobile_full_width": true,
+        "ratio": "adapt",
+        "video_position": "left",
+        "eyebrow": "ORBIT / EVERYDAY MOBILITY",
+        "heading": "A familiar shape, seen differently.",
+        "text": "<p>Orbit Form brings a sculptural detail to the everyday lace-up. A simple knit upper keeps the look understated, while the repeating lines of the sole give it a character of its own.</p><p>Wear it with relaxed trousers for the workday, then denim when the plans change.</p>",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "orbit_scene": {
       "type": "image-with-text",
       "blocks": {
@@ -303,6 +321,7 @@
   "order": [
     "main",
     "orbit_editorial",
+    "tavia_video_text_jBUW8A",
     "orbit_scene",
     "tavia_video_text_89mUAW",
     "orbit_faq",
