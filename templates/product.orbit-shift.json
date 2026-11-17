@@ -285,32 +285,6 @@
         "padding_bottom": 20
       }
     },
-    "related_products": {
-      "type": "related-products",
-      "settings": {
-        "horizontal_carousel": true,
-        "manual_selection": true,
-        "selected_products": [
-          "orbit-shift-high-collar-knit-sneaker",
-          "atlas-wave-sculpted-sole-knit-slip-on",
-          "atlas-grid-structured-knit-slip-on",
-          "oasis-cove-cocoon-knit-slide"
-        ],
-        "heading": "More everyday forms",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "1",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
     "disclosures": {
       "type": "disclosures",
       "settings": {
@@ -328,7 +302,6 @@
     "orbit_editorial",
     "tavia_video_text_89mUAW",
     "orbit_faq",
-    "related_products",
     "disclosures"
   ]
 }
