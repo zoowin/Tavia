@@ -190,19 +190,18 @@
     "current-forms": {
       "type": "tavia-product-gallery",
       "blocks": {
-        "form-2": {
+        "product_card_ggXEVB": {
           "type": "product_card",
           "settings": {
-            "product": "oasis-cove-cocoon-knit-slide",
-            "image": "shopify://shop_images/Main-06-Oasis_Cove_Cocoon-Knit_Slide.jpg",
-            "title": "The 01 / Mono",
+            "product": "oasis-halo-open-knit-slide",
+            "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
             "link": "",
             "fallback_tone": "natural",
-            "background": "#d8d8d5",
-            "swatch_one": "#171717",
-            "swatch_two": "#f2f1ec"
+            "background": "#efefed",
+            "swatch_one": "#f3f2ed",
+            "swatch_two": "#171717"
           }
         },
         "product_card_XR8NLK": {
@@ -220,11 +219,10 @@
             "swatch_two": "#171717"
           }
         },
-        "product_card_Jj8YCm": {
+        "product_card_czzTF7": {
           "type": "product_card",
           "settings": {
-            "product": "orbit-shift-high-collar-knit-sneaker",
-            "image": "shopify://shop_images/Main-01-Orbit_Shift_High-Collar_Knit_Sneaker.jpg",
+            "product": "orbit-form-sculpted-sole-knit-sneaker",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -235,10 +233,10 @@
             "swatch_two": "#171717"
           }
         },
-        "product_card_gL4PC4": {
+        "product_card_AtyNPU": {
           "type": "product_card",
           "settings": {
-            "product": "tavia-squeeze-stress-ball",
+            "product": "vector-drift-low-profile-knit-slip-on",
             "title": "The 01 / Chalk",
             "description": "One-piece everyday shoe",
             "price": "$—",
@@ -251,10 +249,10 @@
         }
       },
       "block_order": [
-        "form-2",
+        "product_card_ggXEVB",
         "product_card_XR8NLK",
-        "product_card_Jj8YCm",
-        "product_card_gL4PC4"
+        "product_card_czzTF7",
+        "product_card_AtyNPU"
       ],
       "settings": {
         "color_scheme": "",
