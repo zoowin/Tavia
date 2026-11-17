@@ -156,6 +156,7 @@
       "type": "tavia-video-text",
       "name": "Tavia video + text",
       "settings": {
+        "video": "shopify://files/videos/orbit-form-day-night-8s-480p-v03.mp4",
         "video_description": "Close-up of Atlas Wave worn while shifting weight and making contact with the ground.",
         "loop": true,
         "autoplay": true,
@@ -168,52 +169,6 @@
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 64
-      }
-    },
-    "orbit_scene": {
-      "type": "image-with-text",
-      "blocks": {
-        "caption": {
-          "type": "caption",
-          "settings": {
-            "caption": "ORBIT / EVERYDAY MOBILITY",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "A familiar shape, seen differently.",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Orbit Form brings a sculptural detail to the everyday lace-up. A simple knit upper keeps the look understated, while the repeating lines of the sole give it a character of its own.</p><p>Wear it with relaxed trousers for the workday, then denim when the plans change.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "caption",
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-4",
-        "color_scheme": "scheme-4",
-        "padding_top": 20,
-        "padding_bottom": 20
       }
     },
     "tavia_video_text_89mUAW": {
@@ -322,7 +277,6 @@
     "main",
     "orbit_editorial",
     "tavia_video_text_jBUW8A",
-    "orbit_scene",
     "tavia_video_text_89mUAW",
     "orbit_faq",
     "disclosures"
