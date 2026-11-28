@@ -42,13 +42,13 @@
         "benefit-1": {
           "type": "item",
           "settings": {
-            "text": "One-piece construction"
+            "text": "3D-printed lattice"
           }
         },
         "benefit-2": {
           "type": "item",
           "settings": {
-            "text": "No traditional assembly"
+            "text": "Sculpted silhouettes"
           }
         },
         "benefit-3": {
@@ -180,7 +180,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "FIND YOUR MOTION",
-        "intro": "Five collections for daily movement, downtime and the objects around you.",
+        "intro": "Four footwear collections, plus Module accessories.",
         "color_scheme": "",
         "grid_gap": 4,
         "padding_top": 20,
@@ -195,7 +195,7 @@
           "settings": {
             "product": "oasis-halo-open-knit-slide",
             "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
+            "description": "Easy-on, open-toe slide for unwinding after a long day.",
             "price": "$—",
             "link": "",
             "fallback_tone": "natural",
@@ -210,7 +210,7 @@
             "product": "atlas-wave-sculpted-sole-knit-slip-on",
             "image": "shopify://shop_images/Main-07-Atlas_Wave_Sculpted-Sole_Knit_Slip-On.jpg",
             "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
+            "description": "Sculpted slip-on with a wave-shaped lattice sole.",
             "price": "$—",
             "link": "",
             "fallback_tone": "natural",
@@ -224,7 +224,7 @@
           "settings": {
             "product": "orbit-form-sculpted-sole-knit-sneaker",
             "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
+            "description": "Knit lace-up with a 3D-printed lattice sole.",
             "price": "$—",
             "link": "",
             "fallback_tone": "natural",
@@ -238,7 +238,7 @@
           "settings": {
             "product": "vector-drift-low-profile-knit-slip-on",
             "title": "The 01 / Chalk",
-            "description": "One-piece everyday shoe",
+            "description": "Low-profile slip-on for workdays spent on your feet.",
             "price": "$—",
             "link": "",
             "fallback_tone": "natural",
